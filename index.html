@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Science with Prof Marwa</title>
 
 <style>
@@ -16,13 +15,14 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#f8f5ff;
+background:#f8f6fb;
 }
 
 .hero{
 height:100vh;
-background:linear-gradient(rgba(40,0,80,.6),rgba(40,0,80,.6)),
-url("https://images.unsplash.com/photo-1532187643603-ba119ca4109e");
+background:
+linear-gradient(rgba(30,0,60,.6),rgba(30,0,60,.6)),
+url('hero.jpg');
 background-size:cover;
 background-position:center;
 display:flex;
@@ -34,51 +34,48 @@ padding:20px;
 }
 
 .hero-content h1{
-font-size:55px;
-margin-bottom:15px;
+font-size:65px;
+font-weight:bold;
+}
+
+.hero-content span{
+color:#ff69b4;
 }
 
 .hero-content p{
-font-size:24px;
-margin-bottom:30px;
+font-size:28px;
+margin-top:20px;
 }
 
-.start-btn{
+.btn{
 display:inline-block;
+margin-top:30px;
 padding:18px 45px;
-background:linear-gradient(45deg,#ff4fc3,#9d4dff);
+background:linear-gradient(45deg,#8e44ad,#ff69b4);
 color:white;
 text-decoration:none;
+border-radius:40px;
 font-size:24px;
-border-radius:50px;
-font-weight:bold;
 }
 
-.social-card{
-margin-top:25px;
-display:inline-block;
-padding:18px 40px;
-border-radius:50px;
-background:#28a8ea;
-color:white;
-font-size:22px;
-font-weight:bold;
-text-decoration:none;
+.section-title{
+text-align:center;
+font-size:40px;
+color:#3b156b;
+margin:60px 0 30px;
 }
 
 .cards{
-padding:60px 20px;
-display:none;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
-max-width:1200px;
-margin:auto;
+padding:30px;
 }
 
 .card{
 background:white;
 padding:30px;
-border-radius:20px;
+border-radius:25px;
 box-shadow:0 5px 15px rgba(0,0,0,.1);
 text-align:center;
 }
@@ -88,14 +85,25 @@ color:#8e44ad;
 margin-bottom:15px;
 }
 
+.card p{
+margin-bottom:20px;
+}
+
 .card a{
 display:inline-block;
-margin-top:15px;
 padding:12px 25px;
-background:linear-gradient(45deg,#ff4fc3,#9d4dff);
+background:linear-gradient(45deg,#8e44ad,#ff69b4);
 color:white;
 text-decoration:none;
 border-radius:30px;
+}
+
+footer{
+margin-top:50px;
+background:linear-gradient(135deg,#240046,#7b2cbf);
+color:white;
+text-align:center;
+padding:30px;
 }
 
 </style>
@@ -107,89 +115,49 @@ border-radius:30px;
 
 <div class="hero-content">
 
-<h1>Science with Prof Marwa</h1>
+<h1>Science with <span>Prof Marwa</span></h1>
 
 <p>علوم الطبيعة والحياة</p>
 
-<a href="#" class="start-btn" onclick="showCards()">
-📖 ابدأ الآن
-</a>
-
-<br>
-
-<a id="socialCard" class="social-card"
-href="https://t.me/sciencesmarwa">
-✈️ زرنا على تيليجرام
-</a>
+<a href="#services" class="btn">ابدأ الآن</a>
 
 </div>
 
 </section>
 
-<section class="cards" id="cards">
+<h2 class="section-title" id="services">
+منصة متكاملة لكل ما تحتاجه
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h2>📚 الملخصات</h2>
+<p>جميع الملخصات جاهزة للتحميل</p>
+<a href="#">استكشف الملخصات</a>
+</div>
 
 <div class="card">
 <h2>📝 الفروض والاختبارات</h2>
-<p>فروض واختبارات مع التصحيح النموذجي</p>
-<a href="#">استكشف</a>
+<p>فروض واختبارات مع التصحيح</p>
+<a href="#">استكشف الفروض</a>
 </div>
 
 <div class="card">
 <h2>🎓 البكالوريا</h2>
-<p>مواضيع البكالوريا السابقة مع الحلول</p>
-<a href="#">استكشف</a>
+<p>مواضيع البكالوريا السابقة</p>
+<a href="#">استكشف البكالوريا</a>
 </div>
 
-<div class="card">
-<h2>📊 حساب المعدل</h2>
-<p>حساب المعدل والمعدل الموزون</p>
-<a href="moyenne.html">استكشف</a>
 </div>
 
-</section>
+<footer>
 
-<script>
+<h2>Science with Prof Marwa</h2>
 
-function showCards(){
-document.getElementById("cards").style.display="grid";
-window.scrollTo({
-top:document.getElementById("cards").offsetTop,
-behavior:"smooth"
-});
-}
+<p>علوم الطبيعة والحياة</p>
 
-const socialCard=document.getElementById("socialCard");
-
-const socials=[
-{
-text:"✈️ زرنا على تيليجرام",
-link:"https://t.me/sciencesmarwa",
-color:"#28a8ea"
-},
-{
-text:"📘 زرنا على فايسبوك",
-link:"https://www.facebook.com/share/19A5CzdY4t/",
-color:"#1877f2"
-},
-{
-text:"📷 زرنا على انستغرام",
-link:"https://www.instagram.com/prof_marwa_sciences?igsh=MjF1ODc3YWRwMmc5",
-color:"#e1306c"
-}
-];
-
-let current=0;
-
-setInterval(()=>{
-current=(current+1)%socials.length;
-
-socialCard.innerHTML=socials[current].text;
-socialCard.href=socials[current].link;
-socialCard.style.background=socials[current].color;
-
-},3000);
-
-</script>
+</footer>
 
 </body>
 </html>
