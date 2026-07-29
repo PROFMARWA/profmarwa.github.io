@@ -3,227 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مرحبًا بك في موقع الأستاذة مروة</title>
 
+<title>Science with Prof Marwa</title>
 
 <style>
-body{
+
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial,sans-serif;
-background:#f7f2ff;
 }
 
-header{
-background:linear-gradient(45deg,#8e44ad,#ff69b4);
-color:white;
-padding:25px;
+body{
+background:#f8f5ff;
+}
+
+.hero{
+height:100vh;
+background:linear-gradient(rgba(40,0,80,.6),rgba(40,0,80,.6)),
+url("https://images.unsplash.com/photo-1532187643603-ba119ca4109e");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
 text-align:center;
-}
-
-header h1{
-margin:0;
-font-size:32px;
-}
-
-header p{
-margin-top:10px;
-font-size:18px;
-}
-
-.container{
-max-width:900px;
-margin:auto;
+color:white;
 padding:20px;
+}
+
+.hero-content h1{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.hero-content p{
+font-size:24px;
+margin-bottom:30px;
+}
+
+.start-btn{
+display:inline-block;
+padding:18px 45px;
+background:linear-gradient(45deg,#ff4fc3,#9d4dff);
+color:white;
+text-decoration:none;
+font-size:24px;
+border-radius:50px;
+font-weight:bold;
+}
+
+.social-card{
+margin-top:25px;
+display:inline-block;
+padding:18px 40px;
+border-radius:50px;
+background:#28a8ea;
+color:white;
+font-size:22px;
+font-weight:bold;
+text-decoration:none;
+}
+
+.cards{
+padding:60px 20px;
+display:none;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
 }
 
 .card{
 background:white;
-padding:20px;
-margin:20px 0;
-border-radius:18px;
-box-shadow:0 4px 12px rgba(0,0,0,.15);
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+text-align:center;
 }
 
 .card h2{
 color:#8e44ad;
+margin-bottom:15px;
 }
 
-.btn{
+.card a{
 display:inline-block;
-padding:12px 22px;
-background:#8e44ad;
+margin-top:15px;
+padding:12px 25px;
+background:linear-gradient(45deg,#ff4fc3,#9d4dff);
 color:white;
 text-decoration:none;
-border-radius:10px;
-margin-top:10px;
+border-radius:30px;
 }
 
-footer{
-background:#8e44ad;
-color:white;
-text-align:center;
-padding:15px;
-margin-top:40px;
-}
 </style>
-
 </head>
 
 <body>
-<div id="welcome" style="height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(135deg,#8e44ad,#ff69b4);color:white;text-align:center;padding:20px;">
 
+<section class="hero">
 
+<div class="hero-content">
 
-<div id="mainSite">
-<header>
-<h1>مرحباً بك في موقع الأستاذة مروة</h1>
+<h1>Science with Prof Marwa</h1>
 
-<p>المنصة الشاملة والمبتكرة للتحضير لمادة علوم الطبيعة والحياة</p>
-</header>
-<div style="text-align:center; margin:30px;">
+<p>علوم الطبيعة والحياة</p>
 
-<a href="choix.html"
-style="display:block;
-background:#2f5be7;
-color:white;
-padding:18px;
-border-radius:30px;
-text-decoration:none;
-font-size:22px;
-margin-bottom:15px;">
-🚀 استكشف الموقع
+<a href="#" class="start-btn" onclick="showCards()">
+📖 ابدأ الآن
 </a>
 
-<a id="socialCard"
-href="https://t.me/sciencesmarwa"
-style="
-display:block;
-background:#28a8ea;
-color:white;
-padding:22px;
-border-radius:30px;
-text-decoration:none;
-font-size:24px;
-font-weight:bold;
-text-align:center;
-margin-bottom:10px;">
-📢 انضم إلينا على التلغرام
+<br>
+
+<a id="socialCard" class="social-card"
+href="https://t.me/sciencesmarwa">
+✈️ زرنا على تيليجرام
 </a>
 
-<div id="dots" style="text-align:center;margin-bottom:20px;">
-● ○ ○
 </div>
 
+</section>
+
+<section class="cards" id="cards">
+
+<div class="card">
+<h2>📝 الفروض والاختبارات</h2>
+<p>فروض واختبارات مع التصحيح النموذجي</p>
+<a href="#">استكشف</a>
+</div>
+
+<div class="card">
+<h2>🎓 البكالوريا</h2>
+<p>مواضيع البكالوريا السابقة مع الحلول</p>
+<a href="#">استكشف</a>
+</div>
+
+<div class="card">
+<h2>📊 حساب المعدل</h2>
+<p>حساب المعدل والمعدل الموزون</p>
+<a href="moyenne.html">استكشف</a>
+</div>
+
+</section>
+
 <script>
-const cards = [
+
+function showCards(){
+document.getElementById("cards").style.display="grid";
+window.scrollTo({
+top:document.getElementById("cards").offsetTop,
+behavior:"smooth"
+});
+}
+
+const socialCard=document.getElementById("socialCard");
+
+const socials=[
 {
-text:"📢 انضم إلينا على التلغرام",
+text:"✈️ زرنا على تيليجرام",
 link:"https://t.me/sciencesmarwa",
-color:"#28a8ea",
-dots:"● ○ ○"
+color:"#28a8ea"
 },
 {
-text:"📘 انضم إلينا على فايسبوك",
+text:"📘 زرنا على فايسبوك",
 link:"https://www.facebook.com/share/19A5CzdY4t/",
-color:"#1877f2",
-dots:"○ ● ○"
+color:"#1877f2"
 },
 {
-text:"📸 انضم إلينا على إنستغرام",
+text:"📷 زرنا على انستغرام",
 link:"https://www.instagram.com/prof_marwa_sciences?igsh=MjF1ODc3YWRwMmc5",
-color:"#d62976",
-dots:"○ ○ ●"
+color:"#e1306c"
 }
 ];
 
-let current = 0;
+let current=0;
 
-setInterval(() => {
-current = (current + 1) % cards.length;
+setInterval(()=>{
+current=(current+1)%socials.length;
 
-document.getElementById("socialCard").innerHTML =
-cards[current].text;
+socialCard.innerHTML=socials[current].text;
+socialCard.href=socials[current].link;
+socialCard.style.background=socials[current].color;
 
-document.getElementById("socialCard").href =
-cards[current].link;
+},3000);
 
-document.getElementById("socialCard").style.background =
-cards[current].color;
-
-document.getElementById("dots").innerHTML =
-cards[current].dots;
-
-}, 4000);
-</script>
-
-<a href="countdown.html"
-style="display:block;
-background:linear-gradient(45deg,#ff8a00,#ff5e3a);
-color:white;
-padding:25px;
-border-radius:25px;
-text-decoration:none;
-font-size:24px;">
-⏳ قداه بقى؟
-</a>
-
-
-
-
-
-
-
-<footer>
-© Science with Prof Marwa
-</footer>
-
-
-<button onclick="toggleDarkMode()" class="btn">
-🌙 الوضع الليلي
-</button>
-
-<script>
-var examDate = new Date("2027-06-13").getTime();
-
-setInterval(function() {
-var now = new Date().getTime();
-var distance = examDate - now;
-
-var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-document.getElementById("countdown").innerHTML =
-"متبقي " + days + " يوم";
-}, 1000);
-
-function toggleDarkMode() {
-document.body.classList.toggle("dark-mode");
-}
-</script>
-
-<style>
-.dark-mode {
-background: #121212 !important;
-color: white !important;
-}
-
-.dark-mode .card {
-background: #1e1e1e !important;
-color: white !important;
-}
-</style>
-</div>
-
-<script>
-function openSite(){
-document.getElementById("welcome").style.display="none";
-document.getElementById("mainSite").style.display="block";
-                         
-}
-function toggleDarkMode() {
-  
-  document.body.classList.toggle("dark-mode");
-
-}
 </script>
 
 </body>
