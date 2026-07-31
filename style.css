@@ -5,10 +5,11 @@
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#25004d,#5b0ea6,#ff4fc3);
-    color:white;
-    min-height:100vh;
+    margin:0;
+    padding:0;
+    font-family:'Cairo',sans-serif;
+    background:#f7f8fc;
+    color:#222;
 }
 
 header{
