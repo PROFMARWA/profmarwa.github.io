@@ -13,29 +13,34 @@ body{
 }
 
 header{
+    position:sticky;
+    top:0;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 60px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(12px);
+    padding:18px 60px;
+    background:white;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    z-index:1000;
 }
+
 
 header h1{
     font-size:30px;
 }
-
 nav a{
-    color:white;
+    color:#444;
     text-decoration:none;
-    margin:0 12px;
-    font-size:18px;
+    margin:0 15px;
+    font-weight:600;
     transition:.3s;
 }
 
+
 nav a:hover{
-    color:#ffd700;
+    color:#7b2ff7;
 }
+
 
 .hero{
     text-align:center;
