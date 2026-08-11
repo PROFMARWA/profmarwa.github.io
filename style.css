@@ -401,9 +401,28 @@ footer p {
     }
 
     .cards {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-    }
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+.card {
+    padding: 20px 8px;
+}
+
+.card h3 {
+    font-size: 17px;
+}
+
+.card p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.card a {
+    font-size: 12px;
+    padding: 8px 10px;
+}
 
     .cards-section {
         padding: 50px 20px;
