@@ -432,3 +432,87 @@ footer p {
         font-size: 27px;
     }
 }
+/* ===== بطاقات الصفحة الرئيسية ===== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    width: 90%;
+    max-width: 1150px;
+    margin: 35px auto;
+}
+
+.card {
+    background: linear-gradient(145deg, #fff8fd, #fdf0fa);
+    border: 1px solid #f0c7e5;
+    border-radius: 18px;
+    padding: 28px 22px;
+    text-align: center;
+    min-height: 300px;
+    box-shadow: 0 8px 25px rgba(150, 50, 150, 0.12);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(150, 50, 150, 0.20);
+}
+
+.card h3 {
+    color: #24104f;
+    font-size: 22px;
+    margin: 18px 0 12px;
+    font-weight: 800;
+}
+
+.card p {
+    color: #333;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.card a {
+    display: inline-block;
+    background: linear-gradient(90deg, #8b20d9, #f02b9d);
+    color: white;
+    text-decoration: none;
+    padding: 11px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(220, 40, 170, 0.25);
+}
+
+/* ===== الهاتف ===== */
+
+@media (max-width: 800px) {
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        width: 94%;
+    }
+
+    .card {
+        min-height: 280px;
+        padding: 18px 8px;
+        border-radius: 15px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .card p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .card a {
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+}
