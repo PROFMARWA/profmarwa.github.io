@@ -5,17 +5,17 @@ const socialText = document.getElementById("socialText");
 const socialPlatforms = [
     {
         name: "Telegram",
-        icon: "📚",
+        icon: '<i class="fa-brands fa-telegram"></i>',
         url: "https://t.me/sciencesmarwa"
     },
     {
         name: "Instagram",
-        icon: "💡",
+        icon: '<i class="fa-brands fa-instagram"></i>',
         url: "https://www.instagram.com/marwa_prof_sciences?igsh=MjF1ODc3YWRwMmc5"
     },
     {
         name: "Facebook",
-        icon: 📌"",
+        icon: '<i class="fa-brands fa-facebook"></i>',
         url: "https://www.facebook.com/share/1EsTEQ35dC/"
     }
 ];
