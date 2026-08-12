@@ -516,3 +516,47 @@ footer p {
         padding: 8px 10px;
     }
 }
+/* زر مواقع التواصل */
+.social-button-container {
+    display: flex;
+    justify-content: center;
+    margin: 25px auto;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-width: 230px;
+    padding: 14px 25px;
+
+    border-radius: 50px;
+    text-decoration: none;
+
+    color: white;
+    background: linear-gradient(135deg, #6a00ff, #ff1493);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    box-shadow: 0 8px 25px rgba(150, 0, 255, 0.35);
+
+    transition: all 0.3s ease;
+}
+
+.social-button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(255, 20, 147, 0.45);
+}
+
+#socialIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#socialText {
+    white-space: nowrap;
+}
