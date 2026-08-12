@@ -560,3 +560,32 @@ footer p {
 #socialText {
     white-space: nowrap;
 }
+/* =========================
+   نقاط مواقع التواصل
+   ========================= */
+
+.social-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin: 10px auto 22px;
+}
+
+.social-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    transition: all 0.35s ease;
+}
+
+.social-dot.active {
+    width: 10px;
+    height: 10px;
+    background: #9cffb0;
+    box-shadow:
+        0 0 5px #9cffb0,
+        0 0 12px #5cff78,
+        0 0 20px rgba(92, 255, 120, 0.7);
+}
