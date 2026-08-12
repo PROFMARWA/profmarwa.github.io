@@ -794,4 +794,15 @@ footer p {
         font-size: 14px;
         padding: 12px 8px;
     }
+.instagram-icon svg {
+    width: 25px;
+    height: 25px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2;
+}
+
+.instagram-icon svg circle:last-child {
+    fill: white;
+    stroke: none;
 }
