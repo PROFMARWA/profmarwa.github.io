@@ -26,7 +26,7 @@ function changeSocialButton() {
 
     const platform = socialPlatforms[currentPlatform];
 
-    socialIcon.textContent = platform.icon;
+    socialIcon.innerHTML = platform.icon;
     socialText.textContent = "زورونا على " + platform.name;
     socialButton.href = platform.url;
 
