@@ -1,7 +1,7 @@
-/* ==================================================
-   Science with Prof Marwa
+/* =====================================================
+   SCIENCE WITH PROF MARWA
    STYLE.CSS
-   ================================================== */
+   ===================================================== */
 
 * {
     margin: 0;
@@ -21,9 +21,10 @@ body {
     overflow-x: hidden;
 }
 
-/* ==================================================
+
+/* =====================================================
    HEADER
-   ================================================== */
+   ===================================================== */
 
 header {
     width: 100%;
@@ -33,7 +34,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
 
     background: linear-gradient(
         90deg,
@@ -44,8 +44,7 @@ header {
 
     color: white;
 
-    box-shadow:
-        0 4px 20px rgba(70, 0, 100, 0.25);
+    box-shadow: 0 4px 20px rgba(70, 0, 100, 0.25);
 
     position: relative;
     z-index: 10;
@@ -58,10 +57,6 @@ header {
 
     font-size: 18px;
     white-space: nowrap;
-}
-
-.logo:first-letter {
-    font-size: 32px;
 }
 
 .logo div {
@@ -79,14 +74,9 @@ header {
     font-weight: bold;
 }
 
-/* NAVIGATION */
-
 nav {
     display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 28px;
-    flex-wrap: wrap;
 }
 
 nav a {
@@ -94,17 +84,18 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     font-size: 15px;
+
     transition: 0.3s;
 }
 
 nav a:hover {
     color: #ff55bd;
-    transform: translateY(-2px);
 }
 
-/* ==================================================
+
+/* =====================================================
    HERO
-   ================================================== */
+   ===================================================== */
 
 .hero {
     width: 100%;
@@ -135,37 +126,6 @@ nav a:hover {
         );
 
     position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: "🧬";
-
-    position: absolute;
-
-    font-size: 260px;
-
-    opacity: 0.08;
-
-    right: 5%;
-    top: 50%;
-
-    transform: translateY(-50%);
-}
-
-.hero::after {
-    content: "🔬";
-
-    position: absolute;
-
-    font-size: 200px;
-
-    opacity: 0.08;
-
-    left: 4%;
-    top: 50%;
-
-    transform: translateY(-50%);
 }
 
 .hero-text {
@@ -173,7 +133,7 @@ nav a:hover {
     z-index: 2;
 
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
 
     padding: 50px 20px;
 }
@@ -191,7 +151,6 @@ nav a:hover {
     color: white;
 
     font-size: clamp(48px, 7vw, 82px);
-
     line-height: 1.05;
 
     margin-bottom: 25px;
@@ -218,16 +177,13 @@ nav a:hover {
     margin-bottom: 35px;
 }
 
-/* ==================================================
+
+/* =====================================================
    SOCIAL BUTTON
-   ================================================== */
+   ===================================================== */
 
 .social-button-container {
     display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
     justify-content: center;
 
     margin: 25px auto;
@@ -235,7 +191,6 @@ nav a:hover {
 
 .social-button {
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -251,11 +206,12 @@ nav a:hover {
 
     color: white;
 
-    background: linear-gradient(
-        135deg,
-        #6a00ff,
-        #ff1493
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #6a00ff,
+            #ff1493
+        );
 
     font-size: 18px;
     font-weight: bold;
@@ -263,19 +219,15 @@ nav a:hover {
     box-shadow:
         0 8px 25px rgba(150, 0, 255, 0.35);
 
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .social-button:hover {
     transform: translateY(-3px) scale(1.03);
-
-    box-shadow:
-        0 12px 30px rgba(255, 20, 147, 0.45);
 }
 
 #socialIcon {
     display: flex;
-
     align-items: center;
     justify-content: center;
 }
@@ -284,15 +236,9 @@ nav a:hover {
     white-space: nowrap;
 }
 
-/* ==================================================
-   SOCIAL DOTS
-   ================================================== */
-
 .social-dots {
     display: flex;
-
     justify-content: center;
-    align-items: center;
 
     gap: 9px;
 
@@ -305,9 +251,9 @@ nav a:hover {
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(255,255,255,0.35);
 
-    transition: all 0.35s ease;
+    transition: 0.35s;
 }
 
 .social-dot.active {
@@ -318,13 +264,13 @@ nav a:hover {
 
     box-shadow:
         0 0 5px #9cffb0,
-        0 0 12px #5cff78,
-        0 0 20px rgba(92, 255, 120, 0.7);
+        0 0 12px #5cff78;
 }
 
-/* ==================================================
+
+/* =====================================================
    START BUTTON
-   ================================================== */
+   ===================================================== */
 
 .main-button {
     display: inline-block;
@@ -333,11 +279,12 @@ nav a:hover {
 
     border-radius: 40px;
 
-    background: linear-gradient(
-        90deg,
-        #8e21e8,
-        #ff35ad
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #8e21e8,
+            #ff35ad
+        );
 
     color: white;
 
@@ -356,9 +303,10 @@ nav a:hover {
     transform: translateY(-4px) scale(1.03);
 }
 
-/* ==================================================
-   STATS BOX
-   ================================================== */
+
+/* =====================================================
+   STATS
+   ===================================================== */
 
 .stats-box {
     width: min(90%, 900px);
@@ -367,31 +315,28 @@ nav a:hover {
 
     padding: 25px 20px 20px;
 
-    background: linear-gradient(
-        135deg,
-        #f8dce9,
-        #f6e1eb,
-        #e4f4e8
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #f8dce9,
+            #f6e1eb,
+            #e4f4e8
+        );
 
     border: 1px solid rgba(180, 90, 150, 0.25);
 
     border-radius: 25px;
 
     box-shadow:
-        0 10px 30px rgba(90, 30, 100, 0.12),
-        inset 0 1px 8px rgba(255, 255, 255, 0.7);
+        0 10px 30px rgba(90, 30, 100, 0.12);
 
     display: flex;
 
     justify-content: center;
-    align-items: stretch;
 
     gap: 12px;
 
     flex-wrap: wrap;
-
-    direction: rtl;
 }
 
 .stat-item {
@@ -403,20 +348,9 @@ nav a:hover {
 
     text-align: center;
 
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(255,255,255,0.35);
 
     border-radius: 18px;
-
-    border: 1px solid rgba(255, 255, 255, 0.7);
-
-    transition: 0.3s ease;
-}
-
-.stat-item:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 8px 20px rgba(100, 40, 100, 0.12);
 }
 
 .stat-icon {
@@ -428,7 +362,6 @@ nav a:hover {
     border-radius: 50%;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -436,21 +369,18 @@ nav a:hover {
     font-weight: bold;
 
     color: white;
-
-    box-shadow:
-        0 5px 15px rgba(80, 30, 90, 0.15);
 }
-
-/* FACEBOOK */
 
 .facebook-icon {
     background: #6fae8c;
 }
 
-/* INSTAGRAM */
-
 .instagram-icon {
     background: #b83d82;
+}
+
+.posts-icon {
+    background: #8c5a91;
 }
 
 .instagram-icon svg {
@@ -458,7 +388,6 @@ nav a:hover {
     height: 25px;
 
     stroke: white;
-
     fill: none;
 
     stroke-width: 2;
@@ -469,14 +398,6 @@ nav a:hover {
     stroke: none;
 }
 
-/* POSTS */
-
-.posts-icon {
-    background: #8c5a91;
-}
-
-/* STAT TITLE */
-
 .stat-title {
     color: #49305d;
 
@@ -486,35 +407,25 @@ nav a:hover {
     margin-bottom: 5px;
 }
 
-/* STAT NUMBER */
-
 .stat-number {
     color: #7d285e;
 
     font-size: 27px;
     font-weight: 800;
-
-    line-height: 1.2;
 }
-
-/* STAT SUBTITLE */
 
 .stat-subtitle {
     color: #5d5264;
 
     font-size: 14px;
-
-    margin-top: 2px;
 }
-
-/* MESSAGE */
 
 .stats-message {
     width: 100%;
 
     margin-top: 12px;
 
-    padding: 15px 12px;
+    padding: 15px;
 
     text-align: center;
 
@@ -523,19 +434,678 @@ nav a:hover {
     font-size: 17px;
     font-weight: 600;
 
-    background: rgba(255, 255, 255, 0.45);
+    background: rgba(255,255,255,0.45);
 
     border-radius: 15px;
-
-    border-top:
-        1px solid rgba(184, 61, 130, 0.15);
 }
 
-/* ==================================================
-   CARDS SECTION
-   ================================================== */
+
+/* =====================================================
+   🔥 مشهد اختيار الشعبة
+   ===================================================== */
+
+.branch-scene {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: none;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #dca5e8 0%,
+            #a75bc1 45%,
+            #4c176d 100%
+        );
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #321047;
+}
+
+
+/* =====================================================
+   خلفية مضيئة
+   ===================================================== */
+
+.branch-scene::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center 35%,
+            rgba(255,255,255,0.75),
+            transparent 38%
+        );
+
+    opacity: 0;
+
+    transition: opacity 1.5s ease;
+
+    pointer-events: none;
+}
+
+.branch-scene.lamp-on::before {
+    opacity: 1;
+}
+
+
+/* =====================================================
+   المصباح
+   ===================================================== */
+
+.scene-lamp {
+
+    position: absolute;
+
+    top: -10px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 170px;
+
+    height: 220px;
+
+    z-index: 10;
+}
+
+
+/* سقف المصباح */
+
+.lamp-shade {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 170px;
+
+    height: 85px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f7edf9,
+            #c6a5d0
+        );
+
+    border-radius:
+        85px 85px 20px 20px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.25);
+}
+
+
+/* اللمبة */
+
+.lamp-bulb {
+
+    position: absolute;
+
+    top: 70px;
+
+    left: 67px;
+
+    width: 36px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #ddd;
+
+    transition: 0.8s;
+
+    box-shadow: none;
+}
+
+
+/* الضوء */
+
+.lamp-on .lamp-bulb {
+
+    background: #fff8b0;
+
+    box-shadow:
+        0 0 20px #fff6a0,
+        0 0 50px #ffe879,
+        0 0 100px rgba(255,230,100,0.9);
+
+}
+
+
+/* الخيط العمودي */
+
+.lamp-rope {
+
+    position: absolute;
+
+    top: 82px;
+
+    left: 84px;
+
+    width: 4px;
+
+    height: 150px;
+
+    background: #9b654d;
+
+    border-radius: 5px;
+
+    transform-origin: top;
+
+    transition: 1s;
+}
+
+
+/* المقبض */
+
+.lamp-rope span {
+
+    position: absolute;
+
+    bottom: -15px;
+
+    left: -7px;
+
+    width: 18px;
+
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: #d79c63;
+
+}
+
+
+/* =====================================================
+   الشاب
+   ===================================================== */
+
+.scene-boy {
+
+    position: absolute;
+
+    left: 18%;
+
+    bottom: 8%;
+
+    width: 190px;
+
+    height: 330px;
+
+    z-index: 20;
+
+    transition:
+        transform 1.4s ease;
+}
+
+
+/* الرأس */
+
+.boy-face {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 45px;
+
+    width: 100px;
+
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: #ffd1a4;
+
+    font-size: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* جسم الشاب */
+
+.boy-body {
+
+    position: absolute;
+
+    top: 90px;
+
+    left: 30px;
+
+    width: 130px;
+
+    height: 170px;
+
+    border-radius: 60px 60px 35px 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #59307f,
+            #241044
+        );
+
+    box-shadow:
+        0 15px 25px rgba(0,0,0,0.2);
+}
+
+
+/* الذراع */
+
+.boy-arm {
+
+    position: absolute;
+
+    top: 105px;
+
+    right: 0;
+
+    width: 110px;
+
+    height: 28px;
+
+    border-radius: 20px;
+
+    background: #59307f;
+
+    transform:
+        rotate(-55deg);
+
+    transform-origin: left center;
+
+}
+
+
+/* عندما يسحب الخيط */
+
+.branch-scene.pull-rope .scene-boy {
+
+    transform:
+        translateY(-20px)
+        translateX(30px);
+}
+
+
+/* =====================================================
+   الستائر
+   ===================================================== */
+
+.scene-curtain {
+
+    position: absolute;
+
+    top: 0;
+
+    width: 25%;
+
+    height: 100%;
+
+    z-index: 15;
+
+    background:
+        linear-gradient(
+            90deg,
+            #27053f,
+            #6e1b86,
+            #3b0759
+        );
+
+    box-shadow:
+        inset 0 0 40px rgba(0,0,0,0.4);
+
+    transition:
+        transform 1.8s cubic-bezier(.7,0,.2,1);
+}
+
+
+/* ستارة يسار */
+
+.scene-curtain.left {
+
+    left: 0;
+
+    border-radius:
+        0 50% 50% 0;
+}
+
+
+/* ستارة يمين */
+
+.scene-curtain.right {
+
+    right: 0;
+
+    border-radius:
+        50% 0 0 50%;
+}
+
+
+/* فتح الستائر */
+
+.branch-scene.open-curtains .scene-curtain.left {
+
+    transform:
+        translateX(-85%);
+}
+
+.branch-scene.open-curtains .scene-curtain.right {
+
+    transform:
+        translateX(85%);
+}
+
+
+/* =====================================================
+   محتوى اختيار الشعبة
+   ===================================================== */
+
+.branch-content {
+
+    position: relative;
+
+    z-index: 8;
+
+    width: 75%;
+
+    max-width: 1000px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(60px)
+        scale(0.92);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+/* يظهر بعد فتح الستائر */
+
+.branch-scene.show-branches .branch-content {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* العنوان */
+
+.branch-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 10px;
+}
+
+.branch-heading h1 {
+
+    font-size: 50px;
+
+    color: #54206d;
+
+    text-shadow:
+        0 3px 8px rgba(255,255,255,0.5);
+}
+
+.branch-heading {
+
+    font-size: 45px;
+}
+
+
+.branch-content > p {
+
+    font-size: 21px;
+
+    color: #54245f;
+
+    margin-bottom: 35px;
+}
+
+
+/* =====================================================
+   بطاقات الشعب
+   ===================================================== */
+
+.branch-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    direction: rtl;
+}
+
+
+.branch-card {
+
+    min-height: 300px;
+
+    padding: 25px 20px;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.9);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(70,20,80,0.18);
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+
+.branch-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 20px 40px
+        rgba(70,20,80,0.25);
+}
+
+
+/* أيقونة الشعبة */
+
+.branch-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin:
+        0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7e32aa,
+            #c34eaa
+        );
+}
+
+
+/* عناوين الشعب */
+
+.branch-card h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 12px;
+
+    color: #4c1b63;
+}
+
+
+.branch-card p {
+
+    color: #443747;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    min-height: 55px;
+
+    margin-bottom: 20px;
+}
+
+
+/* الأزرار */
+
+.branch-card button {
+
+    border: none;
+
+    width: 90%;
+
+    padding: 13px;
+
+    border-radius: 25px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.branch-card button:hover {
+
+    transform:
+        scale(1.04);
+}
+
+
+/* ألوان الشعب */
+
+.branch-card.science button {
+
+    background:
+        linear-gradient(
+            90deg,
+            #3ba866,
+            #52c77c
+        );
+}
+
+
+.branch-card.maths button {
+
+    background:
+        linear-gradient(
+            90deg,
+            #e63d69,
+            #f45c83
+        );
+}
+
+
+.branch-card.technical button {
+
+    background:
+        linear-gradient(
+            90deg,
+            #6731a4,
+            #8a48c9
+        );
+}
+
+
+/* =====================================================
+   العبارة الأخيرة
+   ===================================================== */
+
+.branch-quote {
+
+    margin-top: 30px;
+
+    color: #57216c;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   CARDS القديمة
+   ===================================================== */
 
 .cards-section {
+
     width: 100%;
 
     padding: 70px 5%;
@@ -545,16 +1115,10 @@ nav a:hover {
     text-align: center;
 }
 
-.cards-section > h2 {
-    font-size: 34px;
-
-    margin-bottom: 45px;
-
-    color: #27104c;
-}
-
 .cards {
+
     width: 90%;
+
     max-width: 1150px;
 
     margin: 35px auto;
@@ -568,6 +1132,11 @@ nav a:hover {
 }
 
 .card {
+
+    padding: 28px 22px;
+
+    border-radius: 18px;
+
     background:
         linear-gradient(
             145deg,
@@ -578,64 +1147,25 @@ nav a:hover {
     border:
         1px solid #f0c7e5;
 
-    border-radius: 18px;
-
-    padding: 28px 22px;
+    box-shadow:
+        0 8px 25px
+        rgba(150,50,150,0.12);
 
     text-align: center;
-
-    min-height: 300px;
-
-    box-shadow:
-        0 8px 25px rgba(150, 50, 150, 0.12);
-
-    transition: 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 14px 30px rgba(150, 50, 150, 0.20);
-}
-
-.icon {
-    width: 80px;
-    height: 80px;
-
-    margin: 0 auto 20px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #8d20e6,
-            #ff35ad
-        );
-
-    font-size: 35px;
-
-    box-shadow:
-        0 8px 20px rgba(160, 30, 220, 0.25);
 }
 
 .card h3 {
+
     color: #24104f;
 
     font-size: 22px;
 
-    margin: 18px 0 12px;
-
-    font-weight: 800;
+    margin:
+        18px 0 12px;
 }
 
 .card p {
+
     color: #333;
 
     font-size: 15px;
@@ -646,6 +1176,7 @@ nav a:hover {
 }
 
 .card a {
+
     display: inline-block;
 
     background:
@@ -659,454 +1190,21 @@ nav a:hover {
 
     text-decoration: none;
 
-    padding: 11px 25px;
+    padding:
+        11px 25px;
 
     border-radius: 30px;
 
-    font-size: 14px;
-
     font-weight: bold;
-
-    box-shadow:
-        0 5px 15px rgba(220, 40, 170, 0.25);
 }
 
-/* ==================================================
-   BRANCH SCENE
-   ================================================== */
 
-.branch-scene {
-    display: none;
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 9999;
-
-    background:
-        radial-gradient(
-            circle at 50% 25%,
-            rgba(255, 255, 210, 0.8),
-            transparent 25%
-        ),
-        linear-gradient(
-            135deg,
-            #fff4fa,
-            #f8e7f1,
-            #eaf7ee
-        );
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-direction: column;
-
-    overflow-y: auto;
-
-    padding: 40px 20px;
-}
-
-/* عندما يظهر المشهد */
-
-.branch-scene.show {
-    display: flex;
-}
-
-/* ==================================================
-   LAMP
-   ================================================== */
-
-.scene-lamp {
-    position: relative;
-
-    width: 180px;
-    height: 210px;
-
-    margin-bottom: 20px;
-}
-
-/* ضوء المصباح */
-
-.scene-lamp::after {
-    content: "";
-
-    position: absolute;
-
-    width: 260px;
-    height: 260px;
-
-    left: 50%;
-    top: 65px;
-
-    transform: translateX(-50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255, 248, 170, 0.65),
-            rgba(255, 248, 170, 0.15),
-            transparent 70%
-        );
-
-    opacity: 0;
-
-    transition: opacity 0.7s ease;
-
-    pointer-events: none;
-}
-
-/* المصباح مشتعل */
-
-.branch-scene.light-on .scene-lamp::after {
-    opacity: 1;
-}
-
-.lamp-shade {
-    position: absolute;
-
-    top: 15px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 120px;
-    height: 65px;
-
-    background: #b83d82;
-
-    border-radius:
-        70px 70px 20px 20px;
-
-    box-shadow:
-        0 8px 20px rgba(90, 40, 70, 0.18);
-}
-
-.lamp-bulb {
-    position: absolute;
-
-    top: 72px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 35px;
-    height: 45px;
-
-    border-radius: 50%;
-
-    background: #777;
-
-    transition: 0.5s;
-}
-
-.branch-scene.light-on .lamp-bulb {
-    background: #fffbd0;
-
-    box-shadow:
-        0 0 12px #fffbd0,
-        0 0 30px #fff7a0,
-        0 0 60px rgba(255, 245, 120, 0.8);
-}
-
-/* ==================================================
-   ROPE
-   ================================================== */
-
-.lamp-rope {
-    position: absolute;
-
-    top: 110px;
-    left: 50%;
-
-    width: 4px;
-    height: 95px;
-
-    transform: translateX(-50%);
-
-    background: #8d6657;
-
-    border-radius: 10px;
-
-    z-index: 5;
-}
-
-.lamp-rope span {
-    position: absolute;
-
-    bottom: -10px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 20px;
-    height: 20px;
-
-    border-radius: 50%;
-
-    background: #9cffb0;
-
-    box-shadow:
-        0 0 8px #9cffb0,
-        0 0 18px rgba(92, 255, 120, 0.7);
-
-    cursor: pointer;
-}
-
-/* ==================================================
-   BOY
-   ================================================== */
-
-.scene-boy {
-    position: absolute;
-
-    left: 50%;
-
-    bottom: 12%;
-
-    transform: translateX(-230px);
-
-    display: flex;
-
-    align-items: center;
-
-    transition:
-        transform 1.5s ease-in-out;
-}
-
-.boy-face {
-    font-size: 85px;
-
-    filter:
-        drop-shadow(
-            0 8px 12px rgba(80, 40, 80, 0.15)
-        );
-}
-
-/* عند السحب */
-
-.branch-scene.pull .scene-boy {
-    transform:
-        translateX(-110px)
-        translateY(-5px);
-}
-
-/* ==================================================
-   MESSAGE
-   ================================================== */
-
-.scene-message {
-    text-align: center;
-
-    opacity: 0;
-
-    transform: translateY(15px);
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-}
-
-.branch-scene.show-message
-.scene-message {
-    opacity: 1;
-
-    transform: translateY(0);
-}
-
-.scene-message h2 {
-    color: #54245f;
-
-    font-size: 30px;
-
-    margin-bottom: 10px;
-}
-
-.scene-message p {
-    color: #76576f;
-
-    font-size: 18px;
-}
-
-/* ==================================================
-   BRANCH CONTENT
-   ================================================== */
-
-.branch-content {
-    width: 100%;
-
-    max-width: 1050px;
-
-    text-align: center;
-
-    opacity: 0;
-
-    transform: translateY(30px);
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-
-    pointer-events: none;
-}
-
-.branch-scene.show-branches
-.branch-content {
-    opacity: 1;
-
-    transform: translateY(0);
-
-    pointer-events: auto;
-}
-
-.branch-heading {
-    color: #54245f;
-
-    margin-bottom: 10px;
-}
-
-.branch-heading h1 {
-    display: inline-block;
-
-    font-size: 38px;
-
-    margin-right: 8px;
-}
-
-.branch-content > p {
-    color: #76576f;
-
-    font-size: 18px;
-
-    margin-bottom: 30px;
-}
-
-/* ==================================================
-   BRANCH CARDS
-   ================================================== */
-
-.branch-cards {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 18px;
-}
-
-.branch-card {
-    padding: 25px 18px;
-
-    background:
-        rgba(255, 255, 255, 0.72);
-
-    border-radius: 22px;
-
-    border:
-        1px solid rgba(180, 90, 150, 0.18);
-
-    box-shadow:
-        0 10px 30px rgba(100, 50, 100, 0.10);
-
-    transition: 0.3s;
-}
-
-.branch-card:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 15px 35px rgba(100, 50, 100, 0.16);
-}
-
-.branch-icon {
-    width: 65px;
-    height: 65px;
-
-    margin: 0 auto 12px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #f4d7e7;
-
-    font-size: 30px;
-}
-
-.branch-card h2 {
-    color: #54245f;
-
-    font-size: 21px;
-
-    margin-bottom: 10px;
-}
-
-.branch-card p {
-    color: #665769;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    margin-bottom: 18px;
-}
-
-.branch-card button {
-    border: none;
-
-    padding: 10px 20px;
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #8b20d9,
-            #e52a9f
-        );
-
-    color: white;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.branch-card button:hover {
-    transform: scale(1.05);
-}
-
-.branch-quote {
-    margin-top: 25px;
-
-    padding: 13px 20px;
-
-    border-radius: 18px;
-
-    color: #63304f;
-
-    background:
-        rgba(255, 255, 255, 0.55);
-
-    font-weight: 600;
-}
-
-/* ==================================================
+/* =====================================================
    FOOTER
-   ================================================== */
+   ===================================================== */
 
 footer {
+
     width: 100%;
 
     padding: 45px 20px;
@@ -1124,259 +1222,206 @@ footer {
     color: white;
 }
 
-footer h2 {
-    margin-bottom: 12px;
-}
-
 footer p {
+
     margin: 7px;
 
     color: #f2d8ee;
 }
 
-/* ==================================================
-   MOBILE
-   ================================================== */
 
-@media (max-width: 800px) {
+/* =====================================================
+   📱 الهاتف
+   ===================================================== */
+
+@media (max-width: 700px) {
 
     header {
+
         flex-direction: column;
 
-        padding: 18px 15px;
+        gap: 15px;
+
+        padding: 15px;
     }
 
+
     nav {
+
         gap: 15px;
     }
 
-    nav a {
-        font-size: 14px;
-    }
 
     .hero {
-        min-height: 560px;
+
+        min-height: 650px;
     }
 
-    .hero::before {
-        right: -80px;
-    }
-
-    .hero::after {
-        left: -80px;
-    }
 
     .welcome {
+
         font-size: 30px;
     }
 
+
     .hero h1 {
-        font-size: 48px;
+
+        font-size: 45px;
     }
+
 
     .hero h2 {
-        font-size: 25px;
+
+        font-size: 24px;
     }
 
+
     .subtitle {
+
         font-size: 18px;
     }
 
-    .cards {
-        grid-template-columns:
-            repeat(3, 1fr);
-
-        gap: 10px;
-
-        width: 94%;
-    }
-
-    .card {
-        min-height: 280px;
-
-        padding: 18px 8px;
-
-        border-radius: 15px;
-    }
-
-    .card h3 {
-        font-size: 16px;
-
-        line-height: 1.5;
-    }
-
-    .card p {
-        font-size: 12px;
-
-        line-height: 1.7;
-    }
-
-    .card a {
-        font-size: 11px;
-
-        padding: 8px 10px;
-    }
-
-    .cards-section {
-        padding: 50px 20px;
-    }
-
-    .cards-section > h2 {
-        font-size: 27px;
-    }
-
-    /* STATS */
 
     .stats-box {
-        width: 88%;
 
-        padding: 18px 10px 15px;
+        width: 94%;
 
-        gap: 8px;
-
-        border-radius: 20px;
+        padding: 15px 8px;
     }
 
+
     .stat-item {
+
         min-width: 0;
 
         width: 30%;
 
-        padding: 12px 5px;
-
-        border-radius: 15px;
+        padding: 10px 4px;
     }
 
-    .stat-icon {
-        width: 38px;
-        height: 38px;
-
-        font-size: 21px;
-    }
-
-    .instagram-icon svg {
-        width: 21px;
-        height: 21px;
-    }
 
     .stat-title {
-        font-size: 12px;
+
+        font-size: 11px;
     }
+
 
     .stat-number {
-        font-size: 21px;
+
+        font-size: 20px;
     }
 
-    .stat-subtitle {
-        font-size: 12px;
-    }
 
-    .stats-message {
-        font-size: 14px;
-
-        padding: 12px 8px;
-    }
-
-    /* BRANCH */
-
-    .branch-scene {
-        padding: 25px 12px;
-    }
+    /* مشهد الشعبة */
 
     .scene-lamp {
-        transform: scale(0.75);
 
-        margin-top: -25px;
-        margin-bottom: -20px;
+        transform:
+            translateX(-50%)
+            scale(0.7);
+
+        top: -5px;
     }
+
 
     .scene-boy {
-        bottom: 7%;
+
+        left: 3%;
+
+        bottom: 4%;
 
         transform:
-            translateX(-150px)
-            scale(0.8);
+            scale(0.65);
+        
+        transform-origin:
+            bottom left;
     }
 
-    .branch-scene.pull .scene-boy {
-        transform:
-            translateX(-75px)
-            translateY(-5px)
-            scale(0.8);
+
+    .branch-content {
+
+        width: 94%;
+
+        padding-top: 50px;
     }
+
 
     .branch-heading h1 {
-        font-size: 28px;
+
+        font-size: 34px;
     }
 
+
+    .branch-heading {
+
+        font-size: 32px;
+    }
+
+
     .branch-content > p {
+
         font-size: 15px;
 
         margin-bottom: 20px;
     }
 
+
     .branch-cards {
-        grid-template-columns: 1fr;
 
-        gap: 12px;
-
-        max-width: 500px;
-
-        margin: auto;
+        gap: 8px;
     }
+
 
     .branch-card {
-        padding: 18px 15px;
+
+        min-height: 245px;
+
+        padding: 15px 7px;
+
+        border-radius: 16px;
     }
+
+
+    .branch-icon {
+
+        width: 48px;
+
+        height: 48px;
+
+        font-size: 23px;
+    }
+
 
     .branch-card h2 {
-        font-size: 19px;
+
+        font-size: 17px;
     }
+
 
     .branch-card p {
-        font-size: 13px;
 
-        margin-bottom: 12px;
+        font-size: 11px;
+
+        line-height: 1.6;
+
+        min-height: 65px;
     }
 
-    .branch-quote {
-        font-size: 13px;
 
-        margin-top: 15px;
-    }
-}
+    .branch-card button {
 
-/* ==================================================
-   SMALL PHONES
-   ================================================== */
+        width: 100%;
 
-@media (max-width: 400px) {
+        padding: 9px 3px;
 
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero h2 {
-        font-size: 22px;
-    }
-
-    .social-button {
-        min-width: 210px;
-
-        font-size: 16px;
-    }
-
-    .main-button {
-        padding: 14px 32px;
-
-        font-size: 18px;
-    }
-
-    .stat-title {
         font-size: 11px;
     }
 
-    .stat-number {
-        font-size: 19px;
+
+    .branch-quote {
+
+        margin-top: 15px;
+
+        font-size: 13px;
     }
 }
