@@ -97,79 +97,140 @@ nav a:hover {
    HERO
    ===================================================== */
 
+/* =====================================================
+   HERO - الواجهة الرئيسية
+   ===================================================== */
+
 .hero {
+    position: relative;
     width: 100%;
-    min-height: 540px;
+    min-height: 100vh;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    text-align: center;
+    overflow: hidden;
 
     background:
         radial-gradient(
-            circle at 20% 50%,
-            rgba(255, 58, 190, 0.35),
-            transparent 35%
+            circle at 70% 45%,
+            rgba(255, 190, 255, 0.16),
+            transparent 30%
         ),
         radial-gradient(
-            circle at 80% 50%,
-            rgba(125, 40, 255, 0.35),
+            circle at 20% 70%,
+            rgba(160, 60, 255, 0.18),
             transparent 35%
         ),
         linear-gradient(
             135deg,
-            #18053c,
-            #3c096c,
-            #71148d
+            #090414 0%,
+            #18082f 35%,
+            #2c0b4d 70%,
+            #13051f 100%
         );
 
-    position: relative;
+    color: white;
 }
+
+
+/* إضاءة خلفية */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255,255,255,0.08),
+            transparent 30%
+        );
+
+    pointer-events: none;
+}
+
+
+/* المحتوى */
 
 .hero-text {
     position: relative;
     z-index: 2;
 
     width: 100%;
-    max-width: 1000px;
+    max-width: 1150px;
 
-    padding: 50px 20px;
+    padding: 70px 35px;
+
+    text-align: right;
 }
+
+
+/* Welcome */
 
 .welcome {
-    color: #ff4db8;
+    margin-bottom: 8px;
 
-    font-size: 42px;
-    font-style: italic;
+    color: #ff8bd0;
 
-    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
+
+/* العنوان */
+
 .hero h1 {
+    margin-bottom: 15px;
+
     color: white;
 
-    font-size: clamp(48px, 7vw, 82px);
+    font-size: clamp(42px, 6vw, 72px);
+
     line-height: 1.05;
 
-    margin-bottom: 25px;
+    font-weight: 800;
 }
 
 .hero h1 span {
     display: block;
-    color: #ff4db8;
+
+    color: #f276c4;
+
+    font-family: Georgia, serif;
+    font-style: italic;
 }
+
+
+/* علوم الطبيعة والحياة */
 
 .hero h2 {
-    color: white;
+    margin-bottom: 12px;
 
-    font-size: clamp(25px, 4vw, 38px);
+    color: #ff9bd8;
 
-    margin-bottom: 20px;
+    font-size: clamp(22px, 3vw, 32px);
 }
 
+
+/* العبارة */
+
 .subtitle {
+    margin-bottom: 25px;
+
+    color: #f6dff2;
+
+    font-size: 18px;
+}
+
+  
+     
+  
+
+
     color: #f8d9ef;
 
     font-size: 24px;
