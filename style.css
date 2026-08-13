@@ -807,3 +807,137 @@ footer p {
     fill: white;
     stroke: none;
 }
+
+/* ========================================
+   مشهد اختيار الشعبة
+   ======================================== */
+
+.branch-scene {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    background: linear-gradient(
+        135deg,
+        #fff4fa,
+        #f8e7f1,
+        #eaf7ee
+    );
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* الشاب والخيط */
+
+.rope-character {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    transform: translateX(0);
+
+    transition: transform 1.8s ease-in-out;
+}
+
+.character {
+    font-size: 90px;
+    position: relative;
+    z-index: 2;
+
+    filter: drop-shadow(0 8px 12px rgba(80, 40, 80, 0.15));
+}
+
+
+/* الخيط */
+
+.rope {
+    width: 180px;
+    height: 5px;
+
+    margin-left: -5px;
+
+    background: #9b6b5a;
+
+    border-radius: 10px;
+
+    position: relative;
+
+    box-shadow:
+        0 2px 5px rgba(80, 40, 30, 0.18);
+}
+
+
+/* مقبض الخيط */
+
+.rope-handle {
+    position: absolute;
+
+    right: -5px;
+    top: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: #9cffb0;
+
+    box-shadow:
+        0 0 8px #9cffb0,
+        0 0 18px rgba(92, 255, 120, 0.6);
+}
+
+
+/* النص */
+
+.scene-message {
+    margin-top: 35px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.scene-message h2 {
+    margin-bottom: 10px;
+
+    color: #54245f;
+
+    font-size: 30px;
+}
+
+.scene-message p {
+    color: #76576f;
+
+    font-size: 18px;
+}
+
+
+/* حركة سحب الخيط */
+
+.branch-scene.pull .rope-character {
+    transform: translateX(120px);
+}
+
+
+/* ظهور الرسالة */
+
+.branch-scene.show-message .scene-message {
+    opacity: 1;
+    transform: translateY(0);
+}
