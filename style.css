@@ -1,6 +1,7 @@
-/* =========================
+/* ==================================================
    Science with Prof Marwa
-   ========================= */
+   STYLE.CSS
+   ================================================== */
 
 * {
     margin: 0;
@@ -20,14 +21,15 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================
+/* ==================================================
    HEADER
-   ========================= */
+   ================================================== */
 
 header {
     width: 100%;
     min-height: 80px;
     padding: 15px 5%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,7 +43,9 @@ header {
     );
 
     color: white;
-    box-shadow: 0 4px 20px rgba(70, 0, 100, 0.25);
+
+    box-shadow:
+        0 4px 20px rgba(70, 0, 100, 0.25);
 
     position: relative;
     z-index: 10;
@@ -51,6 +55,7 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
+
     font-size: 18px;
     white-space: nowrap;
 }
@@ -74,7 +79,7 @@ header {
     font-weight: bold;
 }
 
-/* Navigation */
+/* NAVIGATION */
 
 nav {
     display: flex;
@@ -97,9 +102,9 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* =========================
+/* ==================================================
    HERO
-   ========================= */
+   ================================================== */
 
 .hero {
     width: 100%;
@@ -135,42 +140,60 @@ nav a:hover {
 
 .hero::before {
     content: "🧬";
+
     position: absolute;
+
     font-size: 260px;
+
     opacity: 0.08;
+
     right: 5%;
     top: 50%;
+
     transform: translateY(-50%);
 }
 
 .hero::after {
     content: "🔬";
+
     position: absolute;
+
     font-size: 200px;
+
     opacity: 0.08;
+
     left: 4%;
     top: 50%;
+
     transform: translateY(-50%);
 }
 
 .hero-text {
     position: relative;
     z-index: 2;
+
+    width: 100%;
     max-width: 900px;
+
     padding: 50px 20px;
 }
 
 .welcome {
     color: #ff4db8;
+
     font-size: 42px;
     font-style: italic;
+
     margin-bottom: 10px;
 }
 
 .hero h1 {
     color: white;
+
     font-size: clamp(48px, 7vw, 82px);
+
     line-height: 1.05;
+
     margin-bottom: 25px;
 }
 
@@ -181,19 +204,133 @@ nav a:hover {
 
 .hero h2 {
     color: white;
+
     font-size: clamp(25px, 4vw, 38px);
+
     margin-bottom: 20px;
 }
 
 .subtitle {
     color: #f8d9ef;
+
     font-size: 24px;
+
     margin-bottom: 35px;
 }
 
+/* ==================================================
+   SOCIAL BUTTON
+   ================================================== */
+
+.social-button-container {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 25px auto;
+}
+
+.social-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    min-width: 230px;
+
+    padding: 14px 25px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #6a00ff,
+        #ff1493
+    );
+
+    font-size: 18px;
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 25px rgba(150, 0, 255, 0.35);
+
+    transition: all 0.3s ease;
+}
+
+.social-button:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 12px 30px rgba(255, 20, 147, 0.45);
+}
+
+#socialIcon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#socialText {
+    white-space: nowrap;
+}
+
+/* ==================================================
+   SOCIAL DOTS
+   ================================================== */
+
+.social-dots {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 9px;
+
+    margin: 10px auto 22px;
+}
+
+.social-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    transition: all 0.35s ease;
+}
+
+.social-dot.active {
+    width: 10px;
+    height: 10px;
+
+    background: #9cffb0;
+
+    box-shadow:
+        0 0 5px #9cffb0,
+        0 0 12px #5cff78,
+        0 0 20px rgba(92, 255, 120, 0.7);
+}
+
+/* ==================================================
+   START BUTTON
+   ================================================== */
+
 .main-button {
     display: inline-block;
+
     padding: 16px 42px;
+
     border-radius: 40px;
 
     background: linear-gradient(
@@ -203,11 +340,14 @@ nav a:hover {
     );
 
     color: white;
+
     text-decoration: none;
+
     font-size: 20px;
     font-weight: bold;
 
-    box-shadow: 0 8px 25px rgba(255, 35, 170, 0.35);
+    box-shadow:
+        0 8px 25px rgba(255, 35, 170, 0.35);
 
     transition: 0.3s;
 }
@@ -216,53 +356,247 @@ nav a:hover {
     transform: translateY(-4px) scale(1.03);
 }
 
-/* =========================
+/* ==================================================
+   STATS BOX
+   ================================================== */
+
+.stats-box {
+    width: min(90%, 900px);
+
+    margin: 35px auto 20px;
+
+    padding: 25px 20px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #f8dce9,
+        #f6e1eb,
+        #e4f4e8
+    );
+
+    border: 1px solid rgba(180, 90, 150, 0.25);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(90, 30, 100, 0.12),
+        inset 0 1px 8px rgba(255, 255, 255, 0.7);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    direction: rtl;
+}
+
+.stat-item {
+    flex: 1;
+
+    min-width: 170px;
+
+    padding: 15px 10px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    transition: 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(100, 40, 100, 0.12);
+}
+
+.stat-icon {
+    width: 45px;
+    height: 45px;
+
+    margin: 0 auto 8px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    color: white;
+
+    box-shadow:
+        0 5px 15px rgba(80, 30, 90, 0.15);
+}
+
+/* FACEBOOK */
+
+.facebook-icon {
+    background: #6fae8c;
+}
+
+/* INSTAGRAM */
+
+.instagram-icon {
+    background: #b83d82;
+}
+
+.instagram-icon svg {
+    width: 25px;
+    height: 25px;
+
+    stroke: white;
+
+    fill: none;
+
+    stroke-width: 2;
+}
+
+.instagram-icon svg circle:last-child {
+    fill: white;
+    stroke: none;
+}
+
+/* POSTS */
+
+.posts-icon {
+    background: #8c5a91;
+}
+
+/* STAT TITLE */
+
+.stat-title {
+    color: #49305d;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+/* STAT NUMBER */
+
+.stat-number {
+    color: #7d285e;
+
+    font-size: 27px;
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+/* STAT SUBTITLE */
+
+.stat-subtitle {
+    color: #5d5264;
+
+    font-size: 14px;
+
+    margin-top: 2px;
+}
+
+/* MESSAGE */
+
+.stats-message {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 15px 12px;
+
+    text-align: center;
+
+    color: #63304f;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    border-radius: 15px;
+
+    border-top:
+        1px solid rgba(184, 61, 130, 0.15);
+}
+
+/* ==================================================
    CARDS SECTION
-   ========================= */
+   ================================================== */
 
 .cards-section {
     width: 100%;
+
     padding: 70px 5%;
+
     background: #fffaff;
+
     text-align: center;
 }
 
 .cards-section > h2 {
     font-size: 34px;
+
     margin-bottom: 45px;
+
     color: #27104c;
 }
 
 .cards {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
+    width: 90%;
+    max-width: 1150px;
+
+    margin: 35px auto;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
 }
 
 .card {
-    padding: 35px 25px;
-    border-radius: 22px;
+    background:
+        linear-gradient(
+            145deg,
+            #fff8fd,
+            #fdf0fa
+        );
 
-    background: linear-gradient(
-        145deg,
-        #ffffff,
-        #fff0fa
-    );
+    border:
+        1px solid #f0c7e5;
 
-    border: 1px solid #f0c6e8;
+    border-radius: 18px;
 
-    box-shadow: 0 8px 25px rgba(80, 0, 100, 0.08);
+    padding: 28px 22px;
 
-    transition: 0.3s;
+    text-align: center;
+
+    min-height: 300px;
+
+    box-shadow:
+        0 8px 25px rgba(150, 50, 150, 0.12);
+
+    transition: 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(120, 0, 130, 0.16);
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 14px 30px rgba(150, 50, 150, 0.20);
 }
 
 .icon {
@@ -272,74 +606,520 @@ nav a:hover {
     margin: 0 auto 20px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border-radius: 50%;
 
-    background: linear-gradient(
-        135deg,
-        #8d20e6,
-        #ff35ad
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #8d20e6,
+            #ff35ad
+        );
 
     font-size: 35px;
-    box-shadow: 0 8px 20px rgba(160, 30, 220, 0.25);
+
+    box-shadow:
+        0 8px 20px rgba(160, 30, 220, 0.25);
 }
 
 .card h3 {
-    font-size: 25px;
-    margin-bottom: 15px;
-    color: #32115d;
+    color: #24104f;
+
+    font-size: 22px;
+
+    margin: 18px 0 12px;
+
+    font-weight: 800;
 }
 
 .card p {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #4c4056;
-    margin-bottom: 25px;
+    color: #333;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
 }
 
 .card a {
     display: inline-block;
 
-    padding: 11px 22px;
-
-    border-radius: 25px;
-
-    background: linear-gradient(
-        90deg,
-        #7c20df,
-        #ff32aa
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #8b20d9,
+            #f02b9d
+        );
 
     color: white;
+
     text-decoration: none;
+
+    padding: 11px 25px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
     font-weight: bold;
+
+    box-shadow:
+        0 5px 15px rgba(220, 40, 170, 0.25);
+}
+
+/* ==================================================
+   BRANCH SCENE
+   ================================================== */
+
+.branch-scene {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(255, 255, 210, 0.8),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #fff4fa,
+            #f8e7f1,
+            #eaf7ee
+        );
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    overflow-y: auto;
+
+    padding: 40px 20px;
+}
+
+/* عندما يظهر المشهد */
+
+.branch-scene.show {
+    display: flex;
+}
+
+/* ==================================================
+   LAMP
+   ================================================== */
+
+.scene-lamp {
+    position: relative;
+
+    width: 180px;
+    height: 210px;
+
+    margin-bottom: 20px;
+}
+
+/* ضوء المصباح */
+
+.scene-lamp::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    left: 50%;
+    top: 65px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 248, 170, 0.65),
+            rgba(255, 248, 170, 0.15),
+            transparent 70%
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.7s ease;
+
+    pointer-events: none;
+}
+
+/* المصباح مشتعل */
+
+.branch-scene.light-on .scene-lamp::after {
+    opacity: 1;
+}
+
+.lamp-shade {
+    position: absolute;
+
+    top: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 120px;
+    height: 65px;
+
+    background: #b83d82;
+
+    border-radius:
+        70px 70px 20px 20px;
+
+    box-shadow:
+        0 8px 20px rgba(90, 40, 70, 0.18);
+}
+
+.lamp-bulb {
+    position: absolute;
+
+    top: 72px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 35px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #777;
+
+    transition: 0.5s;
+}
+
+.branch-scene.light-on .lamp-bulb {
+    background: #fffbd0;
+
+    box-shadow:
+        0 0 12px #fffbd0,
+        0 0 30px #fff7a0,
+        0 0 60px rgba(255, 245, 120, 0.8);
+}
+
+/* ==================================================
+   ROPE
+   ================================================== */
+
+.lamp-rope {
+    position: absolute;
+
+    top: 110px;
+    left: 50%;
+
+    width: 4px;
+    height: 95px;
+
+    transform: translateX(-50%);
+
+    background: #8d6657;
+
+    border-radius: 10px;
+
+    z-index: 5;
+}
+
+.lamp-rope span {
+    position: absolute;
+
+    bottom: -10px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: #9cffb0;
+
+    box-shadow:
+        0 0 8px #9cffb0,
+        0 0 18px rgba(92, 255, 120, 0.7);
+
+    cursor: pointer;
+}
+
+/* ==================================================
+   BOY
+   ================================================== */
+
+.scene-boy {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 12%;
+
+    transform: translateX(-230px);
+
+    display: flex;
+
+    align-items: center;
+
+    transition:
+        transform 1.5s ease-in-out;
+}
+
+.boy-face {
+    font-size: 85px;
+
+    filter:
+        drop-shadow(
+            0 8px 12px rgba(80, 40, 80, 0.15)
+        );
+}
+
+/* عند السحب */
+
+.branch-scene.pull .scene-boy {
+    transform:
+        translateX(-110px)
+        translateY(-5px);
+}
+
+/* ==================================================
+   MESSAGE
+   ================================================== */
+
+.scene-message {
+    text-align: center;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.branch-scene.show-message
+.scene-message {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.scene-message h2 {
+    color: #54245f;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.scene-message p {
+    color: #76576f;
+
+    font-size: 18px;
+}
+
+/* ==================================================
+   BRANCH CONTENT
+   ================================================== */
+
+.branch-content {
+    width: 100%;
+
+    max-width: 1050px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    pointer-events: none;
+}
+
+.branch-scene.show-branches
+.branch-content {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+.branch-heading {
+    color: #54245f;
+
+    margin-bottom: 10px;
+}
+
+.branch-heading h1 {
+    display: inline-block;
+
+    font-size: 38px;
+
+    margin-right: 8px;
+}
+
+.branch-content > p {
+    color: #76576f;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+/* ==================================================
+   BRANCH CARDS
+   ================================================== */
+
+.branch-cards {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.branch-card {
+    padding: 25px 18px;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    border-radius: 22px;
+
+    border:
+        1px solid rgba(180, 90, 150, 0.18);
+
+    box-shadow:
+        0 10px 30px rgba(100, 50, 100, 0.10);
 
     transition: 0.3s;
 }
 
-.card a:hover {
+.branch-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(100, 50, 100, 0.16);
+}
+
+.branch-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f4d7e7;
+
+    font-size: 30px;
+}
+
+.branch-card h2 {
+    color: #54245f;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.branch-card p {
+    color: #665769;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+.branch-card button {
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8b20d9,
+            #e52a9f
+        );
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.branch-card button:hover {
     transform: scale(1.05);
 }
 
-/* =========================
+.branch-quote {
+    margin-top: 25px;
+
+    padding: 13px 20px;
+
+    border-radius: 18px;
+
+    color: #63304f;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    font-weight: 600;
+}
+
+/* ==================================================
    FOOTER
-   ========================= */
+   ================================================== */
 
 footer {
     width: 100%;
+
     padding: 45px 20px;
 
     text-align: center;
 
-    background: linear-gradient(
-        135deg,
-        #18063b,
-        #4a087d,
-        #7c168e
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #18063b,
+            #4a087d,
+            #7c168e
+        );
 
     color: white;
 }
@@ -350,17 +1130,19 @@ footer h2 {
 
 footer p {
     margin: 7px;
+
     color: #f2d8ee;
 }
 
-/* =========================
+/* ==================================================
    MOBILE
-   ========================= */
+   ================================================== */
 
 @media (max-width: 800px) {
 
     header {
         flex-direction: column;
+
         padding: 18px 15px;
     }
 
@@ -401,28 +1183,39 @@ footer p {
     }
 
     .cards {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    width: 100%;
-}
+        grid-template-columns:
+            repeat(3, 1fr);
 
-.card {
-    padding: 20px 8px;
-}
+        gap: 10px;
 
-.card h3 {
-    font-size: 17px;
-}
+        width: 94%;
+    }
 
-.card p {
-    font-size: 13px;
-    line-height: 1.6;
-}
+    .card {
+        min-height: 280px;
 
-.card a {
-    font-size: 12px;
-    padding: 8px 10px;
-}
+        padding: 18px 8px;
+
+        border-radius: 15px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+
+        line-height: 1.5;
+    }
+
+    .card p {
+        font-size: 12px;
+
+        line-height: 1.7;
+    }
+
+    .card a {
+        font-size: 11px;
+
+        padding: 8px 10px;
+    }
 
     .cards-section {
         padding: 50px 20px;
@@ -431,331 +1224,12 @@ footer p {
     .cards-section > h2 {
         font-size: 27px;
     }
-}
-/* ===== بطاقات الصفحة الرئيسية ===== */
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    width: 90%;
-    max-width: 1150px;
-    margin: 35px auto;
-}
-
-.card {
-    background: linear-gradient(145deg, #fff8fd, #fdf0fa);
-    border: 1px solid #f0c7e5;
-    border-radius: 18px;
-    padding: 28px 22px;
-    text-align: center;
-    min-height: 300px;
-    box-shadow: 0 8px 25px rgba(150, 50, 150, 0.12);
-    transition: 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 30px rgba(150, 50, 150, 0.20);
-}
-
-.card h3 {
-    color: #24104f;
-    font-size: 22px;
-    margin: 18px 0 12px;
-    font-weight: 800;
-}
-
-.card p {
-    color: #333;
-    font-size: 15px;
-    line-height: 1.9;
-    margin-bottom: 20px;
-}
-
-.card a {
-    display: inline-block;
-    background: linear-gradient(90deg, #8b20d9, #f02b9d);
-    color: white;
-    text-decoration: none;
-    padding: 11px 25px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(220, 40, 170, 0.25);
-}
-
-/* ===== الهاتف ===== */
-
-@media (max-width: 800px) {
-
-    .cards {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        width: 94%;
-    }
-
-    .card {
-        min-height: 280px;
-        padding: 18px 8px;
-        border-radius: 15px;
-    }
-
-    .card h3 {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    .card p {
-        font-size: 12px;
-        line-height: 1.7;
-    }
-
-    .card a {
-        font-size: 11px;
-        padding: 8px 10px;
-    }
-}
-/* زر مواقع التواصل */
-.social-button-container {
-    display: flex;
-    justify-content: center;
-    margin: 25px auto;
-}
-
-.social-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-
-    min-width: 230px;
-    padding: 14px 25px;
-
-    border-radius: 50px;
-    text-decoration: none;
-
-    color: white;
-    background: linear-gradient(135deg, #6a00ff, #ff1493);
-
-    font-size: 18px;
-    font-weight: bold;
-
-    box-shadow: 0 8px 25px rgba(150, 0, 255, 0.35);
-
-    transition: all 0.3s ease;
-}
-
-.social-button:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 12px 30px rgba(255, 20, 147, 0.45);
-}
-
-#socialIcon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#socialText {
-    white-space: nowrap;
-}
-/* =========================
-   نقاط مواقع التواصل
-   ========================= */
-
-.social-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 9px;
-    margin: 10px auto 22px;
-}
-
-.social-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.35);
-    transition: all 0.35s ease;
-}
-
-.social-dot.active {
-    width: 10px;
-    height: 10px;
-    background: #9cffb0;
-    box-shadow:
-        0 0 5px #9cffb0,
-        0 0 12px #5cff78,
-        0 0 20px rgba(92, 255, 120, 0.7);
-}
-/* ========================================
-   مربع إحصائيات المنصة
-   ======================================== */
-
-.stats-box {
-    width: min(90%, 900px);
-    margin: 35px auto 20px;
-    padding: 25px 20px 20px;
-
-    background: linear-gradient(
-    135deg,
-    #f8dce9,
-    #f6e1eb,
-    #e4f4e8
-);
-    
-
-    border: 1px solid rgba(180, 90, 150, 0.25);
-    border-radius: 25px;
-
-    box-shadow:
-        0 10px 30px rgba(90, 30, 100, 0.12),
-        inset 0 1px 8px rgba(255, 255, 255, 0.7);
-
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 12px;
-    flex-wrap: wrap;
-
-    direction: rtl;
-}
-
-
-/* كل إحصائية */
-
-.stat-item {
-    flex: 1;
-    min-width: 170px;
-
-    padding: 15px 10px;
-
-    text-align: center;
-
-    background: rgba(255, 255, 255, 0.35);
-
-    border-radius: 18px;
-
-    border: 1px solid rgba(255, 255, 255, 0.7);
-
-    transition: 0.3s ease;
-}
-
-
-/* حركة بسيطة عند لمس المربع */
-
-.stat-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(100, 40, 100, 0.12);
-}
-
-
-/* الأيقونات */
-
-.stat-icon {
-    width: 45px;
-    height: 45px;
-
-    margin: 0 auto 8px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 25px;
-    font-weight: bold;
-
-    color: white;
-
-    box-shadow: 0 5px 15px rgba(80, 30, 90, 0.15);
-}
-
-
-/* فايسبوك */
-
-.facebook-icon {
-    background: #6fae8c;
-}
-
-
-/* إنستغرام */
-
-.instagram-icon {
-    background: #b83d82;
-}
-
-
-/* المنشورات */
-
-.posts-icon {
-    background: #8c5a91;
-}
-
-
-/* العنوان */
-
-.stat-title {
-    color: #49305d;
-    font-size: 15px;
-    font-weight: 600;
-
-    margin-bottom: 5px;
-}
-
-
-/* الرقم */
-
-.stat-number {
-    color: #7d285e;
-
-    font-size: 27px;
-    font-weight: 800;
-
-    line-height: 1.2;
-}
-
-
-/* كلمة منشور */
-
-.stat-subtitle {
-    color: #5d5264;
-    font-size: 14px;
-    margin-top: 2px;
-}
-
-
-/* العبارة أسفل الإحصائيات */
-
-.stats-message {
-    width: 100%;
-
-    margin-top: 12px;
-    padding: 15px 12px;
-
-    text-align: center;
-
-    color: #63304f;
-
-    font-size: 17px;
-    font-weight: 600;
-
-    background: rgba(255, 255, 255, 0.45);
-
-    border-radius: 15px;
-
-    border-top: 1px solid rgba(184, 61, 130, 0.15);
-}
-
-
-/* الهاتف */
-
-@media (max-width: 600px) {
+    /* STATS */
 
     .stats-box {
         width: 88%;
+
         padding: 18px 10px 15px;
 
         gap: 8px;
@@ -765,6 +1239,7 @@ footer p {
 
     .stat-item {
         min-width: 0;
+
         width: 30%;
 
         padding: 12px 5px;
@@ -777,6 +1252,11 @@ footer p {
         height: 38px;
 
         font-size: 21px;
+    }
+
+    .instagram-icon svg {
+        width: 21px;
+        height: 21px;
     }
 
     .stat-title {
@@ -793,833 +1273,110 @@ footer p {
 
     .stats-message {
         font-size: 14px;
+
         padding: 12px 8px;
     }
-.instagram-icon svg {
-    width: 25px;
-    height: 25px;
-    stroke: white;
-    fill: none;
-    stroke-width: 2;
-}
 
-.instagram-icon svg circle:last-child {
-    fill: white;
-    stroke: none;
-}
+    /* BRANCH */
 
-/* ========================================
-   مشهد اختيار الشعبة
-   ======================================== */
-
-.branch-scene {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-
-    background: linear-gradient(
-        135deg,
-        #fff4fa,
-        #f8e7f1,
-        #eaf7ee
-    );
-
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    overflow: hidden;
-}
-
-
-/* الشاب والخيط */
-
-.rope-character {
-    position: relative;
-
-    display: flex;
-    align-items: center;
-
-    transform: translateX(0);
-
-    transition: transform 1.8s ease-in-out;
-}
-
-.character {
-    font-size: 90px;
-    position: relative;
-    z-index: 2;
-
-    filter: drop-shadow(0 8px 12px rgba(80, 40, 80, 0.15));
-}
-
-
-/* الخيط */
-
-.rope {
-    width: 180px;
-    height: 5px;
-
-    margin-left: -5px;
-
-    background: #9b6b5a;
-
-    border-radius: 10px;
-
-    position: relative;
-
-    box-shadow:
-        0 2px 5px rgba(80, 40, 30, 0.18);
-}
-
-
-/* مقبض الخيط */
-
-.rope-handle {
-    position: absolute;
-
-    right: -5px;
-    top: 50%;
-
-    width: 20px;
-    height: 20px;
-
-    transform: translateY(-50%);
-
-    border-radius: 50%;
-
-    background: #9cffb0;
-
-    box-shadow:
-        0 0 8px #9cffb0,
-        0 0 18px rgba(92, 255, 120, 0.6);
-}
-
-
-/* النص */
-
-.scene-message {
-    margin-top: 35px;
-
-    text-align: center;
-
-    opacity: 0;
-
-    transform: translateY(15px);
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-}
-
-.scene-message h2 {
-    margin-bottom: 10px;
-
-    color: #54245f;
-
-    font-size: 30px;
-}
-
-.scene-message p {
-    color: #76576f;
-
-    font-size: 18px;
-}
-
-
-/* حركة سحب الخيط */
-
-.branch-scene.pull .rope-character {
-    transform: translateX(120px);
-}
-
-
-/* ظهور الرسالة */
-
-.branch-scene.show-message .scene-message {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* =========================================
-   مشهد المصباح وسحب الخيط
-   ========================================= */
-
-.branch-scene {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-
-    display: none;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #d99ac8 0%,
-            #713b82 45%,
-            #180a29 100%
-        );
-
-    direction: rtl;
-}
-
-
-/* =========================================
-   ضوء المصباح
-   ========================================= */
-
-.branch-scene.lamp-on::before {
-    content: "";
-
-    position: absolute;
-
-    top: -100px;
-    left: 50%;
-
-    width: 750px;
-    height: 750px;
-
-    transform: translateX(-50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255, 249, 170, .85),
-            rgba(255, 225, 110, .30),
-            transparent 70%
-        );
-
-    animation: lampGlow 2s infinite alternate;
-
-    pointer-events: none;
-}
-
-
-@keyframes lampGlow {
-
-    from {
-        opacity: .55;
-        transform:
-            translateX(-50%)
-            scale(.9);
+    .branch-scene {
+        padding: 25px 12px;
     }
 
-    to {
-        opacity: 1;
-        transform:
-            translateX(-50%)
-            scale(1.08);
+    .scene-lamp {
+        transform: scale(0.75);
+
+        margin-top: -25px;
+        margin-bottom: -20px;
     }
-
-}
-
-
-/* =========================================
-   المصباح
-   ========================================= */
-
-.scene-lamp {
-
-    position: absolute;
-
-    top: 0;
-    left: 50%;
-
-    width: 190px;
-    height: 280px;
-
-    transform: translateX(-50%);
-
-    z-index: 30;
-}
-
-
-.lamp-shade {
-
-    position: absolute;
-
-    top: 25px;
-    left: 50%;
-
-    width: 180px;
-    height: 80px;
-
-    transform: translateX(-50%);
-
-    background: #eee7ec;
-
-    border-radius:
-        100px 100px 35px 35px;
-
-    box-shadow:
-        0 6px 25px rgba(0,0,0,.35);
-
-}
-
-
-.lamp-bulb {
-
-    position: absolute;
-
-    top: 88px;
-    left: 50%;
-
-    width: 42px;
-    height: 42px;
-
-    transform: translateX(-50%);
-
-    border-radius: 50%;
-
-    background: #d8d1d6;
-
-    transition: .7s;
-
-}
-
-
-.branch-scene.lamp-on .lamp-bulb {
-
-    background: #fff8a5;
-
-    box-shadow:
-        0 0 20px #fff6a0,
-        0 0 50px #ffe66b,
-        0 0 100px #ffd84d;
-
-}
-
-
-/* =========================================
-   الخيط
-   ========================================= */
-
-.lamp-rope {
-
-    position: absolute;
-
-    top: 105px;
-    left: 50%;
-
-    width: 4px;
-    height: 120px;
-
-    transform: translateX(-50%);
-
-    background: #c58b5b;
-
-    transition: .8s;
-
-}
-
-
-.lamp-rope span {
-
-    position: absolute;
-
-    bottom: -13px;
-    left: 50%;
-
-    width: 25px;
-    height: 25px;
-
-    transform: translateX(-50%);
-
-    border-radius: 50%;
-
-    background: #d39a62;
-
-}
-
-
-.branch-scene.pull-rope .lamp-rope {
-
-    height: 175px;
-
-}
-
-
-/* =========================================
-   الشاب
-   ========================================= */
-
-.scene-boy {
-
-    position: absolute;
-
-    left: 12%;
-    bottom: 8%;
-
-    width: 150px;
-    height: 300px;
-
-    z-index: 35;
-
-    transition:
-        transform 1s ease;
-
-}
-
-
-.boy-face {
-
-    position: absolute;
-
-    top: 0;
-
-    font-size: 90px;
-
-}
-
-
-.boy-body {
-
-    position: absolute;
-
-    top: 85px;
-    left: 25px;
-
-    width: 90px;
-    height: 140px;
-
-    border-radius:
-        45px 45px 20px 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #71349b,
-            #35144f
-        );
-
-}
-
-
-.boy-arm {
-
-    position: absolute;
-
-    top: 105px;
-    left: 65px;
-
-    width: 100px;
-    height: 18px;
-
-    border-radius: 20px;
-
-    background: #eeb18b;
-
-    transform:
-        rotate(-45deg);
-
-    transform-origin: left center;
-
-}
-
-
-.branch-scene.pull-rope .scene-boy {
-
-    transform:
-        translateY(25px);
-
-}
-
-
-/* =========================================
-   الستائر
-   ========================================= */
-
-.scene-curtain {
-
-    position: absolute;
-
-    top: 0;
-
-    width: 30%;
-    height: 100%;
-
-    z-index: 40;
-
-    background:
-        linear-gradient(
-            90deg,
-            #21052f,
-            #64127c,
-            #3c0c58,
-            #781d86
-        );
-
-    box-shadow:
-        0 0 40px rgba(0,0,0,.5);
-
-    transition:
-        transform 1.5s
-        cubic-bezier(.77,0,.18,1);
-
-}
-
-
-.scene-curtain.left {
-
-    left: 0;
-
-    border-radius:
-        0 90px 90px 0;
-
-}
-
-
-.scene-curtain.right {
-
-    right: 0;
-
-    border-radius:
-        90px 0 0 90px;
-
-}
-
-
-/* فتح الستائر */
-
-.branch-scene.open-curtains
-.scene-curtain.left {
-
-    transform:
-        translateX(-110%);
-
-}
-
-
-.branch-scene.open-curtains
-.scene-curtain.right {
-
-    transform:
-        translateX(110%);
-
-}
-
-
-/* =========================================
-   اختيار الشعبة
-   ========================================= */
-
-.branch-content {
-
-    position: relative;
-
-    z-index: 10;
-
-    width: 82%;
-    max-width: 950px;
-
-    text-align: center;
-
-    opacity: 0;
-
-    transform:
-        translateY(35px);
-
-    transition:
-        opacity 1s ease,
-        transform 1s ease;
-
-}
-
-
-.branch-scene.show-branches
-.branch-content {
-
-    opacity: 1;
-
-    transform:
-        translateY(0);
-
-}
-
-
-.branch-heading {
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 12px;
-
-}
-
-
-.branch-heading h1 {
-
-    margin: 0;
-
-    color: #54227b;
-
-    font-size: 50px;
-
-}
-
-
-.branch-content > p {
-
-    color: #542d63;
-
-    font-size: 20px;
-
-    margin:
-        10px 0 30px;
-
-}
-
-
-/* =========================================
-   بطاقات الشعب
-   ========================================= */
-
-.branch-cards {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
-
-}
-
-
-.branch-card {
-
-    padding:
-        25px 15px;
-
-    background:
-        rgba(255,245,250,.94);
-
-    border:
-        1px solid
-        rgba(255,255,255,.8);
-
-    border-radius: 22px;
-
-    box-shadow:
-        0 15px 35px
-        rgba(60,20,80,.25);
-
-    transition:
-        transform .3s ease;
-
-}
-
-
-.branch-card:hover {
-
-    transform:
-        translateY(-8px);
-
-}
-
-
-.branch-icon {
-
-    width: 65px;
-    height: 65px;
-
-    margin:
-        0 auto 12px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    font-size: 30px;
-
-}
-
-
-.science .branch-icon {
-
-    background: #9cffb0;
-
-}
-
-
-.maths .branch-icon {
-
-    background: #f38baa;
-
-}
-
-
-.technical .branch-icon {
-
-    background: #a983e8;
-
-}
-
-
-.branch-card h2 {
-
-    color: #54205f;
-
-    font-size: 22px;
-
-    margin:
-        10px 0;
-
-}
-
-
-.branch-card p {
-
-    color: #67576a;
-
-    line-height: 1.7;
-
-    min-height: 55px;
-
-}
-
-
-.branch-card button {
-
-    border: 0;
-
-    padding:
-        10px 18px;
-
-    border-radius: 25px;
-
-    color: white;
-
-    font-weight: bold;
-
-    background:
-        linear-gradient(
-            90deg,
-            #7b25a8,
-            #df3aa4
-        );
-
-    cursor: pointer;
-
-}
-
-
-.branch-quote {
-
-    margin-top: 25px;
-
-    color: #63306f;
-
-    font-size: 17px;
-
-}
-
-
-/* =========================================
-   الهاتف
-   ========================================= */
-
-@media (max-width: 700px) {
 
     .scene-boy {
-
-        left: 1%;
-
-        bottom: 5%;
+        bottom: 7%;
 
         transform:
-            scale(.65);
-
-        transform-origin:
-            bottom left;
-
+            translateX(-150px)
+            scale(0.8);
     }
 
-
-    .branch-content {
-
-        width: 94%;
-
-        padding-top: 70px;
-
+    .branch-scene.pull .scene-boy {
+        transform:
+            translateX(-75px)
+            translateY(-5px)
+            scale(0.8);
     }
-
 
     .branch-heading h1 {
-
-        font-size: 32px;
-
+        font-size: 28px;
     }
-
 
     .branch-content > p {
+        font-size: 15px;
 
-        font-size: 14px;
-
+        margin-bottom: 20px;
     }
-
 
     .branch-cards {
+        grid-template-columns: 1fr;
 
-        gap: 8px;
+        gap: 12px;
 
+        max-width: 500px;
+
+        margin: auto;
     }
-
 
     .branch-card {
-
-        padding:
-            15px 6px;
-
-        border-radius: 15px;
-
+        padding: 18px 15px;
     }
-
 
     .branch-card h2 {
-
-        font-size: 14px;
-
+        font-size: 19px;
     }
-
 
     .branch-card p {
+        font-size: 13px;
 
-        font-size: 10px;
-
-        min-height: 55px;
-
+        margin-bottom: 12px;
     }
 
+    .branch-quote {
+        font-size: 13px;
 
-    .branch-card button {
+        margin-top: 15px;
+    }
+}
 
-        font-size: 10px;
+/* ==================================================
+   SMALL PHONES
+   ================================================== */
 
-        padding:
-            8px 5px;
+@media (max-width: 400px) {
 
+    .hero h1 {
+        font-size: 40px;
     }
 
-
-    .branch-icon {
-
-        width: 45px;
-        height: 45px;
-
+    .hero h2 {
         font-size: 22px;
-
     }
 
+    .social-button {
+        min-width: 210px;
+
+        font-size: 16px;
+    }
+
+    .main-button {
+        padding: 14px 32px;
+
+        font-size: 18px;
+    }
+
+    .stat-title {
+        font-size: 11px;
+    }
+
+    .stat-number {
+        font-size: 19px;
+    }
 }
