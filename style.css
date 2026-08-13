@@ -358,50 +358,54 @@ nav a:hover {
     
 
 
-
-    
-    
-
     
    
 
 
 
-/* =====================================================
+   /* =====================================================
    START BUTTON
    ===================================================== */
 
 .main-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    padding: 16px 42px;
+    margin-top: 5px;
 
-    border-radius: 40px;
+    padding: 11px 32px;
+
+    border-radius: 8px;
 
     background:
         linear-gradient(
             90deg,
-            #8e21e8,
-            #ff35ad
+            #e33b9e,
+            #a84be0
         );
 
     color: white;
 
     text-decoration: none;
 
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
 
     box-shadow:
-        0 8px 25px rgba(255, 35, 170, 0.35);
+        0 7px 20px rgba(190,50,170,0.35);
 
     transition: 0.3s;
 }
 
-.main-button:hover {
-    transform: translateY(-4px) scale(1.03);
-}
 
+.main-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 28px rgba(220,70,190,0.45);
+}
+  
 
 /* =====================================================
    STATS
