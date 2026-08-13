@@ -599,11 +599,12 @@ footer p {
     padding: 25px 20px 20px;
 
     background: linear-gradient(
-        135deg,
-        #f8dce9,
-        #f4e4ef,
-        #dff3e8
-    );
+    135deg,
+    #f8dce9,
+    #f6e1eb,
+    #e4f4e8
+);
+    
 
     border: 1px solid rgba(180, 90, 150, 0.25);
     border-radius: 25px;
