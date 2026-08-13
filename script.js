@@ -64,3 +64,36 @@ changeSocialButton();
 
 /* التغيير كل ثانيتين */
 setInterval(changeSocialButton, 2000);
+
+// ========================================
+// تشغيل مشهد اختيار الشعبة
+// ========================================
+
+const startButton = document.getElementById("startButton");
+const branchScene = document.getElementById("branchScene");
+
+if (startButton && branchScene) {
+
+    startButton.addEventListener("click", function () {
+
+        // إظهار المشهد
+        branchScene.style.display = "flex";
+
+        // السماح للمتصفح بإظهار المشهد أولًا
+        setTimeout(() => {
+
+            // الشاب يسحب الخيط
+            branchScene.classList.add("pull");
+
+        }, 300);
+
+        // إظهار الرسالة بعد السحب
+        setTimeout(() => {
+
+            branchScene.classList.add("show-message");
+
+        }, 1900);
+
+    });
+
+}
