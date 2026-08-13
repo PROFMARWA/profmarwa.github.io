@@ -407,140 +407,87 @@ nav a:hover {
 }
   
 
+
 /* =====================================================
    STATS
    ===================================================== */
 
 .stats-box {
-    width: min(90%, 900px);
+    width: min(100%, 700px);
 
-    margin: 35px auto 20px;
+    margin: 25px 0 0;
 
-    padding: 25px 20px 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f8dce9,
-            #f6e1eb,
-            #e4f4e8
-        );
-
-    border: 1px solid rgba(180, 90, 150, 0.25);
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 10px 30px rgba(90, 30, 100, 0.12);
+    padding: 8px;
 
     display: flex;
+    align-items: stretch;
 
-    justify-content: center;
+    gap: 0;
 
-    gap: 12px;
+    background:
+        rgba(45, 15, 70, 0.75);
 
-    flex-wrap: wrap;
+    border:
+        1px solid rgba(255,255,255,0.2);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    overflow: hidden;
 }
+
 
 .stat-item {
     flex: 1;
 
-    min-width: 170px;
+    min-width: 0;
 
-    padding: 15px 10px;
+    padding: 10px 8px;
 
     text-align: center;
 
-    background: rgba(255,255,255,0.35);
+    background: transparent;
 
-    border-radius: 18px;
+    border-radius: 0;
 }
+
 
 .stat-icon {
-    width: 45px;
-    height: 45px;
-
-    margin: 0 auto 8px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 25px;
-    font-weight: bold;
-
-    color: white;
+    display: none;
 }
 
-.facebook-icon {
-    background: #6fae8c;
-}
-
-.instagram-icon {
-    background: #b83d82;
-}
-
-.posts-icon {
-    background: #8c5a91;
-}
-
-.instagram-icon svg {
-    width: 25px;
-    height: 25px;
-
-    stroke: white;
-    fill: none;
-
-    stroke-width: 2;
-}
-
-.instagram-icon svg circle:last-child {
-    fill: white;
-    stroke: none;
-}
 
 .stat-title {
-    color: #49305d;
+    margin-bottom: 4px;
 
-    font-size: 15px;
-    font-weight: 600;
+    color: #e7cde7;
 
-    margin-bottom: 5px;
+    font-size: 11px;
 }
 
-.stat-number {
-    color: #7d285e;
 
-    font-size: 27px;
+.stat-number {
+    color: white;
+
+    font-size: 20px;
     font-weight: 800;
 }
 
-.stat-subtitle {
-    color: #5d5264;
 
-    font-size: 14px;
+.stat-subtitle {
+    color: #d9b9d9;
+
+    font-size: 10px;
 }
+
 
 .stats-message {
-    width: 100%;
-
-    margin-top: 12px;
-
-    padding: 15px;
-
-    text-align: center;
-
-    color: #63304f;
-
-    font-size: 17px;
-    font-weight: 600;
-
-    background: rgba(255,255,255,0.45);
-
-    border-radius: 15px;
+    display: none;
 }
+    
+
 
 
 /* =====================================================
