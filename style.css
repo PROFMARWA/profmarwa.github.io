@@ -245,47 +245,56 @@ nav a:hover {
 
 .social-button-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
 
-    margin: 25px auto;
+    margin: 18px 0;
 }
+
 
 .social-button {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    gap: 12px;
+    gap: 10px;
 
-    min-width: 230px;
+    min-width: 210px;
 
-    padding: 14px 25px;
+    padding: 10px 20px;
 
-    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.25);
 
-    text-decoration: none;
-
-    color: white;
+    border-radius: 30px;
 
     background:
         linear-gradient(
             135deg,
-            #6a00ff,
-            #ff1493
+            rgba(100,30,150,0.8),
+            rgba(40,10,70,0.8)
         );
 
-    font-size: 18px;
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
     font-weight: bold;
 
     box-shadow:
-        0 8px 25px rgba(150, 0, 255, 0.35);
+        0 5px 20px rgba(0,0,0,0.25);
 
     transition: 0.3s;
 }
 
+
 .social-button:hover {
-    transform: translateY(-3px) scale(1.03);
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(200,80,220,0.35);
 }
+
 
 #socialIcon {
     display: flex;
@@ -293,40 +302,69 @@ nav a:hover {
     justify-content: center;
 }
 
+
 #socialText {
     white-space: nowrap;
 }
 
+
 .social-dots {
     display: flex;
-    justify-content: center;
 
-    gap: 9px;
+    gap: 6px;
 
-    margin: 10px auto 22px;
+    margin-top: 8px;
 }
 
+
 .social-dot {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
 
     border-radius: 50%;
 
     background: rgba(255,255,255,0.35);
 
-    transition: 0.35s;
+    transition: 0.3s;
 }
+
 
 .social-dot.active {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
 
-    background: #9cffb0;
+    background: #ff70c9;
 
     box-shadow:
-        0 0 5px #9cffb0,
-        0 0 12px #5cff78;
+        0 0 10px #ff70c9;
 }
+
+    
+
+    
+  
+
+    
+   
+     
+         
+           
+      
+
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+   
+
 
 
 /* =====================================================
