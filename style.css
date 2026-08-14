@@ -2155,9 +2155,18 @@ footer p {
     }
 
     .scene-boy {
-        left: -8%;
-        bottom: 3%;
-        width: 170px;
-        height: 270px;
-    }
+
+    left: 2%;
+
+    bottom: 4%;
+
+    width: 150px;
+
+    height: 260px;
+
+    transform:
+        scale(0.85);
+
+    transform-origin:
+        bottom left;
 }
