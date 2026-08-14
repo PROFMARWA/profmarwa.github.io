@@ -684,10 +684,8 @@ nav a:hover {
 
     background: #d79c63;
 
-}
-
 /* =====================================================
-   الشاب الحقيقي
+   الشاب
    ===================================================== */
 
 .scene-boy {
@@ -698,52 +696,113 @@ nav a:hover {
 
     bottom: 5%;
 
-    width: 330px;
+    width: 190px;
 
-    height: 520px;
+    height: 330px;
 
     z-index: 20;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    justify-content: center;
 
     transition:
         transform 1.4s ease;
 }
 
 
-.boy-image {
+/* الرأس */
 
-    width: 100%;
+.boy-face {
 
-    height: 100%;
+    position: absolute;
 
-    object-fit: contain;
+    top: 0;
 
-    object-position: bottom center;
+    left: 45px;
 
-    display: block;
+    width: 100px;
 
-    filter:
-        drop-shadow(
-            0 15px 20px
-            rgba(50, 10, 70, 0.25)
-        );
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: #ffd1a4;
+
+    font-size: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
 }
 
 
-/* عندما يسحب الشاب الخيط */
+/* الجسم */
+
+.boy-body {
+
+    position: absolute;
+
+    top: 90px;
+
+    left: 30px;
+
+    width: 130px;
+
+    height: 170px;
+
+    border-radius:
+        60px 60px 35px 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #59307f,
+            #241044
+        );
+
+    box-shadow:
+        0 15px 25px
+        rgba(0,0,0,0.2);
+}
+
+
+/* الذراع */
+
+.boy-arm {
+
+    position: absolute;
+
+    top: 105px;
+
+    right: 0;
+
+    width: 110px;
+
+    height: 28px;
+
+    border-radius: 20px;
+
+    background: #59307f;
+
+    transform:
+        rotate(-55deg);
+
+    transform-origin:
+        left center;
+}
+
+
+/* عندما يسحب الخيط */
 
 .branch-scene.pull-rope .scene-boy {
 
     transform:
         translateX(35px)
-        translateY(-15px);
+        translateY(-20px);
 }
-    
+
+
       
 
 
