@@ -686,122 +686,65 @@ nav a:hover {
 
 }
 
-
 /* =====================================================
-   الشاب
+   الشاب الحقيقي
    ===================================================== */
 
 .scene-boy {
 
     position: absolute;
 
-    left: 18%;
+    left: 13%;
 
-    bottom: 8%;
+    bottom: 5%;
 
-    width: 190px;
+    width: 330px;
 
-    height: 330px;
+    height: 520px;
 
     z-index: 20;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
 
     transition:
         transform 1.4s ease;
 }
 
 
-/* الرأس */
+.boy-image {
 
-.boy-face {
+    width: 100%;
 
-    position: absolute;
+    height: 100%;
 
-    top: 0;
+    object-fit: contain;
 
-    left: 45px;
+    object-position: bottom center;
 
-    width: 100px;
+    display: block;
 
-    height: 100px;
-
-    border-radius: 50%;
-
-    background: #ffd1a4;
-
-    font-size: 70px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    overflow: hidden;
-}
-
-
-/* جسم الشاب */
-
-.boy-body {
-
-    position: absolute;
-
-    top: 90px;
-
-    left: 30px;
-
-    width: 130px;
-
-    height: 170px;
-
-    border-radius: 60px 60px 35px 35px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #59307f,
-            #241044
+    filter:
+        drop-shadow(
+            0 15px 20px
+            rgba(50, 10, 70, 0.25)
         );
-
-    box-shadow:
-        0 15px 25px rgba(0,0,0,0.2);
 }
 
 
-/* الذراع */
-
-.boy-arm {
-
-    position: absolute;
-
-    top: 105px;
-
-    right: 0;
-
-    width: 110px;
-
-    height: 28px;
-
-    border-radius: 20px;
-
-    background: #59307f;
-
-    transform:
-        rotate(-55deg);
-
-    transform-origin: left center;
-
-}
-
-
-/* عندما يسحب الخيط */
+/* عندما يسحب الشاب الخيط */
 
 .branch-scene.pull-rope .scene-boy {
 
     transform:
-        translateY(-20px)
-        translateX(30px);
+        translateX(35px)
+        translateY(-15px);
 }
+    
+      
 
 
 /* =====================================================
