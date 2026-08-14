@@ -2040,13 +2040,12 @@ footer p {
 /* =====================================================
    📱 الهواتف الصغيرة جدًا
    ===================================================== */
-
 @media (max-width: 380px) {
 
     .branch-content {
-        width: 96%;
-
-        padding-top: 65px;
+        width: 94%;
+        padding-top: 35px;
+        margin-left: 0;
     }
 
     .branch-heading h1 {
@@ -2055,16 +2054,25 @@ footer p {
 
     .branch-content > p {
         font-size: 13px;
+        margin-bottom: 15px;
     }
 
     .branch-cards {
-        gap: 7px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        width: 100%;
     }
 
     .branch-card {
-        min-height: 220px;
+        min-height: 250px;
+        padding: 14px 7px;
+        border-radius: 16px;
+    }
 
-        padding: 12px 5px;
+    .branch-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
     }
 
     .branch-card h2 {
@@ -2073,9 +2081,24 @@ footer p {
 
     .branch-card p {
         font-size: 10px;
+        line-height: 1.6;
     }
 
     .branch-card button {
+        width: 100%;
         font-size: 10px;
+        padding: 9px 3px;
+    }
+
+    .branch-quote {
+        margin-top: 12px;
+        font-size: 11px;
+    }
+
+    .scene-boy {
+        left: -8%;
+        bottom: 3%;
+        width: 170px;
+        height: 270px;
     }
 }
