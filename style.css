@@ -1410,3 +1410,53 @@ footer p {
         font-size: 10px;
     }
 }
+/* تحسين حجم الكتابة داخل بطاقات الشعب */
+@media (max-width: 700px) {
+
+    .branch-card h2 {
+        font-size: 21px !important;
+    }
+
+    .branch-card p {
+        font-size: 14px !important;
+        line-height: 1.8 !important;
+    }
+
+    .branch-card button {
+        font-size: 14px !important;
+        padding: 11px 5px !important;
+    }
+
+    .branch-quote {
+        font-size: 14px !important;
+    }
+}
+
+
+/* زر العودة للرئيسية */
+.back-home {
+    display: block;
+    width: 80%;
+    max-width: 350px;
+    margin: 28px auto 0;
+    padding: 13px 20px;
+
+    background: linear-gradient(90deg, #54206d, #8e3bb5);
+    color: white;
+
+    text-decoration: none;
+    text-align: center;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    box-shadow: 0 6px 18px rgba(70, 20, 90, 0.25);
+
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    transform: translateY(-3px);
+}
