@@ -1460,3 +1460,54 @@ footer p {
 .back-home:hover {
     transform: translateY(-3px);
 }
+.home-return {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 240px;
+    height: 55px;
+
+    margin: 25px auto 0;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        90deg,
+        #54206d,
+        #8e3bb5
+    );
+
+    border: 2px solid rgba(255,255,255,0.5);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 20px rgba(70,20,90,0.25);
+
+    transition: 0.3s;
+}
+
+.home-return:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(70,20,90,0.35);
+}
+
+@media (max-width: 700px) {
+
+    .home-return {
+        width: 210px;
+        height: 50px;
+
+        margin-top: 20px;
+
+        font-size: 15px;
+    }
+}
