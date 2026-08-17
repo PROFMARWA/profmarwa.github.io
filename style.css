@@ -1587,3 +1587,550 @@ footer p {
         #ff91d9
     );
 }
+/* =====================================================
+   🌸 SCIENCE TOPICS
+   بطاقات محتوى علوم تجريبية - تصميم احترافي
+   ===================================================== */
+
+.science-topics {
+    width: 94%;
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 10px;
+}
+
+.science-topics-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.science-topics-title h1 {
+    color: #54206d;
+    font-size: clamp(28px, 5vw, 44px);
+    margin-bottom: 10px;
+}
+
+.science-topics-title p {
+    color: #704d78;
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   شبكة البطاقات
+   ===================================================== */
+
+.topic-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   البطاقة
+   ===================================================== */
+
+.topic-card {
+    position: relative;
+
+    min-height: 175px;
+
+    padding: 22px 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: #4b2457;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.98),
+            rgba(255,246,252,0.95)
+        );
+
+    border: 2px solid rgba(255,255,255,0.9);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 30px rgba(255,70,180,0.14);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* لمعة أعلى البطاقة */
+
+.topic-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff43b5,
+            #ff8bd5,
+            #76edac
+        );
+}
+
+
+/* تأثير اللمعة */
+
+.topic-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    top: -65px;
+    right: -55px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,116,200,0.12);
+}
+
+
+/* عند لمس البطاقة */
+
+.topic-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #ff78c9;
+
+    box-shadow:
+        0 18px 38px rgba(255,70,180,0.23);
+}
+
+
+/* =====================================================
+   دائرة الأيقونة
+   ===================================================== */
+
+.topic-icon {
+    position: relative;
+
+    z-index: 2;
+
+    width: 68px;
+    height: 68px;
+
+    margin-bottom: 14px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    color: white;
+
+    font-size: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3eaf,
+            #ff8bd5
+        );
+
+    box-shadow:
+        0 8px 18px rgba(255,65,180,0.25);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.topic-card:hover .topic-icon {
+    transform:
+        rotate(-4deg)
+        scale(1.08);
+}
+
+
+/* =====================================================
+   العناوين
+   ===================================================== */
+
+.topic-card h2 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 7px;
+
+    color: #54206d;
+
+    font-size: 19px;
+
+    font-weight: 800;
+}
+
+
+/* الوصف */
+
+.topic-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color: #765c7b;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   ألوان خاصة لكل نوع
+   ===================================================== */
+
+/* 1 - مكتسبات قبلية */
+
+.topic-card.prerequisites .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #8d5de8,
+            #bd9aff
+        );
+}
+
+
+/* 2 - تركيب البروتين */
+
+.topic-card.protein .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #ff3eaa,
+            #ff8bd5
+        );
+}
+
+
+/* 3 - بنية ووظيفة البروتين */
+
+.topic-card.structure .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #35c98a,
+            #8af0bd
+        );
+}
+
+
+/* 4 - الإنزيمات */
+
+.topic-card.enzymes .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #ff9d38,
+            #ffd16d
+        );
+}
+
+
+/* 5 - المناعة */
+
+.topic-card.immunity .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #48b9ef,
+            #8ce2ff
+        );
+}
+
+
+/* 6 - الاتصال */
+
+.topic-card.communication .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f9d,
+            #ff9bd2
+        );
+}
+
+
+/* 7 - التركيب الضوئي */
+
+.topic-card.photosynthesis .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #36c979,
+            #9af3b8
+        );
+}
+
+
+/* 8 - التنفس */
+
+.topic-card.respiration .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #48a7e8,
+            #9ad9ff
+        );
+}
+
+
+/* 9 - الجيولوجيا */
+
+.topic-card.geology .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #38b995,
+            #83e3c0
+        );
+}
+
+
+/* 10 - مواضيع الباك */
+
+.topic-card.bac .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #e944a8,
+            #ff9bd8
+        );
+}
+
+
+/* 11 - البكالوريا التجريبية */
+
+.topic-card.mock-bac .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #7352d9,
+            #a99aff
+        );
+}
+
+
+/* 12 - مواضيع التميز */
+
+.topic-card.excellence .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #e7a82e,
+            #ffe28a
+        );
+}
+
+
+/* 13 - أشبال الأمة */
+
+.topic-card.cadet .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #38b889,
+            #8be6bb
+        );
+}
+
+
+/* 14 - سلاسل الميزان */
+
+.topic-card.balance .topic-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #e84b91,
+            #ff9fc5
+        );
+}
+
+
+/* =====================================================
+   زر العودة
+   ===================================================== */
+
+.topics-back-home {
+    display: block;
+
+    width: 230px;
+
+    margin: 35px auto 20px;
+
+    padding: 14px 20px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3eaf,
+            #b75be8
+        );
+
+    box-shadow:
+        0 8px 22px rgba(255,60,175,0.25);
+
+    transition: 0.3s;
+}
+
+.topics-back-home:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 13px 28px rgba(255,60,175,0.32);
+}
+
+
+/* =====================================================
+   📱 الهاتف
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .science-topics {
+        width: 94%;
+        padding: 5px;
+    }
+
+    .science-topics-title h1 {
+        font-size: 28px;
+    }
+
+    .science-topics-title p {
+        font-size: 14px;
+    }
+
+    .topic-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .topic-card {
+        min-height: 165px;
+
+        padding:
+            17px 7px;
+
+        border-radius: 18px;
+    }
+
+    .topic-icon {
+        width: 55px;
+        height: 55px;
+
+        margin-bottom: 10px;
+
+        border-radius: 17px;
+
+        font-size: 25px;
+    }
+
+    .topic-card h2 {
+        font-size: 15px;
+
+        line-height: 1.5;
+    }
+
+    .topic-card p {
+        font-size: 11px;
+
+        line-height: 1.6;
+    }
+
+    .topics-back-home {
+        width: 210px;
+
+        padding: 13px;
+
+        font-size: 15px;
+    }
+}
+
+
+/* =====================================================
+   📱 الهواتف الصغيرة جدًا
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .topic-grid {
+        gap: 8px;
+    }
+
+    .topic-card {
+        min-height: 150px;
+
+        padding:
+            14px 5px;
+    }
+
+    .topic-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 22px;
+
+        border-radius: 14px;
+    }
+
+    .topic-card h2 {
+        font-size: 13px;
+    }
+
+    .topic-card p {
+        font-size: 10px;
+    }
+}
