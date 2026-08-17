@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>علوم تجريبية | Science with Prof Marwa</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(255, 100, 190, 0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(120, 80, 255, 0.18),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fff8fd,
+                    #f5eaff,
+                    #fff7fc
+                );
+
+            color: #35134d;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           الرأس
+           ========================= */
+
+        .page-header {
+            text-align: center;
+
+            padding: 45px 20px 25px;
+        }
+
+        .small-title {
+            color: #a044b8;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(32px, 6vw, 55px);
+
+            color: #4d1769;
+
+            margin-bottom: 12px;
+        }
+
+        .page-header h1 span {
+            color: #d83ca4;
+        }
+
+        .page-header p {
+            color: #684b72;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           الخط الزخرفي
+           ========================= */
+
+        .title-line {
+            width: 90px;
+            height: 5px;
+
+            margin: 20px auto;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #6e2aa5,
+                    #e63ca5
+                );
+        }
+
+
+        /* =========================
+           المربعات
+           ========================= */
+
+        .topics {
+            width: 92%;
+
+            max-width: 1150px;
+
+            margin: 25px auto 45px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .topic-card {
+            position: relative;
+
+            min-height: 205px;
+
+            padding: 25px 20px;
+
+            background:
+                rgba(255,255,255,0.82);
+
+            border-radius: 24px;
+
+            border:
+                1px solid rgba(255,255,255,0.9);
+
+            box-shadow:
+                0 12px 30px
+                rgba(77,23,105,0.12);
+
+            backdrop-filter: blur(10px);
+
+            text-align: center;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .topic-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 100%;
+            height: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #7130a5,
+                    #e044aa
+                );
+        }
+
+
+        .topic-card:hover {
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                0 20px 40px
+                rgba(77,23,105,0.20);
+        }
+
+
+        /* =========================
+           الأيقونات
+           ========================= */
+
+        .topic-icon {
+            width: 68px;
+            height: 68px;
+
+            margin: 0 auto 17px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f0dcfa,
+                    #ffe4f4
+                );
+
+            color: #7028a0;
+
+            box-shadow:
+                inset 0 0 0 1px
+                rgba(112,40,160,0.08);
+        }
+
+
+        .topic-icon svg {
+            width: 38px;
+            height: 38px;
+
+            fill: none;
+
+            stroke: currentColor;
+
+            stroke-width: 1.8;
+
+            stroke-linecap: round;
+
+            stroke-linejoin: round;
+        }
+
+
+        .topic-card h2 {
+            color: #4b185f;
+
+            font-size: 21px;
+
+            margin-bottom: 9px;
+        }
+
+
+        .topic-card p {
+            color: #725b77;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           ألوان خاصة
+           ========================= */
+
+        .topic-card:nth-child(2) .topic-icon {
+            color: #8d36b2;
+        }
+
+        .topic-card:nth-child(3) .topic-icon {
+            color: #b13d9b;
+        }
+
+        .topic-card:nth-child(4) .topic-icon {
+            color: #d27625;
+        }
+
+        .topic-card:nth-child(5) .topic-icon {
+            color: #3c8d67;
+        }
+
+        .topic-card:nth-child(6) .topic-icon {
+            color: #3278a8;
+        }
+
+        .topic-card:nth-child(7) .topic-icon {
+            color: #c78a20;
+        }
+
+        .topic-card:nth-child(8) .topic-icon {
+            color: #3e8c91;
+        }
+
+        .topic-card:nth-child(9) .topic-icon {
+            color: #7b6846;
+        }
+
+        .topic-card:nth-child(10) .topic-icon {
+            color: #8c3c99;
+        }
+
+        .topic-card:nth-child(11) .topic-icon {
+            color: #bf416e;
+        }
+
+        .topic-card:nth-child(12) .topic-icon {
+            color: #bd8a20;
+        }
+
+        .topic-card:nth-child(13) .topic-icon {
+            color: #5271a8;
+        }
+
+        .topic-card:nth-child(14) .topic-icon {
+            color: #7a4d9b;
+        }
+
+
+        /* =========================
+           زر العودة
+           ========================= */
+
+        .home-button {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 250px;
+            height: 55px;
+
+            margin: 10px auto 45px;
+
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #54206d,
+                    #8e3bb5
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 8px 22px
+                rgba(70,20,90,0.22);
+
+            transition: 0.3s;
+        }
+
+
+        .home-button:hover {
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 13px 28px
+                rgba(70,20,90,0.30);
+        }
+
+
+        /* =========================
+           الهاتف
+           ========================= */
+
+        @media (max-width: 800px) {
+
+            .topics {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 12px;
+
+                width: 94%;
+            }
+
+            .topic-card {
+                min-height: 205px;
+
+                padding: 19px 9px;
+
+                border-radius: 18px;
+            }
+
+            .topic-icon {
+                width: 57px;
+                height: 57px;
+
+                border-radius: 17px;
+
+                margin-bottom: 12px;
+            }
+
+            .topic-icon svg {
+                width: 31px;
+                height: 31px;
+            }
+
+            .topic-card h2 {
+                font-size: 17px;
+            }
+
+            .topic-card p {
+                font-size: 11px;
+
+                line-height: 1.6;
+            }
+
+            .page-header {
+                padding-top: 30px;
+            }
+
+            .page-header p {
+                font-size: 14px;
+            }
+
+            .home-button {
+                width: 220px;
+                height: 52px;
+
+                font-size: 15px;
+            }
+        }
+
+
+        @media (max-width: 380px) {
+
+            .topics {
+                gap: 8px;
+            }
+
+            .topic-card {
+                min-height: 190px;
+
+                padding: 15px 6px;
+            }
+
+            .topic-icon {
+                width: 50px;
+                height: 50px;
+
+                margin-bottom: 9px;
+            }
+
+            .topic-icon svg {
+                width: 27px;
+                height: 27px;
+            }
+
+            .topic-card h2 {
+                font-size: 14px;
+            }
+
+            .topic-card p {
+                font-size: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     العنوان
+     ========================= -->
+
+<header class="page-header">
+
+    <div class="small-title">
+        SCIENCE WITH PROF MARWA
+    </div>
+
+    <h1>
+        علوم <span>تج
