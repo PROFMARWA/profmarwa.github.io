@@ -1,0 +1,554 @@
+/* =========================================================
+   SCIENCE WITH PROF MARWA
+   STYLE.CSS — التصميم الجديد
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: #fff7fc;
+    color: #351342;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   HEADER — الصفحة الرئيسية
+   ========================================================= */
+
+header {
+    width: 100%;
+    min-height: 80px;
+    padding: 15px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: linear-gradient(
+        90deg,
+        #180b3d,
+        #3d0b70,
+        #6b168e
+    );
+
+    color: white;
+
+    box-shadow:
+        0 4px 20px rgba(70, 0, 100, 0.25);
+
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.logo div {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.logo strong {
+    color: white;
+}
+
+.logo span {
+    color: #ff4db8;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff55bd;
+}
+
+
+/* =========================================================
+   HERO — الواجهة الأولى
+   ========================================================= */
+
+.hero {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(255, 58, 190, 0.25),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(125, 40, 255, 0.25),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #120528,
+            #2b0750,
+            #541077
+        );
+
+    position: relative;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1000px;
+
+    padding: 55px 20px;
+}
+
+.welcome {
+    color: #ff70c5;
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    color: white;
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #ff55bd;
+    font-style: italic;
+}
+
+.hero h2 {
+    color: #ff9bd6;
+    font-size: clamp(25px, 4vw, 38px);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: #f7e3f2;
+    font-size: 24px;
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   SOCIAL
+   ========================================================= */
+
+.social-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 25px auto;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    min-width: 300px;
+
+    padding: 16px 28px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6717a5,
+            #e52c9f
+        );
+
+    border: 2px solid rgba(255,255,255,0.25);
+
+    font-size: 20px;
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 25px rgba(150, 0, 255, 0.35);
+
+    transition: 0.3s;
+}
+
+.social-button:hover {
+    transform: translateY(-3px) scale(1.03);
+}
+
+#socialIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+#socialIcon svg {
+    width: 34px;
+    height: 34px;
+}
+
+#socialText {
+    white-space: nowrap;
+}
+
+.social-dots {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin: 12px auto 22px;
+}
+
+.social-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.45);
+    transition: 0.35s;
+}
+
+.social-dot.active {
+    width: 11px;
+    height: 11px;
+    background: #ff73c5;
+    box-shadow: 0 0 8px #ff73c5;
+}
+
+
+/* =========================================================
+   MAIN BUTTON
+   ========================================================= */
+
+.main-button {
+    display: inline-block;
+
+    padding: 16px 48px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e72b9f,
+            #b64ce8
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 25px rgba(255, 35, 170, 0.35);
+
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats-box {
+    width: min(90%, 900px);
+
+    margin: 45px auto 20px;
+
+    padding: 25px 20px;
+
+    background: rgba(35, 8, 65, 0.45);
+
+    border: 2px solid rgba(255,255,255,0.18);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.15);
+
+    display: flex;
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 170px;
+    padding: 12px 10px;
+    text-align: center;
+}
+
+.stat-icon {
+    display: none;
+}
+
+.stat-title {
+    color: #ead7e8;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.stat-number {
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.stat-subtitle {
+    color: #cdb7ce;
+    font-size: 14px;
+}
+
+.stats-message {
+    display: none;
+}
+
+
+/* =========================================================
+   🚫 إلغاء المشهد القديم بالكامل
+   المصباح + الخيط + الشخصية + الستائر
+   ========================================================= */
+
+.branch-scene .scene-lamp,
+.branch-scene .scene-boy,
+.branch-scene .scene-curtain {
+    display: none !important;
+}
+
+
+/* =========================================================
+   🌸 شاشة اختيار الشعبة
+   ========================================================= */
+
+.branch-scene {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: none;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 35px 25px;
+
+    background:
+        radial-gradient(
+            circle at 78% 12%,
+            rgba(255,255,255,0.9),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 35% 20%,
+            rgba(255,190,230,0.45),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fffaff,
+            #ffeaf7 48%,
+            #ffdff2
+        );
+
+    color: #43134f;
+}
+
+
+/* =========================================================
+   خلفية ناعمة
+   ========================================================= */
+
+.branch-scene::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(255,75,180,0.12),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(94,224,145,0.10),
+            transparent 20%
+        );
+
+    opacity: 1 !important;
+}
+
+
+/* =========================================================
+   المحتوى الرئيسي
+   ========================================================= */
+
+.branch-content {
+    position: relative;
+
+    z-index: 10;
+
+    width: min(100%, 1050px);
+
+    margin: 0 auto;
+
+    padding: 5px 0 35px;
+
+    text-align: center;
+
+    opacity: 1 !important;
+
+    transform: none !important;
+
+    transition: none;
+}
+
+
+/* =========================================================
+   عنوان اختر شعبتك
+   ========================================================= */
+
+.branch-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    margin: 5px auto 8px;
+
+    font-size: 46px;
+}
+
+.branch-heading::after {
+    content: "🎓";
+    font-size: 50px;
+    order: -1;
+}
+
+.branch-heading h1 {
+    margin: 0;
+
+    font-size: clamp(38px, 6vw, 58px);
+
+    font-weight: 900;
+
+    color: #321044;
+
+    text-shadow:
+        0 3px 8px rgba(255,255,255,0.9);
+}
+
+.branch-heading h1::first-letter {
+    color: #ef3e9f;
+}
+
+.branch-content > p {
+    margin: 0 auto 25px;
+
+    font-size: clamp(17px, 2.5vw, 22px);
+
+    font-weight: 500;
+
+    color: #542052;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   خط زخرفي
+   ========================================================= */
+
+.branch-content > p::after {
+    content: "  •  ♥  •  ";
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #f26bb7;
+
+    letter-spacing: 8px;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   البطاقات
+   ========================================================= */
+
+.branch-cards {
+    position: relative;
+
+    width: 100%;
+
+   
