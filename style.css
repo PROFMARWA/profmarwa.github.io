@@ -1,7 +1,9 @@
-/* =====================================================
+/* =========================================================
    SCIENCE WITH PROF MARWA
-   STYLE.CSS - نسخة جديدة ونظيفة
-   ===================================================== */
+   STYLE.CSS
+   الصفحة الرئيسية محفوظة
+   صفحة اختيار الشعبة - تصميم جديد
+   ========================================================= */
 
 * {
     margin: 0;
@@ -22,9 +24,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    HEADER
-   ===================================================== */
+   ========================================================= */
 
 header {
     width: 100%;
@@ -92,9 +94,9 @@ nav a:hover {
 }
 
 
-/* =====================================================
-   الصفحة الرئيسية HERO
-   ===================================================== */
+/* =========================================================
+   الصفحة الرئيسية
+   ========================================================= */
 
 .hero {
     width: 100%;
@@ -139,10 +141,8 @@ nav a:hover {
 
 .welcome {
     color: #ff70c5;
-
     font-size: 38px;
     font-weight: bold;
-
     margin-bottom: 12px;
 }
 
@@ -178,9 +178,9 @@ nav a:hover {
 }
 
 
-/* =====================================================
-   زر مواقع التواصل
-   ===================================================== */
+/* =========================================================
+   مواقع التواصل
+   ========================================================= */
 
 .social-button-container {
     display: flex;
@@ -273,14 +273,13 @@ nav a:hover {
 
     background: #ff73c5;
 
-    box-shadow:
-        0 0 8px #ff73c5;
+    box-shadow: 0 0 8px #ff73c5;
 }
 
 
-/* =====================================================
+/* =========================================================
    زر ابدأ الآن
-   ===================================================== */
+   ========================================================= */
 
 .main-button {
     display: inline-block;
@@ -314,9 +313,9 @@ nav a:hover {
 }
 
 
-/* =====================================================
+/* =========================================================
    الإحصائيات
-   ===================================================== */
+   ========================================================= */
 
 .stats-box {
     width: min(90%, 900px);
@@ -325,11 +324,9 @@ nav a:hover {
 
     padding: 25px 20px;
 
-    background:
-        rgba(35, 8, 65, 0.45);
+    background: rgba(35, 8, 65, 0.45);
 
-    border:
-        2px solid rgba(255,255,255,0.18);
+    border: 2px solid rgba(255,255,255,0.18);
 
     border-radius: 25px;
 
@@ -386,9 +383,11 @@ nav a:hover {
 }
 
 
-/* =====================================================
-   مشهد اختيار الشعبة
-   ===================================================== */
+/* =========================================================
+   =========================================================
+   صفحة اختيار الشعبة
+   =========================================================
+   ========================================================= */
 
 .branch-scene {
     position: fixed;
@@ -399,32 +398,32 @@ nav a:hover {
 
     display: none;
 
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     background:
         radial-gradient(
-            circle at center 35%,
-            rgba(255,255,255,0.7),
+            circle at 70% 20%,
+            rgba(255,255,255,0.95),
             transparent 35%
         ),
         linear-gradient(
             135deg,
-            #5b167c,
-            #b25cc7,
-            #e1a4e5
+            #fffaff 0%,
+            #fff1fa 45%,
+            #ffe6f5 100%
         );
 
+    color: #4a174f;
+
     align-items: center;
-
     justify-content: center;
-
-    color: #321047;
 }
 
 
-/* =====================================================
+/* =========================================================
    الإضاءة
-   ===================================================== */
+   ========================================================= */
 
 .branch-scene::before {
     content: "";
@@ -435,9 +434,9 @@ nav a:hover {
 
     background:
         radial-gradient(
-            circle at center 30%,
-            rgba(255,255,255,0.85),
-            transparent 42%
+            circle at 50% 20%,
+            rgba(255,255,255,0.95),
+            transparent 45%
         );
 
     opacity: 0;
@@ -452,21 +451,19 @@ nav a:hover {
 }
 
 
-/* =====================================================
+/* =========================================================
    المصباح
-   ===================================================== */
+   ========================================================= */
 
 .scene-lamp {
     position: absolute;
 
     top: -10px;
-
     left: 50%;
 
     transform: translateX(-50%);
 
     width: 170px;
-
     height: 230px;
 
     z-index: 30;
@@ -485,14 +482,14 @@ nav a:hover {
         linear-gradient(
             180deg,
             #fffaff,
-            #c7afd0
+            #ead9e8
         );
 
     border-radius:
         85px 85px 20px 20px;
 
     box-shadow:
-        0 8px 20px rgba(0,0,0,0.25);
+        0 8px 20px rgba(100,40,90,0.18);
 }
 
 .lamp-bulb {
@@ -529,7 +526,7 @@ nav a:hover {
     width: 4px;
     height: 150px;
 
-    background: #9b654d;
+    background: #b88973;
 
     border-radius: 5px;
 
@@ -553,9 +550,9 @@ nav a:hover {
 }
 
 
-/* =====================================================
+/* =========================================================
    الشخصية
-   ===================================================== */
+   ========================================================= */
 
 .scene-boy {
     position: absolute;
@@ -643,9 +640,9 @@ nav a:hover {
 }
 
 
-/* =====================================================
+/* =========================================================
    الستائر
-   ===================================================== */
+   ========================================================= */
 
 .scene-curtain {
     position: absolute;
@@ -660,13 +657,13 @@ nav a:hover {
     background:
         linear-gradient(
             90deg,
-            #27053f,
-            #6e1b86,
-            #3b0759
+            #73175d,
+            #c52b91,
+            #8a1b72
         );
 
     box-shadow:
-        inset 0 0 40px rgba(0,0,0,0.4);
+        inset 0 0 40px rgba(90,0,70,0.35);
 
     transition:
         transform 1.8s cubic-bezier(.7,0,.2,1);
@@ -697,17 +694,20 @@ nav a:hover {
 }
 
 
-/* =====================================================
-   محتوى اختيار الشعبة
-   ===================================================== */
+/* =========================================================
+   المحتوى الرئيسي
+   ========================================================= */
 
 .branch-content {
     position: relative;
 
-    z-index: 10;
+    z-index: 100;
 
-    width: 75%;
-    max-width: 1000px;
+    width: min(1100px, 78%);
+
+    margin-left: 180px;
+
+    padding: 45px 25px 35px;
 
     text-align: center;
 
@@ -715,7 +715,7 @@ nav a:hover {
 
     transform:
         translateY(60px)
-        scale(0.92);
+        scale(0.94);
 
     transition:
         opacity 1s ease,
@@ -731,9 +731,9 @@ nav a:hover {
 }
 
 
-/* =====================================================
-   عنوان الشعب
-   ===================================================== */
+/* =========================================================
+   العنوان
+   ========================================================= */
 
 .branch-heading {
     display: flex;
@@ -741,86 +741,219 @@ nav a:hover {
     align-items: center;
     justify-content: center;
 
-    gap: 15px;
+    gap: 12px;
 
-    margin-bottom: 10px;
-
-    font-size: 45px;
+    margin-bottom: 8px;
 }
 
 .branch-heading h1 {
-    font-size: 50px;
+    font-size: clamp(38px, 5vw, 58px);
 
-    color: #54206d;
+    color: #3e0d51;
+
+    font-weight: 900;
 
     text-shadow:
-        0 3px 8px rgba(255,255,255,0.5);
+        0 3px 10px rgba(150,60,130,0.12);
+}
+
+.branch-heading::before {
+    content: "🎓";
+
+    font-size: 42px;
 }
 
 .branch-content > p {
-    font-size: 21px;
+    font-size: 19px;
 
-    color: #54245f;
+    color: #713d6c;
 
-    margin-bottom: 35px;
+    margin-bottom: 30px;
+
+    font-weight: 500;
 }
 
 
-/* =====================================================
+/* =========================================================
    بطاقات الشعب
-   ===================================================== */
+   ========================================================= */
 
 .branch-cards {
     display: grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
+        repeat(2, minmax(0, 1fr));
 
-    gap: 25px;
+    gap: 28px;
 
     width: 100%;
 
     direction: rtl;
 }
 
-.branch-card {
-    min-height: 300px;
 
-    padding: 25px 20px;
+/* =========================================================
+   البطاقة الأساسية
+   ========================================================= */
+
+.branch-card {
+    position: relative;
+
+    min-height: 410px;
+
+    padding: 30px 25px 25px;
 
     background:
-        rgba(255,255,255,0.78);
+        rgba(255,255,255,0.94);
 
-    border:
-        1px solid rgba(255,255,255,0.9);
+    border-radius: 30px;
 
-    border-radius: 22px;
+    border: 2px solid rgba(255,255,255,0.95);
 
     box-shadow:
-        0 12px 30px rgba(70,20,80,0.18);
+        0 15px 40px rgba(140,55,120,0.13);
 
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-between;
 
     transition:
-        transform 0.3s,
-        box-shadow 0.3s;
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* لمعة البطاقة */
+
+.branch-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 7px;
 }
 
 .branch-card:hover {
-    transform:
-        translateY(-8px);
+    transform: translateY(-8px);
 
     box-shadow:
-        0 20px 40px
-        rgba(70,20,80,0.25);
+        0 22px 50px rgba(140,55,120,0.20);
 }
 
-.branch-icon {
-    width: 65px;
-    height: 65px;
 
-    margin:
-        0 auto 15px;
+/* =========================================================
+   علوم تجريبية
+   ========================================================= */
+
+.branch-card.science {
+    border-color: rgba(108,220,166,0.45);
+}
+
+.branch-card.science::before {
+    background:
+        linear-gradient(
+            90deg,
+            #70d8a2,
+            #a9efc7
+        );
+}
+
+.branch-card.science .branch-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #42c98c,
+            #9aeac0
+        );
+
+    box-shadow:
+        0 12px 25px rgba(60,200,135,0.25);
+}
+
+.branch-card.science h2 {
+    color: #145d40;
+}
+
+.branch-card.science button {
+    background:
+        linear-gradient(
+            90deg,
+            #36bd7d,
+            #6bdfa5
+        );
+
+    box-shadow:
+        0 8px 20px rgba(55,190,125,0.25);
+}
+
+
+/* =========================================================
+   رياضيات
+   ========================================================= */
+
+.branch-card.maths {
+    border-color: rgba(255,100,190,0.38);
+}
+
+.branch-card.maths::before {
+    background:
+        linear-gradient(
+            90deg,
+            #ed3ca4,
+            #ff8dcc
+        );
+}
+
+.branch-card.maths .branch-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #ed329d,
+            #ff8bca
+        );
+
+    box-shadow:
+        0 12px 25px rgba(235,55,160,0.25);
+}
+
+.branch-card.maths h2 {
+    color: #74134e;
+}
+
+.branch-card.maths button {
+    background:
+        linear-gradient(
+            90deg,
+            #ed3b9f,
+            #fa70bb
+        );
+
+    box-shadow:
+        0 8px 20px rgba(235,55,160,0.25);
+}
+
+
+/* =========================================================
+   أيقونة البطاقة
+   ========================================================= */
+
+.branch-icon {
+    width: 92px;
+    height: 92px;
+
+    margin: 5px auto 20px;
 
     display: flex;
 
@@ -829,122 +962,199 @@ nav a:hover {
 
     border-radius: 50%;
 
-    font-size: 30px;
-
     color: white;
 
-    background:
-        linear-gradient(
-            135deg,
-            #7e32aa,
-            #c34eaa
-        );
+    font-size: 42px;
+
+    flex-shrink: 0;
 }
 
+
+/* =========================================================
+   عنوان البطاقة
+   ========================================================= */
+
 .branch-card h2 {
-    font-size: 24px;
+    font-size: 29px;
 
     margin-bottom: 12px;
 
-    color: #4c1b63;
+    font-weight: 900;
 }
+
+
+/* =========================================================
+   وصف البطاقة
+   ========================================================= */
 
 .branch-card p {
-    color: #443747;
+    color: #554354;
 
-    font-size: 15px;
+    font-size: 17px;
 
-    line-height: 1.8;
+    line-height: 1.9;
 
-    min-height: 55px;
+    max-width: 330px;
 
-    margin-bottom: 20px;
+    min-height: 65px;
+
+    margin-bottom: 25px;
 }
+
+
+/* =========================================================
+   زر اختيار الشعبة
+   ========================================================= */
 
 .branch-card button {
     border: none;
 
     width: 90%;
 
-    padding: 13px;
+    padding: 15px 18px;
 
-    border-radius: 25px;
+    border-radius: 35px;
 
     color: white;
 
-    font-size: 16px;
+    font-size: 18px;
 
     font-weight: bold;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .branch-card button:hover {
     transform:
-        scale(1.04);
+        translateY(-3px)
+        scale(1.02);
 }
 
 
-/* علوم */
-
-.branch-card.science button {
-    background:
-        linear-gradient(
-            90deg,
-            #3ba866,
-            #52c77c
-        );
-}
-
-
-/* رياضيات */
-
-.branch-card.maths button {
-    background:
-        linear-gradient(
-            90deg,
-            #e63d69,
-            #f45c83
-        );
-}
-
-
-/* تقني رياضي إذا كان موجودًا بالـHTML */
-
-.branch-card.technical {
-    display: none;
-}
-
-.branch-card.technical button {
-    background:
-        linear-gradient(
-            90deg,
-            #6731a4,
-            #8a48c9
-        );
-}
-
-
-/* =====================================================
+/* =========================================================
    العبارة الأخيرة
-   ===================================================== */
+   ========================================================= */
 
 .branch-quote {
-    margin-top: 30px;
+    margin-top: 25px;
 
-    color: #57216c;
+    color: #7b3d72;
 
-    font-size: 18px;
+    font-size: 16px;
 
     font-weight: bold;
 }
 
 
-/* =====================================================
-   الأقسام القديمة
-   ===================================================== */
+/* =========================================================
+   الشريط الجانبي
+   ========================================================= */
+
+.branch-scene::after {
+    content: "SCIENCE\A WITH\A PROF MARWA";
+
+    white-space: pre;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 170px;
+    height: 100vh;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #b21e87,
+            #e33fa6,
+            #c52b91
+        );
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: 900;
+
+    line-height: 1.45;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        8px 0 30px rgba(130,30,100,0.12);
+}
+
+
+/* =========================================================
+   العودة للرئيسية
+   ========================================================= */
+
+.home-return,
+.back-home {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 240px;
+    height: 55px;
+
+    margin: 28px auto 0;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #9d2490,
+            #df3e9f
+        );
+
+    border: 2px solid rgba(255,255,255,0.8);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 22px rgba(170,40,130,0.22);
+
+    transition: 0.3s;
+}
+
+.home-return:hover,
+.back-home:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 13px 28px rgba(170,40,130,0.30);
+}
+
+
+/* =========================================================
+   البطاقات القديمة
+   ========================================================= */
 
 .cards-section {
     width: 100%;
@@ -1035,9 +1245,9 @@ nav a:hover {
 }
 
 
-/* =====================================================
+/* =========================================================
    FOOTER
-   ===================================================== */
+   ========================================================= */
 
 footer {
     width: 100%;
@@ -1064,561 +1274,38 @@ footer p {
 }
 
 
-/* =====================================================
-   📱 الهاتف
-   ===================================================== */
-
-@media (max-width: 700px) {
-
-    header {
-        min-height: 70px;
-
-        padding: 12px 15px;
-
-        flex-direction: row;
-
-        gap: 10px;
-    }
-
-    .logo {
-        font-size: 14px;
-
-        gap: 6px;
-    }
-
-    nav {
-        gap: 16px;
-    }
-
-    nav a {
-        font-size: 13px;
-    }
-
-
-    /* الصفحة الرئيسية */
-
-    .hero {
-        min-height:
-            calc(100vh - 70px);
-
-        align-items: center;
-    }
-
-    .hero-text {
-        padding:
-            55px 15px 35px;
-    }
-
-    .welcome {
-        font-size: 30px;
-
-        margin-bottom: 12px;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-
-        line-height: 1.05;
-
-        margin-bottom: 24px;
-    }
-
-    .hero h2 {
-        font-size: 25px;
-
-        margin-bottom: 18px;
-    }
-
-    .subtitle {
-        font-size: 19px;
-
-        margin-bottom: 28px;
-    }
-
-
-    /* التواصل */
-
-    .social-button {
-        min-width: 82%;
-
-        padding:
-            14px 18px;
-
-        font-size: 18px;
-    }
-
-    #socialIcon svg {
-        width: 30px;
-        height: 30px;
-    }
-
-
-    /* ابدأ */
-
-    .main-button {
-        padding:
-            15px 35px;
-
-        font-size: 20px;
-    }
-
-
-    /* الإحصائيات */
-
-    .stats-box {
-        width: 90%;
-
-        margin-top: 40px;
-
-        padding:
-            18px 8px;
-
-        gap: 0;
-    }
-
-    .stat-item {
-        min-width: 0;
-
-        width: 33.33%;
-
-        padding:
-            8px 3px;
-    }
-
-    .stat-title {
-        font-size: 11px;
-
-        line-height: 1.7;
-    }
-
-    .stat-number {
-        font-size: 27px;
-    }
-
-
-    /* =================================================
-       مشهد الشعب على الهاتف
-       ================================================= */
-
-    .scene-lamp {
-        transform:
-            translateX(-50%)
-            scale(0.65);
-
-        top: -5px;
-    }
-
-    .scene-boy {
-        left: 1%;
-
-        bottom: 4%;
-
-        width: 150px;
-
-        height: 260px;
-
-        transform:
-            scale(0.78);
-
-        transform-origin:
-            bottom left;
-    }
-
-    .branch-content {
-        width: 94%;
-
-        padding-top: 60px;
-    }
-
-    .branch-heading {
-        gap: 8px;
-
-        font-size: 28px;
-
-        margin-bottom: 8px;
-    }
-
-    .branch-heading h1 {
-        font-size: 30px;
-    }
-
-    .branch-content > p {
-        font-size: 14px;
-
-        line-height: 1.7;
-
-        margin-bottom: 18px;
-    }
-
-    .branch-cards {
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 8px;
-
-        width: 100%;
-    }
-
-    .branch-card {
-        min-height: 245px;
-
-        padding:
-            14px 7px;
-
-        border-radius: 16px;
-    }
-
-    .branch-icon {
-        width: 50px;
-
-        height: 50px;
-
-        font-size: 22px;
-
-        margin-bottom: 10px;
-    }
-
-    .branch-card h2 {
-        font-size: 17px;
-
-        margin-bottom: 8px;
-    }
-
-    .branch-card p {
-        font-size: 11px;
-
-        line-height: 1.7;
-
-        min-height: 70px;
-
-        margin-bottom: 12px;
-    }
-
-    .branch-card button {
-        width: 100%;
-
-        padding:
-            9px 3px;
-
-        font-size: 11px;
-    }
-
-    .branch-quote {
-        margin-top: 13px;
-
-        font-size: 12px;
-    }
-}
-
-
-/* =====================================================
-   📱 الهواتف الصغيرة جدًا
-   ===================================================== */
-
-@media (max-width: 380px) {
-
-    .hero-text {
-        padding:
-            45px 10px 30px;
-    }
-
-    .welcome {
-        font-size: 27px;
-    }
-
-    .hero h1 {
-        font-size: 42px;
-    }
-
-    .hero h2 {
-        font-size: 22px;
-    }
-
-    .subtitle {
-        font-size: 17px;
-    }
-
-    .social-button {
-        min-width: 90%;
-
-        font-size: 16px;
-    }
-
-    .main-button {
-        font-size: 18px;
-
-        padding:
-            14px 30px;
-    }
-
-    .stats-box {
-        width: 94%;
-    }
-
-    .stat-title {
-        font-size: 10px;
-    }
-
-    .stat-number {
-        font-size: 23px;
-    }
-
-    .branch-content {
-        width: 94%;
-
-        padding-top: 45px;
-    }
-
-    .branch-heading h1 {
-        font-size: 27px;
-    }
-
-    .branch-heading {
-        font-size: 25px;
-    }
-
-    .branch-content > p {
-        font-size: 12px;
-    }
-
-    .branch-cards {
-        gap: 7px;
-    }
-
-    .branch-card {
-        min-height: 230px;
-
-        padding:
-            12px 5px;
-    }
-
-    .branch-card h2 {
-        font-size: 15px;
-    }
-
-    .branch-card p {
-        font-size: 10px;
-
-        min-height: 65px;
-    }
-
-    .branch-card button {
-        font-size: 10px;
-    }
-
-    .branch-quote {
-        font-size: 10px;
-    }
-}
-/* تحسين حجم الكتابة داخل بطاقات الشعب */
-@media (max-width: 700px) {
-
-    .branch-card h2 {
-        font-size: 21px !important;
-    }
-
-    .branch-card p {
-        font-size: 14px !important;
-        line-height: 1.8 !important;
-    }
-
-    .branch-card button {
-        font-size: 14px !important;
-        padding: 11px 5px !important;
-    }
-
-    .branch-quote {
-        font-size: 14px !important;
-    }
-}
-
-
-/* زر العودة للرئيسية */
-.back-home {
-    display: block;
-    width: 80%;
-    max-width: 350px;
-    margin: 28px auto 0;
-    padding: 13px 20px;
-
-    background: linear-gradient(90deg, #54206d, #8e3bb5);
-    color: white;
-
-    text-decoration: none;
-    text-align: center;
-
-    border-radius: 30px;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    box-shadow: 0 6px 18px rgba(70, 20, 90, 0.25);
-
-    transition: 0.3s;
-}
-
-.back-home:hover {
-    transform: translateY(-3px);
-}
-.home-return {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 240px;
-    height: 55px;
-
-    margin: 25px auto 0;
-
-    border-radius: 15px;
-
-    background: linear-gradient(
-        90deg,
-        #54206d,
-        #8e3bb5
-    );
-
-    border: 2px solid rgba(255,255,255,0.5);
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 17px;
-    font-weight: bold;
-
-    box-shadow:
-        0 8px 20px rgba(70,20,90,0.25);
-
-    transition: 0.3s;
-}
-
-.home-return:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 25px rgba(70,20,90,0.35);
-}
-
-@media (max-width: 700px) {
-
-    .home-return {
-        width: 210px;
-        height: 50px;
-
-        margin-top: 20px;
-
-        font-size: 15px;
-    }
-} /* إصلاح الخيط حتى لا يغطي عنوان اختيار الشعبة */
-
-.branch-content {
-    position: relative;
-    z-index: 100;
-}
-
-.scene-lamp {
-    z-index: 30;
-}
-
-.lamp-rope {
-    z-index: 25;
-}
-
-/* عند ظهور اختيار الشعب، نجعل الخيط خلف المحتوى */
-.branch-scene.show-branches .lamp-rope {
-    z-index: 1;
-    opacity: 0.65;
-}
-
-/* وإذا أردنا أن يكون أقصر قليلًا */
-.branch-scene.show-branches .lamp-rope {
-    height: 85px;
-}
-
-.branch-scene.show-branches .lamp-rope span {
-    bottom: -12px;
-}
-/* =========================================
-   ألوان بطاقات الشعب الجديدة
-   وردي لامع + أخضر فاتح
-   ========================================= */
-
-.branch-card {
-    background: rgba(255, 255, 255, 0.92);
-
-    border: 2px solid rgba(255, 255, 255, 0.9);
-
-    box-shadow:
-        0 12px 35px rgba(255, 80, 190, 0.18);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.branch-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 18px 40px rgba(255, 80, 190, 0.28);
-}
-
-.branch-card.science {
-    border-top: 5px solid #70f0ad;
-}
-
-.branch-card.maths {
-    border-top: 5px solid #ff63c3;
-}
-
-.branch-card.science .branch-icon {
-    background: linear-gradient(
-        135deg,
-        #38d993,
-        #8cffc1
-    );
-}
-
-.branch-card.maths .branch-icon {
-    background: linear-gradient(
-        135deg,
-        #ff3fb5,
-        #ff91d9
-    );
-}
-/* =====================================================
-   🌸 SCIENCE TOPICS
-   بطاقات محتوى علوم تجريبية - تصميم احترافي
-   ===================================================== */
+/* =========================================================
+   🌸 صفحة مواضيع العلوم
+   ========================================================= */
 
 .science-topics {
     width: 94%;
     max-width: 1200px;
+
     margin: 25px auto;
+
     padding: 10px;
 }
 
 .science-topics-title {
     text-align: center;
+
     margin-bottom: 30px;
 }
 
 .science-topics-title h1 {
     color: #54206d;
+
     font-size: clamp(28px, 5vw, 44px);
+
     margin-bottom: 10px;
 }
 
 .science-topics-title p {
     color: #704d78;
+
     font-size: 17px;
 }
-
-
-/* =====================================================
-   شبكة البطاقات
-   ===================================================== */
 
 .topic-grid {
     display: grid;
@@ -1631,11 +1318,6 @@ footer p {
     width: 100%;
 }
 
-
-/* =====================================================
-   البطاقة
-   ===================================================== */
-
 .topic-card {
     position: relative;
 
@@ -1644,7 +1326,9 @@ footer p {
     padding: 22px 18px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
 
@@ -1672,12 +1356,8 @@ footer p {
 
     transition:
         transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
+        box-shadow 0.35s ease;
 }
-
-
-/* لمعة أعلى البطاقة */
 
 .topic-card::before {
     content: "";
@@ -1698,43 +1378,6 @@ footer p {
             #76edac
         );
 }
-
-
-/* تأثير اللمعة */
-
-.topic-card::after {
-    content: "";
-
-    position: absolute;
-
-    width: 120px;
-    height: 120px;
-
-    top: -65px;
-    right: -55px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,116,200,0.12);
-}
-
-
-/* عند لمس البطاقة */
-
-.topic-card:hover {
-    transform: translateY(-7px);
-
-    border-color: #ff78c9;
-
-    box-shadow:
-        0 18px 38px rgba(255,70,180,0.23);
-}
-
-
-/* =====================================================
-   دائرة الأيقونة
-   ===================================================== */
 
 .topic-icon {
     position: relative;
@@ -1763,24 +1406,7 @@ footer p {
             #ff3eaf,
             #ff8bd5
         );
-
-    box-shadow:
-        0 8px 18px rgba(255,65,180,0.25);
-
-    transition:
-        transform 0.3s ease;
 }
-
-.topic-card:hover .topic-icon {
-    transform:
-        rotate(-4deg)
-        scale(1.08);
-}
-
-
-/* =====================================================
-   العناوين
-   ===================================================== */
 
 .topic-card h2 {
     position: relative;
@@ -1796,9 +1422,6 @@ footer p {
     font-weight: 800;
 }
 
-
-/* الوصف */
-
 .topic-card p {
     position: relative;
 
@@ -1812,183 +1435,6 @@ footer p {
 
     line-height: 1.7;
 }
-
-
-/* =====================================================
-   ألوان خاصة لكل نوع
-   ===================================================== */
-
-/* 1 - مكتسبات قبلية */
-
-.topic-card.prerequisites .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #8d5de8,
-            #bd9aff
-        );
-}
-
-
-/* 2 - تركيب البروتين */
-
-.topic-card.protein .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #ff3eaa,
-            #ff8bd5
-        );
-}
-
-
-/* 3 - بنية ووظيفة البروتين */
-
-.topic-card.structure .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #35c98a,
-            #8af0bd
-        );
-}
-
-
-/* 4 - الإنزيمات */
-
-.topic-card.enzymes .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #ff9d38,
-            #ffd16d
-        );
-}
-
-
-/* 5 - المناعة */
-
-.topic-card.immunity .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #48b9ef,
-            #8ce2ff
-        );
-}
-
-
-/* 6 - الاتصال */
-
-.topic-card.communication .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #ff4f9d,
-            #ff9bd2
-        );
-}
-
-
-/* 7 - التركيب الضوئي */
-
-.topic-card.photosynthesis .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #36c979,
-            #9af3b8
-        );
-}
-
-
-/* 8 - التنفس */
-
-.topic-card.respiration .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #48a7e8,
-            #9ad9ff
-        );
-}
-
-
-/* 9 - الجيولوجيا */
-
-.topic-card.geology .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #38b995,
-            #83e3c0
-        );
-}
-
-
-/* 10 - مواضيع الباك */
-
-.topic-card.bac .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #e944a8,
-            #ff9bd8
-        );
-}
-
-
-/* 11 - البكالوريا التجريبية */
-
-.topic-card.mock-bac .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #7352d9,
-            #a99aff
-        );
-}
-
-
-/* 12 - مواضيع التميز */
-
-.topic-card.excellence .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #e7a82e,
-            #ffe28a
-        );
-}
-
-
-/* 13 - أشبال الأمة */
-
-.topic-card.cadet .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #38b889,
-            #8be6bb
-        );
-}
-
-
-/* 14 - سلاسل الميزان */
-
-.topic-card.balance .topic-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #e84b91,
-            #ff9fc5
-        );
-}
-
-
-/* =====================================================
-   زر العودة
-   ===================================================== */
 
 .topics-back-home {
     display: block;
@@ -2020,26 +1466,260 @@ footer p {
 
     box-shadow:
         0 8px 22px rgba(255,60,175,0.25);
-
-    transition: 0.3s;
-}
-
-.topics-back-home:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 13px 28px rgba(255,60,175,0.32);
 }
 
 
-/* =====================================================
+/* =========================================================
    📱 الهاتف
-   ===================================================== */
+   ========================================================= */
 
 @media (max-width: 700px) {
 
+    header {
+        min-height: 70px;
+
+        padding: 12px 15px;
+
+        flex-direction: row;
+
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 14px;
+        gap: 6px;
+    }
+
+    nav {
+        gap: 16px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    /* الصفحة الرئيسية */
+
+    .hero {
+        min-height:
+            calc(100vh - 70px);
+
+        align-items: center;
+    }
+
+    .hero-text {
+        padding:
+            55px 15px 35px;
+    }
+
+    .welcome {
+        font-size: 30px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .subtitle {
+        font-size: 19px;
+    }
+
+    .social-button {
+        min-width: 82%;
+
+        padding:
+            14px 18px;
+
+        font-size: 18px;
+    }
+
+    #socialIcon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .main-button {
+        padding:
+            15px 35px;
+
+        font-size: 20px;
+    }
+
+    .stats-box {
+        width: 90%;
+
+        margin-top: 40px;
+
+        padding:
+            18px 8px;
+    }
+
+    .stat-item {
+        min-width: 0;
+
+        width: 33.33%;
+
+        padding:
+            8px 3px;
+    }
+
+    .stat-title {
+        font-size: 11px;
+
+        line-height: 1.7;
+    }
+
+    .stat-number {
+        font-size: 27px;
+    }
+
+
+    /* =====================================================
+       اختيار الشعبة على الهاتف
+       ===================================================== */
+
+    .branch-scene {
+        align-items: flex-start;
+
+        padding-top: 25px;
+
+        padding-bottom: 30px;
+    }
+
+    /* إخفاء الشريط الجانبي على الهاتف */
+    .branch-scene::after {
+        position: absolute;
+
+        width: 100%;
+        height: 72px;
+
+        top: 0;
+        left: 0;
+
+        content: "SCIENCE WITH PROF MARWA";
+
+        font-size: 18px;
+
+        letter-spacing: 1px;
+
+        background:
+            linear-gradient(
+                90deg,
+                #b51f87,
+                #e53ca4,
+                #c92a91
+            );
+    }
+
+    .branch-content {
+        width: 94%;
+
+        margin-left: 0;
+
+        padding:
+            80px 5px 25px;
+    }
+
+    .branch-heading {
+        gap: 7px;
+
+        margin-bottom: 7px;
+    }
+
+    .branch-heading::before {
+        font-size: 27px;
+    }
+
+    .branch-heading h1 {
+        font-size: 31px;
+    }
+
+    .branch-content > p {
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        margin-bottom: 20px;
+    }
+
+    .branch-cards {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .branch-card {
+        min-height: 355px;
+
+        padding:
+            18px 8px 16px;
+
+        border-radius: 22px;
+    }
+
+    .branch-icon {
+        width: 62px;
+        height: 62px;
+
+        margin-bottom: 13px;
+
+        font-size: 29px;
+    }
+
+    .branch-card h2 {
+        font-size: 20px;
+
+        margin-bottom: 9px;
+    }
+
+    .branch-card p {
+        font-size: 12px;
+
+        line-height: 1.8;
+
+        min-height: 75px;
+
+        margin-bottom: 15px;
+    }
+
+    .branch-card button {
+        width: 95%;
+
+        padding:
+            11px 3px;
+
+        font-size: 13px;
+    }
+
+    .branch-quote {
+        margin-top: 17px;
+
+        font-size: 12px;
+    }
+
+    .home-return,
+    .back-home {
+        width: 210px;
+
+        height: 50px;
+
+        margin-top: 18px;
+
+        font-size: 15px;
+    }
+
+
+    /* مواضيع العلوم */
+
     .science-topics {
         width: 94%;
+
         padding: 5px;
     }
 
@@ -2097,14 +1777,124 @@ footer p {
 
         font-size: 15px;
     }
+
+
+    .cards {
+        grid-template-columns:
+            1fr;
+    }
 }
 
 
-/* =====================================================
-   📱 الهواتف الصغيرة جدًا
-   ===================================================== */
+/* =========================================================
+   📱 هواتف صغيرة جدًا
+   ========================================================= */
 
 @media (max-width: 380px) {
+
+    .hero-text {
+        padding:
+            45px 10px 30px;
+    }
+
+    .welcome {
+        font-size: 27px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+
+    .social-button {
+        min-width: 90%;
+
+        font-size: 16px;
+    }
+
+    .main-button {
+        font-size: 18px;
+
+        padding:
+            14px 30px;
+    }
+
+    .stats-box {
+        width: 94%;
+    }
+
+    .stat-title {
+        font-size: 10px;
+    }
+
+    .stat-number {
+        font-size: 23px;
+    }
+
+
+    /* اختيار الشعبة */
+
+    .branch-content {
+        width: 95%;
+
+        padding-top: 78px;
+    }
+
+    .branch-heading h1 {
+        font-size: 27px;
+    }
+
+    .branch-heading::before {
+        font-size: 24px;
+    }
+
+    .branch-content > p {
+        font-size: 12px;
+    }
+
+    .branch-cards {
+        gap: 7px;
+    }
+
+    .branch-card {
+        min-height: 330px;
+
+        padding:
+            15px 5px;
+    }
+
+    .branch-icon {
+        width: 54px;
+        height: 54px;
+
+        font-size: 25px;
+    }
+
+    .branch-card h2 {
+        font-size: 17px;
+    }
+
+    .branch-card p {
+        font-size: 10px;
+
+        min-height: 70px;
+    }
+
+    .branch-card button {
+        font-size: 11px;
+    }
+
+    .branch-quote {
+        font-size: 10px;
+    }
+
 
     .topic-grid {
         gap: 8px;
