@@ -3,530 +3,800 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>علوم الطبيعة والحياة | Science with Prof Marwa</title>
+<title>علوم الطبيعة والحياة | Science with Prof Marwa</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <style>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        /* =================================================
-           صفحة علوم الطبيعة والحياة
-           ================================================= */
+<style>
 
-        .science-page {
+/* =========================================================
+   SCIENCE WITH PROF MARWA
+   واجهة علوم الطبيعة والحياة
+   بنفسجي + وردي لامع + أخضر لامع
+   ========================================================= */
 
-            min-height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            padding: 45px 5% 60px;
+html {
+    scroll-behavior: smooth;
+}
 
-            background:
-                radial-gradient(
-                    circle at 10% 10%,
-                    rgba(255, 105, 190, 0.22),
-                    transparent 30%
-                ),
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: #16051f;
+}
 
-                radial-gradient(
-                    circle at 90% 90%,
-                    rgba(100, 240, 170, 0.20),
-                    transparent 30%
-                ),
 
-                linear-gradient(
-                    135deg,
-                    #fff5fc,
-                    #fffaff,
-                    #f4fff9
-                );
+/* =========================================================
+   الصفحة كاملة
+   ========================================================= */
 
-            color: #54206d;
-        }
+.science-page {
 
+    min-height: 100vh;
 
-        /* =================================================
-           العنوان
-           ================================================= */
+    padding: 45px 5% 70px;
 
-        .science-header {
+    position: relative;
 
-            text-align: center;
+    overflow: hidden;
 
-            margin-bottom: 38px;
-        }
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 55, 190, 0.30),
+            transparent 28%
+        ),
 
-        .science-header h1 {
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(110, 255, 175, 0.20),
+            transparent 25%
+        ),
 
-            margin: 0;
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(130, 35, 210, 0.30),
+            transparent 35%
+        ),
 
-            font-size: clamp(30px, 6vw, 52px);
+        linear-gradient(
+            135deg,
+            #16051f,
+            #2b0644,
+            #3c0755,
+            #180622
+        );
 
-            font-weight: 900;
+    color: white;
+}
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #ec3fae,
-                    #a94bd2,
-                    #35c98a
-                );
 
-            -webkit-background-clip: text;
+/* =========================================================
+   لمعات خلفية
+   ========================================================= */
 
-            -webkit-text-fill-color: transparent;
-        }
+.science-page::before {
 
+    content: "";
 
-        .science-header p {
+    position: absolute;
 
-            margin-top: 12px;
+    width: 500px;
+    height: 500px;
 
-            color: #76567d;
+    top: -220px;
+    right: -180px;
 
-            font-size: 18px;
-        }
+    border-radius: 50%;
 
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 70, 190, 0.25),
+            transparent 65%
+        );
 
-        /* =================================================
-           شبكة البطاقات
-           ================================================= */
+    pointer-events: none;
+}
 
-        .science-grid {
+.science-page::after {
 
-            width: 100%;
+    content: "";
 
-            max-width: 1150px;
+    position: absolute;
 
-            margin: auto;
+    width: 450px;
+    height: 450px;
 
-            display: grid;
+    bottom: -220px;
+    left: -160px;
 
-            grid-template-columns:
-                repeat(2, 1fr);
+    border-radius: 50%;
 
-            gap: 22px;
-        }
+    background:
+        radial-gradient(
+            circle,
+            rgba(55, 240, 145, 0.18),
+            transparent 65%
+        );
 
+    pointer-events: none;
+}
 
-        /* =================================================
-           البطاقة
-           ================================================= */
 
-        .science-card {
+/* =========================================================
+   العنوان
+   ========================================================= */
 
-            position: relative;
+.science-header {
 
-            min-height: 185px;
+    position: relative;
 
-            padding: 25px 18px;
+    z-index: 2;
 
-            display: flex;
+    text-align: center;
 
-            flex-direction: column;
+    margin-bottom: 45px;
+}
 
-            align-items: center;
+.science-header h1 {
 
-            justify-content: center;
+    margin: 0;
 
-            text-align: center;
+    font-size: clamp(36px, 6vw, 58px);
 
-            text-decoration: none;
+    font-weight: 900;
 
-            background:
-                rgba(255,255,255,0.92);
+    letter-spacing: 1px;
 
-            border: 2px solid rgba(255,255,255,0.95);
+    background:
+        linear-gradient(
+            90deg,
+            #ff42b7,
+            #c84cff,
+            #58ffad,
+            #ff42b7
+        );
 
-            border-radius: 26px;
+    background-size: 300% 100%;
 
-            box-shadow:
-                0 10px 30px
-                rgba(170, 55, 150, 0.12);
+    -webkit-background-clip: text;
+    background-clip: text;
 
-            overflow: hidden;
+    -webkit-text-fill-color: transparent;
 
-            transition:
-                transform .35s ease,
-                box-shadow .35s ease;
-        }
+    animation:
+        titleGlow 5s ease infinite;
 
+    text-shadow:
+        0 0 25px rgba(255, 55, 190, 0.25);
+}
 
-        /* الخط اللامع أعلى البطاقة */
+@keyframes titleGlow {
 
-        .science-card::before {
+    0% {
+        background-position: 0% 50%;
+    }
 
-            content: "";
+    50% {
+        background-position: 100% 50%;
+    }
 
-            position: absolute;
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
-            top: 0;
 
-            left: 0;
+.science-header p {
 
-            width: 100%;
+    margin-top: 14px;
 
-            height: 5px;
+    color: #f4d9f4;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #ff42b5,
-                    #ff8fd8,
-                    #6ce8a8
-                );
-        }
+    font-size: 21px;
 
+    font-weight: 600;
+}
 
-        .science-card:hover {
 
-            transform:
-                translateY(-8px);
+/* =========================================================
+   شبكة البطاقات
+   ========================================================= */
 
-            box-shadow:
-                0 20px 42px
-                rgba(235, 55, 170, 0.22);
-        }
+.science-grid {
 
+    position: relative;
 
-        /* =================================================
-           الأيقونة
-           ================================================= */
+    z-index: 2;
 
-        .science-icon {
+    width: 100%;
 
-            width: 72px;
+    max-width: 1150px;
 
-            height: 72px;
+    margin: auto;
 
-            margin-bottom: 15px;
+    display: grid;
 
-            display: flex;
+    grid-template-columns:
+        repeat(2, 1fr);
 
-            align-items: center;
+    gap: 25px;
+}
 
-            justify-content: center;
 
-            border-radius: 22px;
+/* =========================================================
+   البطاقات
+   ========================================================= */
 
-            color: white;
+.science-card {
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #ff3fae,
-                    #ff8bd5
-                );
+    position: relative;
 
-            box-shadow:
-                0 8px 20px
-                rgba(255, 60, 175, .25);
+    min-height: 205px;
 
-            transition:
-                transform .35s ease;
-        }
+    padding: 30px 22px;
 
+    display: flex;
 
-        .science-card:hover .science-icon {
+    flex-direction: column;
 
-            transform:
-                rotate(-5deg)
-                scale(1.08);
-        }
+    align-items: center;
 
+    justify-content: center;
 
-        .science-icon svg {
+    text-align: center;
 
-            width: 38px;
+    text-decoration: none;
 
-            height: 38px;
-        }
+    color: white;
 
+    background:
+        linear-gradient(
+            145deg,
+            rgba(86, 20, 112, 0.92),
+            rgba(45, 8, 65, 0.96)
+        );
 
-        /* =================================================
-           النص
-           ================================================= */
+    border: 2px solid #087a4c;
 
-        .science-card h2 {
+    border-radius: 25px;
 
-            margin: 0 0 8px;
+    box-shadow:
+        0 0 0 1px rgba(52, 255, 160, 0.18),
+        0 10px 35px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(10, 190, 110, 0.12);
 
-            color: #54206d;
+    overflow: hidden;
 
-            font-size: 20px;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
 
-            font-weight: 900;
 
-            line-height: 1.5;
-        }
+/* =========================================================
+   الحافة اللامعة
+   ========================================================= */
 
+.science-card::before {
 
-        .science-card p {
+    content: "";
 
-            margin: 0;
+    position: absolute;
 
-            color: #765d7c;
+    top: 0;
+    left: 0;
 
-            font-size: 14px;
+    width: 100%;
 
-            line-height: 1.7;
-        }
+    height: 5px;
 
+    background:
+        linear-gradient(
+            90deg,
+            #ff32b4,
+            #b944ff,
+            #26df8a,
+            #ff32b4
+        );
 
-        /* =================================================
-           ألوان الأيقونات
-           ================================================= */
+    background-size: 250% 100%;
 
-        .card-green .science-icon {
+    animation:
+        borderGlow 4s linear infinite;
+}
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #35c98a,
-                    #91f2be
-                );
-        }
+@keyframes borderGlow {
 
-        .card-pink .science-icon {
+    0% {
+        background-position: 0% 50%;
+    }
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #ff3eae,
-                    #ff98d8
-                );
-        }
+    100% {
+        background-position: 250% 50%;
+    }
+}
 
-        .card-blue .science-icon {
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #42aee8,
-                    #9adfff
-                );
-        }
+/* =========================================================
+   توهج داخلي
+   ========================================================= */
 
-        .card-purple .science-icon {
+.science-card::after {
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #8055dc,
-                    #b39aff
-                );
-        }
+    content: "";
 
-        .card-gold .science-icon {
+    position: absolute;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #e9a82e,
-                    #ffe18a
-                );
-        }
+    inset: 0;
 
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 55, 190, 0.13),
+            transparent 50%
+        );
 
-        /* =================================================
-           العودة للرئيسية
-           ================================================= */
+    pointer-events: none;
+}
 
-        .science-home {
 
-            display: block;
+/* =========================================================
+   حركة البطاقة
+   ========================================================= */
 
-            width: 240px;
+.science-card:hover {
 
-            margin: 40px auto 0;
+    transform:
+        translateY(-9px)
+        scale(1.015);
 
-            padding: 15px 20px;
+    border-color: #22d987;
 
-            text-align: center;
+    box-shadow:
+        0 0 0 2px rgba(45, 240, 145, 0.15),
+        0 20px 45px rgba(0, 0, 0, 0.45),
+        0 0 35px rgba(35, 240, 145, 0.22),
+        0 0 45px rgba(255, 50, 190, 0.15);
+}
 
-            text-decoration: none;
 
-            color: white;
+/* =========================================================
+   الأيقونة
+   ========================================================= */
 
-            font-size: 17px;
+.science-icon {
 
-            font-weight: 900;
+    position: relative;
 
-            border-radius: 18px;
+    z-index: 2;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #ff3eae,
-                    #b653dc
-                );
+    width: 76px;
+    height: 76px;
 
-            box-shadow:
-                0 9px 25px
-                rgba(235, 55, 170, .25);
+    margin-bottom: 17px;
 
-            transition: .3s;
-        }
+    display: flex;
 
+    align-items: center;
+    justify-content: center;
 
-        .science-home:hover {
+    border-radius: 22px;
 
-            transform:
-                translateY(-4px);
+    color: white;
 
-            box-shadow:
-                0 14px 30px
-                rgba(235, 55, 170, .35);
-        }
+    background:
+        linear-gradient(
+            135deg,
+            #ff35b3,
+            #a93ee8,
+            #5affad
+        );
 
+    box-shadow:
+        0 0 18px rgba(255, 55, 190, 0.35),
+        0 0 25px rgba(50, 240, 150, 0.18);
 
-        /* =================================================
-           الهاتف
-           ================================================= */
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
 
-        @media (max-width: 700px) {
+.science-card:hover .science-icon {
 
-            .science-page {
+    transform:
+        translateY(-4px)
+        rotate(-4deg)
+        scale(1.08);
 
-                padding:
-                    30px 12px 45px;
-            }
+    box-shadow:
+        0 0 25px rgba(255, 60, 190, 0.45),
+        0 0 35px rgba(55, 240, 150, 0.25);
+}
 
 
-            .science-header {
+.science-icon svg {
 
-                margin-bottom: 25px;
-            }
+    width: 40px;
+    height: 40px;
 
+    stroke: white;
+}
 
-            .science-header h1 {
 
-                font-size: 30px;
-            }
+/* =========================================================
+   عنوان البطاقة
+   ========================================================= */
 
+.science-card h2 {
 
-            .science-header p {
+    position: relative;
 
-                font-size: 14px;
-            }
+    z-index: 2;
 
+    margin: 0 0 10px;
 
-            .science-grid {
+    font-size: 25px;
 
-                grid-template-columns:
-                    repeat(2, 1fr);
+    font-weight: 900;
 
-                gap: 10px;
-            }
+    line-height: 1.45;
 
+    background:
+        linear-gradient(
+            90deg,
+            #64ffad,
+            #ff55bd,
+            #c45aff
+        );
 
-            .science-card {
+    -webkit-background-clip: text;
+    background-clip: text;
 
-                min-height: 165px;
+    -webkit-text-fill-color: transparent;
 
-                padding:
-                    17px 7px;
+    text-shadow:
+        0 0 18px rgba(255, 60, 190, 0.15);
+}
 
-                border-radius: 19px;
-            }
 
+/* =========================================================
+   وصف البطاقة
+   ========================================================= */
 
-            .science-icon {
+.science-card p {
 
-                width: 55px;
+    position: relative;
 
-                height: 55px;
+    z-index: 2;
 
-                margin-bottom: 10px;
+    margin: 0;
 
-                border-radius: 17px;
-            }
+    color: #ead8ed;
 
+    font-size: 17px;
 
-            .science-icon svg {
+    font-weight: 600;
 
-                width: 29px;
+    line-height: 1.8;
+}
 
-                height: 29px;
-            }
 
+/* =========================================================
+   ألوان خاصة للأيقونات
+   ========================================================= */
 
-            .science-card h2 {
+.card-green .science-icon {
 
-                font-size: 15px;
+    background:
+        linear-gradient(
+            135deg,
+            #12a961,
+            #35e995,
+            #9affc9
+        );
+}
 
-                line-height: 1.45;
-            }
+.card-pink .science-icon {
 
+    background:
+        linear-gradient(
+            135deg,
+            #ff239f,
+            #ff4fc0,
+            #c33cff
+        );
+}
 
-            .science-card p {
+.card-blue .science-icon {
 
-                font-size: 10px;
+    background:
+        linear-gradient(
+            135deg,
+            #7138d4,
+            #a94cff,
+            #ff4cbf
+        );
+}
 
-                line-height: 1.6;
-            }
+.card-purple .science-icon {
 
+    background:
+        linear-gradient(
+            135deg,
+            #6626a7,
+            #a238e9,
+            #ff46bd
+        );
+}
 
-            .science-home {
+.card-gold .science-icon {
 
-                width: 210px;
+    background:
+        linear-gradient(
+            135deg,
+            #7d2ca8,
+            #d83cb5,
+            #58e9a3
+        );
+}
 
-                padding: 13px;
 
-                font-size: 15px;
-            }
-        }
+/* =========================================================
+   زر العودة
+   ========================================================= */
 
+.science-home {
 
-        @media (max-width: 380px) {
+    position: relative;
 
-            .science-grid {
+    z-index: 2;
 
-                gap: 8px;
-            }
+    display: block;
 
+    width: 250px;
 
-            .science-card {
+    margin: 45px auto 0;
 
-                min-height: 150px;
+    padding: 16px 20px;
 
-                padding:
-                    13px 5px;
-            }
+    text-align: center;
 
+    text-decoration: none;
 
-            .science-icon {
+    color: white;
 
-                width: 48px;
+    font-size: 19px;
 
-                height: 48px;
-            }
+    font-weight: 900;
 
+    border-radius: 18px;
 
-            .science-icon svg {
+    background:
+        linear-gradient(
+            90deg,
+            #ff32b0,
+            #8d35d0,
+            #18ad6b
+        );
 
-                width: 25px;
+    box-shadow:
+        0 8px 25px rgba(255, 45, 175, 0.25),
+        0 0 25px rgba(30, 210, 130, 0.15);
 
-                height: 25px;
-            }
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
 
+.science-home:hover {
 
-            .science-card h2 {
+    transform:
+        translateY(-5px)
+        scale(1.03);
 
-                font-size: 13px;
-            }
+    box-shadow:
+        0 15px 35px rgba(255, 45, 175, 0.35),
+        0 0 35px rgba(30, 220, 130, 0.25);
+}
 
 
-            .science-card p {
+/* =========================================================
+   الهاتف
+   ========================================================= */
 
-                font-size: 9px;
-            }
-        }
+@media (max-width: 700px) {
 
-    </style>
+    .science-page {
+
+        padding:
+            32px 12px 50px;
+    }
+
+
+    .science-header {
+
+        margin-bottom: 30px;
+    }
+
+
+    .science-header h1 {
+
+        font-size: 32px;
+
+        line-height: 1.3;
+    }
+
+
+    .science-header p {
+
+        font-size: 15px;
+
+        margin-top: 10px;
+    }
+
+
+    .science-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 11px;
+    }
+
+
+    .science-card {
+
+        min-height: 185px;
+
+        padding:
+            17px 7px;
+
+        border-radius: 18px;
+    }
+
+
+    .science-icon {
+
+        width: 58px;
+        height: 58px;
+
+        margin-bottom: 11px;
+
+        border-radius: 17px;
+    }
+
+
+    .science-icon svg {
+
+        width: 30px;
+        height: 30px;
+    }
+
+
+    .science-card h2 {
+
+        font-size: 17px;
+
+        line-height: 1.5;
+
+        margin-bottom: 7px;
+    }
+
+
+    .science-card p {
+
+        font-size: 12px;
+
+        line-height: 1.65;
+    }
+
+
+    .science-home {
+
+        width: 215px;
+
+        padding: 14px;
+
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   الهواتف الصغيرة جدًا
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .science-page {
+
+        padding:
+            27px 9px 45px;
+    }
+
+
+    .science-header h1 {
+
+        font-size: 28px;
+    }
+
+
+    .science-header p {
+
+        font-size: 13px;
+    }
+
+
+    .science-grid {
+
+        gap: 8px;
+    }
+
+
+    .science-card {
+
+        min-height: 170px;
+
+        padding:
+            14px 5px;
+    }
+
+
+    .science-icon {
+
+        width: 50px;
+        height: 50px;
+
+        border-radius: 15px;
+    }
+
+
+    .science-icon svg {
+
+        width: 26px;
+        height: 26px;
+    }
+
+
+    .science-card h2 {
+
+        font-size: 15px;
+    }
+
+
+    .science-card p {
+
+        font-size: 10px;
+    }
+
+
+    .science-home {
+
+        width: 200px;
+
+        font-size: 15px;
+    }
+}
+       
+
+  
+
+</style>
 
 </head>
 
@@ -537,574 +807,492 @@
 <main class="science-page">
 
 
-    <!-- ===============================================
-         العنوان
-         =============================================== -->
+<header class="science-header">
 
-    <header class="science-header">
+    <h1>
+        علوم الطبيعة والحياة
+    </h1>
 
-        <h1>
-            علوم الطبيعة والحياة
-        </h1>
+    <p>
+        اختر القسم الذي تريد البدء فيه
+    </p>
 
-        <p>
-            اختر القسم الذي تريد البدء فيه
-        </p>
+</header>
 
-    </header>
 
+<section class="science-grid">
 
-    <!-- ===============================================
-         البطاقات
-         =============================================== -->
 
-    <section class="science-grid">
+<!-- 1 -->
 
+<a href="#" class="science-card card-purple">
 
-        <!-- 1 -->
+<div class="science-icon">
 
-        <a href="#" class="science-card card-purple">
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8">
 
-            <div class="science-icon">
+<path d="M4 19V5"/>
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+<path d="
+M4 5
+C8 3 10 7 12 5
+C15 3 17 4 20 5
+V19
+C17 18 15 17 12 19
+C10 20 7 17 4 19
+"/>
 
-                    <path d="M4 19V5"/>
+<path d="M8 9h3"/>
+<path d="M8 12h4"/>
 
-                    <path d="
-                        M4 5
-                        C8 3 10 7 12 5
-                        C15 3 17 4 20 5
-                        V19
-                        C17 18 15 17 12 19
-                        C10 20 7 17 4 19
-                    "/>
+</svg>
 
-                    <path d="M8 9h3"/>
-                    <path d="M8 12h4"/>
+</div>
 
-                </svg>
+<h2>مكتسبات قبلية</h2>
 
-            </div>
+<p>الأساسيات الضرورية قبل بدء البرنامج</p>
 
-            <h2>
-                مكتسبات قبلية
-            </h2>
+</a>
 
-            <p>
-                الأساسيات الضرورية قبل بدء البرنامج
-            </p>
 
-        </a>
+<!-- 2 -->
 
+<a href="#" class="science-card card-pink">
 
-        <!-- 2 -->
+<div class="science-icon">
 
-        <a href="#" class="science-card card-pink">
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.7">
 
-            <div class="science-icon">
+<path d="M7 3c7 3 3 6 10 9"/>
+<path d="M17 3c-7 3-3 6-10 9"/>
+<path d="M7 21c7-3 3-6 10-9"/>
+<path d="M17 21c-7-3-3-6-10-9"/>
+<path d="M7 6h10"/>
+<path d="M7 18h10"/>
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.7">
+</svg>
 
-                    <path d="M7 3c7 3 3 6 10 9"/>
-                    <path d="M17 3c-7 3-3 6-10 9"/>
+</div>
 
-                    <path d="M7 21c7-3 3-6 10-9"/>
-                    <path d="M17 21c-7-3-3-6-10-9"/>
+<h2>تركيب البروتين</h2>
 
-                    <path d="M7 6h10"/>
-                    <path d="M7 18h10"/>
+<p>الاستنساخ والترجمة وبناء البروتين</p>
 
-                </svg>
+</a>
 
-            </div>
 
-            <h2>
-                تركيب البروتين
-            </h2>
+<!-- 3 -->
 
-            <p>
-                الاستنساخ والترجمة وبناء البروتين
-            </p>
+<a href="#" class="science-card card-green">
 
-        </a>
+<div class="science-icon">
 
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8">
 
-        <!-- 3 -->
+<circle cx="8" cy="8" r="4"/>
+<circle cx="16" cy="16" r="4"/>
+<path d="M11 11l2 2"/>
+<path d="M5 8h6"/>
+<path d="M8 5v6"/>
 
-        <a href="#" class="science-card card-green">
+</svg>
 
-            <div class="science-icon">
+</div>
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+<h2>العلاقة بين بنية ووظيفة البروتين</h2>
 
-                    <circle cx="8" cy="8" r="4"/>
+<p>البنية تحدد الوظيفة</p>
 
-                    <circle cx="16" cy="16" r="4"/>
+</a>
 
-                    <path d="M11 11l2 2"/>
 
-                    <path d="M5 8h6"/>
-                    <path d="M8 5v6"/>
+<!-- 4 -->
 
-                </svg>
+<a href="#" class="science-card card-gold">
 
-            </div>
+<div class="science-icon">
 
-            <h2>
-                العلاقة بين بنية ووظيفة البروتين
-            </h2>
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8">
 
-            <p>
-                البنية تحدد الوظيفة
-            </p>
+<path d="M7 3h10"/>
 
-        </a>
+<path d="
+M9 3v6
+L4 18
+A2 2 0 0 0 6 21
+H18
+A2 2 0 0 0 20 18
+L15 9V3
+"/>
 
+<circle cx="12" cy="15" r="2"/>
 
-        <!-- 4 -->
+</svg>
 
-        <a href="#" class="science-card card-gold">
+</div>
 
-            <div class="science-icon">
+<h2>الإنزيمات</h2>
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+<p>المحفزات الحيوية وآلية عملها</p>
 
-                    <path d="M7 3h10"/>
+</a>
 
-                    <path d="
-                        M9 3v6
-                        L4 18
-                        A2 2 0 0 0 6 21
-                        H18
-                        A2 2 0 0 0 20 18
-                        L15 9V3
-                    "/>
 
-                    <circle cx="12" cy="15" r="2"/>
+<!-- 5 -->
 
-                </svg>
+<a href="#" class="science-card card-blue">
 
-            </div>
+<div class="science-icon">
 
-            <h2>
-                الإنزيمات
-            </h2>
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8">
 
-            <p>
-                المحفزات الحيوية وآلية عملها
-            </p>
+<path d="
+M12 3
+L20 6
+V12
+C20 17 16.5 20 12 21
+C7.5 20 4 17 4 12
+V6
+Z
+"/>
 
-        </a>
+<path d="M9 12l2 2 4-5"/>
 
+</svg>
 
-        <!-- 5 -->
+</div>
 
-        <a href="#" class="science-card card-blue">
+<h2>المناعة</h2>
 
-            <div class="science-icon">
+<p>الدفاع عن العضوية والاستجابة المناعية</p>
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+</a>
 
-                    <path d="
-                        M12 3
-                        L20 6
-                        V12
-                        C20 17 16.5 20 12 21
-                        C7.5 20 4 17 4 12
-                        V6
-                        Z
-                    "/>
 
-                    <path d="M9 12l2 2 4-5"/>
+<!-- 6 -->
 
-                </svg>
+<a href="#" class="science-card card-pink">
 
-            </div>
+<div class="science-icon">
 
-            <h2>
-                المناعة
-            </h2>
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8">
 
-            <p>
-                الدفاع عن العضوية والاستجابة المناعية
-            </p>
+<circle cx="12" cy="12" r="3"/>
+<circle cx="12" cy="4" r="1.5"/>
+<circle cx="20" cy="12" r="1.5"/>
+<circle cx="12" cy="20" r="1.5"/>
+<circle cx="4" cy="12" r="1.5"/>
 
-        </a>
+<path d="M12 9V5.5"/>
+<path d="M15 12h3.5"/>
+<path d="M12 15v3.5"/>
+<path d="M9 12H5.5"/>
 
+</svg>
 
-        <!-- 6 -->
+</div>
 
-        <a href="#" class="science-card card-pink">
+<h2> الاتصال العصبي </h2>
 
-            <div class="science-icon">
+</p>نقل الرسالة العصبية</p>
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+</a>
 
-                    <circle cx="12" cy="12" r="3"/>
 
-                    <circle cx="12" cy="4" r="1.5"/>
-                    <circle cx="20" cy="12" r="1.5"/>
-                    <circle cx="12" cy="20" r="1.5"/>
-                    <circle cx="4" cy="12" r="1.5"/>
+<!-- 7 -->
 
-                    <path d="M12 9V5.5"/>
-                    <path d="M15 12h3.5"/>
-                    <path d="M12 15v3.5"/>
-                    <path d="M9 12H5.5"/>
+<a href="#" class="science-card card-green">
 
-                </svg>
+<div class="science-icon">
 
-            </div>
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8">
 
-            <h2>
-                الاتصال
-            </h2>
+<path d="
+M20 4
+C11 4 5 8 5 14
+C5 18 8 20 12 20
+C18 20 20 13 20 4
+"/>
 
-            <p>
-                الاتصال العصبي والهرموني
-            </p>
+<path d="M5 20c3-5 7-8 12-11"/>
 
-        </a>
+</svg>
 
+</div>
 
-        <!-- 7 -->
+<h2>التركيب الضوئي</h2>
 
-        <a href="#" class="science-card card-green">
+<p> تحويل الطاقة الضوئية إلى طاقة كيميائية كامنة</p>
 
-            <div class="science-icon">
+</a>
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
 
-                    <path d="
-                        M20 4
-                        C11 4 5 8 5 14
-                        C5 18 8 20 12 20
-                        C18 20 20 13 20 4
-                    "/>
+<!-- 8 -->
 
-                    <path d="M5 20c3-5 7-8 12-11"/>
+<a href="#" class="science-card card-blue">
 
-                </svg>
+<div class="science-icon">
 
-            </div>
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8">
 
-            <h2>
-                التركيب الضوئي
-            </h2>
+<path d="
+M13 2
+L5 13
+H11
+L10 22
+L19 11
+H13
+Z
+"/>
 
-            <p>
-                تحويل الطاقة الضوئية إلى طاقة كيميائية
-            </p>
+</svg>
 
-        </a>
+</div>
 
+<h2>التنفس</h2>
 
-        <!-- 8 -->
+<p>إنتاج الطاقة داخل الخلية</p>
 
-        <a href="#" class="science-card card-blue">
+</a>
 
-            <div class="science-icon">
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+<!-- 9 -->
 
-                    <path d="
-                        M13 2
-                        L5 13
-                        H11
-                        L10 22
-                        L19 11
-                        H13
-                        Z
-                    "/>
+<a href="#" class="science-card card-green">
 
-                </svg>
+<div class="science-icon">
 
-            </div>
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.6">
 
-            <h2>
-                التنفس
-            </h2>
+<circle cx="12" cy="12" r="9"/>
 
-            <p>
-                إنتاج الطاقة داخل الخلية
-            </p>
+<path d="M3.5 9h17"/>
+<path d="M4 15h16"/>
 
-        </a>
+<path d="
+M12 3
+C15 6 16 9 16 12
+C16 15 15 18 12 21
+"/>
 
+<path d="
+M12 3
+C9 6 8 9 8 12
+C8 15 9 18 12 21
+"/>
 
-        <!-- 9 -->
+</svg>
 
-        <a href="#" class="science-card card-green">
+</div>
 
-            <div class="science-icon">
+<h2>الجيولوجيا</h2>
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.6">
+<p>الأرض وبنيتها وتاريخها الجيولوجي</p>
 
-                    <circle cx="12" cy="12" r="9"/>
+</a>
 
-                    <path d="M3.5 9h17"/>
-                    <path d="M4 15h16"/>
 
-                    <path d="
-                        M12 3
-                        C15 6 16 9 16 12
-                        C16 15 15 18 12 21
-                    "/>
+<!-- 10 -->
 
-                    <path d="
-                        M12 3
-                        C9 6 8 9 8 12
-                        C8 15 9 18 12 21
-                    "/>
+<a href="#" class="science-card card-pink">
 
-                </svg>
+<div class="science-icon">
 
-            </div>
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8">
 
-            <h2>
-                الجيولوجيا
-            </h2>
+<rect x="5" y="3"
+width="14"
+height="18"
+rx="2"/>
 
-            <p>
-                الأرض وبنيتها وتاريخها الجيولوجي
-            </p>
+<path d="M8 7h8"/>
+<path d="M8 11h8"/>
+<path d="M8 15h5"/>
+<path d="M15 17l1 1 2-2"/>
 
-        </a>
+</svg>
 
+</div>
 
-        <!-- 10 -->
+<h2>مواضيع الباك</h2>
 
-        <a href="#" class="science-card card-pink">
+<p>مواضيع البكالوريا السابقة</p>
 
-            <div class="science-icon">
+</a>
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
 
-                    <rect x="5" y="3"
-                          width="14"
-                          height="18"
-                          rx="2"/>
+<!-- 11 -->
 
-                    <path d="M8 7h8"/>
-                    <path d="M8 11h8"/>
-                    <path d="M8 15h5"/>
+<a href="#" class="science-card card-purple">
 
-                    <path d="M15 17l1 1 2-2"/>
+<div class="science-icon">
 
-                </svg>
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8">
 
-            </div>
+<rect x="4" y="5"
+width="16"
+height="15"
+rx="2"/>
 
-            <h2>
-                مواضيع الباك
-            </h2>
+<path d="M8 3v4"/>
+<path d="M16 3v4"/>
+<path d="M8 11h8"/>
+<path d="M8 15h5"/>
 
-            <p>
-                مواضيع البكالوريا السابقة
-            </p>
+</svg>
 
-        </a>
+</div>
 
+<h2>بكالوريا تجريبية</h2>
 
-        <!-- 11 -->
+<p>اختبارات تجريبية للتحضير للباك</p>
 
-        <a href="#" class="science-card card-purple">
+</a>
 
-            <div class="science-icon">
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+<!-- 12 -->
 
-                    <rect x="4" y="5"
-                          width="16"
-                          height="15"
-                          rx="2"/>
+<a href="#" class="science-card card-gold">
 
-                    <path d="M8 3v4"/>
-                    <path d="M16 3v4"/>
+<div class="science-icon">
 
-                    <path d="M8 11h8"/>
-                    <path d="M8 15h5"/>
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8">
 
-                </svg>
+<path d="M8 4h8v5c0 4-2 6-4 6s-4-2-4-6Z"/>
 
-            </div>
+<path d="M8 6H4c0 4 1 6 5 6"/>
+<path d="M16 6h4c0 4-1 6-5 6"/>
 
-            <h2>
-                بكالوريا تجريبية
-            </h2>
+<path d="M12 15v4"/>
+<path d="M8 21h8"/>
 
-            <p>
-                اختبارات تجريبية للتحضير للباك
-            </p>
+</svg>
 
-        </a>
+</div>
 
+<h2>مواضيع التميز</h2>
 
-        <!-- 12 -->
+<p>تحديات للطلاب الطموحين</p>
 
-        <a href="#" class="science-card card-gold">
+</a>
 
-            <div class="science-icon">
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+<!-- 13 -->
 
-                    <path d="M8 4h8v5c0 4-2 6-4 6s-4-2-4-6Z"/>
+<a href="#" class="science-card card-green">
 
-                    <path d="M8 6H4c0 4 1 6 5 6"/>
-                    <path d="M16 6h4c0 4-1 6-5 6"/>
+<div class="science-icon">
 
-                    <path d="M12 15v4"/>
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8">
 
-                    <path d="M8 21h8"/>
+<path d="
+M12 3
+L15 7
+L20 8
+L16.5 11.5
+L17.5 17
+L12 14.5
+L6.5 17
+L7.5 11.5
+L4 8
+L9 7
+Z
+"/>
 
-                </svg>
+<path d="M9 17l-1 4"/>
+<path d="M15 17l1 4"/>
 
-            </div>
+</svg>
 
-            <h2>
-                مواضيع التميز
-            </h2>
+</div>
 
-            <p>
-                تحديات للطلاب الطموحين
-            </p>
+<h2>مواضيع أشبال الأمة</h2>
 
-        </a>
+<p>مواضيع للتدرب والتحدي</p>
 
+</a>
 
-        <!-- 13 -->
 
-        <a href="#" class="science-card card-green">
+<!-- 14 -->
 
-            <div class="science-icon">
+<a href="#" class="science-card card-pink">
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+<div class="science-icon">
 
-                    <path d="
-                        M12 3
-                        L15 7
-                        L20 8
-                        L16.5 11.5
-                        L17.5 17
-                        L12 14.5
-                        L6.5 17
-                        L7.5 11.5
-                        L4 8
-                        L9 7
-                        Z
-                    "/>
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8">
 
-                    <path d="M9 17l-1 4"/>
-                    <path d="M15 17l1 4"/>
+<path d="M12 4v16"/>
+<path d="M6 7h12"/>
+<path d="M4 7l-3 6h6Z"/>
+<path d="M20 7l-3 6h6Z"/>
+<path d="M7 20h10"/>
 
-                </svg>
+</svg>
 
-            </div>
+</div>
 
-            <h2>
-                مواضيع أشبال الأمة
-            </h2>
+<h2>سلاسل الميزان</h2>
 
-            <p>
-                مواضيع للتدرب والتحدي
-            </p>
+<p>سلاسل تدريبية متدرجة</p>
 
-        </a>
+</a>
 
 
-        <!-- 14 -->
+</section>
 
-        <a href="#" class="science-card card-pink">
 
-            <div class="science-icon">
+<a href="index.html"
+   class="science-home">
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+    ← العودة إلى الرئيسية
 
-                    <path d="M12 4v16"/>
-
-                    <path d="M6 7h12"/>
-
-                    <path d="M4 7l-3 6h6Z"/>
-
-                    <path d="M20 7l-3 6h6Z"/>
-
-                    <path d="M7 20h10"/>
-
-                </svg>
-
-            </div>
-
-            <h2>
-                سلاسل الميزان
-            </h2>
-
-            <p>
-                سلاسل تدريبية متدرجة
-            </p>
-
-        </a>
-
-
-    </section>
-
-
-    <!-- ===============================================
-         العودة
-         =============================================== -->
-
-    <a href="index.html"
-       class="science-home">
-
-        ← العودة إلى الرئيسية
-
-    </a>
+</a>
 
 
 </main>
-
 
 </body>
 
