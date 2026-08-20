@@ -397,7 +397,7 @@ nav a:hover {
 
     z-index: 99999;
 
-    display: flex;
+    display: none;
 
     overflow: hidden;
 
