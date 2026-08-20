@@ -137,4 +137,26 @@ setInterval(
     changeSocialButton,
     2000
 );
+/* =========================================
+   زر ابدأ الآن
+   ========================================= */
+
+const startButton = document.getElementById("startButton");
+const branchScene = document.getElementById("branchScene");
+
+if (startButton && branchScene) {
+
+    startButton.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        branchScene.classList.add("active");
+
+        setTimeout(function() {
+            branchScene.classList.add("show-branches");
+        }, 50);
+
+    });
+
+}
 
