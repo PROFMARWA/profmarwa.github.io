@@ -2248,3 +2248,18 @@ footer p {
         font-size: 10px;
     }
 }
+
+/* إخفاء واجهة اختيار الشعبة عند بداية الموقع */
+.branch-scene {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* إظهارها بعد الضغط على ابدأ الآن */
+.branch-scene.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
