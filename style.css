@@ -1,7 +1,7 @@
 /* =====================================================
    SCIENCE WITH PROF MARWA
    STYLE.CSS
-   النسخة النظيفة والمصلحة
+   نسخة نظيفة ومضبوطة للهاتف والكمبيوتر
    ===================================================== */
 
 * {
@@ -45,7 +45,8 @@ header {
 
     color: white;
 
-    box-shadow: 0 4px 20px rgba(70, 0, 100, 0.25);
+    box-shadow:
+        0 4px 20px rgba(70, 0, 100, 0.25);
 
     position: relative;
     z-index: 10;
@@ -94,7 +95,7 @@ nav a:hover {
 
 
 /* =====================================================
-   HERO
+   الصفحة الرئيسية
    ===================================================== */
 
 .hero {
@@ -180,7 +181,7 @@ nav a:hover {
 
 
 /* =====================================================
-   SOCIAL BUTTON
+   مواقع التواصل
    ===================================================== */
 
 .social-button-container {
@@ -216,7 +217,8 @@ nav a:hover {
             #e52c9f
         );
 
-    border: 2px solid rgba(255,255,255,0.25);
+    border:
+        2px solid rgba(255,255,255,0.25);
 
     font-size: 20px;
     font-weight: bold;
@@ -228,7 +230,9 @@ nav a:hover {
 }
 
 .social-button:hover {
-    transform: translateY(-3px) scale(1.03);
+    transform:
+        translateY(-3px)
+        scale(1.03);
 }
 
 #socialIcon {
@@ -263,7 +267,8 @@ nav a:hover {
 
     border-radius: 50%;
 
-    background: rgba(255,255,255,0.45);
+    background:
+        rgba(255,255,255,0.45);
 
     transition: 0.35s;
 }
@@ -304,18 +309,18 @@ nav a:hover {
     font-size: 22px;
     font-weight: bold;
 
-    border: none;
-
-    cursor: pointer;
-
     box-shadow:
         0 8px 25px rgba(255, 35, 170, 0.35);
 
     transition: 0.3s;
+
+    cursor: pointer;
 }
 
 .main-button:hover {
-    transform: translateY(-4px) scale(1.03);
+    transform:
+        translateY(-4px)
+        scale(1.03);
 }
 
 
@@ -392,7 +397,24 @@ nav a:hover {
 
 
 /* =====================================================
-   مشهد اختيار الشعبة
+   =====================================================
+   واجهة اختيار الشعبة
+   =====================================================
+   ===================================================== */
+
+#branchScene {
+    display: none;
+}
+
+
+/* تظهر بعد الضغط على ابدأ الآن */
+#branchScene.show-branches {
+    display: flex;
+}
+
+
+/* =====================================================
+   الخلفية
    ===================================================== */
 
 .branch-scene {
@@ -403,19 +425,20 @@ nav a:hover {
     z-index: 99999;
 
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
-    display: none;
-
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 
     overflow-y: auto;
     overflow-x: hidden;
 
+    padding:
+        35px 20px 40px;
+
     background:
         radial-gradient(
-            circle at 50% 25%,
+            circle at 50% 15%,
             rgba(255, 85, 189, 0.18),
             transparent 32%
         ),
@@ -437,36 +460,28 @@ nav a:hover {
         );
 
     color: white;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-
-    transition:
-        opacity 0.4s ease,
-        visibility 0.4s ease;
 }
 
 
 /* =====================================================
-   عند الضغط على ابدأ الآن
+   إزالة العناصر القديمة
    ===================================================== */
 
-.branch-scene.show-branches {
-    display: flex;
+.branch-scene .scene-lamp {
+    display: none !important;
+}
 
-    opacity: 1;
+.branch-scene .scene-curtain {
+    display: none !important;
+}
 
-    visibility: visible;
-
-    pointer-events: auto;
+.branch-scene::before {
+    display: none !important;
 }
 
 
 /* =====================================================
-   زخرفة نباتية
+   الزخرفة 🌿
    ===================================================== */
 
 .branch-scene::after {
@@ -474,20 +489,14 @@ nav a:hover {
 
     position: absolute;
 
-    left: 25px;
+    left: 15px;
     bottom: 15px;
 
-    font-size: 115px;
+    font-size: 110px;
 
-    opacity: 0.22;
+    opacity: 0.18;
 
     transform: rotate(-18deg);
-
-    filter:
-        drop-shadow(
-            0 8px 15px
-            rgba(0,0,0,0.25)
-        );
 
     pointer-events: none;
 
@@ -502,21 +511,22 @@ nav a:hover {
 .branch-content {
     position: relative;
 
-    z-index: 100;
+    z-index: 10;
 
-    width: min(92%, 1050px);
+    width: min(100%, 1050px);
 
     max-width: 1050px;
 
-    padding: 35px 0 30px;
+    padding:
+        10px 0 30px;
 
     text-align: center;
 
     opacity: 0;
 
     transform:
-        translateY(30px)
-        scale(0.97);
+        translateY(25px)
+        scale(0.98);
 
     transition:
         opacity 0.7s ease,
@@ -533,7 +543,7 @@ nav a:hover {
 
 
 /* =====================================================
-   عنوان اختيار الشعبة
+   العنوان
    ===================================================== */
 
 .branch-heading {
@@ -542,7 +552,7 @@ nav a:hover {
     align-items: center;
     justify-content: center;
 
-    gap: 13px;
+    gap: 14px;
 
     margin-bottom: 8px;
 
@@ -552,7 +562,7 @@ nav a:hover {
 .branch-heading i {
     color: #ff70c5;
 
-    font-size: 34px;
+    font-size: 36px;
 
     filter:
         drop-shadow(
@@ -564,7 +574,8 @@ nav a:hover {
 .branch-heading h1 {
     margin: 0;
 
-    font-size: clamp(32px, 5vw, 52px);
+    font-size:
+        clamp(35px, 5vw, 52px);
 
     color: white;
 
@@ -574,18 +585,18 @@ nav a:hover {
 }
 
 .branch-content > p {
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 
     color: #f7e3f2;
 
-    font-size: 17px;
+    font-size: 18px;
 
     line-height: 1.7;
 }
 
 
 /* =====================================================
-   البطاقات
+   البطاقات - الكمبيوتر
    ===================================================== */
 
 .branch-cards {
@@ -594,7 +605,7 @@ nav a:hover {
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
-    gap: 24px;
+    gap: 25px;
 
     width: 100%;
 
@@ -603,20 +614,22 @@ nav a:hover {
 
 
 /* =====================================================
-   بطاقة الشعبة
+   البطاقة
    ===================================================== */
 
 .branch-card {
     position: relative;
 
-    min-height: 300px;
+    min-height: 320px;
 
-    padding: 28px 22px 25px;
+    padding:
+        30px 25px 27px;
 
     background:
         rgba(255,255,255,0.96);
 
-    border: 2px solid
+    border:
+        2px solid
         rgba(255,255,255,0.85);
 
     border-radius: 26px;
@@ -629,6 +642,8 @@ nav a:hover {
 
     overflow: hidden;
 
+    text-align: center;
+
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
@@ -636,7 +651,6 @@ nav a:hover {
 
 
 /* الخط العلوي */
-
 .branch-card::before {
     content: "";
 
@@ -651,7 +665,6 @@ nav a:hover {
 
 
 /* علوم */
-
 .branch-card.science::before {
     background:
         linear-gradient(
@@ -663,7 +676,6 @@ nav a:hover {
 
 
 /* رياضيات */
-
 .branch-card.maths::before {
     background:
         linear-gradient(
@@ -674,24 +686,16 @@ nav a:hover {
 }
 
 
-.branch-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 24px 50px
-        rgba(0,0,0,0.28);
-}
-
-
 /* =====================================================
    أيقونات الشعب
    ===================================================== */
 
 .branch-icon {
-    width: 72px;
-    height: 72px;
+    width: 75px;
+    height: 75px;
 
-    margin: 0 auto 17px;
+    margin:
+        0 auto 18px;
 
     display: flex;
 
@@ -702,7 +706,7 @@ nav a:hover {
 
     color: white;
 
-    font-size: 32px;
+    font-size: 34px;
 
     box-shadow:
         0 10px 22px
@@ -711,7 +715,6 @@ nav a:hover {
 
 
 /* علوم */
-
 .branch-card.science .branch-icon {
     background:
         linear-gradient(
@@ -727,7 +730,6 @@ nav a:hover {
 
 
 /* رياضيات */
-
 .branch-card.maths .branch-icon {
     background:
         linear-gradient(
@@ -743,32 +745,32 @@ nav a:hover {
 
 
 /* =====================================================
-   عناوين البطاقات
+   عنوان البطاقة
    ===================================================== */
 
 .branch-card h2 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 
     color: #54206d;
 
-    font-size: 25px;
+    font-size: 26px;
 
     font-weight: 800;
 }
 
 
 /* =====================================================
-   وصف البطاقات
+   وصف البطاقة
    ===================================================== */
 
 .branch-card p {
-    min-height: 55px;
+    min-height: 58px;
 
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 
     color: #66506b;
 
-    font-size: 15px;
+    font-size: 16px;
 
     line-height: 1.8;
 }
@@ -789,7 +791,7 @@ nav a:hover {
 
     color: white;
 
-    font-size: 16px;
+    font-size: 17px;
 
     font-weight: bold;
 
@@ -802,7 +804,6 @@ nav a:hover {
 
 
 /* علوم */
-
 .branch-card.science button {
     background:
         linear-gradient(
@@ -818,7 +819,6 @@ nav a:hover {
 
 
 /* رياضيات */
-
 .branch-card.maths button {
     background:
         linear-gradient(
@@ -832,6 +832,7 @@ nav a:hover {
         rgba(231,43,159,0.30);
 }
 
+
 .branch-card button:hover {
     transform:
         translateY(-3px)
@@ -844,13 +845,15 @@ nav a:hover {
    ===================================================== */
 
 .branch-quote {
-    margin-top: 25px;
+    margin-top: 27px;
 
     color: #f7e3f2;
 
     font-size: 17px;
 
     font-weight: bold;
+
+    line-height: 1.7;
 
     text-shadow:
         0 2px 8px
@@ -869,10 +872,10 @@ nav a:hover {
     justify-content: center;
 
     width: 220px;
-
     height: 52px;
 
-    margin: 20px auto 0;
+    margin:
+        20px auto 0;
 
     border-radius: 15px;
 
@@ -903,7 +906,12 @@ nav a:hover {
 }
 
 .home-return:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,0.30);
 }
 
 
@@ -1038,7 +1046,8 @@ footer p {
     header {
         min-height: 70px;
 
-        padding: 12px 15px;
+        padding:
+            12px 15px;
 
         flex-direction: row;
 
@@ -1047,7 +1056,6 @@ footer p {
 
     .logo {
         font-size: 14px;
-
         gap: 6px;
     }
 
@@ -1060,7 +1068,9 @@ footer p {
     }
 
 
-    /* HERO */
+    /* =========================
+       الصفحة الرئيسية
+       ========================= */
 
     .hero {
         min-height:
@@ -1076,28 +1086,19 @@ footer p {
 
     .welcome {
         font-size: 30px;
-
-        margin-bottom: 12px;
     }
 
     .hero h1 {
         font-size: 48px;
-
         line-height: 1.05;
-
-        margin-bottom: 24px;
     }
 
     .hero h2 {
         font-size: 25px;
-
-        margin-bottom: 18px;
     }
 
     .subtitle {
         font-size: 19px;
-
-        margin-bottom: 28px;
     }
 
 
@@ -1118,7 +1119,7 @@ footer p {
     }
 
 
-    /* ابدأ */
+    /* زر ابدأ */
 
     .main-button {
         padding:
@@ -1162,126 +1163,184 @@ footer p {
 
 
     /* =================================================
-       اختيار الشعب
+       واجهة اختيار الشعبة - الهاتف
        ================================================= */
 
     .branch-scene {
-        align-items: flex-start;
+        position: fixed;
 
-        padding-top: 20px;
-    }
+        inset: 0;
 
-    .branch-content {
-        width: 94%;
+        width: 100%;
+        height: 100vh;
 
         padding:
-            25px 0 25px;
+            25px 15px 30px;
+
+        align-items: flex-start;
+
+        overflow-y: auto;
     }
+
+
+    .branch-content {
+        width: 100%;
+
+        max-width: 480px;
+
+        padding:
+            5px 0 25px;
+    }
+
+
+    /* العنوان */
 
     .branch-heading {
         gap: 8px;
 
-        margin-bottom: 6px;
+        margin-bottom: 8px;
     }
 
     .branch-heading i {
-        font-size: 25px;
+        font-size: 27px;
     }
 
     .branch-heading h1 {
-        font-size: 31px;
+        font-size: 32px;
+
+        line-height: 1.3;
     }
 
     .branch-content > p {
-        font-size: 13px;
+        font-size: 14px;
 
-        margin-bottom: 18px;
+        line-height: 1.8;
+
+        margin:
+            0 auto 22px;
+
+        max-width: 350px;
     }
+
+
+    /* =================================================
+       البطاقات على الهاتف
+       مهم جدًا:
+       بطاقة واحدة في كل سطر
+       ================================================= */
 
     .branch-cards {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        display: flex;
 
-        gap: 10px;
+        flex-direction: column;
+
+        gap: 18px;
+
+        width: 100%;
     }
+
 
     .branch-card {
-        min-height: 255px;
+        width: 100%;
+
+        min-height: auto;
 
         padding:
-            18px 8px 15px;
+            22px 18px 20px;
 
-        border-radius: 19px;
+        border-radius: 22px;
     }
+
+
+    /* الأيقونة */
 
     .branch-icon {
-        width: 56px;
-        height: 56px;
+        width: 62px;
+        height: 62px;
 
-        margin-bottom: 11px;
+        margin:
+            0 auto 12px;
 
-        border-radius: 17px;
+        border-radius: 19px;
 
-        font-size: 25px;
+        font-size: 27px;
     }
+
+
+    /* العنوان */
 
     .branch-card h2 {
-        font-size: 21px;
+        font-size: 22px;
 
-        margin-bottom: 7px;
+        margin-bottom: 8px;
     }
+
+
+    /* الوصف */
 
     .branch-card p {
-        min-height: 65px;
+        min-height: auto;
 
-        margin-bottom: 12px;
+        margin:
+            0 auto 16px;
+
+        max-width: 330px;
 
         font-size: 14px;
 
-        line-height: 1.65;
+        line-height: 1.8;
     }
+
+
+    /* الزر */
 
     .branch-card button {
-        width: 96%;
+        width: 90%;
 
-        padding: 11px 4px;
+        padding:
+            12px 10px;
 
-        font-size: 14px;
+        font-size: 15px;
     }
+
+
+    /* العبارة */
 
     .branch-quote {
-        margin-top: 15px;
+        margin-top: 20px;
 
-        font-size: 14px;
+        font-size: 13px;
 
-        line-height: 1.7;
+        line-height: 1.8;
+
+        padding:
+            0 10px;
     }
+
+
+    /* زر العودة */
 
     .home-return {
-        width: 200px;
+        width: 205px;
 
-        height: 48px;
+        height: 49px;
 
-        margin-top: 15px;
+        margin-top: 17px;
 
-        font-size: 14px;
+        font-size: 15px;
     }
 
+
+    /* الزخرفة */
+
     .branch-scene::after {
-        left: -15px;
+        left: -20px;
 
         bottom: 5px;
 
         font-size: 75px;
 
-        opacity: 0.18;
-    }
-
-
-    /* البطاقات القديمة */
-
-    .cards {
-        grid-template-columns: 1fr;
+        opacity: 0.14;
     }
 }
 
@@ -1313,11 +1372,13 @@ footer p {
         font-size: 17px;
     }
 
+
     .social-button {
         min-width: 90%;
 
         font-size: 16px;
     }
+
 
     .main-button {
         font-size: 18px;
@@ -1325,6 +1386,7 @@ footer p {
         padding:
             14px 30px;
     }
+
 
     .stats-box {
         width: 94%;
@@ -1339,62 +1401,85 @@ footer p {
     }
 
 
-    /* اختيار الشعب */
+    /* واجهة الشعب */
+
+    .branch-scene {
+        padding:
+            20px 10px 25px;
+    }
 
     .branch-content {
-        width: 95%;
+        width: 100%;
     }
 
     .branch-heading h1 {
-        font-size: 27px;
+        font-size: 28px;
     }
 
     .branch-heading i {
-        font-size: 22px;
+        font-size: 23px;
     }
 
     .branch-content > p {
+        font-size: 12px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .branch-cards {
+        gap: 14px;
+    }
+
+
+    .branch-card {
+        padding:
+            18px 13px 17px;
+
+        border-radius: 20px;
+    }
+
+
+    .branch-icon {
+        width: 56px;
+        height: 56px;
+
+        font-size: 24px;
+    }
+
+
+    .branch-card h2 {
+        font-size: 20px;
+    }
+
+
+    .branch-card p {
+        font-size: 13px;
+
+        line-height: 1.75;
+    }
+
+
+    .branch-card button {
+        width: 94%;
+
+        font-size: 14px;
+
+        padding:
+            11px 7px;
+    }
+
+
+    .branch-quote {
         font-size: 11px;
     }
 
-    .branch-cards {
-        gap: 7px;
-    }
 
-    .branch-card {
-        min-height: 235px;
+    .home-return {
+        width: 190px;
 
-        padding:
-            15px 5px 12px;
-    }
+        height: 46px;
 
-    .branch-icon {
-        width: 49px;
-        height: 49px;
-
-        font-size: 21px;
-
-        border-radius: 15px;
-    }
-
-    .branch-card h2 {
-        font-size: 16px;
-    }
-
-    .branch-card p {
-        font-size: 10px;
-
-        min-height: 62px;
-    }
-
-    .branch-card button {
-        font-size: 10px;
-
-        padding:
-            9px 2px;
-    }
-
-    .branch-quote {
-        font-size: 10px;
+        font-size: 14px;
     }
 }
