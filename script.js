@@ -143,13 +143,15 @@ const branchScene = document.getElementById("branchScene");
 
 if (startButton && branchScene) {
 
-    startButton.addEventListener("click", function(e) {
+    startButton.addEventListener("click", function(event) {
 
-        e.preventDefault();
+        event.preventDefault();
 
         branchScene.style.display = "flex";
 
         branchScene.classList.add("show-branches");
+
+        document.body.style.overflow = "hidden";
 
     });
 
