@@ -138,4 +138,3 @@ setInterval(
     2000
 );
 
-
