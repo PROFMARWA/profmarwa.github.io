@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>مواضيع البكالوريا | علوم تجريبية</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: #17051f;
+}
+
+
+/* ===============================
+   الصفحة
+================================ */
+
+.bac-page {
+
+    min-height: 100vh;
+
+    padding: 45px 20px 70px;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255, 55, 190, .28),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 25%,
+            rgba(75, 255, 175, .18),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(130, 35, 210, .28),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            135deg,
+            #16051f,
+            #2b0644,
+            #3d0755,
+            #180622
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* ===============================
+   العنوان
+================================ */
+
+.bac-header {
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+    margin: 0 auto 38px;
+}
+
+.bac-title {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    font-size: clamp(34px, 7vw, 55px);
+
+    font-weight: 900;
+
+    color: white;
+
+    margin-bottom: 18px;
+}
+
+.bac-title i {
+
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 24px;
+
+    font-size: 34px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff36ad,
+            #ff55bd,
+            #b63cff
+        );
+
+    box-shadow:
+        0 0 25px rgba(255, 50, 180, .35);
+}
+
+
+.bac-stream {
+
+    font-size: 28px;
+
+    font-weight: 900;
+
+    color: #5dffb1;
+
+    margin-bottom: 22px;
+}
+
+
+.bac-description {
+
+    color: #f2dff3;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+}
+
+
+/* ===============================
+   شريط العناوين
+================================ */
+
+.bac-tabs {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 0 auto 20px;
+
+    padding: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    overflow: hidden;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3bc895,
+            #7e3ec7,
+            #df219e
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.25);
+}
+
+.bac-tabs div {
+
+    padding: 18px 8px;
+
+    text-align: center;
+
+    font-size: 19px;
+
+    font-weight: 900;
+
+    color: white;
+}
+
+
+/* ===============================
+   قائمة السنوات
+================================ */
+
+.bac-list {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ===============================
+   بطاقة السنة
+================================ */
+
+.bac-item {
+
+    min-height: 120px;
+
+    margin-bottom: 25px;
+
+    padding: 18px 16px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background:
+        rgba(255,255,255,.94);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.22);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.bac-item:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 35px rgba(0,0,0,.30);
+}
+
+
+/* ===============================
+   السنة
+================================ */
+
+.bac-year {
+
+    color: #542075;
+
+    font-size: 23px;
+
+    font-weight: 900;
+
+    text-align: center;
+}
+
+
+/* ===============================
+   الأزرار
+================================ */
+
+.bac-btn {
+
+    min-height: 62px;
+
+    padding: 12px 15px;
+
+    border-radius: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.bac-btn:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.02);
+}
+
+
+/* المواضيع */
+
+.topics-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ec209b,
+            #ff54bd
+        );
+
+    box-shadow:
+        0 8px 20px rgba(235,30,155,.22);
+}
+
+
+/* التصحيح */
+
+.correction-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #39c58e,
+            #69dcae
+        );
+
+    box-shadow:
+        0 8px 20px rgba(45,195,140,.22);
+}
+
+
+/* ===============================
+   النص أسفل الصفحة
+================================ */
+
+.bac-footer-text {
+
+    text-align: center;
+
+    margin: 35px auto 30px;
+
+    color: #f3e4f5;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.bac-footer-text span {
+
+    color: #ffd84d;
+
+    font-size: 25px;
+}
+
+
+/* ===============================
+   العودة
+================================ */
+
+.bac-back {
+
+    display: block;
+
+    width: 280px;
+
+    margin: 0 auto;
+
+    padding: 17px 20px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #38c894,
+            #743cc5,
+            #df249e
+        );
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.25);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.bac-back:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.02);
+}
+
+
+/* ===============================
+   الهاتف
+================================ */
+
+@media (max-width: 600px) {
+
+    .bac-page {
+
+        padding:
+            35px 12px 55px;
+    }
+
+    .bac-title {
+
+        font-size: 31px;
+
+        gap: 11px;
+    }
+
+    .bac-title i {
+
+        width: 62px;
+        height: 62px;
+
+        border-radius: 20px;
+
+        font-size: 28px;
+    }
+
+    .bac-stream {
+
+        font-size: 25px;
+    }
+
+    .bac-description {
+
+        font-size: 16px;
+    }
+
+    .bac-tabs {
+
+        border-radius: 35px;
+    }
+
+    .bac-tabs div {
+
+        padding: 17px 5px;
+
+        font-size: 16px;
+    }
+
+    .bac-item {
+
+        min-height: 110px;
+
+        padding: 14px 10px;
+
+        gap: 8px;
+
+        border-radius: 24px;
+    }
+
+    .bac-year {
+
+        font-size: 19px;
+    }
+
+    .bac-btn {
+
+        min-height: 58px;
+
+        padding: 10px 5px;
+
+        font-size: 14px;
+
+        gap: 5px;
+    }
+
+    .bac-btn i {
+
+        font-size: 13px;
+    }
+
+    .bac-footer-text {
+
+        font-size: 16px;
+    }
+
+    .bac-back {
+
+        width: 245px;
+
+        font-size: 16px;
+    }
+}
+
+
+/* ===============================
+   الهواتف الصغيرة
+================================ */
+
+@media (max-width: 380px) {
+
+    .bac-page {
+
+        padding:
+            28px 8px 45px;
+    }
+
+    .bac-title {
+
+        font-size: 27px;
+    }
+
+    .bac-title i {
+
+        width: 55px;
+        height: 55px;
+
+        font-size: 24px;
+    }
+
+    .bac-stream {
+
+        font-size: 22px;
+    }
+
+    .bac-description {
+
+        font-size: 14px;
+    }
+
+    .bac-item {
+
+        padding: 12px 7px;
+
+        margin-bottom: 17px;
+    }
+
+    .bac-year {
+
+        font-size: 17px;
+    }
+
+    .bac-btn {
+
+        font-size: 12px;
+
+        min-height: 52px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<main class="bac-page">
+
+
+<header class="bac-header">
+
+    <h1 class="bac-title">
+
+        مواضيع البكالوريا
+
+        <i class="fa-solid fa-graduation-cap"></i>
+
+    </h1>
+
+    <div class="bac-stream">
+        علوم تجريبية
+    </div>
+
+    <p class="bac-description">
+        اختر السنة للوصول إلى موضوع البكالوريا أو تصحيحه
+    </p>
+
+</header>
+
+
+<section class="bac-list">
+
+
+<div class="bac-tabs">
+
+    <div>السنة</div>
+
+    <div>المواضيع</div>
+
+    <div>التصحيح</div>
+
+</div>
+
+
+<!-- 2026 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2026
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2025 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2025
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2024 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2024
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2023 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2023
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2022 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2022
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2021 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2021
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2020 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2020
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2019 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2019
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2018 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2018
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2017 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2017
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2016 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2016
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2015 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2015
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2014 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2014
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2013 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2013
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2012 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2012
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2011 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2011
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2010 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2010
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2009 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2009
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+<!-- 2008 -->
+
+<div class="bac-item">
+
+    <div class="bac-year">
+        بكالوريا 2008
+    </div>
+
+    <a href="#"
+       class="bac-btn topics-btn">
+
+        المواضيع
+        <i class="fa-solid fa-file-pdf"></i>
+
+    </a>
+
+    <a href="#"
+       class="bac-btn correction-btn">
+
+        التصحيح
+        <i class="fa-solid fa-circle-check"></i>
+
+    </a>
+
+</div>
+
+
+</section>
+
+
+<div class="bac-footer-text">
+
+    <span>🏆</span>
+
+    💡كل موضوع تنجزه يقربك خطوة من النجاح
+
+</div>
+
+
+<a href="science.html"
+   class="bac-back">
+
+    ← العودة إلى علوم تجريبية
+
+</a>
+
+
+</main>
+
+</body>
+
+</html>
