@@ -2519,3 +2519,476 @@ footer p {
         translateY(-4px)
         scale(1.02);
 }
+
+/* =========================================================
+   🎓 صفحة مواضيع البكالوريا
+   ========================================================= */
+
+.bac-page {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 80, 190, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(60, 220, 150, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #120528,
+            #2b0750,
+            #541077
+        );
+
+    color: white;
+}
+
+
+/* =========================================================
+   المحتوى
+   ========================================================= */
+
+.bac-container {
+    width: min(94%, 950px);
+
+    margin: 0 auto;
+
+    padding:
+        45px 0 60px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   العنوان
+   ========================================================= */
+
+.bac-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-bottom: 8px;
+}
+
+.bac-title-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e72b9f,
+            #ff82cd
+        );
+
+    font-size: 27px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(231,43,159,0.35);
+}
+
+.bac-heading h1 {
+    margin: 0;
+
+    font-size:
+        clamp(30px, 5vw, 48px);
+
+    color: white;
+}
+
+
+.bac-subtitle {
+    margin: 8px 0;
+
+    color: #72e4a9;
+
+    font-size: 26px;
+
+    font-weight: bold;
+}
+
+
+.bac-description {
+    margin-bottom: 30px;
+
+    color: #f5dff1;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   عناوين الأعمدة
+   ========================================================= */
+
+.bac-head-row {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 10px;
+
+    padding:
+        13px 18px;
+
+    color: white;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(53,189,130,0.75),
+            rgba(113,48,168,0.75),
+            rgba(231,43,159,0.75)
+        );
+
+    border-radius: 18px;
+}
+
+
+/* =========================================================
+   صف السنة
+   ========================================================= */
+
+.bac-year {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 1fr 1fr;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+
+    padding: 15px;
+
+    background:
+        rgba(255,255,255,0.94);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.8);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 28px
+        rgba(0,0,0,0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.bac-year:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.25);
+}
+
+
+/* =========================================================
+   اسم السنة
+   ========================================================= */
+
+.bac-year-name {
+    color: #54206d;
+
+    font-size: 19px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   أزرار المواضيع والتصحيح
+   ========================================================= */
+
+.bac-button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 48px;
+
+    padding:
+        10px 12px;
+
+    border-radius: 25px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.bac-button:hover {
+    transform:
+        translateY(-3px)
+        scale(1.02);
+}
+
+
+/* 🩷 المواضيع */
+
+.bac-button.subject {
+    background:
+        linear-gradient(
+            90deg,
+            #e72b9f,
+            #ff72c4
+        );
+
+    box-shadow:
+        0 6px 18px
+        rgba(231,43,159,0.25);
+}
+
+
+/* 💚 التصحيح */
+
+.bac-button.correction {
+    background:
+        linear-gradient(
+            90deg,
+            #35bd82,
+            #70dda8
+        );
+
+    box-shadow:
+        0 6px 18px
+        rgba(53,189,130,0.25);
+}
+
+
+/* =========================================================
+   العبارة
+   ========================================================= */
+
+.bac-quote {
+    margin-top: 30px;
+
+    color: #f7e3f2;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   أزرار العودة
+   ========================================================= */
+
+.bac-back,
+.bac-home {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: min(90%, 330px);
+
+    min-height: 50px;
+
+    margin:
+        18px auto 0;
+
+    border-radius: 28px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.bac-back {
+    background:
+        linear-gradient(
+            90deg,
+            #35bd82,
+            #7130a8,
+            #e72b9f
+        );
+
+    box-shadow:
+        0 8px 22px
+        rgba(231,43,159,0.25);
+}
+
+
+.bac-home {
+    background:
+        rgba(255,255,255,0.12);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.3);
+}
+
+
+.bac-back:hover,
+.bac-home:hover {
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   📱 الهاتف
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .bac-container {
+        width: 94%;
+
+        padding:
+            30px 0 45px;
+    }
+
+
+    .bac-heading {
+        gap: 9px;
+    }
+
+
+    .bac-title-icon {
+        width: 48px;
+        height: 48px;
+
+        border-radius: 15px;
+
+        font-size: 22px;
+    }
+
+
+    .bac-heading h1 {
+        font-size: 29px;
+    }
+
+
+    .bac-subtitle {
+        font-size: 22px;
+    }
+
+
+    .bac-description {
+        font-size: 13px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .bac-head-row {
+        grid-template-columns:
+            1.1fr 1fr 1fr;
+
+        gap: 6px;
+
+        padding:
+            10px 6px;
+
+        font-size: 12px;
+    }
+
+
+    .bac-year {
+        grid-template-columns:
+            1.1fr 1fr 1fr;
+
+        gap: 6px;
+
+        padding: 10px 7px;
+
+        border-radius: 16px;
+    }
+
+
+    .bac-year-name {
+        font-size: 13px;
+    }
+
+
+    .bac-button {
+        min-height: 43px;
+
+        padding:
+            8px 4px;
+
+        gap: 4px;
+
+        border-radius: 22px;
+
+        font-size: 11px;
+    }
+
+
+    .bac-button i {
+        font-size: 12px;
+    }
+
+
+    .bac-quote {
+        margin-top: 22px;
+
+        font-size: 13px;
+    }
+
+
+    .bac-back,
+    .bac-home {
+        width: 85%;
+
+        min-height: 47px;
+
+        font-size: 14px;
+    }
+}
