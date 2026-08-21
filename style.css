@@ -2485,3 +2485,37 @@ footer p {
         font-size: 14px;
     }
 }
+/* =========================================================
+   🌈 زر العودة إلى الرئيسية - اللون النهائي
+   أخضر + بنفسجي + وردي
+   ========================================================= */
+
+.home-return {
+    background: linear-gradient(
+        90deg,
+        #35bd82 0%,
+        #7130a8 50%,
+        #e72b9f 100%
+    ) !important;
+
+    color: #ffffff !important;
+
+    border: 2px solid rgba(255, 255, 255, 0.55) !important;
+
+    box-shadow:
+        0 8px 25px rgba(231, 43, 159, 0.25),
+        0 8px 25px rgba(53, 189, 130, 0.20) !important;
+}
+
+.home-return:hover {
+    background: linear-gradient(
+        90deg,
+        #42d994 0%,
+        #813bc0 50%,
+        #f23aaa 100%
+    ) !important;
+
+    transform:
+        translateY(-4px)
+        scale(1.02);
+}
