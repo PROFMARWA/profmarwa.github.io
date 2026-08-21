@@ -2176,3 +2176,312 @@ footer p {
         margin: 15px auto 0 !important;
     }
 }
+/* =========================================================
+   🌸 المعلومات الإضافية أسفل بطاقات الشعب
+   ========================================================= */
+
+.branch-extra {
+    width: 100%;
+    margin: 30px auto 0;
+
+    padding: 22px 18px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 2px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.18);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   العنصر
+   ========================================================= */
+
+.extra-item {
+    position: relative;
+
+    text-align: center;
+
+    padding: 5px 15px;
+
+    border-left: 1px solid rgba(120, 50, 130, 0.18);
+}
+
+.extra-item:last-child {
+    border-left: none;
+}
+
+
+/* =========================================================
+   الأيقونة
+   ========================================================= */
+
+.extra-icon {
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 9px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-size: 21px;
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+/* وردي */
+
+.extra-icon.pink {
+    background:
+        linear-gradient(
+            135deg,
+            #e72b9f,
+            #ff86cd
+        );
+}
+
+
+/* أخضر */
+
+.extra-icon.green {
+    background:
+        linear-gradient(
+            135deg,
+            #35bd82,
+            #75dfa9
+        );
+}
+
+
+/* بنفسجي */
+
+.extra-icon.purple {
+    background:
+        linear-gradient(
+            135deg,
+            #7030a8,
+            #a64bc8
+        );
+}
+
+
+/* =========================================================
+   العنوان
+   ========================================================= */
+
+.extra-item h3 {
+    margin: 4px 0 5px;
+
+    color: #54206d;
+
+    font-size: 17px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   الوصف
+   ========================================================= */
+
+.extra-item p {
+    margin: 0;
+
+    color: #705d73;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   🌈 زر العودة بتدرج أخضر + بنفسجي + وردي
+   ========================================================= */
+
+.home-return {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 240px;
+    height: 55px;
+
+    margin: 25px auto 0;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #35bd82 0%,
+            #7130a8 50%,
+            #e72b9f 100%
+        );
+
+    border: 2px solid rgba(255, 255, 255, 0.45);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 24px rgba(90, 30, 120, 0.28);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.home-return:hover {
+    transform:
+        translateY(-4px)
+        scale(1.02);
+
+    box-shadow:
+        0 12px 30px rgba(90, 30, 120, 0.38);
+}
+
+
+/* =========================================================
+   📱 الهاتف
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .branch-extra {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 0;
+
+        margin-top: 22px;
+
+        padding:
+            17px 5px;
+
+        border-radius: 20px;
+    }
+
+
+    .extra-item {
+
+        padding:
+            3px 4px;
+    }
+
+
+    .extra-icon {
+
+        width: 43px;
+        height: 43px;
+
+        font-size: 17px;
+
+        margin-bottom: 7px;
+    }
+
+
+    .extra-item h3 {
+
+        font-size: 12px;
+
+        margin-bottom: 4px;
+    }
+
+
+    .extra-item p {
+
+        font-size: 9px;
+
+        line-height: 1.5;
+    }
+
+
+    .home-return {
+
+        width: 210px;
+
+        height: 50px;
+
+        margin-top: 20px;
+
+        font-size: 15px;
+
+        border-radius: 16px;
+    }
+}
+
+
+/* =========================================================
+   📱 الهواتف الصغيرة جدًا
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .branch-extra {
+
+        padding:
+            14px 3px;
+
+        border-radius: 17px;
+    }
+
+
+    .extra-icon {
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 15px;
+    }
+
+
+    .extra-item h3 {
+
+        font-size: 10px;
+    }
+
+
+    .extra-item p {
+
+        font-size: 8px;
+    }
+
+
+    .home-return {
+
+        width: 195px;
+
+        height: 47px;
+
+        font-size: 14px;
+    }
+}
