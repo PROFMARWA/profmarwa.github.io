@@ -2522,10 +2522,12 @@ footer p {
 
 /* =========================================================
    🎓 صفحة مواضيع البكالوريا
+   Science with Prof Marwa
    ========================================================= */
 
 .bac-page {
     min-height: 100vh;
+    width: 100%;
 
     background:
         radial-gradient(
@@ -2546,6 +2548,8 @@ footer p {
         );
 
     color: white;
+
+    overflow-x: hidden;
 }
 
 
@@ -2559,7 +2563,7 @@ footer p {
     margin: 0 auto;
 
     padding:
-        45px 0 60px;
+        35px 0 55px;
 
     text-align: center;
 }
@@ -2573,10 +2577,9 @@ footer p {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    gap: 14px;
+    gap: 12px;
 
     margin-bottom: 8px;
 }
@@ -2613,11 +2616,17 @@ footer p {
         clamp(30px, 5vw, 48px);
 
     color: white;
+
+    line-height: 1.3;
 }
 
 
+/* =========================================================
+   الشعبة
+   ========================================================= */
+
 .bac-subtitle {
-    margin: 8px 0;
+    margin: 8px 0 10px;
 
     color: #72e4a9;
 
@@ -2627,57 +2636,72 @@ footer p {
 }
 
 
+/* =========================================================
+   الوصف
+   ========================================================= */
+
 .bac-description {
-    margin-bottom: 30px;
+    margin:
+        0 auto 28px;
 
     color: #f5dff1;
 
     font-size: 16px;
+
+    line-height: 1.8;
 }
 
 
 /* =========================================================
-   عناوين الأعمدة
+   رأس الجدول
    ========================================================= */
 
 .bac-head-row {
     display: grid;
 
     grid-template-columns:
-        1.2fr 1fr 1fr;
+        1.25fr 1fr 1fr;
 
     gap: 12px;
 
-    margin-bottom: 10px;
+    align-items: center;
+
+    margin-bottom: 12px;
 
     padding:
         13px 18px;
 
-    color: white;
-
-    font-weight: bold;
-
     background:
         linear-gradient(
             90deg,
-            rgba(53,189,130,0.75),
-            rgba(113,48,168,0.75),
-            rgba(231,43,159,0.75)
+            rgba(53,189,130,0.85),
+            rgba(113,48,168,0.85),
+            rgba(231,43,159,0.85)
         );
 
     border-radius: 18px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 22px
+        rgba(0,0,0,0.15);
 }
 
 
 /* =========================================================
-   صف السنة
+   صف كل سنة
    ========================================================= */
 
 .bac-year {
     display: grid;
 
     grid-template-columns:
-        1.2fr 1fr 1fr;
+        1.25fr 1fr 1fr;
 
     align-items: center;
 
@@ -2685,14 +2709,14 @@ footer p {
 
     margin-bottom: 14px;
 
-    padding: 15px;
+    padding: 14px;
 
     background:
-        rgba(255,255,255,0.94);
+        rgba(255,255,255,0.96);
 
     border:
         1px solid
-        rgba(255,255,255,0.8);
+        rgba(255,255,255,0.9);
 
     border-radius: 20px;
 
@@ -2706,7 +2730,8 @@ footer p {
 }
 
 .bac-year:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
         0 15px 35px
@@ -2724,21 +2749,22 @@ footer p {
     font-size: 19px;
 
     font-weight: 800;
+
+    white-space: nowrap;
 }
 
 
 /* =========================================================
-   أزرار المواضيع والتصحيح
+   أزرار الباك
    ========================================================= */
 
 .bac-button {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    gap: 8px;
+    gap: 7px;
 
     min-height: 48px;
 
@@ -2755,11 +2781,12 @@ footer p {
 
     font-weight: bold;
 
+    cursor: pointer;
+
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
 }
-
 
 .bac-button:hover {
     transform:
@@ -2768,7 +2795,9 @@ footer p {
 }
 
 
-/* 🩷 المواضيع */
+/* =========================================================
+   🩷 زر المواضيع
+   ========================================================= */
 
 .bac-button.subject {
     background:
@@ -2784,7 +2813,9 @@ footer p {
 }
 
 
-/* 💚 التصحيح */
+/* =========================================================
+   💚 زر التصحيح
+   ========================================================= */
 
 .bac-button.correction {
     background:
@@ -2801,22 +2832,25 @@ footer p {
 
 
 /* =========================================================
-   العبارة
+   العبارة أسفل السنوات
    ========================================================= */
 
 .bac-quote {
-    margin-top: 30px;
+    margin:
+        28px auto 0;
 
     color: #f7e3f2;
 
     font-size: 17px;
 
     font-weight: bold;
+
+    line-height: 1.8;
 }
 
 
 /* =========================================================
-   أزرار العودة
+   زر العودة إلى علوم تجريبية
    ========================================================= */
 
 .bac-back,
@@ -2824,7 +2858,6 @@ footer p {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     width: min(90%, 330px);
@@ -2845,9 +2878,12 @@ footer p {
     font-weight: bold;
 
     transition:
-        transform 0.25s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
+
+/* العودة إلى علوم تجريبية */
 
 .bac-back {
     background:
@@ -2864,6 +2900,8 @@ footer p {
 }
 
 
+/* الرئيسية */
+
 .bac-home {
     background:
         rgba(255,255,255,0.12);
@@ -2873,11 +2911,14 @@ footer p {
         rgba(255,255,255,0.3);
 }
 
-
 .bac-back:hover,
 .bac-home:hover {
     transform:
         translateY(-3px);
+
+    box-shadow:
+        0 12px 28px
+        rgba(0,0,0,0.25);
 }
 
 
@@ -2891,104 +2932,217 @@ footer p {
         width: 94%;
 
         padding:
-            30px 0 45px;
+            25px 0 45px;
     }
 
+
+    /* العنوان */
 
     .bac-heading {
-        gap: 9px;
+        gap: 8px;
+
+        margin-bottom: 6px;
     }
 
-
     .bac-title-icon {
-        width: 48px;
-        height: 48px;
+        width: 47px;
+        height: 47px;
 
         border-radius: 15px;
 
-        font-size: 22px;
+        font-size: 21px;
     }
-
 
     .bac-heading h1 {
         font-size: 29px;
     }
 
 
+    /* علوم تجريبية */
+
     .bac-subtitle {
         font-size: 22px;
+
+        margin-top: 6px;
     }
 
+
+    /* الوصف */
 
     .bac-description {
         font-size: 13px;
 
-        margin-bottom: 22px;
+        line-height: 1.8;
+
+        margin-bottom: 20px;
     }
 
+
+    /* رأس الجدول */
 
     .bac-head-row {
         grid-template-columns:
-            1.1fr 1fr 1fr;
+            1.15fr 1fr 1fr;
 
-        gap: 6px;
-
-        padding:
-            10px 6px;
-
-        font-size: 12px;
-    }
-
-
-    .bac-year {
-        grid-template-columns:
-            1.1fr 1fr 1fr;
-
-        gap: 6px;
-
-        padding: 10px 7px;
-
-        border-radius: 16px;
-    }
-
-
-    .bac-year-name {
-        font-size: 13px;
-    }
-
-
-    .bac-button {
-        min-height: 43px;
+        gap: 5px;
 
         padding:
-            8px 4px;
+            10px 5px;
 
-        gap: 4px;
-
-        border-radius: 22px;
+        border-radius: 15px;
 
         font-size: 11px;
     }
 
 
-    .bac-button i {
+    /* صف السنة */
+
+    .bac-year {
+        grid-template-columns:
+            1.15fr 1fr 1fr;
+
+        gap: 5px;
+
+        padding:
+            9px 6px;
+
+        margin-bottom: 10px;
+
+        border-radius: 16px;
+    }
+
+
+    /* السنة */
+
+    .bac-year-name {
         font-size: 12px;
     }
 
 
-    .bac-quote {
-        margin-top: 22px;
+    /* الأزرار */
 
-        font-size: 13px;
+    .bac-button {
+        min-height: 42px;
+
+        padding:
+            7px 3px;
+
+        gap: 3px;
+
+        border-radius: 22px;
+
+        font-size: 10px;
+    }
+
+    .bac-button i {
+        font-size: 11px;
     }
 
 
+    /* العبارة */
+
+    .bac-quote {
+        margin-top: 20px;
+
+        font-size: 12px;
+
+        line-height: 1.8;
+    }
+
+
+    /* أزرار العودة */
+
     .bac-back,
     .bac-home {
-        width: 85%;
+        width: 86%;
 
         min-height: 47px;
 
         font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   📱 الهواتف الصغيرة جدًا
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .bac-container {
+        width: 95%;
+    }
+
+    .bac-heading h1 {
+        font-size: 26px;
+    }
+
+    .bac-title-icon {
+        width: 43px;
+        height: 43px;
+
+        font-size: 19px;
+    }
+
+    .bac-subtitle {
+        font-size: 20px;
+    }
+
+    .bac-description {
+        font-size: 11px;
+    }
+
+    .bac-head-row {
+        grid-template-columns:
+            1.1fr 1fr 1fr;
+
+        gap: 3px;
+
+        padding:
+            9px 3px;
+
+        font-size: 10px;
+    }
+
+    .bac-year {
+        grid-template-columns:
+            1.1fr 1fr 1fr;
+
+        gap: 3px;
+
+        padding:
+            8px 4px;
+
+        margin-bottom: 8px;
+    }
+
+    .bac-year-name {
+        font-size: 10px;
+    }
+
+    .bac-button {
+        min-height: 39px;
+
+        padding:
+            6px 2px;
+
+        font-size: 9px;
+    }
+
+    .bac-button i {
+        font-size: 9px;
+    }
+
+    .bac-quote {
+        font-size: 10px;
+    }
+
+    .bac-back,
+    .bac-home {
+        width: 90%;
+
+        min-height: 45px;
+
+        font-size: 13px;
     }
 }
