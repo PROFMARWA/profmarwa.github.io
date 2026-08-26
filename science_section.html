@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>القسم | Science with Prof Marwa</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: #16051f;
+}
+
+
+/* ================================
+   الصفحة
+================================ */
+
+.section-page {
+
+    min-height: 100vh;
+
+    padding: 45px 5% 70px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255, 55, 190, 0.32),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 88% 20%,
+            rgba(80, 255, 170, 0.22),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(145, 40, 220, 0.34),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            135deg,
+            #16051f,
+            #2b0644,
+            #3c0755,
+            #180622
+        );
+}
+
+
+/* ================================
+   اللمعات
+================================ */
+
+.section-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    top: -250px;
+    right: -190px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 65, 190, 0.28),
+            transparent 65%
+        );
+
+    pointer-events: none;
+}
+
+
+.section-page::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 480px;
+    height: 480px;
+
+    bottom: -240px;
+    left: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(50, 240, 150, 0.20),
+            transparent 65%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ================================
+   العنوان
+================================ */
+
+.section-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+
+.section-header h1 {
+
+    font-size: clamp(32px, 6vw, 55px);
+
+    font-weight: 900;
+
+    line-height: 1.4;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff42b7,
+            #c84cff,
+            #58ffad,
+            #ff42b7
+        );
+
+    background-size: 300% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: titleGlow 5s ease infinite;
+}
+
+
+@keyframes titleGlow {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.section-header p {
+
+    margin-top: 12px;
+
+    color: #f5dff5;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+
+/* ================================
+   البطاقات
+================================ */
+
+.section-grid {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ================================
+   البطاقة
+================================ */
+
+.section-card {
+
+    position: relative;
+
+    min-height: 230px;
+
+    padding: 30px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(91, 22, 119, 0.95),
+            rgba(42, 8, 62, 0.98)
+        );
+
+    border: 2px solid #087a4c;
+
+    box-shadow:
+
+        0 0 0 1px rgba(255, 55, 190, 0.10),
+
+        0 12px 35px rgba(0, 0, 0, 0.38),
+
+        0 0 30px rgba(30, 220, 135, 0.15);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+
+/* الخط اللامع */
+
+.section-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff32b4,
+            #b944ff,
+            #26df8a,
+            #ff32b4
+        );
+
+    background-size: 250% 100%;
+
+    animation: borderGlow 4s linear infinite;
+}
+
+
+@keyframes borderGlow {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 250% 50%;
+    }
+}
+
+
+/* التوهج الداخلي */
+
+.section-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 55, 190, 0.18),
+            transparent 55%
+        );
+
+    pointer-events: none;
+}
+
+
+/* الحركة */
+
+.section-card:hover {
+
+    transform:
+        translateY(-9px)
+        scale(1.02);
+
+    border-color: #55ffad;
+
+    box-shadow:
+
+        0 0 0 2px rgba(45, 240, 145, 0.15),
+
+        0 20px 45px rgba(0, 0, 0, 0.45),
+
+        0 0 35px rgba(35, 240, 145, 0.25),
+
+        0 0 45px rgba(255, 50, 190, 0.18);
+}
+
+
+/* ================================
+   الأيقونة
+================================ */
+
+.section-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 75px;
+    height: 75px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    font-size: 34px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ff35b3,
+            #a93ee8,
+            #5affad
+        );
+
+    box-shadow:
+
+        0 0 22px rgba(255, 55, 190, 0.40),
+
+        0 0 30px rgba(50, 240, 150, 0.20);
+
+    transition: .35s ease;
+}
+
+
+.section-card:hover .section-icon {
+
+    transform:
+        translateY(-4px)
+        rotate(-4deg)
+        scale(1.08);
+}
+
+
+/* ================================
+   عنوان البطاقة
+================================ */
+
+.section-card h2 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 10px;
+
+    font-size: 26px;
+
+    font-weight: 900;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #64ffad,
+            #ff55bd,
+            #c45aff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.section-card p {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #ead8ed;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    font-weight: 600;
+}
+
+
+/* ================================
+   زر العودة
+================================ */
+
+.section-home {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    width: 250px;
+
+    margin: 50px auto 0;
+
+    padding: 16px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    border-radius: 18px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff32b0,
+            #8d35d0,
+            #18ad6b
+        );
+
+    box-shadow:
+
+        0 8px 25px rgba(255, 45, 175, 0.25),
+
+        0 0 25px rgba(30, 210, 130, 0.15);
+
+    transition: .3s ease;
+}
+
+
+.section-home:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+}
+
+
+/* ================================
+   الهاتف
+================================ */
+
+@media (max-width: 700px) {
+
+    .section-page {
+
+        padding: 32px 12px 50px;
+    }
+
+    .section-header {
+
+        margin-bottom: 30px;
+    }
+
+    .section-header h1 {
+
+        font-size: 30px;
+    }
+
+    .section-header p {
+
+        font-size: 14px;
+    }
+
+    .section-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 11px;
+    }
+
+    .section-card {
+
+        min-height: 190px;
+
+        padding: 17px 7px;
+
+        border-radius: 18px;
+    }
+
+    .section-icon {
+
+        width: 58px;
+        height: 58px;
+
+        margin-bottom: 11px;
+
+        border-radius: 17px;
+
+        font-size: 25px;
+    }
+
+    .section-card h2 {
+
+        font-size: 17px;
+
+        line-height: 1.5;
+    }
+
+    .section-card p {
+
+        font-size: 11px;
+
+        line-height: 1.6;
+    }
+
+    .section-home {
+
+        width: 215px;
+
+        padding: 14px;
+
+        font-size: 16px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<main class="section-page">
+
+
+<header class="section-header">
+
+    <h1 id="sectionTitle">
+        القسم
+    </h1>
+
+    <p>
+        اختر ما تريد البدء فيه
+    </p>
+
+</header>
+
+
+<section class="section-grid">
+
+
+<!-- ================================
+     الملخصات
+================================ -->
+
+<a href="#"
+   class="section-card">
+
+    <div class="section-icon">
+        📚
+    </div>
+
+    <h2>
+        الملخصات
+    </h2>
+
+    <p>
+        ملخصات ودروس القسم
+    </p>
+
+</a>
+
+
+<!-- ================================
+     التمارين
+================================ -->
+
+<a href="#"
+   class="section-card">
+
+    <div class="section-icon">
+        📝
+    </div>
+
+    <h2>
+        التمارين
+    </h2>
+
+    <p>
+        تمارين وتطبيقات للتدرب
+    </p>
+
+</a>
+
+
+</section>
+
+
+<a href="science.html"
+   class="section-home">
+
+    ← العودة إلى علوم الطبيعة والحياة
+
+</a>
+
+
+</main>
+
+
+<script>
+
+/* ==========================================
+   تحديد القسم من الرابط
+========================================== */
+
+const params = new URLSearchParams(window.location.search);
+
+const subject = params.get("subject");
+
+
+const subjects = {
+
+    prerequisites: "المكتسبات القبلية",
+
+    protein: "تركيب البروتين",
+
+    structure: "العلاقة بين بنية ووظيفة البروتين",
+
+    enzymes: "الإنزيمات",
+
+    immunity: "المناعة",
+
+    nervous: "الاتصال العصبي",
+
+    photosynthesis: "التركيب الضوئي",
+
+    respiration: "التنفس",
+
+    geology: "الجيولوجيا"
+
+};
+
+
+if (subjects[subject]) {
+
+    document.getElementById("sectionTitle").textContent =
+        subjects[subject];
+
+}
+
+</script>
+
+
+</body>
+
+</html>
