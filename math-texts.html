@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>جميع النصوص العلمية | شعبة الرياضيات</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: #16051f;
+}
+
+.texts-page {
+
+    min-height: 100vh;
+
+    padding: 45px 5% 70px;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255,55,190,.30),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(110,255,175,.20),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(130,35,210,.30),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #16051f,
+            #2b0644,
+            #3c0755,
+            #180622
+        );
+
+    color: white;
+}
+
+
+/* العنوان */
+
+.texts-header {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.texts-header h1 {
+
+    font-size: clamp(34px, 6vw, 58px);
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff42b7,
+            #c84cff,
+            #58ffad,
+            #ff42b7
+        );
+
+    background-size: 300% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: titleGlow 5s ease infinite;
+}
+
+@keyframes titleGlow {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.texts-header p {
+
+    margin-top: 14px;
+
+    color: #f4d9f4;
+
+    font-size: 19px;
+
+    font-weight: 600;
+}
+
+
+/* المجالات */
+
+.domain {
+
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: 0 auto 35px;
+
+    padding: 28px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(86,20,112,.92),
+            rgba(45,8,65,.96)
+        );
+
+    border: 2px solid #087a4c;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.35),
+        0 0 25px rgba(10,190,110,.12);
+}
+
+
+/* عنوان المجال */
+
+.domain-title {
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    font-size: 27px;
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #64ffad,
+            #ff55bd,
+            #c45aff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* شبكة النصوص */
+
+.texts-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+/* بطاقة النص */
+
+.text-card {
+
+    min-height: 120px;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    border-radius: 20px;
+
+    border: 2px solid #087a4c;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(70,15,95,.95),
+            rgba(35,7,52,.98)
+        );
+
+    transition: .3s ease;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.30);
+}
+
+.text-card:hover {
+
+    transform:
+        translateY(-6px)
+        scale(1.02);
+
+    border-color: #38ee99;
+
+    box-shadow:
+        0 0 25px rgba(45,240,145,.25),
+        0 15px 35px rgba(0,0,0,.4);
+}
+
+
+/* رقم النص */
+
+.text-number {
+
+    width: 48px;
+
+    height: 48px;
+
+    margin-bottom: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    font-size: 19px;
+
+    font-weight: 900;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff239f,
+            #a238e9,
+            #35e995
+        );
+
+    box-shadow:
+        0 0 18px rgba(255,55,190,.25);
+}
+
+
+/* عنوان النص */
+
+.text-card h2 {
+
+    margin-bottom: 6px;
+
+    font-size: 20px;
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #64ffad,
+            #ff55bd,
+            #c45aff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* وصف */
+
+.text-card p {
+
+    color: #ead8ed;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* أزرار العودة */
+
+.back-button,
+.home-button {
+
+    display: block;
+
+    width: 280px;
+
+    margin: 25px auto 0;
+
+    padding: 16px 20px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff32b0,
+            #8d35d0,
+            #18ad6b
+        );
+
+    box-shadow:
+        0 8px 25px rgba(255,45,175,.25),
+        0 0 25px rgba(30,210,130,.15);
+
+    transition: .3s ease;
+}
+
+.back-button {
+
+    margin-top: 45px;
+}
+
+.back-button:hover,
+.home-button:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+}
+
+
+/* الهاتف */
+
+@media (max-width:700px) {
+
+    .texts-page {
+
+        padding:
+            32px 12px 50px;
+    }
+
+    .texts-header h1 {
+
+        font-size: 31px;
+
+        line-height: 1.35;
+    }
+
+    .texts-header p {
+
+        font-size: 15px;
+    }
+
+    .domain {
+
+        padding: 18px;
+
+        border-radius: 19px;
+    }
+
+    .domain-title {
+
+        font-size: 21px;
+
+        line-height: 1.5;
+    }
+
+    .texts-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .text-card {
+
+        min-height: 125px;
+
+        padding: 12px 7px;
+
+        border-radius: 16px;
+    }
+
+    .text-number {
+
+        width: 42px;
+
+        height: 42px;
+
+        margin-bottom: 9px;
+
+        font-size: 16px;
+
+        border-radius: 13px;
+    }
+
+    .text-card h2 {
+
+        font-size: 15px;
+
+        line-height: 1.5;
+    }
+
+    .text-card p {
+
+        font-size: 10px;
+
+        line-height: 1.6;
+    }
+
+    .back-button,
+    .home-button {
+
+        width: 215px;
+
+        padding: 14px;
+
+        font-size: 16px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<main class="texts-page">
+
+
+<header class="texts-header">
+
+    <h1>
+        جميع النصوص العلمية
+    </h1>
+
+    <p>
+        النصوص العلمية المقررة لشعبة الرياضيات
+    </p>
+
+</header>
+
+
+<!-- =====================================================
+     المجال الأول
+     ===================================================== -->
+
+<section class="domain">
+
+    <h2 class="domain-title">
+        المجال الأول: التخصص الوظيفي للبروتينات
+    </h2>
+
+
+    <div class="texts-grid">
+
+
+        <a href="#" class="text-card">
+
+            <div class="text-number">
+                1
+            </div>
+
+            <h2>
+                آليات تركيب البروتين
+            </h2>
+
+            <p>
+                النص العلمي الخاص بآليات تركيب البروتين
+            </p>
+
+        </a>
+
+
+        <a href="#" class="text-card">
+
+            <div class="text-number">
+                2
+            </div>
+
+            <h2>
+                العلاقة بين بنية ووظيفة البروتين
+            </h2>
+
+            <p>
+                النص العلمي الخاص بالعلاقة بين البنية والوظيفة
+            </p>
+
+        </a>
+
+
+        <a href="#" class="text-card">
+
+            <div class="text-number">
+                3
+            </div>
+
+            <h2>
+                الإنزيمات
+            </h2>
+
+            <p>
+                النص العلمي الخاص بالإنزيمات
+            </p>
+
+        </a>
+
+
+        <a href="#" class="text-card">
+
+            <div class="text-number">
+                4
+            </div>
+
+            <h2>
+                المناعة
+            </h2>
+
+            <p>
+                النص العلمي الخاص بالمناعة
+            </p>
+
+        </a>
+
+
+        <a href="#" class="text-card">
+
+            <div class="text-number">
+                5
+            </div>
+
+            <h2>
+                الاتصال العصبي
+            </h2>
+
+            <p>
+                النص العلمي الخاص بالاتصال العصبي
+            </p>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     المجال الثاني
+     ===================================================== -->
+
+<section class="domain">
+
+    <h2 class="domain-title">
+        المجال الثاني: تحويل الطاقة الضوئية على مستوى ما فوق البنية الخلوية
+    </h2>
+
+
+    <div class="texts-grid">
+
+
+        <a href="#" class="text-card">
+
+            <div class="text-number">
+                6
+            </div>
+
+            <h2>
+                التركيب الضوئي
+            </h2>
+
+            <p>
+                النص العلمي الخاص بالتركيب الضوئي
+            </p>
+
+        </a>
+
+
+        <a href="#" class="text-card">
+
+            <div class="text-number">
+                7
+            </div>
+
+            <h2>
+                التنفس
+            </h2>
+
+            <p>
+                النص العلمي الخاص بالتنفس
+            </p>
+
+        </a>
+
+
+        <a href="#" class="text-card">
+
+            <div class="text-number">
+                8
+            </div>
+
+            <h2>
+                التخمر
+            </h2>
+
+            <p>
+                النص العلمي الخاص بالتخمر
+            </p>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     المجال الثالث
+     ===================================================== -->
+
+<section class="domain">
+
+    <h2 class="domain-title">
+        المجال الثالث: التكتونية العامة للأرض
+    </h2>
+
+
+    <div class="texts-grid">
+
+
+        <a href="#" class="text-card">
+
+            <div class="text-number">
+                9
+            </div>
+
+            <h2>
+                بنية الكرة الأرضية
+            </h2>
+
+            <p>
+                النص العلمي الخاص ببنية الكرة الأرضية
+            </p>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- العودة إلى شعبة الرياضيات -->
+
+<a href="math.html" class="back-button">
+
+    ← العودة إلى شعبة الرياضيات
+
+</a>
+
+
+<!-- العودة إلى الرئيسية -->
+
+<a href="index.html" class="home-button">
+
+    ← العودة إلى الرئيسية
+
+</a>
+
+
+</main>
+
+</body>
+
+</html>
