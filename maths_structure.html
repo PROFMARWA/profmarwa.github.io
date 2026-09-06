@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>العلاقة بين بنية ووظيفة البروتين | Science with Prof Marwa</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: #16051f;
+}
+
+.basics-page {
+    min-height: 100vh;
+    padding: 45px 5% 70px;
+
+    background:
+        radial-gradient(circle at 15% 15%,
+        rgba(255,55,190,.30),
+        transparent 28%),
+
+        radial-gradient(circle at 85% 25%,
+        rgba(110,255,175,.20),
+        transparent 25%),
+
+        radial-gradient(circle at 50% 100%,
+        rgba(130,35,210,.30),
+        transparent 35%),
+
+        linear-gradient(135deg,
+        #16051f,
+        #2b0644,
+        #3c0755,
+        #180622);
+
+    color: white;
+}
+
+.basics-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.basics-header h1 {
+    font-size: clamp(32px, 6vw, 55px);
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff42b7,
+            #c84cff,
+            #58ffad,
+            #ff42b7
+        );
+
+    background-size: 300% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: titleGlow 5s ease infinite;
+}
+
+@keyframes titleGlow {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.basics-header p {
+    margin-top: 14px;
+    color: #f4d9f4;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.basics-grid {
+    width: 100%;
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.section-card {
+    min-height: 205px;
+    padding: 30px 22px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    text-decoration: none;
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(86,20,112,.92),
+            rgba(45,8,65,.96)
+        );
+
+    border: 2px solid #087a4c;
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 0 1px rgba(52,255,160,.18),
+        0 10px 35px rgba(0,0,0,.35);
+
+    transition: .35s ease;
+}
+
+.section-card:hover {
+    transform: translateY(-8px) scale(1.015);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.45),
+        0 0 35px rgba(35,240,145,.22);
+}
+
+.section-icon {
+    width: 76px;
+    height: 76px;
+
+    margin-bottom: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    font-size: 34px;
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff35b3,
+            #a93ee8,
+            #5affad
+        );
+
+    box-shadow:
+        0 0 18px rgba(255,55,190,.35),
+        0 0 25px rgba(50,240,150,.18);
+}
+
+.card-green .section-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #12a961,
+            #35e995,
+            #9affc9
+        );
+}
+
+.card-pink .section-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #ff239f,
+            #ff4fc0,
+            #c33cff
+        );
+}
+
+.card-purple .section-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #6626a7,
+            #a238e9,
+            #ff46bd
+        );
+}
+
+.section-card h2 {
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #64ffad,
+            #ff55bd,
+            #c45aff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.section-card p {
+    color: #ead8ed;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+.back-button,
+.home-button {
+    display: block;
+    width: 280px;
+
+    margin: 25px auto 0;
+    padding: 16px 20px;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff32b0,
+            #8d35d0,
+            #18ad6b
+        );
+
+    box-shadow:
+        0 8px 25px rgba(255,45,175,.25),
+        0 0 25px rgba(30,210,130,.15);
+
+    transition: .3s ease;
+}
+
+.back-button {
+    margin-top: 45px;
+}
+
+.back-button:hover,
+.home-button:hover {
+    transform: translateY(-5px) scale(1.03);
+}
+
+@media (max-width:700px) {
+
+    .basics-page {
+        padding: 32px 12px 50px;
+    }
+
+    .basics-header h1 {
+        font-size: 30px;
+    }
+
+    .basics-header p {
+        font-size: 15px;
+    }
+
+    .basics-grid {
+        grid-template-columns: repeat(2,1fr);
+        gap: 11px;
+    }
+
+    .section-card {
+        min-height: 185px;
+        padding: 17px 7px;
+        border-radius: 18px;
+    }
+
+    .section-icon {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 11px;
+        border-radius: 17px;
+        font-size: 25px;
+    }
+
+    .section-card h2 {
+        font-size: 16px;
+    }
+
+    .section-card p {
+        font-size: 12px;
+    }
+
+    .back-button,
+    .home-button {
+        width: 215px;
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main class="basics-page">
+
+<header class="basics-header">
+
+    <h1>
+        العلاقة بين بنية ووظيفة البروتين
+    </h1>
+
+    <p>
+        اختر القسم الذي تريد البدء فيه
+    </p>
+
+</header>
+
+
+<section class="basics-grid">
+
+
+<!-- الملخصات -->
+
+<a href="#" class="section-card card-pink">
+
+    <div class="section-icon">
+        <i class="fa-solid fa-book"></i>
+    </div>
+
+    <h2>الملخصات</h2>
+
+    <p>
+        ملخصات تساعد على فهم العلاقة بين بنية ووظيفة البروتين
+    </p>
+
+</a>
+
+
+<!-- التمارين -->
+
+<a href="#" class="section-card card-purple">
+
+    <div class="section-icon">
+        <i class="fa-solid fa-pen-to-square"></i>
+    </div>
+
+    <h2>التمارين</h2>
+
+    <p>
+        تمارين متنوعة حول العلاقة بين بنية ووظيفة البروتين
+    </p>
+
+</a>
+
+
+<!-- المخططات -->
+
+<a href="#" class="section-card card-green">
+
+    <div class="section-icon">
+        <i class="fa-solid fa-diagram-project"></i>
+    </div>
+
+    <h2>المخططات</h2>
+
+    <p>
+        مخططات توضيحية تساعد على فهم الدرس
+    </p>
+
+</a>
+
+
+</section>
+
+
+<a href="math.html" class="back-button">
+    ← العودة إلى شعبة الرياضيات
+</a>
+
+
+<a href="index.html" class="home-button">
+    ← العودة إلى الرئيسية
+</a>
+
+</main>
+
+</body>
+</html>
