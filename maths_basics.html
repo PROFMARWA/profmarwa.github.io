@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>المكتسبات القبلية | Science with Prof Marwa</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: #16051f;
+}
+
+
+/* =========================
+   الصفحة
+========================= */
+
+.basics-page {
+
+    min-height: 100vh;
+
+    padding: 45px 5% 70px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255, 55, 190, 0.32),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 88% 20%,
+            rgba(80, 255, 170, 0.22),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(145, 40, 220, 0.34),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            135deg,
+            #16051f,
+            #2b0644,
+            #3c0755,
+            #180622
+        );
+}
+
+
+/* =========================
+   العنوان
+========================= */
+
+.basics-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.basics-header h1 {
+
+    font-size: clamp(34px, 6vw, 58px);
+
+    font-weight: 900;
+
+    line-height: 1.35;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff42b7,
+            #c84cff,
+            #58ffad,
+            #ff42b7
+        );
+
+    background-size: 300% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: titleGlow 5s ease infinite;
+}
+
+@keyframes titleGlow {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.basics-header p {
+
+    margin-top: 14px;
+
+    color: #f5dff5;
+
+    font-size: 19px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   البطاقات
+========================= */
+
+.basics-grid {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================
+   البطاقة
+========================= */
+
+.section-card {
+
+    position: relative;
+
+    min-height: 190px;
+
+    padding: 25px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    border-radius: 23px;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(91, 22, 119, 0.92),
+            rgba(42, 8, 62, 0.97)
+        );
+
+    border:
+        2px solid rgba(34, 217, 135, 0.55);
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(255, 55, 190, 0.10),
+
+        0 12px 35px
+        rgba(0, 0, 0, 0.38),
+
+        0 0 25px
+        rgba(30, 220, 135, 0.12);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+
+/* =========================
+   الخط اللامع
+========================= */
+
+.section-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff32b4,
+            #b944ff,
+            #26df8a,
+            #ff32b4
+        );
+
+    background-size: 250% 100%;
+
+    animation: borderGlow 4s linear infinite;
+}
+
+@keyframes borderGlow {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 250% 50%;
+    }
+}
+
+
+/* =========================
+   التوهج
+========================= */
+
+.section-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 55, 190, 0.16),
+            transparent 55%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   حركة البطاقة
+========================= */
+
+.section-card:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1.015);
+
+    box-shadow:
+
+        0 0 0 2px
+        rgba(45, 240, 145, 0.15),
+
+        0 20px 45px
+        rgba(0, 0, 0, 0.45),
+
+        0 0 35px
+        rgba(35, 240, 145, 0.24),
+
+        0 0 45px
+        rgba(255, 50, 190, 0.16);
+}
+
+
+/* =========================
+   الأيقونة
+========================= */
+
+.section-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 70px;
+
+    height: 70px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    color: white;
+
+    font-size: 29px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ff35b3,
+            #a93ee8,
+            #5affad
+        );
+
+    box-shadow:
+
+        0 0 18px
+        rgba(255, 55, 190, 0.35),
+
+        0 0 25px
+        rgba(50, 240, 150, 0.18);
+}
+
+
+/* =========================
+   العنوان
+========================= */
+
+.section-card h2 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 9px;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #64ffad,
+            #ff55bd,
+            #c45aff
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================
+   الوصف
+========================= */
+
+.section-card p {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #ead8ed;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   زر العودة
+========================= */
+
+.back-button {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    width: 280px;
+
+    margin: 45px auto 0;
+
+    padding: 16px 20px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    border-radius: 18px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff32b0,
+            #8d35d0,
+            #18ad6b
+        );
+
+    box-shadow:
+
+        0 8px 25px
+        rgba(255, 45, 175, 0.25),
+
+        0 0 25px
+        rgba(30, 210, 130, 0.15);
+
+    transition: .3s ease;
+}
+
+.back-button:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+}
+
+
+/* =========================
+   العودة للرئيسية
+========================= */
+
+.home-button {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    width: 280px;
+
+    margin: 18px auto 0;
+
+    padding: 16px 20px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    border-radius: 18px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff32b0,
+            #8d35d0,
+            #18ad6b
+        );
+
+    box-shadow:
+
+        0 8px 25px
+        rgba(255, 45, 175, 0.25),
+
+        0 0 25px
+        rgba(30, 210, 130, 0.15);
+
+    transition: .3s ease;
+}
+
+.home-button:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+}
+
+
+/* =========================
+   الهاتف
+========================= */
+
+@media (max-width: 700px) {
+
+    .basics-page {
+
+        padding: 32px 12px 50px;
+    }
+
+    .basics-header {
+
+        margin-bottom: 30px;
+    }
+
+    .basics-header h1 {
+
+        font-size: 32px;
+    }
+
+    .basics-header p {
+
+        font-size: 15px;
+    }
+
+    .basics-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 11px;
+    }
+
+    .section-card {
+
+        min-height: 175px;
+
+        padding: 17px 7px;
+
+        border-radius: 18px;
+    }
+
+    .section-icon {
+
+        width: 55px;
+
+        height: 55px;
+
+        margin-bottom: 10px;
+
+        border-radius: 16px;
+
+        font-size: 23px;
+    }
+
+    .section-card h2 {
+
+        font-size: 17px;
+
+        line-height: 1.5;
+    }
+
+    .section-card p {
+
+        font-size: 11px;
+
+        line-height: 1.6;
+    }
+
+    .back-button,
+    .home-button {
+
+        width: 215px;
+
+        padding: 14px;
+
+        font-size: 16px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<main class="basics-page">
+
+
+<header class="basics-header">
+
+    <h1>المكتسبات القبلية</h1>
+
+    <p>
+        اختر ما تريد البدء فيه
+    </p>
+
+</header>
+
+
+<section class="basics-grid">
+
+
+<!-- الملخصات -->
+
+<a href="#"
+   class="section-card card-green">
+
+    <div class="section-icon">
+
+        <i class="fa-solid fa-book-open"></i>
+
+    </div>
+
+    <h2>الملخصات</h2>
+
+    <p>
+        ملخصات ودروس المكتسبات القبلية
+    </p>
+
+</a>
+
+
+<!-- التمارين -->
+
+<a href="#"
+   class="section-card card-pink">
+
+    <div class="section-icon">
+
+        <i class="fa-solid fa-pen-to-square"></i>
+
+    </div>
+
+    <h2>التمارين</h2>
+
+    <p>
+        تمارين وتطبيقات للتدرب
+    </p>
+
+</a>
+
+
+<!-- المخططات -->
+
+<a href="#"
+   class="section-card card-purple">
+
+    <div class="section-icon">
+
+        <i class="fa-solid fa-diagram-project"></i>
+
+    </div>
+
+    <h2>المخططات</h2>
+
+    <p>
+        مخططات توضيحية تساعد على فهم الدرس
+    </p>
+
+</a>
+
+
+</section>
+
+
+<!--العودة الى الرياضيات   -->
+
+<a href="math.html"
+   class="back-button">
+
+    ← العودة إلى الرياضيات 
+
+</a>
+
+
+<!-- العودة إلى الرئيسية -->
+
+<a href="index.html"
+   class="home-button">
+
+    ← العودة إلى الرئيسية
+
+</a>
+
+
+</main>
+
+</body>
+
+</html>
