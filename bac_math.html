@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>مواضيع البكالوريا | شعبة الرياضيات</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #18002f, #3b075c, #18002f);
+    color: white;
+    min-height: 100vh;
+}
+
+.page {
+    max-width: 900px;
+    margin: auto;
+    padding: 45px 20px;
+}
+
+/* العنوان */
+
+.header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.header-icon {
+    display: inline-flex;
+    width: 90px;
+    height: 90px;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #ff35ad, #c13cff);
+    border-radius: 28px;
+
+    font-size: 45px;
+
+    box-shadow:
+        0 0 25px rgba(255, 53, 173, .5);
+}
+
+.header h1 {
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.header h2 {
+    color: #52e8a0;
+    font-size: 28px;
+    margin-top: 12px;
+}
+
+.header p {
+    margin-top: 20px;
+    font-size: 19px;
+    color: #eee;
+}
+
+/* عناوين الجدول */
+
+.table-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    background: linear-gradient(
+        90deg,
+        #40c994,
+        #7735c9,
+        #e6259c
+    );
+
+    border-radius: 35px;
+    padding: 18px 20px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+/* السنة */
+
+.year-card {
+    background: #f7f6fa;
+    color: #351252;
+
+    border-radius: 25px;
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+    gap: 12px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.25);
+}
+
+.year {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+/* الأزرار */
+
+.button {
+    border: none;
+    text-decoration: none;
+
+    padding: 16px 25px;
+
+    border-radius: 40px;
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    text-align: center;
+
+    transition: .3s;
+}
+
+.subjects {
+    background: linear-gradient(
+        135deg,
+        #ec259b,
+        #ff55bc
+    );
+
+    box-shadow:
+        0 0 18px rgba(236,37,155,.25);
+}
+
+.correction {
+    background: linear-gradient(
+        135deg,
+        #38c890,
+        #62dca9
+    );
+
+    box-shadow:
+        0 0 18px rgba(56,200,144,.25);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+/* العودة */
+
+.back {
+    text-align: center;
+    margin-top: 45px;
+}
+
+.back a {
+    display: inline-block;
+
+    text-decoration: none;
+    color: white;
+
+    padding: 17px 40px;
+
+    border-radius: 40px;
+
+    background: linear-gradient(
+        90deg,
+        #40c994,
+        #e6259c
+    );
+
+    font-size: 19px;
+    font-weight: bold;
+}
+
+/* الهاتف */
+
+@media (max-width: 650px) {
+
+    .page {
+        padding: 35px 20px;
+    }
+
+    .header h1 {
+        font-size: 32px;
+    }
+
+    .header h2 {
+        font-size: 25px;
+    }
+
+    .table-head {
+        font-size: 16px;
+        padding: 16px 8px;
+    }
+
+    .year-card {
+        padding: 16px 10px;
+        gap: 8px;
+    }
+
+    .year {
+        font-size: 17px;
+    }
+
+    .button {
+        padding: 14px 8px;
+        font-size: 15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="header">
+
+        <div class="header-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <h1>مواضيع البكالوريا</h1>
+
+        <h2>شعبة الرياضيات</h2>
+
+        <p>
+            اختر السنة للوصول إلى موضوع البكالوريا أو تصحيحه
+        </p>
+
+    </div>
+
+
+    <div class="table-head">
+
+        <div>التصحيح</div>
+        <div>المواضيع</div>
+        <div>السنة</div>
+
+    </div>
+
+
+    <!-- 2026 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">
+            التصحيح ✓
+        </a>
+
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+
+        <div class="year">
+            بكالوريا 2026
+        </div>
+    </div>
+
+
+    <!-- 2025 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">
+            التصحيح ✓
+        </a>
+
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+
+        <div class="year">
+            بكالوريا 2025
+        </div>
+    </div>
+
+
+    <!-- 2024 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">
+            التصحيح ✓
+        </a>
+
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+
+        <div class="year">
+            بكالوريا 2024
+        </div>
+    </div>
+
+
+    <!-- 2023 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2023</div>
+    </div>
+
+
+    <!-- 2022 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2022</div>
+    </div>
+
+
+    <!-- 2021 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2021</div>
+    </div>
+
+
+    <!-- 2020 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2020</div>
+    </div>
+
+
+    <!-- 2019 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2019</div>
+    </div>
+
+
+    <!-- 2018 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2018</div>
+    </div>
+
+
+    <!-- 2017 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2017</div>
+    </div>
+
+
+    <!-- 2016 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2016</div>
+    </div>
+
+
+    <!-- 2015 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2015</div>
+    </div>
+
+
+    <!-- 2014 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2014</div>
+    </div>
+
+
+    <!-- 2013 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2013</div>
+    </div>
+
+
+    <!-- 2012 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2012</div>
+    </div>
+
+
+    <!-- 2011 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2011</div>
+    </div>
+
+
+    <!-- 2010 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2010</div>
+    </div>
+
+
+    <!-- 2009 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2009</div>
+    </div>
+
+
+    <!-- 2008 -->
+
+    <div class="year-card">
+        <a href="#" class="button correction">التصحيح ✓</a>
+        <a href="#" class="button subjects">
+            المواضيع <i class="fa-solid fa-file-pdf"></i>
+        </a>
+        <div class="year">بكالوريا 2008</div>
+    </div>
+
+
+    <div class="back">
+
+        <a href="math.html">
+            ← العودة إلى شعبة الرياضيات
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
