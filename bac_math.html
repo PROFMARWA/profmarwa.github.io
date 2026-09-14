@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,493 +14,741 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <style>
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #18002f, #3b075c, #18002f);
+    font-family: Arial, Tahoma, sans-serif;
+    background:
+        radial-gradient(circle at 50% 0%,
+        rgba(255, 40, 190, .25),
+        transparent 35%),
+        linear-gradient(135deg,
+        #16051f,
+        #28043f,
+        #19052d,
+        #0d0319);
+
     color: white;
     min-height: 100vh;
 }
 
-.page {
-    max-width: 900px;
-    margin: auto;
-    padding: 45px 20px;
+
+/* =========================
+   الصفحة
+========================= */
+
+.bac-page {
+
+    min-height: 100vh;
+
+    padding: 35px 4% 60px;
+
 }
 
-/* العنوان */
 
-.header {
+/* =========================
+   العنوان
+========================= */
+
+.bac-header {
+
     text-align: center;
-    margin-bottom: 45px;
+
+    margin-bottom: 35px;
 }
 
-.header-icon {
-    display: inline-flex;
-    width: 90px;
-    height: 90px;
+
+.bac-icon {
+
+    width: 78px;
+    height: 78px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    background: linear-gradient(135deg, #ff35ad, #c13cff);
-    border-radius: 28px;
+    border-radius: 23px;
 
-    font-size: 45px;
+    font-size: 36px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff20aa,
+            #b331ed,
+            #25dfa0
+        );
 
     box-shadow:
-        0 0 25px rgba(255, 53, 173, .5);
+        0 0 25px rgba(255, 40, 180, .45),
+        0 0 35px rgba(40, 230, 160, .18);
 }
 
-.header h1 {
-    font-size: 40px;
-    margin-top: 20px;
+
+.bac-header h1 {
+
+    font-size: clamp(32px, 6vw, 55px);
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #58ffb0,
+            #ff4fbd,
+            #bd55ff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
 }
 
-.header h2 {
-    color: #52e8a0;
-    font-size: 28px;
+
+.bac-header h2 {
+
+    margin-top: 8px;
+
+    font-size: 27px;
+
+    color: #52ffb0;
+}
+
+
+.bac-header p {
+
     margin-top: 12px;
+
+    color: #ead9ef;
+
+    font-size: 18px;
+
 }
 
-.header p {
-    margin-top: 20px;
-    font-size: 19px;
-    color: #eee;
-}
 
-/* عناوين الجدول */
+/* =========================
+   شبكة السنوات
+========================= */
 
-.table-head {
+.years-grid {
+
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: auto;
+
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
 
-    background: linear-gradient(
-        90deg,
-        #40c994,
-        #7735c9,
-        #e6259c
-    );
+    grid-template-columns:
+        repeat(3, 1fr);
 
-    border-radius: 35px;
-    padding: 18px 20px;
+    gap: 18px;
 
-    font-size: 20px;
-    font-weight: bold;
-
-    text-align: center;
-    margin-bottom: 18px;
 }
 
-/* السنة */
+
+/* =========================
+   بطاقة السنة
+========================= */
 
 .year-card {
-    background: #f7f6fa;
-    color: #351252;
+
+    min-height: 180px;
+
+    padding: 18px;
 
     border-radius: 25px;
 
-    padding: 20px;
+    text-align: center;
 
-    margin-bottom: 18px;
+    text-decoration: none;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    color: white;
 
+    position: relative;
+
+    overflow: hidden;
+
+    border: 2px solid transparent;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(76, 18, 105, .96),
+            rgba(38, 7, 58, .98)
+        );
+
+    border-image:
+        linear-gradient(
+            135deg,
+            #14e3a0,
+            #8b35ff,
+            #ff31b4
+        ) 1;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.35),
+        0 0 20px rgba(255,40,190,.08);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.year-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.45),
+        0 0 30px rgba(255,40,190,.20);
+}
+
+
+/* =========================
+   أيقونة السنة
+========================= */
+
+.year-icon {
+
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 8px;
+
+    display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    font-size: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff20ad,
+            #a83bea,
+            #42eaa3
+        );
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,.25);
+        0 0 18px rgba(255,40,180,.3);
 }
 
-.year {
-    font-size: 21px;
-    font-weight: bold;
+
+/* =========================
+   رقم السنة
+========================= */
+
+.year-card h3 {
+
+    font-size: 29px;
+
+    margin-bottom: 13px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff5abc,
+            #c65aff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
 }
 
-/* الأزرار */
 
-.button {
-    border: none;
+/* =========================
+   الأزرار
+========================= */
+
+.year-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 9px;
+}
+
+
+.year-buttons a {
+
+    flex: 1;
+
+    max-width: 135px;
+
+    padding: 10px 8px;
+
+    border-radius: 30px;
+
     text-decoration: none;
-
-    padding: 16px 25px;
-
-    border-radius: 40px;
 
     color: white;
 
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 14px;
 
-    text-align: center;
+    font-weight: 800;
 
-    transition: .3s;
+    transition: .3s ease;
+
 }
 
-.subjects {
-    background: linear-gradient(
-        135deg,
-        #ec259b,
-        #ff55bc
-    );
+
+.subject-btn {
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff239f,
+            #b532e9
+        );
 
     box-shadow:
-        0 0 18px rgba(236,37,155,.25);
+        0 0 15px rgba(255,35,160,.18);
 }
 
-.correction {
-    background: linear-gradient(
-        135deg,
-        #38c890,
-        #62dca9
-    );
+
+.correction-btn {
+
+    background:
+        linear-gradient(
+            90deg,
+            #16b978,
+            #58e3ad
+        );
 
     box-shadow:
-        0 0 18px rgba(56,200,144,.25);
+        0 0 15px rgba(30,220,145,.18);
 }
 
-.button:hover {
-    transform: translateY(-3px);
+
+.year-buttons a:hover {
+
+    transform: scale(1.05);
 }
 
-/* العودة */
 
-.back {
+/* =========================
+   العودة
+========================= */
+
+.back-button {
+
+    display: block;
+
+    width: 270px;
+
+    margin: 38px auto 0;
+
+    padding: 14px 20px;
+
     text-align: center;
-    margin-top: 45px;
-}
-
-.back a {
-    display: inline-block;
 
     text-decoration: none;
+
     color: white;
 
-    padding: 17px 30px;
+    font-size: 17px;
 
-    border-radius: 40px;
+    font-weight: 900;
 
-    background: linear-gradient(
-        90deg,
-        #40c994,
-        #e6259c
-    );
+    border-radius: 30px;
 
-    font-size: 16px;
-    font-weight: bold;
+    background:
+        linear-gradient(
+            90deg,
+            #19c991,
+            #a637e5,
+            #ee20ad
+        );
+
+    box-shadow:
+        0 8px 25px rgba(255,40,180,.2);
 }
 
-/* الهاتف */
 
-@media (max-width: 650px) {
+/* =========================
+   الهاتف
+========================= */
 
-    .page {
-        padding: 35px 20px;
+@media (max-width: 700px) {
+
+    .bac-page {
+
+        padding:
+            28px 12px 45px;
     }
 
-    .header h1 {
-        font-size: 32px;
+
+    .bac-icon {
+
+        width: 65px;
+        height: 65px;
+
+        font-size: 29px;
     }
 
-    .header h2 {
-        font-size: 25px;
+
+    .bac-header h1 {
+
+        font-size: 31px;
     }
 
-    .table-head {
-        font-size: 16px;
-        padding: 16px 8px;
+
+    .bac-header h2 {
+
+        font-size: 23px;
     }
+
+
+    .bac-header p {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    .years-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 11px;
+    }
+
 
     .year-card {
-        padding: 16px 10px;
-        gap: 8px;
+
+        min-height: 165px;
+
+        padding: 14px 7px;
+
+        border-radius: 20px;
     }
 
-    .year {
-        font-size: 17px;
+
+    .year-icon {
+
+        width: 52px;
+        height: 52px;
+
+        font-size: 22px;
+
+        border-radius: 16px;
     }
 
-    .button {
-        padding: 14px 8px;
+
+    .year-card h3 {
+
+        font-size: 23px;
+
+        margin-bottom: 11px;
+    }
+
+
+    .year-buttons {
+
+        gap: 5px;
+    }
+
+
+    .year-buttons a {
+
+        padding: 9px 4px;
+
+        font-size: 11px;
+    }
+
+
+    .back-button {
+
+        width: 220px;
+
         font-size: 15px;
+
+        padding: 13px;
     }
 
 }
 
+
 </style>
+
 </head>
+
 
 <body>
 
-<div class="page">
+<main class="bac-page">
 
-    <div class="header">
 
-        <div class="header-icon">
-            <i class="fa-solid fa-graduation-cap"></i>
-        </div>
+<header class="bac-header">
 
-        <h1>مواضيع البكالوريا</h1>
-
-        <h2>شعبة الرياضيات</h2>
-
-        <p>
-            اختر السنة للوصول إلى موضوع البكالوريا أو تصحيحه
-        </p>
-
+    <div class="bac-icon">
+        <i class="fa-solid fa-graduation-cap"></i>
     </div>
 
+    <h1>مواضيع البكالوريا</h1>
 
-    <div class="table-head">
+    <h2>شعبة الرياضيات</h2>
 
-        <div>التصحيح</div>
-        <div>المواضيع</div>
-        <div>السنة</div>
+    <p>
+        اختر السنة للوصول إلى موضوع البكالوريا أو تصحيحه
+    </p>
 
+</header>
+
+
+<section class="years-grid">
+
+
+<!-- 2026 -->
+<div class="year-card">
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
     </div>
+    <h3>2026</h3>
 
-
-    <!-- 2026 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">
-            التصحيح ✓
-        </a>
-
-        <a href="#" class="button subjects">
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">
             المواضيع <i class="fa-solid fa-file-pdf"></i>
         </a>
 
-        <div class="year">
-            بكالوريا 2026
-        </div>
+        <a href="#" class="correction-btn">
+            التصحيح <i class="fa-solid fa-circle-check"></i>
+        </a>
     </div>
-
-
-    <!-- 2025 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">
-            التصحيح ✓
-        </a>
-
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-
-        <div class="year">
-            بكالوريا 2025
-        </div>
-    </div>
-
-
-    <!-- 2024 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">
-            التصحيح ✓
-        </a>
-
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-
-        <div class="year">
-            بكالوريا 2024
-        </div>
-    </div>
-
-
-    <!-- 2023 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2023</div>
-    </div>
-
-
-    <!-- 2022 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2022</div>
-    </div>
-
-
-    <!-- 2021 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2021</div>
-    </div>
-
-
-    <!-- 2020 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2020</div>
-    </div>
-
-
-    <!-- 2019 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2019</div>
-    </div>
-
-
-    <!-- 2018 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2018</div>
-    </div>
-
-
-    <!-- 2017 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2017</div>
-    </div>
-
-
-    <!-- 2016 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2016</div>
-    </div>
-
-
-    <!-- 2015 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2015</div>
-    </div>
-
-
-    <!-- 2014 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2014</div>
-    </div>
-
-
-    <!-- 2013 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2013</div>
-    </div>
-
-
-    <!-- 2012 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2012</div>
-    </div>
-
-
-    <!-- 2011 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2011</div>
-    </div>
-
-
-    <!-- 2010 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2010</div>
-    </div>
-
-
-    <!-- 2009 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2009</div>
-    </div>
-
-
-    <!-- 2008 -->
-
-    <div class="year-card">
-        <a href="#" class="button correction">التصحيح ✓</a>
-        <a href="#" class="button subjects">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <div class="year">بكالوريا 2008</div>
-    </div>
-
-
-    <div class="back">
-
-        <a href="math.html">
-            ← العودة إلى شعبة الرياضيات
-        </a>
-
-    </div>
-
 </div>
+
+
+<!-- 2025 -->
+<div class="year-card">
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+    <h3>2025</h3>
+
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2024 -->
+<div class="year-card">
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+    <h3>2024</h3>
+
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2023 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2023</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2022 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2022</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2021 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2021</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2020 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2020</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2019 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2019</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2018 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2018</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2017 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2017</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2016 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2016</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2015 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2015</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2014 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2014</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2013 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2013</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2012 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2012</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2011 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2011</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2010 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2010</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2009 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2009</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+<!-- 2008 -->
+<div class="year-card">
+    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <h3>2008</h3>
+    <div class="year-buttons">
+        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
+        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+    </div>
+</div>
+
+
+</section>
+
+
+<a href="math.html" class="back-button">
+    ← العودة إلى شعبة الرياضيات
+</a>
+
+
+</main>
 
 </body>
 </html>
