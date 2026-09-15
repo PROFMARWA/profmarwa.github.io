@@ -255,7 +255,7 @@ body {
 
 
 /* =========================
-   الأزرار
+   الزر
 ========================= */
 
 .year-buttons {
@@ -263,17 +263,15 @@ body {
     display: flex;
 
     justify-content: center;
-
-    gap: 9px;
 }
 
 .year-buttons a {
 
-    flex: 1;
+    width: 100%;
 
-    max-width: 135px;
+    max-width: 220px;
 
-    padding: 10px 8px;
+    padding: 11px 12px;
 
     border-radius: 30px;
 
@@ -284,9 +282,14 @@ body {
     font-size: 14px;
 
     font-weight: 800;
-}
 
-.subject-btn {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
 
     background:
         linear-gradient(
@@ -294,16 +297,19 @@ body {
             #ff239f,
             #b532e9
         );
+
+    box-shadow:
+        0 0 15px rgba(255,40,180,.15);
+
+    transition: .25s ease;
 }
 
-.correction-btn {
+.year-buttons a:hover {
 
-    background:
-        linear-gradient(
-            90deg,
-            #16b978,
-            #58e3ad
-        );
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 22px rgba(255,40,180,.3);
 }
 
 
@@ -411,15 +417,13 @@ body {
         margin-bottom: 11px;
     }
 
-    .year-buttons {
-        gap: 5px;
-    }
-
     .year-buttons a {
 
         padding: 9px 4px;
 
         font-size: 11px;
+
+        gap: 4px;
     }
 
     .back-button {
@@ -453,7 +457,7 @@ body {
     <h2>علوم تجريبية</h2>
 
     <p>
-        اختر السنة للوصول إلى موضوع البكالوريا أو تصحيحه
+        اختر السنة للوصول إلى موضوع البكالوريا وتصحيحه
     </p>
 
 </header>
@@ -467,13 +471,13 @@ body {
     <div class="year-icon">
         <i class="fa-regular fa-calendar-days"></i>
     </div>
+
     <h3>2026</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">
-            المواضيع <i class="fa-solid fa-file-pdf"></i>
-        </a>
-        <a href="#" class="correction-btn">
-            التصحيح <i class="fa-solid fa-circle-check"></i>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
         </a>
     </div>
 </div>
@@ -481,198 +485,306 @@ body {
 
 <!-- 2025 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2025</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2024 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2024</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2023 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2023</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2022 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2022</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2021 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2021</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2020 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2020</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2019 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2019</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2018 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2018</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2017 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2017</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2016 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2016</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2015 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2015</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2014 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2014</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2013 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2013</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2012 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2012</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2011 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2011</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2010 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2010</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2009 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2009</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
 
 <!-- 2008 -->
 <div class="year-card">
-    <div class="year-icon"><i class="fa-regular fa-calendar-days"></i></div>
+    <div class="year-icon">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
     <h3>2008</h3>
+
     <div class="year-buttons">
-        <a href="#" class="subject-btn">المواضيع <i class="fa-solid fa-file-pdf"></i></a>
-        <a href="#" class="correction-btn">التصحيح <i class="fa-solid fa-circle-check"></i></a>
+        <a href="#">
+            الموضوع والتصحيح
+            <i class="fa-solid fa-file-pdf"></i>
+        </a>
     </div>
 </div>
 
