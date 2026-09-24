@@ -40,19 +40,28 @@ header p {
     width: 95%;
     max-width: 1000px;
     margin: 10px auto 30px;
+    padding: 10px;
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,77,184,0.35);
     border-radius: 18px;
-    padding: 10px;
+    box-shadow: 0 0 25px rgba(255,77,184,0.12);
 }
 
-iframe {
+.pdf-page {
+    display: block;
     width: 100%;
-    height: 75vh;
-    min-height: 600px;
-    border: none;
-    border-radius: 12px;
+    height: auto;
+    margin: 0 auto 15px;
     background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+.loading {
+    text-align: center;
+    padding: 40px 10px;
+    color: #ddd;
+    font-size: 17px;
 }
 
 .back-button {
@@ -79,7 +88,11 @@ iframe {
 
 <div class="pdf-container">
 
-    <iframe src="bac_blanc_science.pdf"></iframe>
+    <div id="loading" class="loading">
+        جارٍ تحميل الموضوع...
+    </div>
+
+    <div id="pdf-pages"></div>
 
 </div>
 
@@ -87,6 +100,58 @@ iframe {
     ← العودة إلى علوم الطبيعة والحياة
 </a>
 
-</body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+const pdfUrl = "bac_blanc_science.pdf";
+
+const pagesContainer = document.getElementById("pdf-pages");
+const loading = document.getElementById("loading");
+
+pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+
+    loading.style.display = "none";
+
+    for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+
+        pdf.getPage(pageNumber).then(function(page) {
+
+            const viewport = page.getViewport({ scale: 1.5 });
+
+            const canvas = document.createElement("canvas");
+            const context = canvas.getContext("2d");
+
+            canvas.className = "pdf-page";
+
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+
+            pagesContainer.appendChild(canvas);
+
+            page.render({
+                canvasContext: context,
+                viewport: viewport
+            });
+
+        });
+
+    }
+
+}).catch(function(error) {
+
+    loading.textContent =
+    "تعذر تحميل الموضوع. تأكد من وجود ملف bac_blanc_science.pdf في الموقع.";
+
+    console.error(error);
+
+});
+
+</script>
+
+</body>
 </html>
