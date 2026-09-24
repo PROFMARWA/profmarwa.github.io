@@ -57,6 +57,18 @@ header p {
     box-shadow: 0 0 12px rgba(0,0,0,0.3);
 }
 
+.page-loading {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ddd;
+    font-size: 16px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
 .loading {
     text-align: center;
     padding: 40px 10px;
@@ -74,6 +86,17 @@ header p {
     color: white;
     font-weight: bold;
     background: linear-gradient(90deg, #8e21e8, #ff35ad);
+}
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .page-loading {
+        min-height: 350px;
+    }
 }
 </style>
 
@@ -113,39 +136,124 @@ const pdfUrl = "bac_blanc_science.pdf";
 const pagesContainer = document.getElementById("pdf-pages");
 const loading = document.getElementById("loading");
 
-pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+let pdfDocument = null;
+
+
+/* تحميل صفحة واحدة */
+
+function renderPage(pageNumber, container) {
+
+    if (container.dataset.loaded === "true") {
+        return;
+    }
+
+    container.dataset.loaded = "true";
+
+    container.textContent =
+        "جارٍ تحميل الصفحة " + pageNumber + "...";
+
+    pdfDocument.getPage(pageNumber).then(function(page) {
+
+        const viewport = page.getViewport({
+            scale: 1.4
+        });
+
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+
+        canvas.className = "pdf-page";
+
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        container.innerHTML = "";
+        container.appendChild(canvas);
+
+        page.render({
+            canvasContext: context,
+            viewport: viewport
+        });
+
+    }).catch(function() {
+
+        container.textContent =
+            "تعذر تحميل هذه الصفحة.";
+
+    });
+
+}
+
+
+/* تحميل ملف PDF */
+
+pdfjsLib.getDocument({
+    url: pdfUrl,
+    disableAutoFetch: false,
+    disableStream: false
+}).promise.then(function(pdf) {
+
+    pdfDocument = pdf;
 
     loading.style.display = "none";
 
-    for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
 
-        pdf.getPage(pageNumber).then(function(page) {
+    /* إنشاء أماكن الصفحات */
 
-            const viewport = page.getViewport({ scale: 1.5 });
+    for (let i = 1; i <= pdf.numPages; i++) {
 
-            const canvas = document.createElement("canvas");
-            const context = canvas.getContext("2d");
+        const pageContainer = document.createElement("div");
 
-            canvas.className = "pdf-page";
+        pageContainer.className = "page-loading";
 
-            canvas.width = viewport.width;
-            canvas.height = viewport.height;
+        pageContainer.textContent =
+            "الصفحة " + i + " — جارٍ تجهيزها...";
 
-            pagesContainer.appendChild(canvas);
+        pageContainer.dataset.page = i;
 
-            page.render({
-                canvasContext: context,
-                viewport: viewport
-            });
+        pagesContainer.appendChild(pageContainer);
+
+    }
+
+
+    /* تحميل الصفحات تدريجيًا */
+
+    const observer = new IntersectionObserver(function(entries) {
+
+        entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+
+                const container = entry.target;
+
+                const pageNumber =
+                    Number(container.dataset.page);
+
+                renderPage(pageNumber, container);
+
+                observer.unobserve(container);
+
+            }
 
         });
 
-    }
+    }, {
+        rootMargin: "500px 0px"
+    });
+
+
+    document
+        .querySelectorAll(".page-loading")
+        .forEach(function(container) {
+
+            observer.observe(container);
+
+        });
+
 
 }).catch(function(error) {
 
     loading.textContent =
-    "تعذر تحميل الموضوع. تأكد من وجود ملف bac_blanc_science.pdf في الموقع.";
+        "تعذر تحميل الموضوع. تأكد من وجود ملف bac_blanc_science.pdf.";
 
     console.error(error);
 
