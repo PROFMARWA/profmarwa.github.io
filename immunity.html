@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>المناعة | علوم تجريبية</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(circle at top right, rgba(255,77,184,0.18), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(88,255,180,0.10), transparent 35%),
+        linear-gradient(135deg, #100322, #270544, #4b0b68);
+
+    color: white;
+    min-height: 100vh;
+}
+
+/* العنوان */
+
+header {
+    text-align: center;
+    padding: 45px 15px 25px;
+}
+
+header .main-icon {
+    width: 85px;
+    height: 85px;
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 42px;
+
+    background: rgba(255,255,255,0.07);
+
+    border: 1px solid rgba(255,77,184,0.45);
+
+    box-shadow:
+        0 0 25px rgba(255,77,184,0.25),
+        0 0 45px rgba(180,50,233,0.12);
+}
+
+header h1 {
+    margin: 0;
+
+    font-size: 32px;
+
+    color: #ff4db8;
+
+    text-shadow:
+        0 0 12px rgba(255,77,184,0.5);
+}
+
+header p {
+    margin-top: 10px;
+
+    color: #ddd;
+
+    font-size: 15px;
+}
+
+
+/* الحاوية */
+
+.sections {
+
+    width: 92%;
+    max-width: 900px;
+
+    margin: 25px auto 40px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+/* الخانات */
+
+.immunity-card {
+
+    text-decoration: none;
+
+    color: white;
+
+    min-height: 230px;
+
+    padding: 30px 20px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.10),
+            rgba(255,255,255,0.035)
+        );
+
+    border: 1px solid rgba(255,77,184,0.28);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 0 20px rgba(255,77,184,0.08);
+}
+
+.immunity-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: rgba(255,77,184,0.7);
+
+    box-shadow:
+        0 0 25px rgba(255,77,184,0.25),
+        0 0 45px rgba(180,50,233,0.12);
+}
+
+
+/* الأيقونة */
+
+.card-icon {
+
+    width: 85px;
+    height: 85px;
+
+    border-radius: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 42px;
+
+    margin-bottom: 20px;
+
+    background: rgba(255,77,184,0.08);
+
+    border: 1px solid rgba(255,77,184,0.35);
+
+    box-shadow:
+        0 0 20px rgba(255,77,184,0.12);
+}
+
+
+/* عنوان الخانة */
+
+.immunity-card h2 {
+
+    margin: 5px 0 10px;
+
+    font-size: 21px;
+
+    color: #ff70c5;
+}
+
+
+/* الوصف */
+
+.immunity-card p {
+
+    margin: 0;
+
+    color: #ddd;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* زر العودة */
+
+.back-button {
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 10px auto 35px;
+
+    padding: 11px 25px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(90deg, #8e21e8, #ff35ad);
+
+    box-shadow:
+        0 0 18px rgba(255,53,173,0.2);
+
+    transition: 0.25s ease;
+}
+
+.back-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(255,53,173,0.35);
+}
+
+
+/* الهاتف */
+
+@media (max-width: 650px) {
+
+    header {
+        padding-top: 35px;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    .sections {
+
+        grid-template-columns: 1fr;
+
+        width: 90%;
+
+        gap: 18px;
+    }
+
+    .immunity-card {
+
+        min-height: 210px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="main-icon">
+        🛡️
+    </div>
+
+    <h1>المناعة</h1>
+
+    <p>
+        اختر المحور الذي تريد دراسته
+    </p>
+
+</header>
+
+
+
+<section class="sections">
+
+
+    <!-- الذات واللاذات -->
+
+    <a href="#" class="immunity-card">
+
+        <div class="card-icon">
+            🧬
+        </div>
+
+        <h2>
+            الذات واللاذات
+        </h2>
+
+        <p>
+            مفاهيم الذات واللاذات والتعرف على العناصر الغريبة
+        </p>
+
+    </a>
+
+
+
+    <!-- المناعة الخلطية والخلوية -->
+
+    <a href="#" class="immunity-card">
+
+        <div class="card-icon">
+            🦠
+        </div>
+
+        <h2>
+            المناعة الخلطية والخلوية
+        </h2>
+
+        <p>
+            آليات الاستجابة المناعية الخلطية والخلوية
+        </p>
+
+    </a>
+
+
+</section>
+
+
+
+<a href="science.html" class="back-button">
+
+    ← العودة إلى علوم الطبيعة والحياة
+
+</a>
+
+
+</body>
+
+</html>
