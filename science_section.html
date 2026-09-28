@@ -690,10 +690,14 @@ const summaryLink =
     );
 
 
+const summaryLink =
+    document.getElementById("summaryLink");
+
+
 if (subject === "protein") {
 
     summaryLink.href =
-        "protein-summary.pdf";
+        "pdf-viewer.html?file=protein-summary.pdf&title=تركيب%20البروتين&back=science_section.html?subject=protein";
 
 }
 
@@ -701,7 +705,7 @@ if (subject === "protein") {
 if (subject === "structure") {
 
     summaryLink.href =
-        "structure-summary.pdf";
+        "pdf-viewer.html?file=structure-summary.pdf&title=العلاقة%20بين%20بنية%20ووظيفة%20البروتين&back=science_section.html?subject=structure";
 
 }
 
@@ -709,7 +713,7 @@ if (subject === "structure") {
 if (subject === "enzymes") {
 
     summaryLink.href =
-        "enzymes-summary.pdf";
+        "pdf-viewer.html?file=enzymes-summary.pdf&title=الإنزيمات&back=science_section.html?subject=enzymes";
 
 }
 
@@ -717,9 +721,10 @@ if (subject === "enzymes") {
 if (subject === "immunity") {
 
     summaryLink.href =
-        "humoral-summary.pdf";
+        "pdf-viewer.html?file=humoral-summary.pdf&title=المناعة&back=science_section.html?subject=immunity";
 
 }
+
 
 
 /* ==========================================
