@@ -632,7 +632,7 @@ body {
 <!-- ================================
      الملخصات
 ================================ -->
-  <a href="protein-summary.pdf"
+  <a href="#
    id="summaryLink"
    class="section-card">
 
@@ -749,6 +749,19 @@ if (subjects[subject]) {
 
     document.getElementById("sectionTitle").textContent =
         subjects[subject];
+
+}
+if (subject === "protein") {
+
+    document.getElementById("summaryLink").href =
+        "protein-summary.pdf";
+
+}
+
+if (subject === "structure") {
+
+    document.getElementById("summaryLink").href =
+        "structure-summary.pdf";
 
 }
 
