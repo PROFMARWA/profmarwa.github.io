@@ -1,763 +1,727 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>القسم | Science with Prof Marwa</title>
-
-<style>
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-
-    margin: 0;
-
-    font-family: Arial, Tahoma, sans-serif;
-
-    background:
-        linear-gradient(
-            135deg,
-            #12052d,
-            #2b0752,
-            #4b0b68
-        );
-
-    color: white;
-
-    min-height: 100vh;
-}
-
-
-/* ================================
-   الصفحة
-================================ */
-
-.section-page {
-
-    min-height: 100vh;
-
-    padding: 25px 15px 40px;
-
-}
-
-
-/* ================================
-   العنوان
-================================ */
-
-.section-header {
-
-    text-align: center;
-
-    padding: 10px 10px 25px;
-
-}
-
-
-.section-header h1 {
-
-    margin: 0;
-
-    font-size: clamp(25px, 6vw, 38px);
-
-    font-weight: 900;
-
-    color: #ff4db8;
-
-}
-
-
-.section-header p {
-
-    margin-top: 10px;
-
-    color: #ddd;
-
-    font-size: 17px;
-
-}
-
-
-/* ================================
-   الحاوية الرئيسية
-   نفس شكل صفحة البكالوريات
-================================ */
-
-.content-container {
-
-    width: 95%;
-
-    max-width: 1000px;
-
-    margin: 10px auto 30px;
-
-    padding: 18px;
-
-    background:
-        rgba(255,255,255,0.08);
-
-    border:
-        1px solid rgba(255,77,184,0.35);
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 0 25px rgba(255,77,184,0.12);
-
-}
-
-
-/* ================================
-   المواضيع
-================================ */
-
-.topics {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 18px;
-
-}
-
-
-/* ================================
-   بطاقة الموضوع
-================================ */
-
-.topic-card {
-
-    position: relative;
-
-    min-height: 190px;
-
-    padding: 25px 18px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    text-decoration: none;
-
-    color: white;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(91,22,119,0.95),
-            rgba(42,8,62,0.98)
-        );
-
-    border:
-        1px solid rgba(255,77,184,0.35);
-
-    border-radius: 15px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.25);
-
-    overflow: hidden;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        border-color .3s ease;
-
-}
-
-
-/* الخط العلوي */
-
-.topic-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    right: 0;
-
-    width: 100%;
-
-    height: 4px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #8e21e8,
-            #ff35ad
-        );
-
-}
-
-
-/* تأثير الإضاءة */
-
-.topic-card::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 150px;
-
-    height: 150px;
-
-    top: -80px;
-
-    left: -50px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,77,184,0.12);
-
-    pointer-events: none;
-
-}
-
-
-/* الحركة */
-
-.topic-card:hover {
-
-    transform:
-        translateY(-6px);
-
-    border-color:
-        rgba(255,77,184,0.75);
-
-    box-shadow:
-
-        0 15px 35px rgba(0,0,0,0.4),
-
-        0 0 25px rgba(255,77,184,0.18);
-
-}
-
-
-/* ================================
-   الأيقونة
-================================ */
-
-.topic-icon {
-
-    width: 65px;
-
-    height: 65px;
-
-    margin-bottom: 14px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 18px;
-
-    font-size: 30px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #8e21e8,
-            #ff35ad
-        );
-
-    box-shadow:
-
-        0 0 20px
-        rgba(255,77,184,0.30);
-
-}
-
-
-/* ================================
-   عنوان الموضوع
-================================ */
-
-.topic-card h2 {
-
-    margin: 0 0 8px;
-
-    font-size: 22px;
-
-    font-weight: 900;
-
-    color: #ff65c1;
-
-}
-
-
-/* ================================
-   وصف الموضوع
-================================ */
-
-.topic-card p {
-
-    margin: 0;
-
-    color: #ddd;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-}
-
-
-/* ================================
-   زر العودة
-================================ */
-
-.back-button {
-
-    display: block;
-
-    width: fit-content;
-
-    margin: 0 auto 18px;
-
-    padding: 11px 22px;
-
-    border-radius: 25px;
-
-    text-decoration: none;
-
-    color: white;
-
-    font-weight: bold;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #8e21e8,
-            #ff35ad
-        );
-
-    box-shadow:
-
-        0 6px 20px
-        rgba(255,53,173,0.20);
-
-    transition: .3s ease;
-
-}
-
-
-.back-button:hover {
-
-    transform:
-        translateY(-3px);
-
-}
-
-
-/* ================================
-   الهاتف
-================================ */
-
-@media (max-width: 600px) {
-
-    .section-page {
-
-        padding:
-            20px 8px 30px;
-
-    }
-
-    .section-header h1 {
-
-        font-size: 25px;
-
-    }
-
-    .section-header p {
-
-        font-size: 15px;
-
-    }
-
-    .content-container {
-
-        width: 96%;
-
-        padding: 10px;
-
-        border-radius: 18px;
-
-    }
-
-    .topics {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 10px;
-
-    }
-
-    .topic-card {
-
-        min-height: 170px;
-
-        padding:
-            18px 7px;
-
-        border-radius: 13px;
-
-    }
-
-    .topic-icon {
-
-        width: 53px;
-
-        height: 53px;
-
-        margin-bottom: 10px;
-
-        border-radius: 15px;
-
-        font-size: 24px;
-
-    }
-
-    .topic-card h2 {
-
-        font-size: 16px;
-
-        line-height: 1.5;
-
-    }
-
-    .topic-card p {
-
-        font-size: 11px;
-
-        line-height: 1.5;
-
-    }
-
-    .back-button {
-
-        font-size: 14px;
-
-        padding:
-            10px 18px;
-
-    }
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<main class="section-page">
-
-
-<!-- ================================
-     العنوان
-================================ -->
-
-<header class="section-header">
-
-    <h1 id="sectionTitle">
-        القسم
-    </h1>
-
-    <p>
-        علوم الطبيعة والحياة
-    </p>
-
-</header>
-
-
-
-<!-- ================================
-     الحاوية
-================================ -->
-
-<div class="content-container">
-
-
-<section class="topics">
-
-
-<!-- ================================
-     الملخصات
-================================ -->
-
-<a href="#"
-   id="summaryLink"
-   class="topic-card">
-
-    <div class="topic-icon">
-        📚
-    </div>
-
-    <h2>
-        الملخصات
-    </h2>
-
-    <p>
-        ملخصات ودروس القسم
-    </p>
-
-</a>
-
-
-
-<!-- ================================
-     التمارين
-================================ -->
-
-<a href="protein-exercises.pdf"
-   id="exercisesLink"
-   class="topic-card">
-
-    <div class="topic-icon">
-        📝
-    </div>
-
-    <h2>
-        التمارين
-    </h2>
-
-    <p>
-        تمارين وتطبيقات للتدرب
-    </p>
-
-</a>
-
-
-
-<!-- ================================
-     المخططات
-================================ -->
-
-<a href="#"
-   id="schemesLink"
-   class="topic-card">
-
-    <div class="topic-icon">
-        📖
-    </div>
-
-    <h2>
-        المخططات
-    </h2>
-
-    <p>
-        مخططات توضيحية تساعد على فهم الدرس واسترجاع المعلومات
-    </p>
-
-</a>
-
-
-</section>
-
-</div>
-
-
-
-<!-- ================================
-     أزرار العودة
-================================ -->
-
-<a href="science.html"
-   class="back-button">
-
-    ← العودة إلى علوم الطبيعة والحياة
-
-</a>
-
-
-<a href="index.html"
-   class="back-button">
-
-    ← العودة للرئيسية
-
-</a>
-
-
-</main>
-
-
-
-<script>
-
-/* ==========================================
-   تحديد القسم من الرابط
-========================================== */
-
-const params =
-    new URLSearchParams(
-        window.location.search
-    );
-
-const subject =
-    params.get("subject");
-
-
-
-/* ==========================================
-   أسماء الأقسام
-========================================== */
-
-const subjects = {
-
-    prerequisites:
-        "المكتسبات القبلية",
-
-    protein:
-        "تركيب البروتين",
-
-    structure:
-        "العلاقة بين بنية ووظيفة البروتين",
-
-    enzymes:
-        "الإنزيمات",
-
-    immunity:
-        "المناعة",
-
-    nervous:
-        "الاتصال العصبي",
-
-    photosynthesis:
-        "التركيب الضوئي",
-
-    respiration:
-        "التنفس",
-
-    geology:
-        "الجيولوجيا"
-
-};
-
-
-
-/* ==========================================
-   تغيير العنوان
-========================================== */
-
-if (subjects[subject]) {
-
-    document
-        .getElementById("sectionTitle")
-        .textContent =
-        subjects[subject];
-
-}
-
-
-
-/* ==========================================
-   روابط الملخصات
-========================================== */
-
-const summaryLink =
-    document.getElementById(
-        "summaryLink"
-    );
-
-
-const summaryLink =
-    document.getElementById("summaryLink");
-
-
-if (subject === "protein") {
-
-    summaryLink.href =
-        "pdf-viewer.html?file=protein-summary.pdf&title=تركيب%20البروتين&back=science_section.html?subject=protein";
-
-}
-
-
-if (subject === "structure") {
-
-    summaryLink.href =
-        "pdf-viewer.html?file=structure-summary.pdf&title=العلاقة%20بين%20بنية%20ووظيفة%20البروتين&back=science_section.html?subject=structure";
-
-}
-
-
-if (subject === "enzymes") {
-
-    summaryLink.href =
-        "pdf-viewer.html?file=enzymes-summary.pdf&title=الإنزيمات&back=science_section.html?subject=enzymes";
-
-}
-
-
-if (subject === "immunity") {
-
-    summaryLink.href =
-        "pdf-viewer.html?file=humoral-summary.pdf&title=المناعة&back=science_section.html?subject=immunity";
-
-}
-
-
-
-/* ==========================================
-   رابط التمارين
-========================================== */
-
-const exercisesLink =
-    document.getElementById(
-        "exercisesLink"
-    );
-
-
-if (subject === "protein") {
-
-    exercisesLink.href =
-        "protein-exercises.pdf";
-
-}
-
-
-/* ==========================================
-   المخططات
-========================================== */
-
-const schemesLink =
-    document.getElementById(
-        "schemesLink"
-    );
-
-
-</script>
-
-
-</body>
-
-</html>
+<!DOCTYPE html>  <html lang="ar" dir="rtl">  <head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>القسم | Science with Prof Marwa</title>  <style>  
+  
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+}  
+  
+html {  
+    scroll-behavior: smooth;  
+}  
+  
+body {  
+    font-family: Arial, Tahoma, sans-serif;  
+    background: #16051f;  
+}  
+  
+  
+/* ================================  
+   الصفحة  
+================================ */  
+  
+.section-page {  
+  
+    min-height: 100vh;  
+  
+    padding: 45px 5% 70px;  
+  
+    position: relative;  
+  
+    overflow: hidden;  
+  
+    color: white;  
+  
+    background:  
+  
+        radial-gradient(  
+            circle at 15% 10%,  
+            rgba(255, 55, 190, 0.32),  
+            transparent 28%  
+        ),  
+  
+        radial-gradient(  
+            circle at 88% 20%,  
+            rgba(80, 255, 170, 0.22),  
+            transparent 27%  
+        ),  
+  
+        radial-gradient(  
+            circle at 50% 100%,  
+            rgba(145, 40, 220, 0.34),  
+            transparent 38%  
+        ),  
+  
+        linear-gradient(  
+            135deg,  
+            #16051f,  
+            #2b0644,  
+            #3c0755,  
+            #180622  
+        );  
+}  
+  
+  
+/* ================================  
+   اللمعات  
+================================ */  
+  
+.section-page::before {  
+  
+    content: "";  
+  
+    position: absolute;  
+  
+    width: 520px;  
+    height: 520px;  
+  
+    top: -250px;  
+    right: -190px;  
+  
+    border-radius: 50%;  
+  
+    background:  
+        radial-gradient(  
+            circle,  
+            rgba(255, 65, 190, 0.28),  
+            transparent 65%  
+        );  
+  
+    pointer-events: none;  
+}  
+  
+  
+.section-page::after {  
+  
+    content: "";  
+  
+    position: absolute;  
+  
+    width: 480px;  
+    height: 480px;  
+  
+    bottom: -240px;  
+    left: -180px;  
+  
+    border-radius: 50%;  
+  
+    background:  
+        radial-gradient(  
+            circle,  
+            rgba(50, 240, 150, 0.20),  
+            transparent 65%  
+        );  
+  
+    pointer-events: none;  
+}  
+  
+  
+/* ================================  
+   العنوان  
+================================ */  
+  
+.section-header {  
+  
+    position: relative;  
+  
+    z-index: 2;  
+  
+    text-align: center;  
+  
+    margin-bottom: 50px;  
+}  
+  
+  
+.section-header h1 {  
+  
+    font-size: clamp(32px, 6vw, 55px);  
+  
+    font-weight: 900;  
+  
+    line-height: 1.4;  
+  
+    background:  
+  
+        linear-gradient(  
+            90deg,  
+            #ff42b7,  
+            #c84cff,  
+            #58ffad,  
+            #ff42b7  
+        );  
+  
+    background-size: 300% 100%;  
+  
+    -webkit-background-clip: text;  
+    background-clip: text;  
+  
+    -webkit-text-fill-color: transparent;  
+  
+    animation: titleGlow 5s ease infinite;  
+}  
+  
+  
+@keyframes titleGlow {  
+  
+    0% {  
+        background-position: 0% 50%;  
+    }  
+  
+    50% {  
+        background-position: 100% 50%;  
+    }  
+  
+    100% {  
+        background-position: 0% 50%;  
+    }  
+}  
+  
+  
+.section-header p {  
+  
+    margin-top: 12px;  
+  
+    color: #f5dff5;  
+  
+    font-size: 18px;  
+  
+    font-weight: 600;  
+}  
+  
+  
+/* ================================  
+   البطاقات  
+================================ */  
+  
+.section-grid {  
+  
+    position: relative;  
+  
+    z-index: 2;  
+  
+    width: 100%;  
+  
+    max-width: 900px;  
+  
+    margin: auto;  
+  
+    display: grid;  
+  
+    grid-template-columns: repeat(2, 1fr);  
+  
+    gap: 25px;  
+}  
+  
+  
+/* ================================  
+   البطاقة  
+================================ */  
+  
+.section-card {  
+  
+    position: relative;  
+  
+    min-height: 230px;  
+  
+    padding: 30px 20px;  
+  
+    display: flex;  
+  
+    flex-direction: column;  
+  
+    align-items: center;  
+  
+    justify-content: center;  
+  
+    text-align: center;  
+  
+    text-decoration: none;  
+  
+    color: white;  
+  
+    border-radius: 25px;  
+  
+    overflow: hidden;  
+  
+    background:  
+  
+        linear-gradient(  
+            145deg,  
+            rgba(91, 22, 119, 0.95),  
+            rgba(42, 8, 62, 0.98)  
+        );  
+  
+    border: 2px solid #087a4c;  
+  
+    box-shadow:  
+  
+        0 0 0 1px rgba(255, 55, 190, 0.10),  
+  
+        0 12px 35px rgba(0, 0, 0, 0.38),  
+  
+        0 0 30px rgba(30, 220, 135, 0.15);  
+  
+    transition:  
+        transform .35s ease,  
+        box-shadow .35s ease,  
+        border-color .35s ease;  
+}  
+  
+  
+/* الخط اللامع */  
+  
+.section-card::before {  
+  
+    content: "";  
+  
+    position: absolute;  
+  
+    top: 0;  
+    left: 0;  
+  
+    width: 100%;  
+  
+    height: 5px;  
+  
+    background:  
+  
+        linear-gradient(  
+            90deg,  
+            #ff32b4,  
+            #b944ff,  
+            #26df8a,  
+            #ff32b4  
+        );  
+  
+    background-size: 250% 100%;  
+  
+    animation: borderGlow 4s linear infinite;  
+}  
+  
+  
+@keyframes borderGlow {  
+  
+    0% {  
+        background-position: 0% 50%;  
+    }  
+  
+    100% {  
+        background-position: 250% 50%;  
+    }  
+}  
+  
+  
+/* التوهج الداخلي */  
+  
+.section-card::after {  
+  
+    content: "";  
+  
+    position: absolute;  
+  
+    inset: 0;  
+  
+    background:  
+  
+        radial-gradient(  
+            circle at 50% 0%,  
+            rgba(255, 55, 190, 0.18),  
+            transparent 55%  
+        );  
+  
+    pointer-events: none;  
+}  
+  
+  
+/* الحركة */  
+  
+.section-card:hover {  
+  
+    transform:  
+        translateY(-9px)  
+        scale(1.02);  
+  
+    border-color: #55ffad;  
+  
+    box-shadow:  
+  
+        0 0 0 2px rgba(45, 240, 145, 0.15),  
+  
+        0 20px 45px rgba(0, 0, 0, 0.45),  
+  
+        0 0 35px rgba(35, 240, 145, 0.25),  
+  
+        0 0 45px rgba(255, 50, 190, 0.18);  
+}  
+  
+  
+/* ================================  
+   الأيقونة  
+================================ */  
+  
+.section-icon {  
+  
+    position: relative;  
+  
+    z-index: 2;  
+  
+    width: 75px;  
+    height: 75px;  
+  
+    margin-bottom: 18px;  
+  
+    display: flex;  
+  
+    align-items: center;  
+    justify-content: center;  
+  
+    border-radius: 22px;  
+  
+    font-size: 34px;  
+  
+    background:  
+  
+        linear-gradient(  
+            135deg,  
+            #ff35b3,  
+            #a93ee8,  
+            #5affad  
+        );  
+  
+    box-shadow:  
+  
+        0 0 22px rgba(255, 55, 190, 0.40),  
+  
+        0 0 30px rgba(50, 240, 150, 0.20);  
+  
+    transition: .35s ease;  
+}  
+  
+  
+.section-card:hover .section-icon {  
+  
+    transform:  
+        translateY(-4px)  
+        rotate(-4deg)  
+        scale(1.08);  
+}  
+  
+  
+/* ================================  
+   عنوان البطاقة  
+================================ */  
+  
+.section-card h2 {  
+  
+    position: relative;  
+  
+    z-index: 2;  
+  
+    margin-bottom: 10px;  
+  
+    font-size: 26px;  
+  
+    font-weight: 900;  
+  
+    background:  
+  
+        linear-gradient(  
+            90deg,  
+            #64ffad,  
+            #ff55bd,  
+            #c45aff  
+        );  
+  
+    -webkit-background-clip: text;  
+    background-clip: text;  
+  
+    -webkit-text-fill-color: transparent;  
+}  
+  
+  
+.section-card p {  
+  
+    position: relative;  
+  
+    z-index: 2;  
+  
+    color: #ead8ed;  
+  
+    font-size: 16px;  
+  
+    line-height: 1.7;  
+  
+    font-weight: 600;  
+}  
+  
+  
+/* ================================  
+   زر العودة  
+================================ */  
+  
+.section-home {  
+  
+    position: relative;  
+  
+    z-index: 2;  
+  
+    display: block;  
+  
+    width: 250px;  
+  
+    margin: 50px auto 0;  
+  
+    padding: 16px;  
+  
+    text-align: center;  
+  
+    text-decoration: none;  
+  
+    color: white;  
+  
+    font-size: 18px;  
+  
+    font-weight: 900;  
+  
+    border-radius: 18px;  
+  
+    background:  
+  
+        linear-gradient(  
+            90deg,  
+            #ff32b0,  
+            #8d35d0,  
+            #18ad6b  
+        );  
+  
+    box-shadow:  
+  
+        0 8px 25px rgba(255, 45, 175, 0.25),  
+  
+        0 0 25px rgba(30, 210, 130, 0.15);  
+  
+    transition: .3s ease;  
+}  
+  
+  
+.section-home:hover {  
+  
+    transform:  
+        translateY(-5px)  
+        scale(1.03);  
+  
+}  
+  
+  
+/* ================================  
+   الهاتف  
+================================ */  
+  
+@media (max-width: 700px) {  
+  
+    .section-page {  
+  
+        padding: 32px 12px 50px;  
+    }  
+  
+    .section-header {  
+  
+        margin-bottom: 30px;  
+    }  
+  
+    .section-header h1 {  
+  
+        font-size: 30px;  
+    }  
+  
+    .section-header p {  
+  
+        font-size: 14px;  
+    }  
+  
+    .section-grid {  
+  
+        grid-template-columns: repeat(2, 1fr);  
+  
+        gap: 11px;  
+    }  
+  
+    .section-card {  
+  
+        min-height: 190px;  
+  
+        padding: 17px 7px;  
+  
+        border-radius: 18px;  
+    }  
+  
+    .section-icon {  
+  
+        width: 58px;  
+        height: 58px;  
+  
+        margin-bottom: 11px;  
+  
+        border-radius: 17px;  
+  
+        font-size: 25px;  
+    }  
+  
+    .section-card h2 {  
+  
+        font-size: 17px;  
+  
+        line-height: 1.5;  
+    }  
+  
+    .section-card p {  
+  
+        font-size: 11px;  
+  
+        line-height: 1.6;  
+    }  
+  
+    .section-home {  
+  
+        width: 215px;  
+  
+        padding: 14px;  
+  
+        font-size: 16px;  
+    }  
+}  
+  
+</style>  </head>  <body>  <main class="section-page">  <header class="section-header">  <h1 id="sectionTitle">  
+    القسم  
+</h1>  
+
+<p>  
+    اختر ما تريد البدء فيه  
+</p>
+
+</header>  <section class="section-grid">  <!-- ================================  
+     الملخصات  
+================================ -->  <a href="#"  
+id="summaryLink"  
+class="section-card">
+
+<div class="section-icon">  
+    📚  
+</div>  
+
+<h2>  
+    الملخصات  
+</h2>  
+
+<p>  
+    ملخصات ودروس القسم  
+</p>
+
+</a>   <!-- ================================  
+     التمارين  
+================================ -->  <a href="protein-exercises.pdf"  
+id="exercisesLink"  
+class="section-card">
+
+<div class="section-icon">  
+    📝  
+</div>  
+
+<h2>  
+    التمارين  
+</h2>  
+
+<p>  
+    تمارين وتطبيقات للتدرب  
+</p>
+
+</a>  <!-- المخططات -->  <a href="#"  
+class="section-card card-green">
+
+<div class="section-icon">
+
+<i class="fa-solid fa-book"></i>
+
+</div>  <h2>المخططات</h2>  
+
+<p>  
+    مخططات توضيحية تساعد على فهم الدرس واسترجاع المعلومات  
+</p>
+
+</a>  </section>  <a href="science.html"  
+class="section-home">
+
+← العودة إلى علوم الطبيعة والحياة
+
+</a>  <a href="index.html"  
+class="section-home">
+
+← العودة للرئيسية
+
+</main>  <script>  
+  
+/* ==========================================  
+   تحديد القسم من الرابط  
+========================================== */  
+  
+const params = new URLSearchParams(window.location.search);  
+  
+const subject = params.get("subject");  
+  
+  
+const subjects = {  
+  
+    prerequisites: "المكتسبات القبلية",  
+  
+    protein: "تركيب البروتين",  
+  
+    structure: "العلاقة بين بنية ووظيفة البروتين",  
+  
+    enzymes: "الإنزيمات",  
+  
+    immunity: "المناعة",  
+  
+    nervous: "الاتصال العصبي",  
+  
+    photosynthesis: "التركيب الضوئي",  
+  
+    respiration: "التنفس",  
+  
+    geology: "الجيولوجيا"  
+  
+};  
+  
+  
+if (subjects[subject]) {  
+  
+    document.getElementById("sectionTitle").textContent =  
+        subjects[subject];  
+  
+}  
+if (subject === "protein") {  
+  
+    document.getElementById("summaryLink").href =  
+        "protein-summary.pdf";  
+  
+}  
+  
+if (subject === "structure") {  
+  
+    document.getElementById("summaryLink").href =  
+        "structure-summary.pdf";  
+  
+}  
+ if (subject === "enzymes") {  
+    document.getElementById("summaryLink").href =  
+        "enzymes-summary.pdf";  
+}  
+if (subject === "immunity") {  
+    document.getElementById("summaryLink").href =  
+        "humoral-summary.pdf";  
+}  
+  
+</script>  
+
+</body> 
+
+ </html>
