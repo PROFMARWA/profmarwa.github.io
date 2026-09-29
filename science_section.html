@@ -697,34 +697,40 @@ const subjects = {
   
 };  
   
-  
-if (subjects[subject]) {  
-  
-    document.getElementById("sectionTitle").textContent =  
-        subjects[subject];  
-  
-}  
-if (subject === "protein") {  
-  
-    document.getElementById("summaryLink").href =  
-        "protein-summary.pdf";  
-  
-}  
-  
-if (subject === "structure") {  
-  
-    document.getElementById("summaryLink").href =  
-        "structure-summary.pdf";  
-  
-}  
- if (subject === "enzymes") {  
-    document.getElementById("summaryLink").href =  
-        "enzymes-summary.pdf";  
-}  
-if (subject === "immunity") {  
-    document.getElementById("summaryLink").href =  
-        "humoral-summary.pdf";  
-}  
+  if (subjects[subject]) {
+
+    document.getElementById("sectionTitle").textContent =
+        subjects[subject];
+
+}
+
+if (subject === "protein") {
+
+    document.getElementById("summaryLink").href =
+        "pdf-viewer.html?file=protein-summary.pdf";
+
+}
+
+if (subject === "structure") {
+
+    document.getElementById("summaryLink").href =
+        "pdf-viewer.html?file=structure-summary.pdf";
+
+}
+
+if (subject === "enzymes") {
+
+    document.getElementById("summaryLink").href =
+        "pdf-viewer.html?file=enzymes-summary.pdf";
+
+}
+
+if (subject === "immunity") {
+
+    document.getElementById("summaryLink").href =
+        "pdf-viewer.html?file=humoral-summary.pdf";
+
+}
   
 </script>  
 
