@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>عرض الملف</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #12052d,
+            #2b0752,
+            #4b0b68
+        );
+
+    color: white;
+
+    min-height: 100vh;
+}
+
+
+/* العنوان */
+
+header {
+    text-align: center;
+
+    padding: 25px 15px 18px;
+}
+
+header h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+    color: #ff4db8;
+
+    text-shadow:
+        0 0 12px rgba(255,77,184,0.5);
+}
+
+
+/* حاوية الصفحات */
+
+.pdf-container {
+
+    width: 95%;
+
+    max-width: 1000px;
+
+    margin: 10px auto 30px;
+
+    padding: 10px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border:
+        1px solid rgba(255,77,184,0.35);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 25px rgba(255,77,184,0.12);
+}
+
+
+/* صفحات PDF */
+
+.pdf-page {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    margin: 0 auto 15px;
+
+    background: white;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 0 12px rgba(0,0,0,0.3);
+}
+
+
+/* مكان تحميل الصفحة */
+
+.page-loading {
+
+    min-height: 400px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ddd;
+
+    font-size: 16px;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+/* رسالة التحميل */
+
+.loading {
+
+    text-align: center;
+
+    padding: 40px 10px;
+
+    color: #ddd;
+
+    font-size: 17px;
+}
+
+
+/* زر العودة */
+
+.back-button {
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto 30px;
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8e21e8,
+            #ff35ad
+        );
+
+    box-shadow:
+        0 0 15px rgba(255,53,173,0.2);
+}
+
+
+/* الهاتف */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .page-loading {
+        min-height: 350px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1 id="fileTitle">
+        جارٍ تحميل الملف...
+    </h1>
+
+</header>
+
+
+<div class="pdf-container">
+
+    <div id="loading" class="loading">
+        جارٍ تحميل الموضوع...
+    </div>
+
+    <div id="pdf-pages"></div>
+
+</div>
+
+
+<a href="science_section.html" class="back-button">
+
+    ← العودة
+
+</a>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+
+<script>
+
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+
+/* الحصول على اسم الملف من الرابط */
+
+const params =
+new URLSearchParams(window.location.search);
+
+const file =
+params.get("file");
+
+
+/* العناصر */
+
+const pagesContainer =
+document.getElementById("pdf-pages");
+
+const loading =
+document.getElementById("loading");
+
+const fileTitle =
+document.getElementById("fileTitle");
+
+
+/* إذا لم يوجد ملف */
+
+if (!file) {
+
+    loading.textContent =
+        "لم يتم تحديد الملف.";
+
+}
+
+
+/* تحويل اسم الملف إلى عنوان */
+
+if (file) {
+
+    const cleanName =
+        file.replace(".pdf", "");
+
+    const titles = {
+
+        "protein-summary":
+            "ملخصات تركيب البروتين",
+
+        "structure-summary":
+            "ملخصات العلاقة بين بنية ووظيفة البروتين",
+
+        "enzymes-summary":
+            "ملخصات الإنزيمات",
+
+        "humoral-summary":
+            "ملخصات المناعة الخلطية والخلوية"
+
+    };
+
+    fileTitle.textContent =
+        titles[cleanName] || "عرض الملف";
+
+}
+
+
+/* تحميل PDF */
+
+if (file) {
+
+    pdfjsLib.getDocument({
+        url: file,
+
+        disableAutoFetch: false,
+
+        disableStream: false
+
+    }).promise.then(function(pdf) {
+
+        loading.style.display = "none";
+
+
+        /*
+        إنشاء أماكن لجميع الصفحات
+        */
+
+        for (
+            let i = 1;
+            i <= pdf.numPages;
+            i++
+        ) {
+
+            const pageContainer =
+                document.createElement("div");
+
+            pageContainer.className =
+                "page-loading";
+
+            pageContainer.textContent =
+                "الصفحة " +
+                i +
+                " — جارٍ تجهيزها...";
+
+            pageContainer.dataset.page = i;
+
+            pagesContainer.appendChild(
+                pageContainer
+            );
+
+        }
+
+
+        /*
+        تحميل الصفحات عند الاقتراب منها
+        */
+
+        const observer =
+            new IntersectionObserver(
+                function(entries) {
+
+                    entries.forEach(
+                        function(entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                const container =
+                                    entry.target;
+
+                                const pageNumber =
+                                    Number(
+                                        container.dataset.page
+                                    );
+
+                                renderPage(
+                                    pdf,
+                                    pageNumber,
+                                    container
+                                );
+
+                                observer.unobserve(
+                                    container
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    rootMargin:
+                        "500px 0px"
+                }
+
+            );
+
+
+        document
+            .querySelectorAll(".page-loading")
+            .forEach(
+                function(container) {
+
+                    observer.observe(
+                        container
+                    );
+
+                }
+            );
+
+
+    }).catch(function(error) {
+
+        loading.textContent =
+            "تعذر تحميل الملف.";
+
+        console.error(error);
+
+    });
+
+}
+
+
+/* رسم الصفحة */
+
+function renderPage(
+    pdf,
+    pageNumber,
+    container
+) {
+
+    if (
+        container.dataset.loaded === "true"
+    ) {
+        return;
+    }
+
+
+    container.dataset.loaded =
+        "true";
+
+
+    container.textContent =
+        "جارٍ تحميل الصفحة " +
+        pageNumber +
+        "...";
+
+
+    pdf.getPage(pageNumber)
+        .then(function(page) {
+
+
+            const viewport =
+                page.getViewport({
+                    scale: 1.4
+                });
+
+
+            const canvas =
+                document.createElement(
+                    "canvas"
+                );
+
+
+            const context =
+                canvas.getContext(
+                    "2d"
+                );
+
+
+            canvas.className =
+                "pdf-page";
+
+
+            canvas.width =
+                viewport.width;
+
+
+            canvas.height =
+                viewport.height;
+
+
+            container.innerHTML = "";
+
+
+            container.appendChild(
+                canvas
+            );
+
+
+            page.render({
+
+                canvasContext:
+                    context,
+
+                viewport:
+                    viewport
+
+            });
+
+
+        })
+
+        .catch(function() {
+
+            container.textContent =
+                "تعذر تحميل هذه الصفحة.";
+
+        });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
