@@ -16,7 +16,6 @@
 
 body {
     margin: 0;
-
     font-family: Arial, sans-serif;
 
     background:
@@ -28,42 +27,29 @@ body {
         );
 
     color: white;
-
     min-height: 100vh;
 }
 
-
-/* العنوان */
-
 header {
     text-align: center;
-
     padding: 25px 15px 18px;
 }
 
 header h1 {
-
     margin: 0;
-
     font-size: 25px;
-
     color: #ff4db8;
 
     text-shadow:
         0 0 12px rgba(255,77,184,0.5);
 }
 
-
-/* حاوية الصفحات */
-
 .pdf-container {
 
     width: 95%;
-
     max-width: 1000px;
 
     margin: 10px auto 30px;
-
     padding: 10px;
 
     background:
@@ -78,15 +64,11 @@ header h1 {
         0 0 25px rgba(255,77,184,0.12);
 }
 
-
-/* صفحات PDF */
-
 .pdf-page {
 
     display: block;
 
     width: 100%;
-
     height: auto;
 
     margin: 0 auto 15px;
@@ -99,17 +81,12 @@ header h1 {
         0 0 12px rgba(0,0,0,0.3);
 }
 
-
-/* مكان تحميل الصفحة */
-
 .page-loading {
 
     min-height: 400px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     color: #ddd;
@@ -124,9 +101,6 @@ header h1 {
     margin-bottom: 15px;
 }
 
-
-/* رسالة التحميل */
-
 .loading {
 
     text-align: center;
@@ -137,9 +111,6 @@ header h1 {
 
     font-size: 17px;
 }
-
-
-/* زر العودة */
 
 .back-button {
 
@@ -169,9 +140,6 @@ header h1 {
     box-shadow:
         0 0 15px rgba(255,53,173,0.2);
 }
-
-
-/* الهاتف */
 
 @media (max-width: 600px) {
 
@@ -220,17 +188,21 @@ header h1 {
 </a>
 
 
+<script type="module">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+import {
+    getDocument,
+    GlobalWorkerOptions
+}
+from
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs";
 
 
-<script>
-
-pdfjsLib.GlobalWorkerOptions.workerSrc =
-"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+GlobalWorkerOptions.workerSrc =
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs";
 
 
-/* الحصول على اسم الملف من الرابط */
+/* الحصول على اسم الملف */
 
 const params =
 new URLSearchParams(window.location.search);
@@ -261,7 +233,7 @@ if (!file) {
 }
 
 
-/* تحويل اسم الملف إلى عنوان */
+/* عناوين الملفات */
 
 if (file) {
 
@@ -280,7 +252,10 @@ if (file) {
             "ملخصات الإنزيمات",
 
         "humoral-summary":
-            "ملخصات المناعة الخلطية والخلوية"
+            "ملخصات المناعة الخلطية والخلوية",
+
+        "nervous-summary":
+            "ملخصات الاتصال العصبي"
 
     };
 
@@ -294,21 +269,29 @@ if (file) {
 
 if (file) {
 
-    pdfjsLib.getDocument({
+    getDocument({
+
         url: file,
 
         disableAutoFetch: false,
 
-        disableStream: false
+        disableStream: false,
+
+        /*
+        محاولة استخدام الخطوط الموجودة
+        في ملف PDF بشكل أفضل
+        */
+
+        useSystemFonts: true,
+
+        disableFontFace: false
 
     }).promise.then(function(pdf) {
 
         loading.style.display = "none";
 
 
-        /*
-        إنشاء أماكن لجميع الصفحات
-        */
+        /* إنشاء أماكن الصفحات */
 
         for (
             let i = 1;
@@ -336,12 +319,11 @@ if (file) {
         }
 
 
-        /*
-        تحميل الصفحات عند الاقتراب منها
-        */
+        /* تحميل الصفحة عند الاقتراب منها */
 
         const observer =
             new IntersectionObserver(
+
                 function(entries) {
 
                     entries.forEach(
@@ -435,8 +417,8 @@ function renderPage(
 
 
     pdf.getPage(pageNumber)
-        .then(function(page) {
 
+        .then(function(page) {
 
             const viewport =
                 page.getViewport({
@@ -463,13 +445,11 @@ function renderPage(
             canvas.width =
                 viewport.width;
 
-
             canvas.height =
                 viewport.height;
 
 
             container.innerHTML = "";
-
 
             container.appendChild(
                 canvas
@@ -485,7 +465,6 @@ function renderPage(
                     viewport
 
             });
-
 
         })
 
