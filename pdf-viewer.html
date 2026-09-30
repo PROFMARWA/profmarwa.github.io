@@ -4,9 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>عرض الملف</title>
 
@@ -17,7 +15,6 @@
 }
 
 body {
-
     margin: 0;
 
     font-family: Arial, sans-serif;
@@ -35,41 +32,26 @@ body {
     min-height: 100vh;
 }
 
-
-/* العنوان */
-
 header {
-
     text-align: center;
-
     padding: 25px 15px 18px;
-
 }
 
 header h1 {
-
     margin: 0;
-
     font-size: 25px;
-
     color: #ff4db8;
 
     text-shadow:
         0 0 12px rgba(255,77,184,0.5);
-
 }
-
-
-/* حاوية PDF */
 
 .pdf-container {
 
     width: 95%;
-
     max-width: 1000px;
 
     margin: 10px auto 30px;
-
     padding: 10px;
 
     background:
@@ -83,10 +65,8 @@ header h1 {
     box-shadow:
         0 0 25px rgba(255,77,184,0.12);
 
+    overflow: hidden;
 }
-
-
-/* عارض PDF */
 
 .pdf-frame {
 
@@ -100,14 +80,10 @@ header h1 {
 
     border-radius: 10px;
 
-    background: white;
-
     display: block;
 
+    background: white;
 }
-
-
-/* زر العودة */
 
 .back-button {
 
@@ -136,26 +112,17 @@ header h1 {
 
     box-shadow:
         0 0 15px rgba(255,53,173,0.2);
-
 }
-
-
-/* الهاتف */
 
 @media (max-width: 600px) {
 
     header h1 {
-
         font-size: 22px;
-
     }
 
     .pdf-frame {
-
-        height: 75vh;
-
-        min-height: 500px;
-
+        height: 78vh;
+        min-height: 550px;
     }
 
 }
@@ -197,32 +164,20 @@ header h1 {
 
 <script>
 
-
-/* الحصول على اسم الملف */
-
 const params =
     new URLSearchParams(
         window.location.search
     );
 
-
 const file =
     params.get("file");
 
-
 const pdfFrame =
-    document.getElementById(
-        "pdfFrame"
-    );
-
+    document.getElementById("pdfFrame");
 
 const fileTitle =
-    document.getElementById(
-        "fileTitle"
-    );
+    document.getElementById("fileTitle");
 
-
-/* عناوين الملفات */
 
 const titles = {
 
@@ -244,22 +199,34 @@ const titles = {
 };
 
 
-/* تحميل الملف */
-
 if (file) {
 
     const cleanName =
         file.replace(".pdf", "");
-
 
     fileTitle.textContent =
         titles[cleanName] ||
         "عرض الملف";
 
 
-    pdfFrame.src = file;
+    /*
+       استخدام عارض PDF.js الجاهز
+       بدل عارض Chrome
+    */
+
+    const pdfUrl =
+        window.location.origin +
+        window.location.pathname
+            .replace("pdf-viewer.html", "")
+        + file;
+
+
+    pdfFrame.src =
+        "https://mozilla.github.io/pdf.js/web/viewer.html?file="
+        + encodeURIComponent(pdfUrl);
 
 }
+
 else {
 
     fileTitle.textContent =
