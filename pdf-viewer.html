@@ -4,7 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>عرض الملف</title>
 
@@ -15,7 +17,9 @@
 }
 
 body {
+
     margin: 0;
+
     font-family: Arial, sans-serif;
 
     background:
@@ -27,29 +31,45 @@ body {
         );
 
     color: white;
+
     min-height: 100vh;
 }
 
+
+/* العنوان */
+
 header {
+
     text-align: center;
+
     padding: 25px 15px 18px;
+
 }
 
 header h1 {
+
     margin: 0;
+
     font-size: 25px;
+
     color: #ff4db8;
 
     text-shadow:
         0 0 12px rgba(255,77,184,0.5);
+
 }
+
+
+/* حاوية PDF */
 
 .pdf-container {
 
     width: 95%;
+
     max-width: 1000px;
 
     margin: 10px auto 30px;
+
     padding: 10px;
 
     background:
@@ -62,55 +82,32 @@ header h1 {
 
     box-shadow:
         0 0 25px rgba(255,77,184,0.12);
+
 }
 
-.pdf-page {
 
-    display: block;
+/* عارض PDF */
+
+.pdf-frame {
 
     width: 100%;
-    height: auto;
 
-    margin: 0 auto 15px;
+    height: 80vh;
 
-    background: white;
+    min-height: 600px;
 
-    border-radius: 8px;
-
-    box-shadow:
-        0 0 12px rgba(0,0,0,0.3);
-}
-
-.page-loading {
-
-    min-height: 400px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #ddd;
-
-    font-size: 16px;
-
-    background:
-        rgba(255,255,255,0.04);
+    border: none;
 
     border-radius: 10px;
 
-    margin-bottom: 15px;
+    background: white;
+
+    display: block;
+
 }
 
-.loading {
 
-    text-align: center;
-
-    padding: 40px 10px;
-
-    color: #ddd;
-
-    font-size: 17px;
-}
+/* زر العودة */
 
 .back-button {
 
@@ -139,16 +136,26 @@ header h1 {
 
     box-shadow:
         0 0 15px rgba(255,53,173,0.2);
+
 }
+
+
+/* الهاتف */
 
 @media (max-width: 600px) {
 
     header h1 {
+
         font-size: 22px;
+
     }
 
-    .page-loading {
-        min-height: 350px;
+    .pdf-frame {
+
+        height: 75vh;
+
+        min-height: 500px;
+
     }
 
 }
@@ -172,308 +179,91 @@ header h1 {
 
 <div class="pdf-container">
 
-    <div id="loading" class="loading">
-        جارٍ تحميل الموضوع...
-    </div>
-
-    <div id="pdf-pages"></div>
+    <iframe
+        id="pdfFrame"
+        class="pdf-frame">
+    </iframe>
 
 </div>
 
 
-<a href="science_section.html" class="back-button">
+<a href="science_section.html"
+   class="back-button">
 
     ← العودة
 
 </a>
 
 
-<script type="module">
-
-import {
-    getDocument,
-    GlobalWorkerOptions
-}
-from
-"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs";
-
-
-GlobalWorkerOptions.workerSrc =
-"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs";
+<script>
 
 
 /* الحصول على اسم الملف */
 
 const params =
-new URLSearchParams(window.location.search);
+    new URLSearchParams(
+        window.location.search
+    );
+
 
 const file =
-params.get("file");
+    params.get("file");
 
 
-/* العناصر */
+const pdfFrame =
+    document.getElementById(
+        "pdfFrame"
+    );
 
-const pagesContainer =
-document.getElementById("pdf-pages");
-
-const loading =
-document.getElementById("loading");
 
 const fileTitle =
-document.getElementById("fileTitle");
-
-
-/* إذا لم يوجد ملف */
-
-if (!file) {
-
-    loading.textContent =
-        "لم يتم تحديد الملف.";
-
-}
+    document.getElementById(
+        "fileTitle"
+    );
 
 
 /* عناوين الملفات */
+
+const titles = {
+
+    "protein-summary":
+        "ملخصات تركيب البروتين",
+
+    "structure-summary":
+        "ملخصات العلاقة بين بنية ووظيفة البروتين",
+
+    "enzymes-summary":
+        "ملخصات الإنزيمات",
+
+    "humoral-summary":
+        "ملخصات المناعة الخلطية والخلوية",
+
+    "nervous-summary":
+        "ملخصات الاتصال العصبي"
+
+};
+
+
+/* تحميل الملف */
 
 if (file) {
 
     const cleanName =
         file.replace(".pdf", "");
 
-    const titles = {
-
-        "protein-summary":
-            "ملخصات تركيب البروتين",
-
-        "structure-summary":
-            "ملخصات العلاقة بين بنية ووظيفة البروتين",
-
-        "enzymes-summary":
-            "ملخصات الإنزيمات",
-
-        "humoral-summary":
-            "ملخصات المناعة الخلطية والخلوية",
-
-        "nervous-summary":
-            "ملخصات الاتصال العصبي"
-
-    };
 
     fileTitle.textContent =
-        titles[cleanName] || "عرض الملف";
+        titles[cleanName] ||
+        "عرض الملف";
+
+
+    pdfFrame.src = file;
 
 }
+else {
 
-
-/* تحميل PDF */
-
-if (file) {
-
-    getDocument({
-
-        url: file,
-
-        disableAutoFetch: false,
-
-        disableStream: false,
-
-        /*
-        محاولة استخدام الخطوط الموجودة
-        في ملف PDF بشكل أفضل
-        */
-
-        useSystemFonts: true,
-
-        disableFontFace: false
-
-    }).promise.then(function(pdf) {
-
-        loading.style.display = "none";
-
-
-        /* إنشاء أماكن الصفحات */
-
-        for (
-            let i = 1;
-            i <= pdf.numPages;
-            i++
-        ) {
-
-            const pageContainer =
-                document.createElement("div");
-
-            pageContainer.className =
-                "page-loading";
-
-            pageContainer.textContent =
-                "الصفحة " +
-                i +
-                " — جارٍ تجهيزها...";
-
-            pageContainer.dataset.page = i;
-
-            pagesContainer.appendChild(
-                pageContainer
-            );
-
-        }
-
-
-        /* تحميل الصفحة عند الاقتراب منها */
-
-        const observer =
-            new IntersectionObserver(
-
-                function(entries) {
-
-                    entries.forEach(
-                        function(entry) {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                const container =
-                                    entry.target;
-
-                                const pageNumber =
-                                    Number(
-                                        container.dataset.page
-                                    );
-
-                                renderPage(
-                                    pdf,
-                                    pageNumber,
-                                    container
-                                );
-
-                                observer.unobserve(
-                                    container
-                                );
-
-                            }
-
-                        }
-                    );
-
-                },
-
-                {
-                    rootMargin:
-                        "500px 0px"
-                }
-
-            );
-
-
-        document
-            .querySelectorAll(".page-loading")
-            .forEach(
-                function(container) {
-
-                    observer.observe(
-                        container
-                    );
-
-                }
-            );
-
-
-    }).catch(function(error) {
-
-        loading.textContent =
-            "تعذر تحميل الملف.";
-
-        console.error(error);
-
-    });
-
-}
-
-
-/* رسم الصفحة */
-
-function renderPage(
-    pdf,
-    pageNumber,
-    container
-) {
-
-    if (
-        container.dataset.loaded === "true"
-    ) {
-        return;
-    }
-
-
-    container.dataset.loaded =
-        "true";
-
-
-    container.textContent =
-        "جارٍ تحميل الصفحة " +
-        pageNumber +
-        "...";
-
-
-    pdf.getPage(pageNumber)
-
-        .then(function(page) {
-
-            const viewport =
-                page.getViewport({
-                    scale: 1.4
-                });
-
-
-            const canvas =
-                document.createElement(
-                    "canvas"
-                );
-
-
-            const context =
-                canvas.getContext(
-                    "2d"
-                );
-
-
-            canvas.className =
-                "pdf-page";
-
-
-            canvas.width =
-                viewport.width;
-
-            canvas.height =
-                viewport.height;
-
-
-            container.innerHTML = "";
-
-            container.appendChild(
-                canvas
-            );
-
-
-            page.render({
-
-                canvasContext:
-                    context,
-
-                viewport:
-                    viewport
-
-            });
-
-        })
-
-        .catch(function() {
-
-            container.textContent =
-                "تعذر تحميل هذه الصفحة.";
-
-        });
+    fileTitle.textContent =
+        "لم يتم تحديد الملف";
 
 }
 
@@ -481,6 +271,5 @@ function renderPage(
 
 
 </body>
-
 
 </html>
