@@ -4,9 +4,15 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>عرض الملف</title>
+
+<!-- تسريع الاتصال بالعارض -->
+<link rel="preconnect"
+      href="https://mozilla.github.io">
 
 <style>
 
@@ -15,6 +21,7 @@
 }
 
 body {
+
     margin: 0;
 
     font-family: Arial, sans-serif;
@@ -32,46 +39,120 @@ body {
     min-height: 100vh;
 }
 
+
+/* العنوان */
+
 header {
+
     text-align: center;
+
     padding: 25px 15px 18px;
 }
 
 header h1 {
+
     margin: 0;
+
     font-size: 25px;
+
     color: #ff4db8;
 
     text-shadow:
         0 0 12px rgba(255,77,184,0.5);
 }
 
+
+/* مكان الـ PDF */
+
 .pdf-container {
+
     width: 95%;
+
     max-width: 1000px;
 
     margin: 10px auto 30px;
 
     padding: 0 10px 10px;
 
-    background: rgba(255,255,255,0.08);
+    background:
+        rgba(255,255,255,0.08);
 
-    border: 1px solid rgba(255,77,184,0.35);
+    border:
+        1px solid rgba(255,77,184,0.35);
 
     border-radius: 18px;
 
-    box-shadow: 0 0 25px rgba(255,77,184,0.12);
+    box-shadow:
+        0 0 25px rgba(255,77,184,0.12);
 
     overflow: hidden;
+
+    position: relative;
 }
 
 
+/* شاشة التحميل */
+
+.loading-screen {
+
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    color: #ddd;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+
+/* دائرة التحميل */
+
+.spinner {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: 4px solid rgba(255,255,255,0.2);
+
+    border-top:
+        4px solid #ff4db8;
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* الـ PDF */
+
 .pdf-frame {
+
     width: 100%;
 
     height: calc(80vh + 72px);
 
-    margin-top: -42px;
+    margin-top: -60px;
 
     border: none;
 
@@ -80,8 +161,23 @@ header h1 {
     border-radius: 10px;
 
     background: white;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.35s ease;
 }
 
+
+/* بعد التحميل */
+
+.pdf-frame.loaded {
+
+    opacity: 1;
+}
+
+
+/* زر العودة */
 
 .back-button {
 
@@ -112,15 +208,23 @@ header h1 {
         0 0 15px rgba(255,53,173,0.2);
 }
 
+
+/* الهاتف */
+
 @media (max-width: 600px) {
 
     header h1 {
+
         font-size: 22px;
     }
 
     .pdf-frame {
-        height: 78vh;
-        min-height: 550px;
+
+        height:
+            calc(80vh + 72px);
+
+        margin-top:
+                   -48px;
     }
 
 }
@@ -144,10 +248,37 @@ header h1 {
 
 <div class="pdf-container">
 
+
+    <!-- شاشة التحميل -->
+
+    <div id="loadingScreen"
+         class="loading-screen">
+
+        <div class="spinner"></div>
+
+        <div>
+            📚 جاري تجهيز الملف...
+        </div>
+
+        <div style="
+            font-size:14px;
+            color:#aaa;
+        ">
+            لحظات وسيظهر الملخص
+        </div>
+
+    </div>
+
+
+    <!-- عارض PDF -->
+
     <iframe
         id="pdfFrame"
-        class="pdf-frame">
+        class="pdf-frame"
+        loading="eager"
+        allow="fullscreen">
     </iframe>
+
 
 </div>
 
@@ -162,20 +293,38 @@ header h1 {
 
 <script>
 
+
+/* قراءة اسم الملف */
+
 const params =
     new URLSearchParams(
         window.location.search
     );
 
+
 const file =
     params.get("file");
 
-const pdfFrame =
-    document.getElementById("pdfFrame");
 
 const fileTitle =
-    document.getElementById("fileTitle");
+    document.getElementById(
+        "fileTitle"
+    );
 
+
+const pdfFrame =
+    document.getElementById(
+        "pdfFrame"
+    );
+
+
+const loadingScreen =
+    document.getElementById(
+        "loadingScreen"
+    );
+
+
+/* أسماء الملفات */
 
 const titles = {
 
@@ -192,17 +341,35 @@ const titles = {
         "ملخصات المناعة الخلطية والخلوية",
 
     "nervous-summary":
-        "ملخصات الاتصال العصبي"
-   
-   "photosynthesis-summary":
-    "ملخصات التركيب الضوئي",
+        "ملخصات الاتصال العصبي",
+
+    "photosynthesis-summary":
+        "ملخصات التركيب الضوئي"
+
 };
 
 
+/* إذا لم يوجد ملف */
+
+if (!file) {
+
+    fileTitle.textContent =
+        "عرض الملف";
+
+    loadingScreen.innerHTML =
+        "لم يتم تحديد الملف.";
+
+}
+
+
+/* إذا وجد الملف */
+
 if (file) {
+
 
     const cleanName =
         file.replace(".pdf", "");
+
 
     fileTitle.textContent =
         titles[cleanName] ||
@@ -210,27 +377,50 @@ if (file) {
 
 
     /*
-       استخدام عارض PDF.js الجاهز
-       بدل عارض Chrome
+       فتح PDF.js مباشرة
+       وعدم فتح ملف PDF مباشرة
     */
 
-    const pdfUrl =
-        window.location.origin +
-        window.location.pathname
-            .replace("pdf-viewer.html", "")
-        + file;
+    const viewerUrl =
+        "https://mozilla.github.io/pdf.js/web/viewer.html?file="
+        +
+        encodeURIComponent(file);
 
 
     pdfFrame.src =
-        "https://mozilla.github.io/pdf.js/web/viewer.html?file="
-        + encodeURIComponent(pdfUrl);
+        viewerUrl;
 
-}
 
-else {
+    /*
+       عندما يبدأ العارض بالتحميل
+    */
 
-    fileTitle.textContent =
-        "لم يتم تحديد الملف";
+    pdfFrame.addEventListener(
+        "load",
+        function() {
+
+
+            /*
+               نعطي العارض لحظة
+               ليظهر المحتوى
+            */
+
+            setTimeout(
+                function() {
+
+                    pdfFrame.classList.add(
+                        "loaded"
+                    );
+
+                    loadingScreen.style.display =
+                        "none";
+
+                },
+                500
+            );
+
+        }
+    );
 
 }
 
