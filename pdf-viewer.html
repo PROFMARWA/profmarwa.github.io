@@ -10,10 +10,6 @@
 
 <title>عرض الملف</title>
 
-<!-- تسريع الاتصال بالعارض -->
-<link rel="preconnect"
-      href="https://mozilla.github.io">
-
 <style>
 
 * {
@@ -62,7 +58,7 @@ header h1 {
 }
 
 
-/* مكان الـ PDF */
+/* حاوية PDF */
 
 .pdf-container {
 
@@ -144,15 +140,17 @@ header h1 {
 }
 
 
-/* الـ PDF */
+/* عارض PDF */
 
 .pdf-frame {
 
     width: 100%;
 
-    height: calc(80vh + 72px);
+    height:
+        calc(80vh + 72px);
 
-    margin-top: -60px;
+    margin-top:
+        -60px;
 
     border: none;
 
@@ -169,7 +167,7 @@ header h1 {
 }
 
 
-/* بعد التحميل */
+/* بعد ظهور العارض */
 
 .pdf-frame.loaded {
 
@@ -224,7 +222,7 @@ header h1 {
             calc(80vh + 72px);
 
         margin-top:
-                   -48px;
+            -60px;
     }
 
 }
@@ -249,8 +247,6 @@ header h1 {
 <div class="pdf-container">
 
 
-    <!-- شاشة التحميل -->
-
     <div id="loadingScreen"
          class="loading-screen">
 
@@ -269,8 +265,6 @@ header h1 {
 
     </div>
 
-
-    <!-- عارض PDF -->
 
     <iframe
         id="pdfFrame"
@@ -294,7 +288,7 @@ header h1 {
 <script>
 
 
-/* قراءة اسم الملف */
+/* قراءة اسم الملف من الرابط */
 
 const params =
     new URLSearchParams(
@@ -349,7 +343,7 @@ const titles = {
 };
 
 
-/* إذا لم يوجد ملف */
+/* إذا لم يتم تحديد ملف */
 
 if (!file) {
 
@@ -362,10 +356,9 @@ if (!file) {
 }
 
 
-/* إذا وجد الملف */
+/* إذا تم تحديد الملف */
 
 if (file) {
-
 
     const cleanName =
         file.replace(".pdf", "");
@@ -377,14 +370,26 @@ if (file) {
 
 
     /*
-       فتح PDF.js مباشرة
-       وعدم فتح ملف PDF مباشرة
+       تحويل اسم الملف إلى
+       رابط كامل من موقعك
+    */
+
+    const pdfUrl =
+        new URL(
+            file,
+            window.location.href
+        ).href;
+
+
+    /*
+       فتح PDF.js
+       مع الرابط الكامل الصحيح
     */
 
     const viewerUrl =
         "https://mozilla.github.io/pdf.js/web/viewer.html?file="
         +
-        encodeURIComponent(file);
+        encodeURIComponent(pdfUrl);
 
 
     pdfFrame.src =
@@ -392,18 +397,12 @@ if (file) {
 
 
     /*
-       عندما يبدأ العارض بالتحميل
+       عند تحميل العارض
     */
 
     pdfFrame.addEventListener(
         "load",
         function() {
-
-
-            /*
-               نعطي العارض لحظة
-               ليظهر المحتوى
-            */
 
             setTimeout(
                 function() {
