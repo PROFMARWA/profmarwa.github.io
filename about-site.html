@@ -15,6 +15,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
     font-family: Arial, Tahoma, sans-serif;
@@ -22,18 +26,22 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
+/* رأس الصفحة */
 header {
     background: linear-gradient(135deg, #180b3d, #3d0b70, #6b168e);
     padding: 22px 15px;
     text-align: center;
     box-shadow: 0 4px 20px rgba(60, 10, 100, 0.2);
+    animation: headerReveal 0.8s ease both;
 }
 
 header h1 {
     font-size: 25px;
     color: #ff4db8;
+    text-shadow: 0 0 15px rgba(255, 77, 184, 0.3);
 }
 
 header p {
@@ -42,27 +50,67 @@ header p {
     font-size: 14px;
 }
 
+@keyframes headerReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* مساحة البطاقة */
 main {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px 16px;
+    padding: 35px 16px;
 }
 
+/* البطاقة الرئيسية */
 .about-card {
+    position: relative;
+    isolation: isolate;
     width: 100%;
-    max-width: 650px;
-    padding: 30px 24px;
+    max-width: 700px;
+    padding: 32px 26px;
     border-radius: 25px;
     text-align: center;
     background: linear-gradient(145deg, #241044, #4b1374, #321052);
     border: 1px solid rgba(255, 77, 184, 0.65);
-    box-shadow:
-        0 0 25px rgba(142, 33, 232, 0.2),
-        0 0 35px rgba(255, 77, 184, 0.12);
+    box-shadow: 0 0 25px rgba(142, 33, 232, 0.2);
+    animation: cardEntrance 0.9s ease-out both,
+               cardGlow 5s ease-in-out 1s infinite;
 }
 
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes cardGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 20px rgba(142, 33, 232, 0.2),
+            0 0 25px rgba(255, 77, 184, 0.1);
+    }
+    50% {
+        box-shadow:
+            0 0 30px rgba(142, 33, 232, 0.35),
+            0 0 38px rgba(255, 77, 184, 0.22);
+    }
+}
+
+/* أيقونة العلوم */
 .card-icon {
     width: 72px;
     height: 72px;
@@ -74,14 +122,38 @@ main {
     font-size: 35px;
     background: linear-gradient(135deg, #8e21e8, #ff35ad);
     box-shadow: 0 0 22px rgba(255, 53, 173, 0.3);
+    animation: iconFloat 3s ease-in-out infinite;
 }
 
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* العنوان */
 .about-card h2 {
     color: #ff70c5;
-    font-size: 25px;
+    font-size: 27px;
     margin-bottom: 22px;
+    animation: titleReveal 0.8s ease 0.3s both;
 }
 
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* النص */
 .about-text {
     text-align: right;
     line-height: 2.1;
@@ -90,12 +162,39 @@ main {
 }
 
 .about-text p {
-    padding: 5px 0;
+    padding: 8px 0;
     border-bottom: 1px solid rgba(255,255,255,0.09);
+    opacity: 0;
+    animation: lineReveal 0.75s ease-out forwards;
+    transition: color 0.3s ease;
+}
+
+.about-text p:hover {
+    color: #ffd8f0;
 }
 
 .about-text p:last-child {
     border-bottom: none;
+}
+
+/* ظهور الأسطر بالتتابع */
+.about-text p:nth-child(1) { animation-delay: 0.7s; }
+.about-text p:nth-child(2) { animation-delay: 1.2s; }
+.about-text p:nth-child(3) { animation-delay: 1.7s; }
+.about-text p:nth-child(4) { animation-delay: 2.2s; }
+.about-text p:nth-child(5) { animation-delay: 2.7s; }
+.about-text p:nth-child(6) { animation-delay: 3.2s; }
+.about-text p:nth-child(7) { animation-delay: 3.7s; }
+
+@keyframes lineReveal {
+    from {
+        opacity: 0;
+        transform: translateX(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .highlight {
@@ -103,17 +202,19 @@ main {
     font-weight: bold;
 }
 
+/* زر الرئيسية */
 .home-button {
     display: inline-block;
-    margin-top: 24px;
-    padding: 12px 25px;
+    margin-top: 25px;
+    padding: 13px 27px;
     border-radius: 30px;
     text-decoration: none;
     color: white;
     font-weight: bold;
     background: linear-gradient(90deg, #8e21e8, #ff35ad);
     box-shadow: 0 0 16px rgba(255,53,173,0.2);
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: buttonReveal 0.7s ease 4.3s both;
 }
 
 .home-button:hover {
@@ -121,25 +222,77 @@ main {
     box-shadow: 0 0 25px rgba(255,53,173,0.4);
 }
 
+@keyframes buttonReveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* التذييل */
 footer {
     text-align: center;
-    padding: 15px;
+    padding: 16px;
     color: #704080;
     font-size: 13px;
 }
 
+/* الهاتف */
 @media (max-width: 480px) {
+    header h1 {
+        font-size: 22px;
+    }
+
+    main {
+        padding: 25px 13px;
+    }
+
     .about-card {
         padding: 25px 18px;
+        border-radius: 21px;
     }
 
     .about-card h2 {
-        font-size: 22px;
+        font-size: 23px;
     }
 
     .about-text {
         font-size: 14px;
         line-height: 2;
+    }
+
+    .about-text p {
+        padding: 7px 0;
+    }
+
+    .card-icon {
+        width: 62px;
+        height: 62px;
+        font-size: 30px;
+    }
+
+    .home-button {
+        font-size: 14px;
+        padding: 12px 22px;
+    }
+}
+
+/* احترام إعدادات تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .about-text p {
+        opacity: 1;
+        transform: none;
     }
 }
 </style>
@@ -162,7 +315,7 @@ footer {
         <div class="about-text">
             <p>مرحبًا بكم في <span class="highlight">Science with Prof Marwa</span>، فضاء علمي وتعليمي يهدف إلى دعم التلاميذ في رحلتهم نحو النجاح.</p>
 
-            <p> أنشئ هذا الموقع ليجمع الموارد التعليمية الخاصة بمادة علوم الطبيعة والحياة في مكان واحد، ويسهّل الوصول إليها.</p>
+            <p>أُنشئ هذا الموقع ليجمع الموارد التعليمية الخاصة بمادة علوم الطبيعة والحياة في مكان واحد، ويسهّل الوصول إليها.</p>
 
             <p>ستجدون فيه ملخصات منظمة تساعد على فهم الدروس ومراجعتها.</p>
 
