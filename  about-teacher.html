@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>حول الأستاذة | Science with Prof Marwa</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    min-height: 100vh;
+    padding: 30px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background:
+        radial-gradient(circle at top right, #45106d 0%, transparent 40%),
+        linear-gradient(135deg, #10051f, #210b3b, #10051f);
+}
+
+.teacher-card {
+    width: 100%;
+    max-width: 760px;
+    padding: 38px 28px;
+    text-align: center;
+    border: 1px solid rgba(255, 77, 184, 0.35);
+    border-radius: 25px;
+    background: linear-gradient(
+        145deg,
+        rgba(48, 17, 75, 0.96),
+        rgba(24, 8, 43, 0.97)
+    );
+    box-shadow: 0 0 35px rgba(255, 77, 184, 0.13);
+    animation: cardEntrance 1s ease both, cardGlow 4s ease-in-out 1s infinite;
+}
+
+.teacher-icon {
+    font-size: 55px;
+    margin-bottom: 16px;
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+h1 {
+    font-size: clamp(25px, 5vw, 35px);
+    color: #ff72c6;
+    margin-bottom: 12px;
+    animation: titleReveal 0.9s ease both;
+}
+
+.subtitle {
+    color: #d9b8ff;
+    font-size: 16px;
+    margin-bottom: 28px;
+    animation: titleReveal 1s ease 0.2s both;
+}
+
+.teacher-info {
+    text-align: right;
+    line-height: 2;
+}
+
+.teacher-info p {
+    position: relative;
+    margin: 14px 0;
+    padding: 13px 16px;
+    border-radius: 13px;
+    border-right: 3px solid #ff4db8;
+    background: rgba(255, 255, 255, 0.045);
+    color: #f7edff;
+    font-size: 17px;
+    opacity: 0;
+    animation: lineReveal 0.8s ease forwards;
+}
+
+.teacher-info p:nth-child(1) { animation-delay: 0.5s; }
+.teacher-info p:nth-child(2) { animation-delay: 1s; }
+.teacher-info p:nth-child(3) { animation-delay: 1.5s; }
+.teacher-info p:nth-child(4) { animation-delay: 2s; }
+.teacher-info p:nth-child(5) { animation-delay: 2.5s; }
+
+.highlight {
+    color: #ff72c6;
+    font-weight: bold;
+}
+
+.achievement {
+    margin-top: 22px;
+    padding: 20px 16px;
+    border: 1px solid rgba(255, 77, 184, 0.35);
+    border-radius: 18px;
+    background: rgba(255, 77, 184, 0.07);
+    animation: lineReveal 0.9s ease 3s both;
+}
+
+.achievement h2 {
+    color: #ff72c6;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.achievement p {
+    color: #f7edff;
+    line-height: 2;
+    margin: 8px 0;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 13px 27px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(90deg, #8e21e8, #ff35ad);
+    box-shadow: 0 5px 20px rgba(255, 53, 173, 0.2);
+    animation: lineReveal 0.8s ease 3.4s both;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 53, 173, 0.4);
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes cardGlow {
+    0%, 100% {
+        box-shadow: 0 0 25px rgba(255, 77, 184, 0.10);
+    }
+    50% {
+        box-shadow: 0 0 38px rgba(255, 77, 184, 0.23);
+    }
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lineReveal {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 18px 12px;
+    }
+
+    .teacher-card {
+        padding: 28px 17px;
+    }
+
+    .teacher-info p {
+        font-size: 15px;
+        padding: 11px 12px;
+    }
+
+    .achievement h2 {
+        font-size: 19px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="teacher-card">
+
+    <div class="teacher-icon">👩‍🏫</div>
+
+    <h1>الأستاذة خمالي مروة</h1>
+
+    <p class="subtitle">
+        أستاذة علوم الطبيعة والحياة
+    </p>
+
+    <section class="teacher-info">
+
+        <p>
+            🎓 خريجة <span class="highlight">المدرسة العليا للأساتذة – القبة</span>.
+        </p>
+
+        <p>
+            📚 تمتلك خبرة في تدريس <span class="highlight">الأقسام النهائية</span>.
+        </p>
+
+        <p>
+            🌟 صاحبة أعلى نسب تفوق في مادة
+            <span class="highlight">علوم الطبيعة والحياة</span>
+            في ولاية تيبازة.
+        </p>
+
+    </section>
+
+    <section class="achievement">
+
+        <h2>🏆 محطات التميز</h2>
+
+        <p>
+            <span class="highlight">2024</span>
+            — مع شعبة الرياضيات.
+        </p>
+
+        <p>
+            <span class="highlight">2026</span>
+            — مع شعبة العلوم التجريبية.
+        </p>
+
+    </section>
+
+    <a href="index.html" class="back-button">
+        🏠 العودة إلى الصفحة الرئيسية
+    </a>
+
+</main>
+
+</body>
+</html>
