@@ -1,431 +1,169 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>عرض الملف</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عرض الملف | Science with Prof Marwa</title>
 
 <style>
-
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:Arial,Tahoma,sans-serif;
+    background:linear-gradient(135deg,#12052d,#2b0752,#4b0b68);
+    color:white;
+    min-height:100vh;
 }
-
-body {
-
-    margin: 0;
-
-    font-family: Arial, sans-serif;
-
-    background:
-        linear-gradient(
-            135deg,
-            #12052d,
-            #2b0752,
-            #4b0b68
-        );
-
-    color: white;
-
-    min-height: 100vh;
+header{text-align:center;padding:24px 12px 14px}
+header h1{
+    margin:0;
+    font-size:clamp(21px,4vw,30px);
+    color:#ff4db8;
+    text-shadow:0 0 12px #ff4db880;
 }
-
-
-/* العنوان */
-
-header {
-
-    text-align: center;
-
-    padding: 25px 15px 18px;
+.file-type{margin-top:10px;color:#ead8ed;font-size:14px}
+.actions{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    padding:12px;
 }
-
-header h1 {
-
-    margin: 0;
-
-    font-size: 25px;
-
-    color: #ff4db8;
-
-    text-shadow:
-        0 0 12px rgba(255,77,184,0.5);
+.action-button{
+    display:inline-block;
+    padding:12px 20px;
+    border-radius:16px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    background:linear-gradient(90deg,#8e21e8,#ff35ad);
+    box-shadow:0 0 15px #ff35ad30;
+    border:0;
+    cursor:pointer;
+    font-size:15px;
 }
-
-
-/* حاوية PDF */
-
-.pdf-container {
-
-    width: 95%;
-
-    max-width: 1000px;
-
-    margin: 10px auto 30px;
-
-    padding: 0 10px 10px;
-
-    background:
-        rgba(255,255,255,0.08);
-
-    border:
-        1px solid rgba(255,77,184,0.35);
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 0 25px rgba(255,77,184,0.12);
-
-    overflow: hidden;
-
-    position: relative;
+.action-button.secondary{
+    background:linear-gradient(90deg,#087a4c,#18ad6b);
 }
-
-
-/* شاشة التحميل */
-
-.loading-screen {
-
-    min-height: 300px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    color: #ddd;
-
-    text-align: center;
-
-    font-size: 17px;
+.pdf-container{
+    width:95%;
+    max-width:1000px;
+    margin:10px auto 30px;
+    padding:10px;
+    background:#ffffff14;
+    border:1px solid #ff4db859;
+    border-radius:18px;
+    box-shadow:0 0 25px #ff4db81f;
 }
-
-
-/* دائرة التحميل */
-
-.spinner {
-
-    width: 42px;
-
-    height: 42px;
-
-    border: 4px solid rgba(255,255,255,0.2);
-
-    border-top:
-        4px solid #ff4db8;
-
-    border-radius: 50%;
-
-    animation:
-        spin 0.8s linear infinite;
+.pdf-frame{
+    width:100%;
+    height:75vh;
+    min-height:450px;
+    border:0;
+    border-radius:10px;
+    background:white;
 }
-
-
-@keyframes spin {
-
-    to {
-        transform: rotate(360deg);
-    }
-
+.notice{
+    text-align:center;
+    padding:12px;
+    color:#f5dff5;
+    font-size:14px;
+    line-height:1.8;
 }
-
-
-/* عارض PDF */
-
-.pdf-frame {
-
-    width: 100%;
-
-    height:
-        calc(80vh + 72px);
-
-    margin-top:
-        -48px;
-
-    border: none;
-
-    display: block;
-
-    border-radius: 10px;
-
-    background: white;
-
-    opacity: 0;
-
-    transition:
-        opacity 0.35s ease;
+@media(max-width:600px){
+    header{padding-top:20px}
+    .pdf-container{width:97%;padding:5px}
+    .pdf-frame{height:70vh;min-height:400px}
+    .action-button{padding:11px 14px;font-size:14px}
 }
-
-
-/* بعد ظهور العارض */
-
-.pdf-frame.loaded {
-
-    opacity: 1;
-}
-
-
-/* زر العودة */
-
-.back-button {
-
-    display: block;
-
-    width: fit-content;
-
-    margin: 0 auto 30px;
-
-    padding: 10px 20px;
-
-    border-radius: 25px;
-
-    text-decoration: none;
-
-    color: white;
-
-    font-weight: bold;
-
-    background:
-        linear-gradient(
-            90deg,
-            #8e21e8,
-            #ff35ad
-        );
-
-    box-shadow:
-        0 0 15px rgba(255,53,173,0.2);
-}
-
-
-/* الهاتف */
-
-@media (max-width: 600px) {
-
-    header h1 {
-
-        font-size: 22px;
-    }
-
-    .pdf-frame {
-
-        height:
-            calc(80vh + 72px);
-
-        margin-top:
-            -60px;
-    }
-
-}
-
 </style>
-
 </head>
 
-
 <body>
-
-
 <header>
-
-    <h1 id="fileTitle">
-        جارٍ تحميل الملف...
-    </h1>
-
+    <h1 id="fileTitle">عرض الملف</h1>
+    <div class="file-type" id="fileDescription">Science with Prof Marwa</div>
 </header>
 
-
-<div class="pdf-container">
-
-
-    <div id="loadingScreen"
-         class="loading-screen">
-
-        <div class="spinner"></div>
-
-        <div>
-            📚 جاري تجهيز الملف...
-        </div>
-
-        <div style="
-            font-size:14px;
-            color:#aaa;
-        ">
-            لحظات وسيظهر الملخص
-        </div>
-
-    </div>
-
-
-    <iframe
-        id="pdfFrame"
-        class="pdf-frame"
-        loading="eager"
-        allow="fullscreen">
-    </iframe>
-
-
+<div class="actions">
+    <a id="downloadButton" class="action-button" href="#" download>
+        📥 تحميل الملف
+    </a>
+    <a id="backButton" class="action-button secondary" href="science.html">
+        ← العودة إلى القسم
+    </a>
 </div>
 
-
-<a href="science_section.html"
-   class="back-button">
-
-    ← العودة
-
-</a>
-
+<div class="pdf-container">
+    <iframe id="pdfFrame" class="pdf-frame" title="عارض ملف PDF"></iframe>
+    <div class="notice">
+        إذا لم يظهر الملف داخل الصفحة، اضغط على «تحميل الملف» لفتحه على جهازك.
+    </div>
+</div>
 
 <script>
-
-
-/* قراءة اسم الملف من الرابط */
-
-const params =
-    new URLSearchParams(
-        window.location.search
-    );
-
-
-const file =
-    params.get("file");
-
-
-const fileTitle =
-    document.getElementById(
-        "fileTitle"
-    );
-
-
-const pdfFrame =
-    document.getElementById(
-        "pdfFrame"
-    );
-
-
-const loadingScreen =
-    document.getElementById(
-        "loadingScreen"
-    );
-
-
-/* أسماء الملفات */
+const params = new URLSearchParams(location.search);
+const file = params.get("file");
+const subject = params.get("subject") || "";
+const type = params.get("type") || "summary";
 
 const titles = {
-
-    "protein-summary":
-        "ملخصات تركيب البروتين",
-
-    "structure-summary":
-        "ملخصات العلاقة بين بنية ووظيفة البروتين",
-
-    "enzymes-summary":
-        "ملخصات الإنزيمات",
-
-    "humoral-summary":
-        "ملخصات المناعة الخلطية والخلوية",
-
-    "nervous-summary":
-        "ملخصات الاتصال العصبي",
-
-    "photosynthesis-summary":
-        "ملخصات التركيب الضوئي"
-
+    "protein-summary.pdf":"ملخصات تركيب البروتين",
+    "protein-exercises.pdf":"تمارين تركيب البروتين",
+    "structure-summary.pdf":"ملخصات العلاقة بين بنية ووظيفة البروتين",
+    "enzymes-summary.pdf":"ملخصات الإنزيمات",
+    "humoral-summary.pdf":"ملخصات المناعة الخلطية والخلوية",
+    "nervous-summary.pdf":"ملخصات الاتصال العصبي",
+    "photosynthesis-summary.pdf":"ملخصات التركيب الضوئي"
 };
 
+const subjectNames = {
+    prerequisites:"المكتسبات القبلية",
+    protein:"تركيب البروتين",
+    structure:"العلاقة بين بنية ووظيفة البروتين",
+    enzymes:"الإنزيمات",
+    immunity:"المناعة",
+    nervous:"الاتصال العصبي",
+    photosynthesis:"التركيب الضوئي",
+    respiration:"التنفس",
+    geology:"الجيولوجيا"
+};
 
-/* إذا لم يتم تحديد ملف */
+const typeNames = {
+    summary:"الملخصات",
+    exercises:"التمارين",
+    diagrams:"المخططات"
+};
 
-if (!file) {
+const titleElement = document.getElementById("fileTitle");
+const descriptionElement = document.getElementById("fileDescription");
+const frame = document.getElementById("pdfFrame");
+const downloadButton = document.getElementById("downloadButton");
+const backButton = document.getElementById("backButton");
 
-    fileTitle.textContent =
-        "عرض الملف";
+if (!file || file.includes("/") || file.includes("\\") || file.includes("..")) {
+    titleElement.textContent = "لم يتم تحديد ملف صالح";
+    descriptionElement.textContent = "ارجع إلى القسم واختر ملفًا.";
+    frame.hidden = true;
+    downloadButton.hidden = true;
+} else {
+    const pdfUrl = new URL(file, location.href).href;
 
-    loadingScreen.innerHTML =
-        "لم يتم تحديد الملف.";
+    titleElement.textContent = titles[file] || file.replace(/\.pdf$/i, "");
+    descriptionElement.textContent =
+        (subjectNames[subject] || "القسم") + " — " +
+        (typeNames[type] || "الملف");
 
-}
-
-
-/* إذا تم تحديد الملف */
-
-if (file) {
-
-    const cleanName =
-        file.replace(".pdf", "");
-
-
-    fileTitle.textContent =
-        titles[cleanName] ||
-        "عرض الملف";
-
-
-    /*
-       تحويل اسم الملف إلى
-       رابط كامل من موقعك
-    */
-
-    const pdfUrl =
-        new URL(
-            file,
-            window.location.href
-        ).href;
-
-
-    /*
-       فتح PDF.js
-       مع الرابط الكامل الصحيح
-    */
-
-    const viewerUrl =
-        "https://mozilla.github.io/pdf.js/web/viewer.html?file="
-        +
+    downloadButton.href = pdfUrl;
+    frame.src =
+        "https://mozilla.github.io/pdf.js/web/viewer.html?file=" +
         encodeURIComponent(pdfUrl);
-
-
-    pdfFrame.src =
-        viewerUrl;
-
-
-    /*
-       عند تحميل العارض
-    */
-
-    pdfFrame.addEventListener(
-        "load",
-        function() {
-
-            setTimeout(
-                function() {
-
-                    pdfFrame.classList.add(
-                        "loaded"
-                    );
-
-                    loadingScreen.style.display =
-                        "none";
-
-                },
-                500
-            );
-
-        }
-    );
-
 }
 
+backButton.href = subject
+    ? "science_section.html?subject=" + encodeURIComponent(subject)
+    : "science.html";
 </script>
-
-
 </body>
-
 </html>
