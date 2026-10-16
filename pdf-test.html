@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخصات تركيب البروتين | Science with Prof Marwa</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Tahoma, sans-serif;
+    background: linear-gradient(135deg, #12052d, #2b0752, #4b0b68);
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 22px 12px 14px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(21px, 4vw, 30px);
+    color: #ff4db8;
+    text-shadow: 0 0 12px #ff4db880;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(90deg, #8e21e8, #ff35ad);
+}
+
+.btn.back {
+    background: linear-gradient(90deg, #087a4c, #18ad6b);
+}
+
+.pdf-box {
+    width: 96%;
+    max-width: 1000px;
+    margin: 10px auto 25px;
+    padding: 8px;
+    border: 1px solid #ff4db859;
+    border-radius: 16px;
+    background: #ffffff14;
+}
+
+.pdf {
+    display: block;
+    width: 100%;
+    height: 75vh;
+    min-height: 450px;
+    border: 0;
+    border-radius: 10px;
+    background: white;
+}
+
+.note {
+    text-align: center;
+    padding: 12px 8px;
+    color: #f5dff5;
+    line-height: 1.8;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .pdf {
+        height: 70vh;
+        min-height: 400px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>ملخصات تركيب البروتين</h1>
+    <p>Science with Prof Marwa</p>
+</header>
+
+<div class="buttons">
+    <a class="btn" href="protein-summary.pdf"
+       target="_blank" rel="noopener">
+       📥 فتح أو تحميل الملف
+    </a>
+
+    <a class="btn back" href="science_section.html?subject=protein">
+       ← العودة إلى القسم
+    </a>
+</div>
+
+<div class="pdf-box">
+    <iframe
+        class="pdf"
+        src="protein-summary.pdf"
+        title="ملخصات تركيب البروتين">
+    </iframe>
+
+    <div class="note">
+        إذا لم يظهر الملف، اضغط على زر فتح أو تحميل الملف.
+    </div>
+</div>
+
+</body>
+</html>
