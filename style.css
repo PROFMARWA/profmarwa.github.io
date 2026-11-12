@@ -863,12 +863,3 @@ body > footer p { margin: 7px; color: #f2d8ee; }
     .extra-item p { font-size: 8px; }
     .home-return { width: 195px; height: 47px; font-size: 14px; }
 }
-/* إيقاف الحركات المستمرة لتسريع التنقل على الهاتف */
-.card::before, .row::before, .page-header h1 {
-    animation: none !important;
-}
-.card, .row, .viewer-bar {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-}
-.card { transition: transform 0.2s ease, box-shadow 0.2s ease !important; }
