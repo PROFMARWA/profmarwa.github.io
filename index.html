@@ -1,300 +1,290 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Science with Prof Marwa | علوم الطبيعة والحياة</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<style>
-:root {
-    --pink-light: #ffe6f4;
-    --pink: #e72b9f;
-    --purple-dark: #2e0a4a;
-    --purple-mid: #5b1a8a;
-    --ink: #2e0a4a;
-    --grad: linear-gradient(90deg, #e72b9f, #b64ce8);
-}
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GGCMZSSMV"></script>
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-body {
-    font-family: Arial, Tahoma, sans-serif;
-    background: linear-gradient(180deg, #fff0f9, #ffe0f2 60%, #ffd3ec);
-    color: var(--ink);
-    min-height: 100vh;
-    overflow-x: hidden;
-}
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-a { color: inherit; text-decoration: none; }
+        gtag('js', new Date());
+        gtag('config', 'G-0GGCMZSSMV');
+    </script>
 
-/* الرأس */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 18px 16px;
-    background: var(--purple-dark);
-    color: #fff;
-}
+    <!-- Google verification -->
+    <meta name="google-site-verification"
+          content="1RZ525bQBmyQ-bM1f74TaerKX5sEN659aGbwYkOr0xc">
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 19px;
-    font-weight: 800;
-}
+    <meta charset="UTF-8">
 
-.logo .dna { font-size: 26px; }
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-/* الواجهة */
-.hero {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 40px 20px 30px;
-    text-align: center;
-}
+    <title>Science with Prof Marwa</title>
 
-.hero h1 {
-    font-size: clamp(30px, 7vw, 46px);
-    line-height: 1.3;
-    font-weight: 900;
-    color: var(--purple-dark);
-}
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css?v=4000">
 
-.hero h1 span { color: var(--pink); }
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-.hero .sub {
-    margin-top: 14px;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--purple-mid);
-}
-
-/* الأزرار */
-.buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 30px;
-}
-
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 62px;
-    padding: 14px 12px;
-    border-radius: 999px;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 800;
-    text-align: center;
-    background: var(--grad);
-    box-shadow: 0 8px 20px rgba(231, 43, 159, 0.25);
-}
-
-.btn.outline {
-    background: var(--purple-dark);
-    border: 2px solid var(--pink);
-}
-
-.btn.wide { grid-column: 1 / -1; }
-
-.btn.insta {
-    background: var(--purple-dark);
-    border: 3px solid #ff9a3c;
-}
-
-/* الأقسام */
-section.block {
-    max-width: 760px;
-    margin: 40px auto 0;
-    padding: 0 20px;
-}
-
-section.block h2 {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 900;
-    color: var(--purple-dark);
-    margin-bottom: 18px;
-}
-
-.branches {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.dark-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 26px 16px;
-    text-align: center;
-    border-radius: 22px;
-    background: var(--purple-dark);
-    border-top: 5px solid var(--pink);
-    box-shadow: 0 12px 28px rgba(46, 10, 74, 0.25);
-    transition: transform 0.2s;
-}
-
-.dark-card:active { transform: scale(0.98); }
-
-.dark-card i {
-    font-size: 30px;
-    color: #fff;
-    width: 62px;
-    height: 62px;
-    display: grid;
-    place-items: center;
-    border-radius: 18px;
-    background: var(--grad);
-}
-
-.dark-card h3 { color: #fff; font-size: 19px; font-weight: 900; }
-.dark-card p { color: #e9d5ff; font-size: 13px; line-height: 1.6; }
-
-/* بطاقات بيضاء بحواف وردية وبنفسجية */
-.white-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.white-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 24px 14px;
-    text-align: center;
-    background: #fff;
-    border-radius: 22px;
-    border: 4px solid transparent;
-    background-clip: padding-box;
-    box-shadow:
-        inset 0 0 0 4px #b8269e,
-        0 10px 24px rgba(91, 26, 138, 0.2);
-    position: relative;
-}
-
-.white-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 22px;
-    padding: 4px;
-    background: linear-gradient(135deg, #b8269e, #6a1fb5);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-}
-
-.white-card i { font-size: 30px; color: #b8269e; }
-.white-card h3 { font-size: 19px; font-weight: 900; color: var(--purple-dark); }
-.white-card p { font-size: 13px; color: var(--purple-mid); }
-
-/* الشريط الأسفل: حول الموقع + الاقتباس */
-.quote {
-    max-width: 680px;
-    margin: 40px auto 0;
-    padding: 24px 20px 40px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 800;
-    color: var(--purple-mid);
-    line-height: 1.8;
-}
-
-footer {
-    padding: 20px;
-    text-align: center;
-    background: var(--purple-dark);
-    color: #f2d8ee;
-    font-size: 14px;
-}
-
-/* الهاتف الصغير */
-@media (max-width: 420px) {
-    .hero h1 { font-size: 30px; }
-    .btn { font-size: 15px; min-height: 56px; }
-    .dark-card h3, .white-card h3 { font-size: 16px; }
-}
-</style>
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
+
     <div class="logo">
-        <span class="dna">🧬</span>
-        <span>موقع الأستاذة مروة خمالي</span>
+
+        🧬
+
+        <div>
+            <strong>Science with</strong>
+            <span>Prof Marwa</span>
+        </div>
+
     </div>
+
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="about-teacher.html">حول الأستاذة</a>
+        <a href="about-site.html">حول الموقع</a>
+    </nav>
+
 </header>
 
+
+<!-- الصفحة الرئيسية -->
+
 <section class="hero">
-    <h1>علوم الطبيعة والحياة <span>مع الأستاذة مروة</span></h1>
-    <p class="sub">معًا نحو التفوق في البكالوريا</p>
 
-    <div class="buttons">
-        <a class="btn" href="#branches">📚 ابدأ التعلم الآن</a>
-        <a class="btn outline" href="about-site.html">ℹ️ حول الموقع</a>
+    <div class="hero-text">
 
-        <a class="btn insta wide"
-           href="https://www.instagram.com/prof_marwa_sciences?vrfl=MjF1ODc3YWRwMmc5"
-           target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-instagram"></i>
-            زورونا على انستغرام
+        <p class="welcome">Welcome to</p>
+
+        <h1>
+            Science with
+            <span>Prof Marwa</span>
+        </h1>
+
+        <h2>علوم الطبيعة والحياة</h2>
+
+        <p class="subtitle">معًا نحو التفوق في البكالوريا</p>
+
+
+        <!-- مواقع التواصل -->
+
+        <div class="social-button-container">
+
+            <a id="socialButton"
+               href="#"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="social-button">
+
+                <span id="socialIcon">
+                    <i class="fa-brands fa-telegram"></i>
+                </span>
+
+                <span id="socialText">زورونا على Telegram</span>
+
+            </a>
+
+            <div class="social-dots" id="socialDots">
+                <span class="social-dot active"></span>
+                <span class="social-dot"></span>
+                <span class="social-dot"></span>
+            </div>
+
+        </div>
+
+
+        <!-- زر ابدأ الآن -->
+
+        <a href="#branchScene"
+           id="startButton"
+           class="main-button">
+
+            📚 ابدأ الآن
+
         </a>
 
-        <a class="btn outline" href="about-teacher.html">👩‍🏫 حول الأستاذة</a>
+
+        <!-- الإحصائيات -->
+
+        <div class="stats-box">
+
+            <div class="stat-item">
+                <div class="stat-icon facebook-icon">f</div>
+                <div class="stat-title">متابعون على فايسبوك</div>
+                <div class="stat-number">119K</div>
+            </div>
+
+            <div class="stat-item">
+
+                <div class="stat-icon instagram-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <circle cx="17.5" cy="6.5" r="1"></circle>
+                    </svg>
+                </div>
+
+                <div class="stat-title">متابعون على إنستغرام</div>
+                <div class="stat-number">118K</div>
+
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-icon posts-icon">✎</div>
+                <div class="stat-title">أكثر من</div>
+                <div class="stat-number">700+</div>
+                <div class="stat-subtitle">منشور</div>
+            </div>
+
+            <div class="stats-message">
+                💡🧠النجاح الحقيقي ليس ان تحلم بالقمة بل تسعى للوصول إليها 📌
+            </div>
+
+        </div>
+
     </div>
+
 </section>
 
-<section class="block" id="branches">
-    <h2>اختر شعبتك</h2>
-    <div class="branches">
-        <a class="dark-card" href="branch.html?b=science">
-            <i class="fa-solid fa-dna"></i>
-            <h3>علوم تجريبية</h3>
-            <p>محتوى شامل لطلاب شعبة العلوم التجريبية</p>
-        </a>
-        <a class="dark-card" href="branch.html?b=math">
-            <i class="fa-solid fa-calculator"></i>
-            <h3>رياضيات</h3>
-            <p>محتوى شامل لطلاب شعبة الرياضيات</p>
-        </a>
-    </div>
-</section>
 
-<section class="block">
-    <div class="white-cards">
-        <a class="white-card" href="branch.html?b=science">
-            <i class="fa-solid fa-pen-to-square"></i>
-            <h3>تمارين</h3>
-            <p>درس تفاعلي وتطبيقات للتدرب</p>
-        </a>
-        <a class="white-card" href="branch.html?b=science">
-            <i class="fa-solid fa-book-open"></i>
-            <h3>ملخصات</h3>
-            <p>ملخصات منظمة لمراجعة الدروس</p>
-        </a>
-    </div>
-</section>
+<!-- واجهة اختيار الشعبة -->
 
-<p class="quote">
-    «النَجَاح الحَقِيقِي ليسَ أنْ تَحلُمَ باِلقِمَةِ، بَلْ تَسْعَىٰ لِلوصُولِ إِلَيهَا 🥇💡»
-</p>
+<div id="branchScene" class="branch-scene">
+
+    <div class="branch-content">
+
+        <div class="branch-heading">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h1>اختر شعبتك</h1>
+        </div>
+
+        <p>اختر الشعبة التي تريد الوصول إلى محتواها</p>
+
+
+        <div class="branch-cards">
+
+            <div class="branch-card science">
+
+                <div class="branch-icon">
+                    <i class="fa-solid fa-dna"></i>
+                </div>
+
+                <h2>علوم تجريبية</h2>
+
+                <p>محتوى شامل لطلاب شعبة العلوم التجريبية</p>
+
+                <button type="button"
+                        onclick="window.location.href='branch.html?b=science'">
+                    اختر هذه الشعبة
+                </button>
+
+            </div>
+
+            <div class="branch-card maths">
+
+                <div class="branch-icon">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+
+                <h2>رياضيات</h2>
+
+                <p>محتوى شامل لطلاب شعبة الرياضيات</p>
+
+                <button type="button"
+                        onclick="window.location.href='branch.html?b=math'">
+                    اختر هذه الشعبة
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="branch-quote">
+            «النَجَاح الحَقِيقِي ليسَ أنْ تَحلُمَ باِلقِمَةِ، بَلْ تَسْعَىٰ لِلوصُولِ إِلَيهَا 🥇💡»
+        </div>
+
+
+        <div class="branch-extra">
+
+            <div class="extra-item">
+                <div class="extra-icon pink">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <h3>دروس مبسطة</h3>
+                <p>شرح سهل وواضح</p>
+            </div>
+
+            <div class="extra-item">
+                <div class="extra-icon green">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <h3>تمارين متنوعة</h3>
+                <p>تدرب وتفوق</p>
+            </div>
+
+            <div class="extra-item">
+                <div class="extra-icon purple">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3>مواضيع الباك</h3>
+                <p>مواضيع رسمية محلولة</p>
+            </div>
+
+            <div class="extra-item">
+                <div class="extra-icon green">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <h3>مسار التميز</h3>
+                <p>للوصول إلى القمة</p>
+            </div>
+
+        </div>
+
+
+        <a href="index.html" class="home-return">
+            🏫 العودة إلى الرئيسية
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
 
 <footer>
-    Science with Prof Marwa 🧬 · معًا نحو التفوق في البكالوريا 💜
+
+    <h2>Science with Prof Marwa 🧬</h2>
+
+    <p>علوم الطبيعة والحياة</p>
+
+    <p>معًا نحو التفوق في البكالوريا 💜</p>
+
 </footer>
 
+
+<!-- JavaScript -->
+
+<script src="./script.js?v=2003"></script>
+
 </body>
+
 </html>
