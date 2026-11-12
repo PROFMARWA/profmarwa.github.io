@@ -872,3 +872,110 @@ body > footer p { margin: 7px; color: #f2d8ee; }
     -webkit-backdrop-filter: none !important;
 }
 .card { transition: transform 0.2s ease, box-shadow 0.2s ease !important; }
+/* =====================================================
+   شكل البطاقات والعنوان (على نمط مشكاة)
+   ===================================================== */
+
+/* مربع العنوان في أعلى كل صفحة داخلية */
+.page-header {
+    max-width: 720px;
+    margin: 0 auto 28px;
+    padding: 24px 16px 22px;
+    border-radius: 36px;
+    background: linear-gradient(145deg, rgba(46, 10, 74, 0.92), rgba(24, 6, 40, 0.96));
+    border: 3px solid #ff4db8;
+    box-shadow: 0 0 28px rgba(255, 77, 184, 0.28);
+}
+
+.page-header::before {
+    content: "Science with Prof Marwa";
+    display: block;
+    margin-bottom: 6px;
+    color: #fff;
+    font-size: clamp(15px, 4vw, 20px);
+    font-weight: 800;
+}
+
+.page-header h1 {
+    background: none;
+    -webkit-text-fill-color: #fff;
+    color: #fff;
+    animation: none;
+    font-size: clamp(27px, 7vw, 44px);
+}
+
+.page-header p {
+    color: #d9b8ff;
+    font-size: clamp(14px, 3.8vw, 18px);
+}
+
+/* الشبكة: عمودان بنفس الحجم */
+.page > .grid {
+    max-width: 720px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+/* البطاقة: أيقونة + عنوان فقط */
+.card {
+    min-height: 145px;
+    padding: 18px 10px;
+    gap: 12px;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #3b1260, #25083f);
+    border: 3px solid #b8269e;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+}
+
+.card::before { display: none; }
+
+.card-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0;
+    font-size: 24px;
+    border-radius: 18px;
+}
+
+.card h2 {
+    margin: 0;
+    background: none;
+    -webkit-text-fill-color: #fff;
+    color: #fff;
+    font-size: clamp(15px, 4.2vw, 20px);
+}
+
+.card p { display: none; }
+
+.badge { display: none; }
+
+.card.is-disabled { opacity: 1; }
+
+a.card:hover { border-color: #ff4db8; }
+
+/* رسالة "قيد الإعداد": بيضاء بحواف بنفسجية */
+.toast {
+    left: 50%;
+    right: auto;
+    bottom: 28px;
+    margin: 0;
+    width: max-content;
+    max-width: min(86vw, 340px);
+    padding: 16px 28px;
+    border: 3px solid #7c3aed;
+    border-radius: 30px;
+    background: #fff;
+    color: #4a1a78;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    font-size: 0;
+    transform: translate(-50%, 14px);
+}
+
+.toast.show { transform: translate(-50%, 0); }
+
+.toast::after {
+    content: "هذا المحتوى قيد الإعداد وسيُضاف قريبًا ✨";
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.7;
+}
