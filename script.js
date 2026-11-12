@@ -15,7 +15,8 @@
         {
             name: "Instagram",
             icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
-            url: "https://www.instagram.com/marwa_prof_sciences?igsh=MjF1ODc3YWRwMmc5"
+            url: "https://www.instagram.com/prof_marwa_sciences?rpxt=MjF1ODc3YWRwMmc5"
+
         },
         {
             name: "Facebook",
