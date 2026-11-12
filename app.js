@@ -41,10 +41,7 @@
     }
 
 
-    /* =====================================================
-       قائمة الملفات: طلب واحد فقط بدل مئات الطلبات
-       ===================================================== */
-
+    /* قائمة الملفات: طلب واحد فقط */
     let FILES = null;
     let listPromise = null;
 
@@ -73,7 +70,6 @@
         return listPromise;
     }
 
-    /* هل الملف موجود؟ name مثل: science-protein-summary.pdf */
     async function exists(name) {
         await getFileList();
         if (FILES) return FILES.has(name);
@@ -85,8 +81,6 @@
         }
     }
 
-    /* base مثل: science-protein-summary
-       يبحث عن base.pdf ثم base-2.pdf ثم base-3.pdf ... */
     async function findFiles(base) {
         const out = [];
         for (let i = 1; i <= 10; i++) {
@@ -108,9 +102,7 @@
     }
 
 
-    /* =====================================================
-       عناصر الواجهة
-       ===================================================== */
+    /* عناصر الواجهة */
 
     function header(title, sub) {
         return '<div class="page-header"><h1>' + title + "</h1>" +
@@ -123,19 +115,23 @@
             '<a class="btn btn-ghost" href="index.html">← العودة إلى الرئيسية</a></div>';
     }
 
+    /* البطاقة: تُنشأ فورًا، وتتحدّث لاحقًا عند معرفة الملفات */
     function card(o) {
         const c = el(o.href ? "a" : "div",
             "card card-" + (o.color || "purple") + (o.href ? "" : " is-disabled"));
         if (o.href) c.href = o.href;
 
         c.innerHTML =
-            (o.badge ? '<span class="badge ' + (o.badgeType || "") + '">' + o.badge + "</span>" : "") +
             '<div class="card-icon"><i class="fa-solid ' + o.icon + '"></i></div>' +
             "<h2>" + o.title + "</h2>" +
-            (o.desc ? "<p>" + o.desc + "</p>" : "");
+            (o.desc ? "<p>" + o.desc + "</p>" : "") +
+            (o.badge ? '<span class="badge ' + (o.badgeType || "") + '">' + o.badge + "</span>" : "");
 
         if (!o.href) {
-            c.addEventListener("click", function () { toast("قيد الإعداد"); });
+            c.addEventListener("click", function (e) {
+                e.preventDefault();
+                toast("قيد الإعداد");
+            });
         }
         return c;
     }
@@ -145,9 +141,7 @@
     }
 
 
-    /* =====================================================
-       صفحة الشعبة
-       ===================================================== */
+    /* صفحة الشعبة */
 
     function branchPage() {
         const b = params.get("b");
@@ -188,11 +182,8 @@
     }
 
 
-    /* =====================================================
-       صفحة الدرس
-       ===================================================== */
-
-    async function lessonPage() {
+    /* صفحة الدرس: البطاقات تظهر فورًا، والملفات تُفحص بعدها */
+    function lessonPage() {
         const b = params.get("b");
         const l = params.get("l");
 
@@ -211,26 +202,30 @@
         const grid = document.getElementById("grid");
         const back = "lesson.html?b=" + b + "&l=" + l;
 
-        await getFileList();
+        const slots = SITE.types.map(function (t, i) {
+            const c = card({
+                title: t.title, desc: t.desc, icon: t.icon,
+                color: COLORS[i % 3], badge: "…"
+            });
+            grid.append(c);
+            return c;
+        });
 
-        for (let i = 0; i < SITE.types.length; i++) {
-            const t = SITE.types[i];
+        SITE.types.forEach(async function (t, i) {
             const files = await findFiles(b + "-" + l + "-" + t.id);
             const n = files.length;
-
-            grid.append(card({
+            slots[i].replaceWith(card({
                 title: t.title, desc: t.desc, icon: t.icon, color: COLORS[i % 3],
                 href: n ? viewerHref(files, [], lesson.title + " — " + t.title, back) : null,
                 badge: n > 1 ? n + " ملفات" : n ? "" : "قيد الإعداد",
                 badgeType: n ? "ok" : ""
             }));
-        }
+            slots[i] = null;
+        });
     }
 
 
-    /* =====================================================
-       صفحة قسم المواضيع
-       ===================================================== */
+    /* صفحة قسم المواضيع */
 
     async function collectionPage() {
         const b = params.get("b");
@@ -299,11 +294,9 @@
     }
 
 
-    /* =====================================================
-       صفحة النصوص العلمية
-       ===================================================== */
+    /* صفحة النصوص العلمية */
 
-    async function textsPage() {
+    function textsPage() {
         const b = params.get("b");
         if (!own(SITE.branches, b)) return notFound();
 
@@ -317,38 +310,36 @@
 
         const wrap = document.getElementById("domains");
         const back = "texts.html?b=" + b;
-
-        await getFileList();
-
         let i = 0;
-        for (const d of br.texts) {
+
+        br.texts.forEach(function (d) {
             const sec = el("section", "domain");
             sec.innerHTML = '<div class="domain-title"><h2>' + d.title + "</h2><p>" + d.desc + "</p></div>";
-
             const grid = el("div", "grid" + (d.items.length === 1 ? " single" : ""));
             sec.append(grid);
             wrap.append(sec);
 
-            for (const it of d.items) {
+            d.items.forEach(function (it) {
                 const color = COLORS[i++ % 3];
                 const icon = SITE.lessons[it.lesson].icon;
-                const files = await findFiles(b + "-texts-" + it.lesson);
-                const n = files.length;
+                const slot = card({ title: it.title, desc: it.desc, icon: icon, color: color, badge: "…" });
+                grid.append(slot);
 
-                grid.append(card({
-                    title: it.title, desc: it.desc, icon: icon, color: color,
-                    href: n ? viewerHref(files, [], it.title, back) : null,
-                    badge: it.num + (n ? "" : " · قيد الإعداد"),
-                    badgeType: n ? "ok" : ""
-                }));
-            }
-        }
+                findFiles(b + "-texts-" + it.lesson).then(function (files) {
+                    const n = files.length;
+                    slot.replaceWith(card({
+                        title: it.title, desc: it.desc, icon: icon, color: color,
+                        href: n ? viewerHref(files, [], it.title, back) : null,
+                        badge: it.num + (n ? "" : " · قيد الإعداد"),
+                        badgeType: n ? "ok" : ""
+                    }));
+                });
+            });
+        });
     }
 
 
-    /* =====================================================
-       عارض الملفات
-       ===================================================== */
+    /* عارض الملفات */
 
     function viewerPage() {
         const files = params.getAll("f").filter(function (f) { return FILE_RE.test(f); });
@@ -522,9 +513,7 @@
     }
 
 
-    /* =====================================================
-       التشغيل
-       ===================================================== */
+    /* التشغيل */
 
     const pages = {
         branch: branchPage,
