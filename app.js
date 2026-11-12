@@ -1,13 +1,12 @@
 /* =====================================================
    Science with Prof Marwa — app.js
-   يبني كل الصفحات الداخلية تلقائيًا من data.js
-   ويبحث عن ملفات PDF في مجلد files حسب أسمائها.
    ===================================================== */
 
 (function () {
     "use strict";
 
     const ROOT = SITE.filesRoot;
+    const REPO_FILES_API = "https://api.github.com/repos/PROFMARWA/profmarwa.github.io/contents/files";
     const NAME = "Science with Prof Marwa";
     const COLORS = ["pink", "purple", "green"];
 
@@ -17,11 +16,6 @@
 
     const FILE_RE = new RegExp("^" + ROOT + "/[A-Za-z0-9_\\-.]+\\.pdf$", "i");
     const BACK_RE = /^[A-Za-z0-9_\-]+\.html(\?[A-Za-z0-9_\-=&%.]*)?$/;
-
-
-    /* =====================================================
-       أدوات عامة
-       ===================================================== */
 
     const own = (obj, key) =>
         typeof key === "string" && Object.prototype.hasOwnProperty.call(obj, key);
@@ -43,25 +37,61 @@
         t.textContent = message;
         t.classList.add("show");
         clearTimeout(toastTimer);
-        toastTimer = setTimeout(function () { t.classList.remove("show"); }, 2200);
+        toastTimer = setTimeout(function () { t.classList.remove("show"); }, 2000);
     }
 
-    /* هل الملف موجود؟ */
-    async function exists(url) {
+
+    /* =====================================================
+       قائمة الملفات: طلب واحد فقط بدل مئات الطلبات
+       ===================================================== */
+
+    let FILES = null;
+    let listPromise = null;
+
+    function getFileList() {
+        if (!listPromise) {
+            listPromise = (async function () {
+                try {
+                    const cached = JSON.parse(sessionStorage.getItem("pm_files") || "null");
+                    if (cached && Date.now() - cached.t < 10 * 60 * 1000) {
+                        FILES = new Set(cached.names);
+                        return FILES;
+                    }
+                    const r = await fetch(REPO_FILES_API);
+                    if (!r.ok) throw new Error("api");
+                    const data = await r.json();
+                    const names = data.filter(function (f) { return f.type === "file"; })
+                                      .map(function (f) { return f.name; });
+                    FILES = new Set(names);
+                    sessionStorage.setItem("pm_files", JSON.stringify({ t: Date.now(), names: names }));
+                } catch (e) {
+                    FILES = null;
+                }
+                return FILES;
+            })();
+        }
+        return listPromise;
+    }
+
+    /* هل الملف موجود؟ name مثل: science-protein-summary.pdf */
+    async function exists(name) {
+        await getFileList();
+        if (FILES) return FILES.has(name);
         try {
-            const r = await fetch(url, { method: "HEAD" });
-            return r.ok && (r.headers.get("content-type") || "").includes("pdf");
+            const r = await fetch(ROOT + "/" + name, { method: "HEAD" });
+            return r.ok;
         } catch (e) {
             return false;
         }
     }
 
-    /* يبحث عن: name.pdf ثم name-2.pdf ثم name-3.pdf ... */
-    async function findFiles(prefix, max) {
+    /* base مثل: science-protein-summary
+       يبحث عن base.pdf ثم base-2.pdf ثم base-3.pdf ... */
+    async function findFiles(base) {
         const out = [];
-        for (let i = 1; i <= (max || 10); i++) {
-            const url = prefix + (i === 1 ? "" : "-" + i) + ".pdf";
-            if (await exists(url)) out.push(url);
+        for (let i = 1; i <= 10; i++) {
+            const name = base + (i === 1 ? "" : "-" + i) + ".pdf";
+            if (await exists(name)) out.push(ROOT + "/" + name);
             else break;
         }
         return out;
@@ -105,7 +135,7 @@
             (o.desc ? "<p>" + o.desc + "</p>" : "");
 
         if (!o.href) {
-            c.addEventListener("click", function () { toast("لم يُرفع هذا المحتوى بعد"); });
+            c.addEventListener("click", function () { toast("قيد الإعداد"); });
         }
         return c;
     }
@@ -116,7 +146,7 @@
 
 
     /* =====================================================
-       صفحة الشعبة  (branch.html?b=science)
+       صفحة الشعبة
        ===================================================== */
 
     function branchPage() {
@@ -159,8 +189,7 @@
 
 
     /* =====================================================
-       صفحة الدرس  (lesson.html?b=science&l=protein)
-       ملخصات + تمارين + مخططات
+       صفحة الدرس
        ===================================================== */
 
     async function lessonPage() {
@@ -182,31 +211,25 @@
         const grid = document.getElementById("grid");
         const back = "lesson.html?b=" + b + "&l=" + l;
 
-        const slots = SITE.types.map(function (t, i) {
-            const slot = card({
-                title: t.title, desc: t.desc, icon: t.icon,
-                color: COLORS[i % 3], badge: "…"
-            });
-            grid.append(slot);
-            return slot;
-        });
+        await getFileList();
 
-        await Promise.all(SITE.types.map(async function (t, i) {
-            const files = await findFiles(ROOT + "/" + b + "-" + l + "-" + t.id);
+        for (let i = 0; i < SITE.types.length; i++) {
+            const t = SITE.types[i];
+            const files = await findFiles(b + "-" + l + "-" + t.id);
             const n = files.length;
 
-            slots[i].replaceWith(card({
+            grid.append(card({
                 title: t.title, desc: t.desc, icon: t.icon, color: COLORS[i % 3],
                 href: n ? viewerHref(files, [], lesson.title + " — " + t.title, back) : null,
-                badge: n > 1 ? n + " ملفات" : n ? "" : "قريبًا",
+                badge: n > 1 ? n + " ملفات" : n ? "" : "قيد الإعداد",
                 badgeType: n ? "ok" : ""
             }));
-        }));
+        }
     }
 
 
     /* =====================================================
-       صفحة قسم المواضيع (collection.html?b=science&c=bac)
+       صفحة قسم المواضيع
        ===================================================== */
 
     async function collectionPage() {
@@ -222,12 +245,12 @@
 
         app.innerHTML =
             header(col.title, br.title) +
-            '<div class="list" id="list"><div class="empty">جارٍ البحث عن الملفات...</div></div>' +
+            '<div class="list" id="list"><div class="empty">جارٍ التحميل...</div></div>' +
             actions("branch.html?b=" + b, "العودة إلى " + br.short);
 
         const list = document.getElementById("list");
         const back = "collection.html?b=" + b + "&c=" + c;
-        const prefix = ROOT + "/" + b + "-" + c + "-";
+        const base = b + "-" + c + "-";
 
         let keys = [];
         if (col.mode === "years") {
@@ -236,18 +259,20 @@
             for (let n = 1; n <= (col.max || 30); n++) keys.push(String(n));
         }
 
-        const found = await Promise.all(keys.map(async function (k) {
-            const f = prefix + k + ".pdf";
-            if (!(await exists(f))) return null;
-            const s = prefix + k + "-solution.pdf";
-            return { k: k, f: f, s: (await exists(s)) ? s : null };
-        }));
+        await getFileList();
 
-        const items = found.filter(Boolean);
+        const items = [];
+        for (const k of keys) {
+            const f = base + k + ".pdf";
+            if (!(await exists(f))) continue;
+            const hasSol = await exists(base + k + "-solution.pdf");
+            items.push({ k: k, f: ROOT + "/" + f, s: hasSol ? ROOT + "/" + base + k + "-solution.pdf" : null });
+        }
+
         list.innerHTML = "";
 
         if (!items.length) {
-            list.innerHTML = '<div class="empty">لم تُرفع ملفات هذا القسم بعد 💜</div>';
+            list.innerHTML = '<div class="empty">قيد الإعداد 💜</div>';
             return;
         }
 
@@ -275,7 +300,7 @@
 
 
     /* =====================================================
-       صفحة النصوص العلمية (texts.html?b=science)
+       صفحة النصوص العلمية
        ===================================================== */
 
     async function textsPage() {
@@ -292,10 +317,11 @@
 
         const wrap = document.getElementById("domains");
         const back = "texts.html?b=" + b;
-        const jobs = [];
-        let i = 0;
 
-        br.texts.forEach(function (d) {
+        await getFileList();
+
+        let i = 0;
+        for (const d of br.texts) {
             const sec = el("section", "domain");
             sec.innerHTML = '<div class="domain-title"><h2>' + d.title + "</h2><p>" + d.desc + "</p></div>";
 
@@ -303,31 +329,25 @@
             sec.append(grid);
             wrap.append(sec);
 
-            d.items.forEach(function (it) {
+            for (const it of d.items) {
                 const color = COLORS[i++ % 3];
                 const icon = SITE.lessons[it.lesson].icon;
-                const slot = card({ title: it.title, desc: it.desc, icon: icon, color: color, badge: "…" });
-                grid.append(slot);
+                const files = await findFiles(b + "-texts-" + it.lesson);
+                const n = files.length;
 
-                jobs.push((async function () {
-                    const files = await findFiles(ROOT + "/" + b + "-texts-" + it.lesson);
-                    const n = files.length;
-                    slot.replaceWith(card({
-                        title: it.title, desc: it.desc, icon: icon, color: color,
-                        href: n ? viewerHref(files, [], it.title, back) : null,
-                        badge: it.num + (n ? "" : " · قريبًا"),
-                        badgeType: n ? "ok" : ""
-                    }));
-                })());
-            });
-        });
-
-        await Promise.all(jobs);
+                grid.append(card({
+                    title: it.title, desc: it.desc, icon: icon, color: color,
+                    href: n ? viewerHref(files, [], it.title, back) : null,
+                    badge: it.num + (n ? "" : " · قيد الإعداد"),
+                    badgeType: n ? "ok" : ""
+                }));
+            }
+        }
     }
 
 
     /* =====================================================
-       عارض الملفات (viewer.html)
+       عارض الملفات
        ===================================================== */
 
     function viewerPage() {
@@ -361,15 +381,14 @@
             actions(back, "رجوع");
 
         const $ = function (id) { return document.getElementById(id); };
-        const titleEl = $("vTitle"), countEl = $("vCount"), statusEl = $("vStatus");
+        const countEl = $("vCount"), statusEl = $("vStatus");
         const pagesEl = $("vPages"), tabsEl = $("vTabs"), dl = $("vDl");
 
-        titleEl.textContent = title;
+        $("vTitle").textContent = title;
         $("vBack").href = back;
 
         let token = 0, zoom = 1, pdfDoc = null, wraps = [], obs = null, countObs = null;
 
-        /* التبويبات */
         function label(i) { return names[i] || "الملف " + (i + 1); }
 
         function drawTabs() {
@@ -404,7 +423,6 @@
             statusEl.append(a);
         }
 
-        /* رسم صفحة واحدة */
         async function renderPage(w) {
             if (w.dataset.state === "loading" || w.dataset.state === "done") return;
             w.dataset.state = "loading";
@@ -433,7 +451,6 @@
             }
         }
 
-        /* تحميل الملف الحالي */
         async function load() {
             const my = ++token;
             if (obs) obs.disconnect();
@@ -480,7 +497,6 @@
             }
         }
 
-        /* التكبير */
         function setZoom(z) {
             zoom = Math.max(1, Math.min(3, z));
             pagesEl.style.setProperty("--zoom", zoom);
